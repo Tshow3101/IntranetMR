@@ -1,0 +1,58 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_tipocategoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_tipocategoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreTipoCategoria)
+        </dd>
+
+        <dt>
+            Fecha Registro
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            Usuario Registro
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            Fecha Modificación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            Usuario Modificación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTipocategoria }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

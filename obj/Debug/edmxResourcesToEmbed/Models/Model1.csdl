@@ -1,0 +1,1809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_MUNDOREPRESENTACIONESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_agencia">
+    <Key>
+      <PropertyRef Name="idAgencia" />
+    </Key>
+    <Property Name="idAgencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipodocumento" Type="Int32" />
+    <Property Name="Direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Promotor" Type="Int32" />
+    <Property Name="retenedor" Type="Int32" />
+    <Property Name="idZona" Type="Int32" />
+    <Property Name="Png_En_alta_vertical" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="documentousuario" Type="Int32" />
+    <Property Name="Telefono1" Type="Int32" />
+    <Property Name="Linea_Credito" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Retencion" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="idPais" Type="Int32" />
+    <Property Name="png_en_alta_horizontal" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Numero_de_Ruc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono2" Type="Int32" />
+    <Property Name="Formapago" Type="Int32" />
+    <Property Name="Cta_Detraccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idCiudad" Type="Int32" />
+    <Property Name="Pie_de_Pagina_Flyers" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RazonSocial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Vigente" Type="Int32" />
+    <Property Name="Logo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Encabezado_landing_reps" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Landing_MR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_agenci__docum__6754599E" FromRole="tb_agencia" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria1" Relationship="Self.FK__tb_agenci__Forma__693CA210" FromRole="tb_agencia" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_agenci__idCiu__6A30C649" FromRole="tb_agencia" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_agenci__idPai__68487DD7" FromRole="tb_agencia" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_agenci__idZon__66603565" FromRole="tb_agencia" ToRole="tb_zona" />
+    <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_agenci__Promo__6477ECF3" FromRole="tb_agencia" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_vigencia" Relationship="Self.FK__tb_agenci__reten__656C112C" FromRole="tb_agencia" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_categoria2" Relationship="Self.FK__tb_agenci__tipod__6383C8BA" FromRole="tb_agencia" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_vigencia1" Relationship="Self.FK__tb_agenci__Vigen__6B24EA82" FromRole="tb_agencia" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_usuario1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idAge__6C190EBB" FromRole="tb_agencia" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_bancoagencia" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__idAge__5E8A0973" FromRole="tb_agencia" ToRole="tb_bancoagencia" />
+  </EntityType>
+  <EntityType Name="tb_cadenahotelera">
+    <Key>
+      <PropertyRef Name="idCadenaHotelera" />
+    </Key>
+    <Property Name="idCadenaHotelera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idZona" Type="Int32" />
+    <Property Name="idPais" Type="Int32" />
+    <Property Name="idCiudad" Type="Int32" />
+    <Property Name="DireccionCadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ContactoCadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoCadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono1CadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono2CadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LogoCadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PaginaWebCadenaHotelera" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idVigencia" Type="Int32" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_cadena__idCiu__21B6055D" FromRole="tb_cadenahotelera" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_cadena__idPai__20C1E124" FromRole="tb_cadenahotelera" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_vigencia" Relationship="Self.FK__tb_cadena__idVig__22AA2996" FromRole="tb_cadenahotelera" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_cadena__idZon__1FCDBCEB" FromRole="tb_cadenahotelera" ToRole="tb_zona" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idCade__25869641" FromRole="tb_cadenahotelera" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_tipoha__idCad__3D5E1FD2" FromRole="tb_cadenahotelera" ToRole="tb_tipohabitacion" />
+    <NavigationProperty Name="tb_servicioshotel" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idCad__6442E2C9" FromRole="tb_cadenahotelera" ToRole="tb_servicioshotel" />
+  </EntityType>
+  <EntityType Name="tb_categoria">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCategoria" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idTipocategoria" Type="Int32" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__docum__6754599E" FromRole="tb_categoria" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_agencia1" Relationship="Self.FK__tb_agenci__Forma__693CA210" FromRole="tb_categoria" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_agencia2" Relationship="Self.FK__tb_agenci__tipod__6383C8BA" FromRole="tb_categoria" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_tipocategoria" Relationship="Self.FK__tb_catego__idTip__1273C1CD" FromRole="tb_categoria" ToRole="tb_tipocategoria" />
+    <NavigationProperty Name="tb_contactohotel" Relationship="Self.FK__tb_contac__idCat__2E1BDC42" FromRole="tb_categoria" ToRole="tb_contactohotel" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idCate__29572725" FromRole="tb_categoria" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_usuari__areau__5629CD9C" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario1" Relationship="Self.FK__tb_usuari__docum__5812160E" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario2" Relationship="Self.FK__tb_usuari__empre__59063A47" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario3" Relationship="Self.FK__tb_usuari__forma__5AEE82B9" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario4" Relationship="Self.FK__tb_usuari__Puest__571DF1D5" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario5" Relationship="Self.FK__tb_usuari__sexou__5DCAEF64" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario6" Relationship="Self.FK__tb_usuari__tipod__5EBF139D" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_aerolinea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Banco__0697FACD" FromRole="tb_categoria" ToRole="tb_aerolinea" />
+    <NavigationProperty Name="tb_bancoagencia" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__banco__5F7E2DAC" FromRole="tb_categoria" ToRole="tb_bancoagencia" />
+    <NavigationProperty Name="tb_bancoagencia1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__tipoc__607251E5" FromRole="tb_categoria" ToRole="tb_bancoagencia" />
+    <NavigationProperty Name="tb_servicioshotel" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__promo__634EBE90" FromRole="tb_categoria" ToRole="tb_servicioshotel" />
+    <NavigationProperty Name="tb_serviciolineaaerea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tempo__6AEFE058" FromRole="tb_categoria" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_servicioshotel1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipoa__671F4F74" FromRole="tb_categoria" ToRole="tb_servicioshotel" />
+    <NavigationProperty Name="tb_serviciolineaaerea1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipob__6DCC4D03" FromRole="tb_categoria" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipop__6CD828CA" FromRole="tb_categoria" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciosgenerales" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipos__7B264821" FromRole="tb_categoria" ToRole="tb_serviciosgenerales" />
+    <NavigationProperty Name="tb_servicioshotel2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__681373AD" FromRole="tb_categoria" ToRole="tb_servicioshotel" />
+    <NavigationProperty Name="tb_serviciolineaaerea3" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__6BE40491" FromRole="tb_categoria" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciosgenerales1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__7C1A6C5A" FromRole="tb_categoria" ToRole="tb_serviciosgenerales" />
+    <NavigationProperty Name="tb_usuario7" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__TIPOU__078C1F06" FromRole="tb_categoria" ToRole="tb_usuario" />
+  </EntityType>
+  <EntityType Name="tb_ciudad">
+    <Key>
+      <PropertyRef Name="idCiudad" />
+    </Key>
+    <Property Name="idCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCiudad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoCiudad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idPais" Type="Int32" />
+    <Property Name="idZona" Type="Int32" />
+    <Property Name="fotoCiudad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__idCiu__6A30C649" FromRole="tb_ciudad" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_cadena__idCiu__21B6055D" FromRole="tb_ciudad" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_ciudad__idPai__1BFD2C07" FromRole="tb_ciudad" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_ciudad__idZon__1CF15040" FromRole="tb_ciudad" ToRole="tb_zona" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idCiud__286302EC" FromRole="tb_ciudad" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_aerolinea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Desti__05A3D694" FromRole="tb_ciudad" ToRole="tb_aerolinea" />
+    <NavigationProperty Name="tb_serviciosgenerales" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desde__7D0E9093" FromRole="tb_ciudad" ToRole="tb_serviciosgenerales" />
+    <NavigationProperty Name="tb_serviciolineaaerea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6EC0713C" FromRole="tb_ciudad" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6FB49575" FromRole="tb_ciudad" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__70A8B9AE" FromRole="tb_ciudad" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea3" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__719CDDE7" FromRole="tb_ciudad" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea4" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__72910220" FromRole="tb_ciudad" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciosgenerales1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__hasta__7E02B4CC" FromRole="tb_ciudad" ToRole="tb_serviciosgenerales" />
+  </EntityType>
+  <EntityType Name="tb_contactohotel">
+    <Key>
+      <PropertyRef Name="idContactoHotel" />
+    </Key>
+    <Property Name="idContactoHotel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idHotel" Type="Int32" />
+    <Property Name="nombreContactoHotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="correoContactoHotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idCategoria" Type="Int32" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_contac__idCat__2E1BDC42" FromRole="tb_contactohotel" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_contac__idHot__2D27B809" FromRole="tb_contactohotel" ToRole="tb_hotel" />
+  </EntityType>
+  <EntityType Name="tb_hotel">
+    <Key>
+      <PropertyRef Name="idHotel" />
+    </Key>
+    <Property Name="idHotel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombrehotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idCadenaHotelera" Type="Int32" />
+    <Property Name="idZona" Type="Int32" />
+    <Property Name="idPais" Type="Int32" />
+    <Property Name="idCiudad" Type="Int32" />
+    <Property Name="idCategoria" Type="Int32" />
+    <Property Name="direccionhotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="correohotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="telefono1hotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="telefono2hotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idVigencia" Type="Int32" />
+    <Property Name="linkhotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="checkinhotel" Type="Time" Precision="7" />
+    <Property Name="checkouthotel" Type="Time" Precision="7" />
+    <Property Name="mapahotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="logohotel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_hotel__idCade__25869641" FromRole="tb_hotel" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_hotel__idCate__29572725" FromRole="tb_hotel" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_hotel__idCiud__286302EC" FromRole="tb_hotel" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_contactohotel" Relationship="Self.FK__tb_contac__idHot__2D27B809" FromRole="tb_hotel" ToRole="tb_contactohotel" />
+    <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_hotel__idPais__276EDEB3" FromRole="tb_hotel" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_vigencia" Relationship="Self.FK__tb_hotel__idVige__2A4B4B5E" FromRole="tb_hotel" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_hotel__idZona__267ABA7A" FromRole="tb_hotel" ToRole="tb_zona" />
+    <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_tipoha__idHot__3E52440B" FromRole="tb_hotel" ToRole="tb_tipohabitacion" />
+    <NavigationProperty Name="tb_servicioshotel" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idHot__65370702" FromRole="tb_hotel" ToRole="tb_servicioshotel" />
+  </EntityType>
+  <EntityType Name="tb_impuestos">
+    <Key>
+      <PropertyRef Name="idImpuestos" />
+    </Key>
+    <Property Name="idImpuestos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreImpuesto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="precioImpuesto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_serviciolineaaerea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__73852659" FromRole="tb_impuestos" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__74794A92" FromRole="tb_impuestos" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__756D6ECB" FromRole="tb_impuestos" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea3" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__76619304" FromRole="tb_impuestos" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea4" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7755B73D" FromRole="tb_impuestos" ToRole="tb_serviciolineaaerea" />
+    <NavigationProperty Name="tb_serviciolineaaerea5" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7849DB76" FromRole="tb_impuestos" ToRole="tb_serviciolineaaerea" />
+  </EntityType>
+  <EntityType Name="tb_moneda">
+    <Key>
+      <PropertyRef Name="idMoneda" />
+    </Key>
+    <Property Name="idMoneda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreMoneda" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="precioMoneda" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tb_pais">
+    <Key>
+      <PropertyRef Name="idPais" />
+    </Key>
+    <Property Name="idPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombrePais" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idZona" Type="Int32" />
+    <Property Name="fotoPais" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__idPai__68487DD7" FromRole="tb_pais" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_cadena__idPai__20C1E124" FromRole="tb_pais" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_ciudad__idPai__1BFD2C07" FromRole="tb_pais" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idPais__276EDEB3" FromRole="tb_pais" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_pais__idZona__1920BF5C" FromRole="tb_pais" ToRole="tb_zona" />
+    <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_usuari__idPai__5BE2A6F2" FromRole="tb_pais" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_aerolinea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Pais__04AFB25B" FromRole="tb_pais" ToRole="tb_aerolinea" />
+  </EntityType>
+  <EntityType Name="tb_tipocategoria">
+    <Key>
+      <PropertyRef Name="idTipocategoria" />
+    </Key>
+    <Property Name="idTipocategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreTipoCategoria" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_catego__idTip__1273C1CD" FromRole="tb_tipocategoria" ToRole="tb_categoria" />
+  </EntityType>
+  <EntityType Name="tb_tipohabitacion">
+    <Key>
+      <PropertyRef Name="idTipoHabitacion" />
+    </Key>
+    <Property Name="idTipoHabitacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreTipoHabitacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idCadenaHotelera" Type="Int32" />
+    <Property Name="idHotel" Type="Int32" />
+    <Property Name="capacidadmaxima" Type="Int32" />
+    <Property Name="camasmaximas" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_tipoha__idCad__3D5E1FD2" FromRole="tb_tipohabitacion" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_tipoha__idHot__3E52440B" FromRole="tb_tipohabitacion" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_servicioshotel" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idTip__662B2B3B" FromRole="tb_tipohabitacion" ToRole="tb_servicioshotel" />
+  </EntityType>
+  <EntityType Name="tb_usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="anexo_usuario" Type="Int32" />
+    <Property Name="apellidopaternousuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="apellidomaternousuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="areausuario" Type="Int32" />
+    <Property Name="Puesto_Empresa" Type="Int32" />
+    <Property Name="comisionusuario" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="contactousuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="contrasenausuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="correousuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="correosunatusuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ctadetraccionusuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="cumpleanosusuario" Type="DateTime" Precision="0" />
+    <Property Name="direccionusuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="documentousuario" Type="Int32" />
+    <Property Name="empresesa_usuario" Type="Int32" />
+    <Property Name="facturaelectronicausuario" Type="Int32" />
+    <Property Name="formapagousuario" Type="Int32" />
+    <Property Name="lineacreditousuario" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="metausuario" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="nombreusuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="numerocontactousuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="numerodocumentousuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="idPais" Type="Int32" />
+    <Property Name="razonsocialusuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="retenedorusuario" Type="Int32" />
+    <Property Name="sexousuario" Type="Int32" />
+    <Property Name="skypeusuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="telefonousuario" Type="Int32" />
+    <Property Name="tipodocumento" Type="Int32" />
+    <Property Name="usuario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="vigenteusuario" Type="Int32" />
+    <Property Name="idZona" Type="Int32" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__Promo__6477ECF3" FromRole="tb_usuario" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_usuari__areau__5629CD9C" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria1" Relationship="Self.FK__tb_usuari__docum__5812160E" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria2" Relationship="Self.FK__tb_usuari__empre__59063A47" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria3" Relationship="Self.FK__tb_usuari__forma__5AEE82B9" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria4" Relationship="Self.FK__tb_usuari__Puest__571DF1D5" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria5" Relationship="Self.FK__tb_usuari__sexou__5DCAEF64" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria6" Relationship="Self.FK__tb_usuari__tipod__5EBF139D" FromRole="tb_usuario" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_usuari__idPai__5BE2A6F2" FromRole="tb_usuario" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_vigencia" Relationship="Self.FK__tb_usuari__factu__59FA5E80" FromRole="tb_usuario" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_usuari__idZon__60A75C0F" FromRole="tb_usuario" ToRole="tb_zona" />
+    <NavigationProperty Name="tb_vigencia1" Relationship="Self.FK__tb_usuari__reten__5CD6CB2B" FromRole="tb_usuario" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_vigencia2" Relationship="Self.FK__tb_usuari__vigen__5FB337D6" FromRole="tb_usuario" ToRole="tb_vigencia" />
+    <Property Name="idAgencia" Type="Int32" />
+    <NavigationProperty Name="tb_agencia1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idAge__6C190EBB" FromRole="tb_usuario" ToRole="tb_agencia" />
+    <Property Name="TIPOUSUARIO" Type="Int32" />
+    <NavigationProperty Name="tb_categoria7" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__TIPOU__078C1F06" FromRole="tb_usuario" ToRole="tb_categoria" />
+  </EntityType>
+  <EntityType Name="tb_vigencia">
+    <Key>
+      <PropertyRef Name="idVigencia" />
+    </Key>
+    <Property Name="idVigencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreVigencia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__reten__656C112C" FromRole="tb_vigencia" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_agencia1" Relationship="Self.FK__tb_agenci__Vigen__6B24EA82" FromRole="tb_vigencia" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_cadena__idVig__22AA2996" FromRole="tb_vigencia" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idVige__2A4B4B5E" FromRole="tb_vigencia" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_usuari__factu__59FA5E80" FromRole="tb_vigencia" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario1" Relationship="Self.FK__tb_usuari__reten__5CD6CB2B" FromRole="tb_vigencia" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_usuario2" Relationship="Self.FK__tb_usuari__vigen__5FB337D6" FromRole="tb_vigencia" ToRole="tb_usuario" />
+  </EntityType>
+  <EntityType Name="tb_zona">
+    <Key>
+      <PropertyRef Name="idZona" />
+    </Key>
+    <Property Name="idZona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreZona" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__idZon__66603565" FromRole="tb_zona" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_cadena__idZon__1FCDBCEB" FromRole="tb_zona" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_ciudad__idZon__1CF15040" FromRole="tb_zona" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idZona__267ABA7A" FromRole="tb_zona" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_pais__idZona__1920BF5C" FromRole="tb_zona" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_usuari__idZon__60A75C0F" FromRole="tb_zona" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_aerolinea" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Zona__03BB8E22" FromRole="tb_zona" ToRole="tb_aerolinea" />
+  </EntityType>
+  <Association Name="FK__tb_agenci__docum__6754599E">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="documentousuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__Forma__693CA210">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="Formapago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__idCiu__6A30C649">
+    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="idCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__idPai__68487DD7">
+    <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__idZon__66603565">
+    <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__Promo__6477ECF3">
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="Promotor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__reten__656C112C">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="retenedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__tipod__6383C8BA">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="tipodocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_agenci__Vigen__6B24EA82">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_agencia" Type="Self.tb_agencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_agencia">
+        <PropertyRef Name="Vigente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_cadena__idCiu__21B6055D">
+    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_cadenahotelera">
+        <PropertyRef Name="idCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_cadena__idPai__20C1E124">
+    <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="tb_cadenahotelera">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_cadena__idVig__22AA2996">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_cadenahotelera">
+        <PropertyRef Name="idVigencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_cadena__idZon__1FCDBCEB">
+    <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_cadenahotelera">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__idCade__25869641">
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cadenahotelera">
+        <PropertyRef Name="idCadenaHotelera" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="idCadenaHotelera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_tipoha__idCad__3D5E1FD2">
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
+    <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cadenahotelera">
+        <PropertyRef Name="idCadenaHotelera" />
+      </Principal>
+      <Dependent Role="tb_tipohabitacion">
+        <PropertyRef Name="idCadenaHotelera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_catego__idTip__1273C1CD">
+    <End Role="tb_tipocategoria" Type="Self.tb_tipocategoria" Multiplicity="0..1" />
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipocategoria">
+        <PropertyRef Name="idTipocategoria" />
+      </Principal>
+      <Dependent Role="tb_categoria">
+        <PropertyRef Name="idTipocategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_contac__idCat__2E1BDC42">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_contactohotel" Type="Self.tb_contactohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_contactohotel">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__idCate__29572725">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__areau__5629CD9C">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="areausuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__docum__5812160E">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="documentousuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__empre__59063A47">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="empresesa_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__forma__5AEE82B9">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="formapagousuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__Puest__571DF1D5">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="Puesto_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__sexou__5DCAEF64">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="sexousuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__tipod__5EBF139D">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="tipodocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_ciudad__idPai__1BFD2C07">
+    <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="tb_ciudad">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_ciudad__idZon__1CF15040">
+    <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_ciudad">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__idCiud__286302EC">
+    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="idCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_contac__idHot__2D27B809">
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
+    <End Role="tb_contactohotel" Type="Self.tb_contactohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hotel">
+        <PropertyRef Name="idHotel" />
+      </Principal>
+      <Dependent Role="tb_contactohotel">
+        <PropertyRef Name="idHotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__idPais__276EDEB3">
+    <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__idVige__2A4B4B5E">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="idVigencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__idZona__267ABA7A">
+    <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_tipoha__idHot__3E52440B">
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
+    <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hotel">
+        <PropertyRef Name="idHotel" />
+      </Principal>
+      <Dependent Role="tb_tipohabitacion">
+        <PropertyRef Name="idHotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_pais__idZona__1920BF5C">
+    <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+    <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_pais">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__idPai__5BE2A6F2">
+    <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__factu__59FA5E80">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="facturaelectronicausuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__idZon__60A75C0F">
+    <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__reten__5CD6CB2B">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="retenedorusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__vigen__5FB337D6">
+    <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_vigencia">
+        <PropertyRef Name="idVigencia" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="vigenteusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModeloMR" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_agencia" EntityType="Self.tb_agencia" />
+    <EntitySet Name="tb_cadenahotelera" EntityType="Self.tb_cadenahotelera" />
+    <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" />
+    <EntitySet Name="tb_ciudad" EntityType="Self.tb_ciudad" />
+    <EntitySet Name="tb_contactohotel" EntityType="Self.tb_contactohotel" />
+    <EntitySet Name="tb_hotel" EntityType="Self.tb_hotel" />
+    <EntitySet Name="tb_impuestos" EntityType="Self.tb_impuestos" />
+    <EntitySet Name="tb_moneda" EntityType="Self.tb_moneda" />
+    <EntitySet Name="tb_pais" EntityType="Self.tb_pais" />
+    <EntitySet Name="tb_tipocategoria" EntityType="Self.tb_tipocategoria" />
+    <EntitySet Name="tb_tipohabitacion" EntityType="Self.tb_tipohabitacion" />
+    <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" />
+    <EntitySet Name="tb_vigencia" EntityType="Self.tb_vigencia" />
+    <EntitySet Name="tb_zona" EntityType="Self.tb_zona" />
+    <AssociationSet Name="FK__tb_agenci__docum__6754599E" Association="Self.FK__tb_agenci__docum__6754599E">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__Forma__693CA210" Association="Self.FK__tb_agenci__Forma__693CA210">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__idCiu__6A30C649" Association="Self.FK__tb_agenci__idCiu__6A30C649">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__idPai__68487DD7" Association="Self.FK__tb_agenci__idPai__68487DD7">
+      <End Role="tb_pais" EntitySet="tb_pais" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__idZon__66603565" Association="Self.FK__tb_agenci__idZon__66603565">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__Promo__6477ECF3" Association="Self.FK__tb_agenci__Promo__6477ECF3">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__reten__656C112C" Association="Self.FK__tb_agenci__reten__656C112C">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__tipod__6383C8BA" Association="Self.FK__tb_agenci__tipod__6383C8BA">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_agenci__Vigen__6B24EA82" Association="Self.FK__tb_agenci__Vigen__6B24EA82">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_cadena__idCiu__21B6055D" Association="Self.FK__tb_cadena__idCiu__21B6055D">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_cadena__idPai__20C1E124" Association="Self.FK__tb_cadena__idPai__20C1E124">
+      <End Role="tb_pais" EntitySet="tb_pais" />
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_cadena__idVig__22AA2996" Association="Self.FK__tb_cadena__idVig__22AA2996">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_cadena__idZon__1FCDBCEB" Association="Self.FK__tb_cadena__idZon__1FCDBCEB">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__idCade__25869641" Association="Self.FK__tb_hotel__idCade__25869641">
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_tipoha__idCad__3D5E1FD2" Association="Self.FK__tb_tipoha__idCad__3D5E1FD2">
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+      <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_catego__idTip__1273C1CD" Association="Self.FK__tb_catego__idTip__1273C1CD">
+      <End Role="tb_tipocategoria" EntitySet="tb_tipocategoria" />
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_contac__idCat__2E1BDC42" Association="Self.FK__tb_contac__idCat__2E1BDC42">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__idCate__29572725" Association="Self.FK__tb_hotel__idCate__29572725">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__areau__5629CD9C" Association="Self.FK__tb_usuari__areau__5629CD9C">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__docum__5812160E" Association="Self.FK__tb_usuari__docum__5812160E">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__empre__59063A47" Association="Self.FK__tb_usuari__empre__59063A47">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__forma__5AEE82B9" Association="Self.FK__tb_usuari__forma__5AEE82B9">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__Puest__571DF1D5" Association="Self.FK__tb_usuari__Puest__571DF1D5">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__sexou__5DCAEF64" Association="Self.FK__tb_usuari__sexou__5DCAEF64">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__tipod__5EBF139D" Association="Self.FK__tb_usuari__tipod__5EBF139D">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_ciudad__idPai__1BFD2C07" Association="Self.FK__tb_ciudad__idPai__1BFD2C07">
+      <End Role="tb_pais" EntitySet="tb_pais" />
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_ciudad__idZon__1CF15040" Association="Self.FK__tb_ciudad__idZon__1CF15040">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__idCiud__286302EC" Association="Self.FK__tb_hotel__idCiud__286302EC">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_contac__idHot__2D27B809" Association="Self.FK__tb_contac__idHot__2D27B809">
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+      <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__idPais__276EDEB3" Association="Self.FK__tb_hotel__idPais__276EDEB3">
+      <End Role="tb_pais" EntitySet="tb_pais" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__idVige__2A4B4B5E" Association="Self.FK__tb_hotel__idVige__2A4B4B5E">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__idZona__267ABA7A" Association="Self.FK__tb_hotel__idZona__267ABA7A">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_tipoha__idHot__3E52440B" Association="Self.FK__tb_tipoha__idHot__3E52440B">
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+      <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_pais__idZona__1920BF5C" Association="Self.FK__tb_pais__idZona__1920BF5C">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_pais" EntitySet="tb_pais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__idPai__5BE2A6F2" Association="Self.FK__tb_usuari__idPai__5BE2A6F2">
+      <End Role="tb_pais" EntitySet="tb_pais" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__factu__59FA5E80" Association="Self.FK__tb_usuari__factu__59FA5E80">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__idZon__60A75C0F" Association="Self.FK__tb_usuari__idZon__60A75C0F">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__reten__5CD6CB2B" Association="Self.FK__tb_usuari__reten__5CD6CB2B">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__vigen__5FB337D6" Association="Self.FK__tb_usuari__vigen__5FB337D6">
+      <End Role="tb_vigencia" EntitySet="tb_vigencia" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__idAge__6C190EBB" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idAge__6C190EBB">
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <EntitySet Name="tb_aerolinea" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea" />
+    <EntitySet Name="tb_bancoagencia" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_bancoagencia" />
+    <EntitySet Name="tb_detalleserviciosgenerales" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_detalleserviciosgenerales" />
+    <EntitySet Name="tb_serviciolineaaerea" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" />
+    <EntitySet Name="tb_serviciosgenerales" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" />
+    <EntitySet Name="tb_servicioshotel" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" />
+    <AssociationSet Name="FK__tb_aeroli__Banco__0697FACD" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Banco__0697FACD">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_aeroli__Desti__05A3D694" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Desti__05A3D694">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_aerolin__Pais__04AFB25B" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Pais__04AFB25B">
+      <End Role="tb_pais" EntitySet="tb_pais" />
+      <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_aerolin__Zona__03BB8E22" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Zona__03BB8E22">
+      <End Role="tb_zona" EntitySet="tb_zona" />
+      <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_bancoa__idAge__5E8A0973" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__idAge__5E8A0973">
+      <End Role="tb_agencia" EntitySet="tb_agencia" />
+      <End Role="tb_bancoagencia" EntitySet="tb_bancoagencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_bancoa__banco__5F7E2DAC" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__banco__5F7E2DAC">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_bancoagencia" EntitySet="tb_bancoagencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_bancoa__tipoc__607251E5" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__tipoc__607251E5">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_bancoagencia" EntitySet="tb_bancoagencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__idCad__6442E2C9" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idCad__6442E2C9">
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__promo__634EBE90" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__promo__634EBE90">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tempo__6AEFE058" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tempo__6AEFE058">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipoa__671F4F74" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipoa__671F4F74">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipob__6DCC4D03" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipob__6DCC4D03">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipop__6CD828CA" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipop__6CD828CA">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipos__7B264821" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipos__7B264821">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipot__681373AD" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__681373AD">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipot__6BE40491" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__6BE40491">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__tipot__7C1A6C5A" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__7C1A6C5A">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__desde__7D0E9093" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desde__7D0E9093">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__desti__6EC0713C" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6EC0713C">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__desti__6FB49575" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6FB49575">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__desti__70A8B9AE" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__70A8B9AE">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__desti__719CDDE7" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__719CDDE7">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__desti__72910220" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__72910220">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__hasta__7E02B4CC" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__hasta__7E02B4CC">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_detall__idSer__00DF2177" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__idSer__00DF2177">
+      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
+      <End Role="tb_detalleserviciosgenerales" EntitySet="tb_detalleserviciosgenerales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__idHot__65370702" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idHot__65370702">
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__impue__73852659" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__73852659">
+      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__impue__74794A92" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__74794A92">
+      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__impue__756D6ECB" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__756D6ECB">
+      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__impue__76619304" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__76619304">
+      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__impue__7755B73D" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7755B73D">
+      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__impue__7849DB76" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7849DB76">
+      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
+      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_servic__idTip__662B2B3B" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idTip__662B2B3B">
+      <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
+      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_usuari__TIPOU__078C1F06" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__TIPOU__078C1F06">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__tb_usuari__idAge__6C190EBB">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_agencia" Role="tb_agencia" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_usuario" Role="tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_agencia">
+        <PropertyRef Name="idAgencia" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="idAgencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tb_aerolinea">
+    <Key>
+      <PropertyRef Name="idaerolinea" />
+    </Key>
+    <Property Name="idaerolinea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreComercial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Zona" Type="Int32" />
+    <Property Name="telefono1" Type="Int32" />
+    <Property Name="RazonSocial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pais" Type="Int32" />
+    <Property Name="telefono2" Type="Int32" />
+    <Property Name="Ruc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Destino" Type="Int32" />
+    <Property Name="Paginaweb" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="correofacturacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BancoAfiliado" Type="Int32" />
+    <Property Name="logo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_categoria" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Banco__0697FACD" FromRole="tb_aerolinea" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_ciudad" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Desti__05A3D694" FromRole="tb_aerolinea" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_pais" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Pais__04AFB25B" FromRole="tb_aerolinea" ToRole="tb_pais" />
+    <NavigationProperty Name="tb_zona" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Zona__03BB8E22" FromRole="tb_aerolinea" ToRole="tb_zona" />
+  </EntityType>
+  <EntityType Name="tb_bancoagencia">
+    <Key>
+      <PropertyRef Name="idBancoagencia" />
+    </Key>
+    <Property Name="idBancoagencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idAgencia" Type="Int32" />
+    <Property Name="banco" Type="Int32" />
+    <Property Name="tipocuenta" Type="Int32" />
+    <Property Name="numerocuenta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="codigointerbancario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_agencia" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__idAge__5E8A0973" FromRole="tb_bancoagencia" ToRole="tb_agencia" />
+    <NavigationProperty Name="tb_categoria" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__banco__5F7E2DAC" FromRole="tb_bancoagencia" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__tipoc__607251E5" FromRole="tb_bancoagencia" ToRole="tb_categoria" />
+  </EntityType>
+  <EntityType Name="tb_detalleserviciosgenerales">
+    <Key>
+      <PropertyRef Name="idDetalleserviciosgenerales" />
+    </Key>
+    <Property Name="idDetalleserviciosgenerales" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idServiciosgenerales" Type="Int32" />
+    <Property Name="minpasajeros" Type="Int32" />
+    <Property Name="maxpasajeros" Type="Int32" />
+    <Property Name="costoadulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="costoniño" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ventaadulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ventaniño" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_serviciosgenerales" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__idSer__00DF2177" FromRole="tb_detalleserviciosgenerales" ToRole="tb_serviciosgenerales" />
+  </EntityType>
+  <EntityType Name="tb_serviciolineaaerea">
+    <Key>
+      <PropertyRef Name="idServiciolineaaerea" />
+    </Key>
+    <Property Name="idServiciolineaaerea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="viajaini" Type="DateTime" Precision="0" />
+    <Property Name="viajefin" Type="DateTime" Precision="0" />
+    <Property Name="compraini" Type="DateTime" Precision="0" />
+    <Property Name="comprafin" Type="DateTime" Precision="0" />
+    <Property Name="farebasis" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="clase" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="claseinterna" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="temporada" Type="Int32" />
+    <Property Name="tipotarifa" Type="Int32" />
+    <Property Name="tipopasajero" Type="Int32" />
+    <Property Name="cambioclase" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="tipoboleto" Type="Int32" />
+    <Property Name="destino1" Type="Int32" />
+    <Property Name="destino2" Type="Int32" />
+    <Property Name="destino3" Type="Int32" />
+    <Property Name="destino4" Type="Int32" />
+    <Property Name="destino5" Type="Int32" />
+    <Property Name="neto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="igvneto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="niño" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="igvniño" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="estadiaminima" Type="Int32" />
+    <Property Name="Cantidadparada" Type="Int32" />
+    <Property Name="paradasfree" Type="Int32" />
+    <Property Name="netoparada" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="impuesto1" Type="Int32" />
+    <Property Name="impuestoprecio1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="impuesto2" Type="Int32" />
+    <Property Name="impuestoprecio2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="impuesto3" Type="Int32" />
+    <Property Name="impuestoprecio3" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="impuesto4" Type="Int32" />
+    <Property Name="impuestoprecio4" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="impuesto5" Type="Int32" />
+    <Property Name="impuestoprecio5" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="impuesto6" Type="Int32" />
+    <Property Name="impuestoprecio6" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="precioadulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="comisionadulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="totalcomisionadulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="overadulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="totaloveradulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="totalapagaradulto" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="preciochild" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="comisionchild" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="totalcomisionchild" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="overchild" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="totaloverchild" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="totalapagarchild" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="factor" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_categoria" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tempo__6AEFE058" FromRole="tb_serviciolineaaerea" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipob__6DCC4D03" FromRole="tb_serviciolineaaerea" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipop__6CD828CA" FromRole="tb_serviciolineaaerea" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria3" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__6BE40491" FromRole="tb_serviciolineaaerea" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_ciudad" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6EC0713C" FromRole="tb_serviciolineaaerea" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_ciudad1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6FB49575" FromRole="tb_serviciolineaaerea" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_ciudad2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__70A8B9AE" FromRole="tb_serviciolineaaerea" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_ciudad3" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__719CDDE7" FromRole="tb_serviciolineaaerea" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_ciudad4" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__72910220" FromRole="tb_serviciolineaaerea" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_impuestos" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__73852659" FromRole="tb_serviciolineaaerea" ToRole="tb_impuestos" />
+    <NavigationProperty Name="tb_impuestos1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__74794A92" FromRole="tb_serviciolineaaerea" ToRole="tb_impuestos" />
+    <NavigationProperty Name="tb_impuestos2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__756D6ECB" FromRole="tb_serviciolineaaerea" ToRole="tb_impuestos" />
+    <NavigationProperty Name="tb_impuestos3" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__76619304" FromRole="tb_serviciolineaaerea" ToRole="tb_impuestos" />
+    <NavigationProperty Name="tb_impuestos4" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7755B73D" FromRole="tb_serviciolineaaerea" ToRole="tb_impuestos" />
+    <NavigationProperty Name="tb_impuestos5" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7849DB76" FromRole="tb_serviciolineaaerea" ToRole="tb_impuestos" />
+  </EntityType>
+  <EntityType Name="tb_serviciosgenerales">
+    <Key>
+      <PropertyRef Name="idServiciosgenerales" />
+    </Key>
+    <Property Name="idServiciosgenerales" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="viajaini" Type="DateTime" Precision="0" />
+    <Property Name="viajefin" Type="DateTime" Precision="0" />
+    <Property Name="compraini" Type="DateTime" Precision="0" />
+    <Property Name="comprafin" Type="DateTime" Precision="0" />
+    <Property Name="tiposervicio" Type="Int32" />
+    <Property Name="tipotarifa" Type="Int32" />
+    <Property Name="desde" Type="Int32" />
+    <Property Name="hasta" Type="Int32" />
+    <Property Name="factor" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_categoria" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipos__7B264821" FromRole="tb_serviciosgenerales" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__7C1A6C5A" FromRole="tb_serviciosgenerales" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_ciudad" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desde__7D0E9093" FromRole="tb_serviciosgenerales" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_ciudad1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__hasta__7E02B4CC" FromRole="tb_serviciosgenerales" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_detalleserviciosgenerales" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__idSer__00DF2177" FromRole="tb_serviciosgenerales" ToRole="tb_detalleserviciosgenerales" />
+  </EntityType>
+  <EntityType Name="tb_servicioshotel">
+    <Key>
+      <PropertyRef Name="idServiciohotel" />
+    </Key>
+    <Property Name="idServiciohotel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="viajaini" Type="DateTime" Precision="0" />
+    <Property Name="viajefin" Type="DateTime" Precision="0" />
+    <Property Name="compraini" Type="DateTime" Precision="0" />
+    <Property Name="comprafin" Type="DateTime" Precision="0" />
+    <Property Name="promociones" Type="Int32" />
+    <Property Name="idCadena" Type="Int32" />
+    <Property Name="idHotel" Type="Int32" />
+    <Property Name="idTipoHabitacion" Type="Int32" />
+    <Property Name="tipoalimentacion" Type="Int32" />
+    <Property Name="noches" Type="Int32" />
+    <Property Name="minnoches" Type="Int32" />
+    <Property Name="comision" Type="Int32" />
+    <Property Name="tipotarifa" Type="Int32" />
+    <Property Name="valordoble" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="nadoble" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realDoble" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="valortriple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="natriple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realTriple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="valorsimple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="nasimple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realSimple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorCuadruple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NACuadruple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realCuadruple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorQuintuple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NAQuintuple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realQuintuple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorSextuple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NASextuple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realSextuple" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorChild1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NAChild1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad1Child1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad2Child1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realChild1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorChild2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NAChild2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad1Child2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad2Child2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realChild2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorJunior" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NAJunior" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad1Junior" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad2Junior" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realJunior" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ValorInfante" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="NAInfante" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad1Infante" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Edad2Infante" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="realInfante" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="factor" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="notasgenerales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="fecharegistro" Type="DateTime" Precision="0" />
+    <Property Name="usuarioregistro" Type="Int32" />
+    <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
+    <Property Name="usuariomodificacion" Type="Int32" />
+    <NavigationProperty Name="tb_cadenahotelera" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idCad__6442E2C9" FromRole="tb_servicioshotel" ToRole="tb_cadenahotelera" />
+    <NavigationProperty Name="tb_categoria" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__promo__634EBE90" FromRole="tb_servicioshotel" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria1" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipoa__671F4F74" FromRole="tb_servicioshotel" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_categoria2" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__681373AD" FromRole="tb_servicioshotel" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_hotel" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idHot__65370702" FromRole="tb_servicioshotel" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_tipohabitacion" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idTip__662B2B3B" FromRole="tb_servicioshotel" ToRole="tb_tipohabitacion" />
+  </EntityType>
+  <Association Name="FK__tb_aeroli__Banco__0697FACD">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea" Role="tb_aerolinea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_aerolinea">
+        <PropertyRef Name="BancoAfiliado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_aeroli__Desti__05A3D694">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea" Role="tb_aerolinea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_aerolinea">
+        <PropertyRef Name="Destino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_aerolin__Pais__04AFB25B">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_pais" Role="tb_pais" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea" Role="tb_aerolinea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="tb_aerolinea">
+        <PropertyRef Name="Pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_aerolin__Zona__03BB8E22">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_zona" Role="tb_zona" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea" Role="tb_aerolinea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="tb_aerolinea">
+        <PropertyRef Name="Zona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_bancoa__idAge__5E8A0973">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_agencia" Role="tb_agencia" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_bancoagencia" Role="tb_bancoagencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_agencia">
+        <PropertyRef Name="idAgencia" />
+      </Principal>
+      <Dependent Role="tb_bancoagencia">
+        <PropertyRef Name="idAgencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_bancoa__banco__5F7E2DAC">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_bancoagencia" Role="tb_bancoagencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_bancoagencia">
+        <PropertyRef Name="banco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_bancoa__tipoc__607251E5">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_bancoagencia" Role="tb_bancoagencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_bancoagencia">
+        <PropertyRef Name="tipocuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__idCad__6442E2C9">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_cadenahotelera" Role="tb_cadenahotelera" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Role="tb_servicioshotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cadenahotelera">
+        <PropertyRef Name="idCadenaHotelera" />
+      </Principal>
+      <Dependent Role="tb_servicioshotel">
+        <PropertyRef Name="idCadena" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__promo__634EBE90">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Role="tb_servicioshotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_servicioshotel">
+        <PropertyRef Name="promociones" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tempo__6AEFE058">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="temporada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipoa__671F4F74">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Role="tb_servicioshotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_servicioshotel">
+        <PropertyRef Name="tipoalimentacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipob__6DCC4D03">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="tipoboleto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipop__6CD828CA">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="tipopasajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipos__7B264821">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" Role="tb_serviciosgenerales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_serviciosgenerales">
+        <PropertyRef Name="tiposervicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipot__681373AD">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Role="tb_servicioshotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_servicioshotel">
+        <PropertyRef Name="tipotarifa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipot__6BE40491">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="tipotarifa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__tipot__7C1A6C5A">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" Role="tb_serviciosgenerales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_serviciosgenerales">
+        <PropertyRef Name="tipotarifa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__desde__7D0E9093">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" Role="tb_serviciosgenerales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciosgenerales">
+        <PropertyRef Name="desde" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__desti__6EC0713C">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="destino1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__desti__6FB49575">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="destino2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__desti__70A8B9AE">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="destino3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__desti__719CDDE7">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="destino4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__desti__72910220">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="destino5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__hasta__7E02B4CC">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" Role="tb_serviciosgenerales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_serviciosgenerales">
+        <PropertyRef Name="hasta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_detall__idSer__00DF2177">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" Role="tb_serviciosgenerales" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_detalleserviciosgenerales" Role="tb_detalleserviciosgenerales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_serviciosgenerales">
+        <PropertyRef Name="idServiciosgenerales" />
+      </Principal>
+      <Dependent Role="tb_detalleserviciosgenerales">
+        <PropertyRef Name="idServiciosgenerales" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__idHot__65370702">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_hotel" Role="tb_hotel" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Role="tb_servicioshotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hotel">
+        <PropertyRef Name="idHotel" />
+      </Principal>
+      <Dependent Role="tb_servicioshotel">
+        <PropertyRef Name="idHotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__impue__73852659">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Role="tb_impuestos" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_impuestos">
+        <PropertyRef Name="idImpuestos" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="impuesto1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__impue__74794A92">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Role="tb_impuestos" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_impuestos">
+        <PropertyRef Name="idImpuestos" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="impuesto2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__impue__756D6ECB">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Role="tb_impuestos" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_impuestos">
+        <PropertyRef Name="idImpuestos" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="impuesto3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__impue__76619304">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Role="tb_impuestos" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_impuestos">
+        <PropertyRef Name="idImpuestos" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="impuesto4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__impue__7755B73D">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Role="tb_impuestos" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_impuestos">
+        <PropertyRef Name="idImpuestos" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="impuesto5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__impue__7849DB76">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Role="tb_impuestos" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Role="tb_serviciolineaaerea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_impuestos">
+        <PropertyRef Name="idImpuestos" />
+      </Principal>
+      <Dependent Role="tb_serviciolineaaerea">
+        <PropertyRef Name="impuesto6" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_servic__idTip__662B2B3B">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_tipohabitacion" Role="tb_tipohabitacion" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Role="tb_servicioshotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipohabitacion">
+        <PropertyRef Name="idTipoHabitacion" />
+      </Principal>
+      <Dependent Role="tb_servicioshotel">
+        <PropertyRef Name="idTipoHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_usuari__TIPOU__078C1F06">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_usuario" Role="tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="TIPOUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_MUNDOREPRESENTACIONESModelStoreContainer" CdmEntityContainer="ModeloMR">
+    <EntitySetMapping Name="tb_agencia">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_agencia">
+        <MappingFragment StoreEntitySet="tb_agencia">
+          <ScalarProperty Name="idAgencia" ColumnName="idAgencia" />
+          <ScalarProperty Name="tipodocumento" ColumnName="tipodocumento" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Promotor" ColumnName="Promotor" />
+          <ScalarProperty Name="retenedor" ColumnName="retenedor" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="Png_En_alta_vertical" ColumnName="Png_En_alta_vertical" />
+          <ScalarProperty Name="documentousuario" ColumnName="documentousuario" />
+          <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+          <ScalarProperty Name="Linea_Credito" ColumnName="Linea_Credito" />
+          <ScalarProperty Name="Retencion" ColumnName="Retencion" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="png_en_alta_horizontal" ColumnName="png_en_alta_horizontal" />
+          <ScalarProperty Name="Numero_de_Ruc" ColumnName="Numero_de_Ruc" />
+          <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+          <ScalarProperty Name="Formapago" ColumnName="Formapago" />
+          <ScalarProperty Name="Cta_Detraccion" ColumnName="Cta_Detraccion" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="Pie_de_Pagina_Flyers" ColumnName="Pie_de_Pagina_Flyers" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="Vigente" ColumnName="Vigente" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Encabezado_landing_reps" ColumnName="Encabezado_landing_reps" />
+          <ScalarProperty Name="Landing_MR" ColumnName="Landing_MR" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cadenahotelera">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_cadenahotelera">
+        <MappingFragment StoreEntitySet="tb_cadenahotelera">
+          <ScalarProperty Name="idCadenaHotelera" ColumnName="idCadenaHotelera" />
+          <ScalarProperty Name="nombreCadenaHotelera" ColumnName="nombreCadenaHotelera" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="DireccionCadenaHotelera" ColumnName="DireccionCadenaHotelera" />
+          <ScalarProperty Name="ContactoCadenaHotelera" ColumnName="ContactoCadenaHotelera" />
+          <ScalarProperty Name="CorreoCadenaHotelera" ColumnName="CorreoCadenaHotelera" />
+          <ScalarProperty Name="Telefono1CadenaHotelera" ColumnName="Telefono1CadenaHotelera" />
+          <ScalarProperty Name="Telefono2CadenaHotelera" ColumnName="Telefono2CadenaHotelera" />
+          <ScalarProperty Name="LogoCadenaHotelera" ColumnName="LogoCadenaHotelera" />
+          <ScalarProperty Name="PaginaWebCadenaHotelera" ColumnName="PaginaWebCadenaHotelera" />
+          <ScalarProperty Name="idVigencia" ColumnName="idVigencia" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_categoria">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_categoria">
+        <MappingFragment StoreEntitySet="tb_categoria">
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="idTipocategoria" ColumnName="idTipocategoria" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ciudad">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_ciudad">
+        <MappingFragment StoreEntitySet="tb_ciudad">
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="nombreCiudad" ColumnName="nombreCiudad" />
+          <ScalarProperty Name="CodigoCiudad" ColumnName="CodigoCiudad" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="fotoCiudad" ColumnName="fotoCiudad" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_contactohotel">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_contactohotel">
+        <MappingFragment StoreEntitySet="tb_contactohotel">
+          <ScalarProperty Name="idContactoHotel" ColumnName="idContactoHotel" />
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="nombreContactoHotel" ColumnName="nombreContactoHotel" />
+          <ScalarProperty Name="correoContactoHotel" ColumnName="correoContactoHotel" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_hotel">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_hotel">
+        <MappingFragment StoreEntitySet="tb_hotel">
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="nombrehotel" ColumnName="nombrehotel" />
+          <ScalarProperty Name="idCadenaHotelera" ColumnName="idCadenaHotelera" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="direccionhotel" ColumnName="direccionhotel" />
+          <ScalarProperty Name="correohotel" ColumnName="correohotel" />
+          <ScalarProperty Name="telefono1hotel" ColumnName="telefono1hotel" />
+          <ScalarProperty Name="telefono2hotel" ColumnName="telefono2hotel" />
+          <ScalarProperty Name="idVigencia" ColumnName="idVigencia" />
+          <ScalarProperty Name="linkhotel" ColumnName="linkhotel" />
+          <ScalarProperty Name="checkinhotel" ColumnName="checkinhotel" />
+          <ScalarProperty Name="checkouthotel" ColumnName="checkouthotel" />
+          <ScalarProperty Name="mapahotel" ColumnName="mapahotel" />
+          <ScalarProperty Name="logohotel" ColumnName="logohotel" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_impuestos">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_impuestos">
+        <MappingFragment StoreEntitySet="tb_impuestos">
+          <ScalarProperty Name="idImpuestos" ColumnName="idImpuestos" />
+          <ScalarProperty Name="nombreImpuesto" ColumnName="nombreImpuesto" />
+          <ScalarProperty Name="precioImpuesto" ColumnName="precioImpuesto" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_moneda">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_moneda">
+        <MappingFragment StoreEntitySet="tb_moneda">
+          <ScalarProperty Name="idMoneda" ColumnName="idMoneda" />
+          <ScalarProperty Name="NombreMoneda" ColumnName="NombreMoneda" />
+          <ScalarProperty Name="precioMoneda" ColumnName="precioMoneda" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pais">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_pais">
+        <MappingFragment StoreEntitySet="tb_pais">
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="NombrePais" ColumnName="NombrePais" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="fotoPais" ColumnName="fotoPais" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipocategoria">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_tipocategoria">
+        <MappingFragment StoreEntitySet="tb_tipocategoria">
+          <ScalarProperty Name="idTipocategoria" ColumnName="idTipocategoria" />
+          <ScalarProperty Name="nombreTipoCategoria" ColumnName="nombreTipoCategoria" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipohabitacion">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_tipohabitacion">
+        <MappingFragment StoreEntitySet="tb_tipohabitacion">
+          <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
+          <ScalarProperty Name="NombreTipoHabitacion" ColumnName="NombreTipoHabitacion" />
+          <ScalarProperty Name="idCadenaHotelera" ColumnName="idCadenaHotelera" />
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="capacidadmaxima" ColumnName="capacidadmaxima" />
+          <ScalarProperty Name="camasmaximas" ColumnName="camasmaximas" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_usuario">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="TIPOUSUARIO" ColumnName="TIPOUSUARIO" />
+          <ScalarProperty Name="idAgencia" ColumnName="idAgencia" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="anexo_usuario" ColumnName="anexo_usuario" />
+          <ScalarProperty Name="apellidopaternousuario" ColumnName="apellidopaternousuario" />
+          <ScalarProperty Name="apellidomaternousuario" ColumnName="apellidomaternousuario" />
+          <ScalarProperty Name="areausuario" ColumnName="areausuario" />
+          <ScalarProperty Name="Puesto_Empresa" ColumnName="Puesto_Empresa" />
+          <ScalarProperty Name="comisionusuario" ColumnName="comisionusuario" />
+          <ScalarProperty Name="contactousuario" ColumnName="contactousuario" />
+          <ScalarProperty Name="contrasenausuario" ColumnName="contrasenausuario" />
+          <ScalarProperty Name="correousuario" ColumnName="correousuario" />
+          <ScalarProperty Name="correosunatusuario" ColumnName="correosunatusuario" />
+          <ScalarProperty Name="ctadetraccionusuario" ColumnName="ctadetraccionusuario" />
+          <ScalarProperty Name="cumpleanosusuario" ColumnName="cumpleanosusuario" />
+          <ScalarProperty Name="direccionusuario" ColumnName="direccionusuario" />
+          <ScalarProperty Name="documentousuario" ColumnName="documentousuario" />
+          <ScalarProperty Name="empresesa_usuario" ColumnName="empresesa_usuario" />
+          <ScalarProperty Name="facturaelectronicausuario" ColumnName="facturaelectronicausuario" />
+          <ScalarProperty Name="formapagousuario" ColumnName="formapagousuario" />
+          <ScalarProperty Name="lineacreditousuario" ColumnName="lineacreditousuario" />
+          <ScalarProperty Name="metausuario" ColumnName="metausuario" />
+          <ScalarProperty Name="nombreusuario" ColumnName="nombreusuario" />
+          <ScalarProperty Name="numerocontactousuario" ColumnName="numerocontactousuario" />
+          <ScalarProperty Name="numerodocumentousuario" ColumnName="numerodocumentousuario" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="razonsocialusuario" ColumnName="razonsocialusuario" />
+          <ScalarProperty Name="retenedorusuario" ColumnName="retenedorusuario" />
+          <ScalarProperty Name="sexousuario" ColumnName="sexousuario" />
+          <ScalarProperty Name="skypeusuario" ColumnName="skypeusuario" />
+          <ScalarProperty Name="telefonousuario" ColumnName="telefonousuario" />
+          <ScalarProperty Name="tipodocumento" ColumnName="tipodocumento" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="vigenteusuario" ColumnName="vigenteusuario" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_vigencia">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_vigencia">
+        <MappingFragment StoreEntitySet="tb_vigencia">
+          <ScalarProperty Name="idVigencia" ColumnName="idVigencia" />
+          <ScalarProperty Name="nombreVigencia" ColumnName="nombreVigencia" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_zona">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_zona">
+        <MappingFragment StoreEntitySet="tb_zona">
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="nombreZona" ColumnName="nombreZona" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_aerolinea">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea">
+        <MappingFragment StoreEntitySet="tb_aerolinea">
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="BancoAfiliado" ColumnName="BancoAfiliado" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="correofacturacion" ColumnName="correofacturacion" />
+          <ScalarProperty Name="Paginaweb" ColumnName="Paginaweb" />
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="telefono2" ColumnName="telefono2" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="telefono1" ColumnName="telefono1" />
+          <ScalarProperty Name="Zona" ColumnName="Zona" />
+          <ScalarProperty Name="NombreComercial" ColumnName="NombreComercial" />
+          <ScalarProperty Name="idaerolinea" ColumnName="idaerolinea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_bancoagencia">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_bancoagencia">
+        <MappingFragment StoreEntitySet="tb_bancoagencia">
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="codigointerbancario" ColumnName="codigointerbancario" />
+          <ScalarProperty Name="numerocuenta" ColumnName="numerocuenta" />
+          <ScalarProperty Name="tipocuenta" ColumnName="tipocuenta" />
+          <ScalarProperty Name="banco" ColumnName="banco" />
+          <ScalarProperty Name="idAgencia" ColumnName="idAgencia" />
+          <ScalarProperty Name="idBancoagencia" ColumnName="idBancoagencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalleserviciosgenerales">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalleserviciosgenerales">
+        <MappingFragment StoreEntitySet="tb_detalleserviciosgenerales">
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="ventaniño" ColumnName="ventaniño" />
+          <ScalarProperty Name="ventaadulto" ColumnName="ventaadulto" />
+          <ScalarProperty Name="costoniño" ColumnName="costoniño" />
+          <ScalarProperty Name="costoadulto" ColumnName="costoadulto" />
+          <ScalarProperty Name="maxpasajeros" ColumnName="maxpasajeros" />
+          <ScalarProperty Name="minpasajeros" ColumnName="minpasajeros" />
+          <ScalarProperty Name="idServiciosgenerales" ColumnName="idServiciosgenerales" />
+          <ScalarProperty Name="idDetalleserviciosgenerales" ColumnName="idDetalleserviciosgenerales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_serviciolineaaerea">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea">
+        <MappingFragment StoreEntitySet="tb_serviciolineaaerea">
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="factor" ColumnName="factor" />
+          <ScalarProperty Name="totalapagarchild" ColumnName="totalapagarchild" />
+          <ScalarProperty Name="totaloverchild" ColumnName="totaloverchild" />
+          <ScalarProperty Name="overchild" ColumnName="overchild" />
+          <ScalarProperty Name="totalcomisionchild" ColumnName="totalcomisionchild" />
+          <ScalarProperty Name="comisionchild" ColumnName="comisionchild" />
+          <ScalarProperty Name="preciochild" ColumnName="preciochild" />
+          <ScalarProperty Name="totalapagaradulto" ColumnName="totalapagaradulto" />
+          <ScalarProperty Name="totaloveradulto" ColumnName="totaloveradulto" />
+          <ScalarProperty Name="overadulto" ColumnName="overadulto" />
+          <ScalarProperty Name="totalcomisionadulto" ColumnName="totalcomisionadulto" />
+          <ScalarProperty Name="comisionadulto" ColumnName="comisionadulto" />
+          <ScalarProperty Name="precioadulto" ColumnName="precioadulto" />
+          <ScalarProperty Name="notas" ColumnName="notas" />
+          <ScalarProperty Name="impuestoprecio6" ColumnName="impuestoprecio6" />
+          <ScalarProperty Name="impuesto6" ColumnName="impuesto6" />
+          <ScalarProperty Name="impuestoprecio5" ColumnName="impuestoprecio5" />
+          <ScalarProperty Name="impuesto5" ColumnName="impuesto5" />
+          <ScalarProperty Name="impuestoprecio4" ColumnName="impuestoprecio4" />
+          <ScalarProperty Name="impuesto4" ColumnName="impuesto4" />
+          <ScalarProperty Name="impuestoprecio3" ColumnName="impuestoprecio3" />
+          <ScalarProperty Name="impuesto3" ColumnName="impuesto3" />
+          <ScalarProperty Name="impuestoprecio2" ColumnName="impuestoprecio2" />
+          <ScalarProperty Name="impuesto2" ColumnName="impuesto2" />
+          <ScalarProperty Name="impuestoprecio1" ColumnName="impuestoprecio1" />
+          <ScalarProperty Name="impuesto1" ColumnName="impuesto1" />
+          <ScalarProperty Name="netoparada" ColumnName="netoparada" />
+          <ScalarProperty Name="paradasfree" ColumnName="paradasfree" />
+          <ScalarProperty Name="Cantidadparada" ColumnName="Cantidadparada" />
+          <ScalarProperty Name="estadiaminima" ColumnName="estadiaminima" />
+          <ScalarProperty Name="igvniño" ColumnName="igvniño" />
+          <ScalarProperty Name="niño" ColumnName="niño" />
+          <ScalarProperty Name="igvneto" ColumnName="igvneto" />
+          <ScalarProperty Name="neto" ColumnName="neto" />
+          <ScalarProperty Name="destino5" ColumnName="destino5" />
+          <ScalarProperty Name="destino4" ColumnName="destino4" />
+          <ScalarProperty Name="destino3" ColumnName="destino3" />
+          <ScalarProperty Name="destino2" ColumnName="destino2" />
+          <ScalarProperty Name="destino1" ColumnName="destino1" />
+          <ScalarProperty Name="tipoboleto" ColumnName="tipoboleto" />
+          <ScalarProperty Name="cambioclase" ColumnName="cambioclase" />
+          <ScalarProperty Name="tipopasajero" ColumnName="tipopasajero" />
+          <ScalarProperty Name="tipotarifa" ColumnName="tipotarifa" />
+          <ScalarProperty Name="temporada" ColumnName="temporada" />
+          <ScalarProperty Name="claseinterna" ColumnName="claseinterna" />
+          <ScalarProperty Name="clase" ColumnName="clase" />
+          <ScalarProperty Name="farebasis" ColumnName="farebasis" />
+          <ScalarProperty Name="comprafin" ColumnName="comprafin" />
+          <ScalarProperty Name="compraini" ColumnName="compraini" />
+          <ScalarProperty Name="viajefin" ColumnName="viajefin" />
+          <ScalarProperty Name="viajaini" ColumnName="viajaini" />
+          <ScalarProperty Name="idServiciolineaaerea" ColumnName="idServiciolineaaerea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_serviciosgenerales">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales">
+        <MappingFragment StoreEntitySet="tb_serviciosgenerales">
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="factor" ColumnName="factor" />
+          <ScalarProperty Name="hasta" ColumnName="hasta" />
+          <ScalarProperty Name="desde" ColumnName="desde" />
+          <ScalarProperty Name="tipotarifa" ColumnName="tipotarifa" />
+          <ScalarProperty Name="tiposervicio" ColumnName="tiposervicio" />
+          <ScalarProperty Name="comprafin" ColumnName="comprafin" />
+          <ScalarProperty Name="compraini" ColumnName="compraini" />
+          <ScalarProperty Name="viajefin" ColumnName="viajefin" />
+          <ScalarProperty Name="viajaini" ColumnName="viajaini" />
+          <ScalarProperty Name="idServiciosgenerales" ColumnName="idServiciosgenerales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_servicioshotel">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel">
+        <MappingFragment StoreEntitySet="tb_servicioshotel">
+          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
+          <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
+          <ScalarProperty Name="notasgenerales" ColumnName="notasgenerales" />
+          <ScalarProperty Name="factor" ColumnName="factor" />
+          <ScalarProperty Name="realInfante" ColumnName="realInfante" />
+          <ScalarProperty Name="Edad2Infante" ColumnName="Edad2Infante" />
+          <ScalarProperty Name="Edad1Infante" ColumnName="Edad1Infante" />
+          <ScalarProperty Name="NAInfante" ColumnName="NAInfante" />
+          <ScalarProperty Name="ValorInfante" ColumnName="ValorInfante" />
+          <ScalarProperty Name="realJunior" ColumnName="realJunior" />
+          <ScalarProperty Name="Edad2Junior" ColumnName="Edad2Junior" />
+          <ScalarProperty Name="Edad1Junior" ColumnName="Edad1Junior" />
+          <ScalarProperty Name="NAJunior" ColumnName="NAJunior" />
+          <ScalarProperty Name="ValorJunior" ColumnName="ValorJunior" />
+          <ScalarProperty Name="realChild2" ColumnName="realChild2" />
+          <ScalarProperty Name="Edad2Child2" ColumnName="Edad2Child2" />
+          <ScalarProperty Name="Edad1Child2" ColumnName="Edad1Child2" />
+          <ScalarProperty Name="NAChild2" ColumnName="NAChild2" />
+          <ScalarProperty Name="ValorChild2" ColumnName="ValorChild2" />
+          <ScalarProperty Name="realChild1" ColumnName="realChild1" />
+          <ScalarProperty Name="Edad2Child1" ColumnName="Edad2Child1" />
+          <ScalarProperty Name="Edad1Child1" ColumnName="Edad1Child1" />
+          <ScalarProperty Name="NAChild1" ColumnName="NAChild1" />
+          <ScalarProperty Name="ValorChild1" ColumnName="ValorChild1" />
+          <ScalarProperty Name="realSextuple" ColumnName="realSextuple" />
+          <ScalarProperty Name="NASextuple" ColumnName="NASextuple" />
+          <ScalarProperty Name="ValorSextuple" ColumnName="ValorSextuple" />
+          <ScalarProperty Name="realQuintuple" ColumnName="realQuintuple" />
+          <ScalarProperty Name="NAQuintuple" ColumnName="NAQuintuple" />
+          <ScalarProperty Name="ValorQuintuple" ColumnName="ValorQuintuple" />
+          <ScalarProperty Name="realCuadruple" ColumnName="realCuadruple" />
+          <ScalarProperty Name="NACuadruple" ColumnName="NACuadruple" />
+          <ScalarProperty Name="ValorCuadruple" ColumnName="ValorCuadruple" />
+          <ScalarProperty Name="realSimple" ColumnName="realSimple" />
+          <ScalarProperty Name="nasimple" ColumnName="nasimple" />
+          <ScalarProperty Name="valorsimple" ColumnName="valorsimple" />
+          <ScalarProperty Name="realTriple" ColumnName="realTriple" />
+          <ScalarProperty Name="natriple" ColumnName="natriple" />
+          <ScalarProperty Name="valortriple" ColumnName="valortriple" />
+          <ScalarProperty Name="realDoble" ColumnName="realDoble" />
+          <ScalarProperty Name="nadoble" ColumnName="nadoble" />
+          <ScalarProperty Name="valordoble" ColumnName="valordoble" />
+          <ScalarProperty Name="tipotarifa" ColumnName="tipotarifa" />
+          <ScalarProperty Name="comision" ColumnName="comision" />
+          <ScalarProperty Name="minnoches" ColumnName="minnoches" />
+          <ScalarProperty Name="noches" ColumnName="noches" />
+          <ScalarProperty Name="tipoalimentacion" ColumnName="tipoalimentacion" />
+          <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="idCadena" ColumnName="idCadena" />
+          <ScalarProperty Name="promociones" ColumnName="promociones" />
+          <ScalarProperty Name="comprafin" ColumnName="comprafin" />
+          <ScalarProperty Name="compraini" ColumnName="compraini" />
+          <ScalarProperty Name="viajefin" ColumnName="viajefin" />
+          <ScalarProperty Name="viajaini" ColumnName="viajaini" />
+          <ScalarProperty Name="idServiciohotel" ColumnName="idServiciohotel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

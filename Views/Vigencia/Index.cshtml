@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_vigencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Descripción
+        </th>
+        <th>
+            Fecha Registro
+        </th>
+        <th>
+            Usuario Registro
+        </th>
+        <th>
+            Fecha Modificación
+        </th>
+        <th>
+            Usuario Modificación
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreVigencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecharegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioregistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idVigencia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idVigencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idVigencia })
+        </td>
+    </tr>
+}
+
+</table>

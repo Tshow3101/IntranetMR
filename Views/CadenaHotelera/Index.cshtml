@@ -1,0 +1,123 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_cadenahotelera>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactoCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono1CadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono2CadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LogoCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaginaWebCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_vigencia.nombreVigencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactoCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono1CadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono2CadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LogoCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaginaWebCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecharegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioregistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_ciudad.nombreCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_pais.NombrePais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_vigencia.nombreVigencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_zona.nombreZona)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idCadenaHotelera }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idCadenaHotelera }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idCadenaHotelera })
+        </td>
+    </tr>
+}
+
+</table>

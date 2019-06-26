@@ -1,0 +1,66 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_impuestos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_impuestos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreImpuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreImpuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precioImpuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precioImpuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idImpuestos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

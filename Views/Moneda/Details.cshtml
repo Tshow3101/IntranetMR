@@ -1,0 +1,66 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_moneda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_moneda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreMoneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precioMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precioMoneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idMoneda }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

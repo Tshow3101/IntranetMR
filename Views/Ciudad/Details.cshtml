@@ -1,0 +1,90 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_ciudad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_ciudad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fotoCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fotoCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_pais.NombrePais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_zona.nombreZona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idCiudad }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

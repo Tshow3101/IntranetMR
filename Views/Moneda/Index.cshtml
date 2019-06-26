@@ -1,0 +1,63 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_moneda>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreMoneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioMoneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreMoneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precioMoneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecharegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioregistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idMoneda }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idMoneda }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idMoneda })
+        </td>
+    </tr>
+}
+
+</table>

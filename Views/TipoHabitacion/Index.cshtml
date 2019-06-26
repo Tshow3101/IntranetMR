@@ -1,0 +1,87 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_tipohabitacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreTipoHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.capacidadmaxima)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.camasmaximas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_hotel.nombrehotel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreTipoHabitacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.capacidadmaxima)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.camasmaximas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecharegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioregistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_cadenahotelera.nombreCadenaHotelera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_hotel.nombrehotel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idTipoHabitacion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idTipoHabitacion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idTipoHabitacion })
+        </td>
+    </tr>
+}
+
+</table>

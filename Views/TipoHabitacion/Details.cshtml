@@ -1,0 +1,98 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_tipohabitacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_tipohabitacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTipoHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTipoHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.capacidadmaxima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacidadmaxima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.camasmaximas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.camasmaximas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_hotel.nombrehotel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_hotel.nombrehotel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTipoHabitacion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

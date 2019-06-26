@@ -1,0 +1,194 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_hotel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+
+<div class="form-horizontal">
+    <h4>tb_hotel</h4>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.nombrehotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombrehotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombrehotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idCadenaHotelera, "idCadenaHotelera", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("idCadenaHotelera", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idCadenaHotelera, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idZona, "idZona", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("idZona", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idZona, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idPais, "idPais", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("idPais", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idPais, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idCiudad, "idCiudad", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("idCiudad", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idCiudad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idCategoria, "idCategoria", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("idCategoria", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idCategoria, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.direccionhotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.direccionhotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.direccionhotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.correohotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.correohotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.correohotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.telefono1hotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.telefono1hotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.telefono1hotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.telefono2hotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.telefono2hotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.telefono2hotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idVigencia, "idVigencia", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("idVigencia", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idVigencia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.linkhotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.linkhotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.linkhotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.checkinhotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.checkinhotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.checkinhotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.checkouthotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.checkouthotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.checkouthotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.mapahotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.mapahotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.mapahotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.logohotel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.logohotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.logohotel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="details">
+            <div class="table-responsive">
+                <table id="example" class="table table-bordered table-striped" border="1">
+                    <tr style="text-align:center;">
+                        <td>Nombre</td>
+                        <td>Correo</td>
+                        <td>Puesto</td>
+                        <td>Acciones</td>
+                    </tr>
+                    <tr class="mycontainer" id="mainrow">
+                        <td class="col-md-3">
+                            <input type="text" id="nombreContactoHotel" name="nombreContactoHotel" class="nombreContactoHotel form-control" />
+                        </td>
+                        <td class="col-md-3">
+                            <input type="text" id="correoContactoHotel" name="correoContactoHotel" class="correoContactoHotel form-control" />
+                        </td>
+                        <td class="col-md-3">
+                            @Html.DropDownList("idCategoria1", null, htmlAttributes: new { @class = "idCategoria1 form-control" })
+                        </td>
+                        <td class="col-md-3" style="text-align:center;">
+                            <input type="button" id="add" value="add" style="width: 80px" class="btn btn-primary" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+        </div>
+    </div>
+
+    <div id="orderItems">
+        
+        <span id="orderItemError" style="color: red"></span>
+
+        <div class="col-md-offset-2 col-md-10">
+            <input id="submit" type="button" value="Guardar" class="btn btn-success center-block" style="padding: 10px 20px" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

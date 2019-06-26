@@ -1,0 +1,81 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_ciudad>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fotoCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fotoCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecharegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioregistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_pais.NombrePais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_zona.nombreZona)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idCiudad }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idCiudad }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idCiudad })
+        </td>
+    </tr>
+}
+
+</table>

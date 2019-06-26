@@ -1,0 +1,201 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_agencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Png_En_alta_vertical)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Linea_Credito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Retencion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.png_en_alta_horizontal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_de_Ruc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_Detraccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pie_de_Pagina_Flyers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Encabezado_landing_reps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Landing_MR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_categoria1.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_vigencia.nombreVigencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_categoria2.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_vigencia1.nombreVigencia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Png_En_alta_vertical)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Linea_Credito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Retencion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.png_en_alta_horizontal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_de_Ruc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_Detraccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pie_de_Pagina_Flyers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazonSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Encabezado_landing_reps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Landing_MR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecharegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioregistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_categoria.nombreCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_categoria1.nombreCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_ciudad.nombreCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_pais.NombrePais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_zona.nombreZona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_usuario.apellidopaternousuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_vigencia.nombreVigencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_categoria2.nombreCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_vigencia1.nombreVigencia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idAgencia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idAgencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idAgencia })
+        </td>
+    </tr>
+}
+
+</table>

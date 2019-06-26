@@ -1,0 +1,247 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_usuario
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Crear Empleado</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Tipo Documento-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Tipo Documento</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("tipodocumento", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Documento-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Documento</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("documentousuario", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Numero Documento-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Numero Documento</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="numerodocumentousuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Area-->
+                    <div class="col-md-1" style="width:20%;">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Area</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("areausuario", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Empresa-->
+                    <div class="col-md-1" style="width:16.5%">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Empresa</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("empresesa_usuario", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+                </div>
+                /*Segunda Fila*/
+                <div class="col-md-12">
+
+                    <!--Apellido Paterno-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Apellido Paterno</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="apellidopaternousuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Apellido Materno-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Apellido Materno</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="apellidomaternousuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Nombre-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Nombre</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="nombreusuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Telefono-->
+                    <div class="col-md-1" style="width:20%;">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Telefono</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="telefonousuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Anexo-->
+                    <div class="col-md-1" style="width:16.5%;">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Anexo</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="anexo_usuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+                </div>
+                /*Tercera Fila*/
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <!--Direccion-->
+                        <div class="col-md-2" style="width:16%;">
+                            <label>Direccion</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input id="direccionusuario" style="width:100%; height:30px; margin-left:2px;" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Correo-->
+                        <div class="col-md-2" style="width:16%;">
+                            <label>Correo</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input id="correousuario" style="width:99.5%; height:30px;" />
+                        </div>
+                    </div>
+                </div>
+                /*Cuarta Fila*/
+                <div class="col-md-12" style="margin-top:5px;">
+                    <!--Usuario-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Usuario</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="usuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Contraseña-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Contraseña</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="password" id="contrasenausuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Skype-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Skype</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="skypeusuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Meta-->
+                    <div class="col-md-1" style="width:20%;">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Meta</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="metausuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+
+                    <!--Puesto Empresa-->
+                    <div class="col-md-1" style="width:16.5%">
+                        <div class="col-md-4">
+                            <label style="font-size:11px;">Puesto Empresa</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("Puesto_Empresa", null, htmlAttributes: new { @style = "width: auto; height:30px;" })
+                        </div>
+                    </div>
+                    
+                </div>
+                /*Quinta Fila*/
+                <div class="col-md-12">
+                    <!--Tipo Usuario-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Tipo Usuario</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("TIPOUSUARIO", null, htmlAttributes: new { @style = "width: auto; height:30px;" })
+                        </div>
+                    </div>
+
+
+                    <!--Cumpleaños-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Cumpleaños</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="date" id="cumpleanosusuario" style="width:100%; height:30px;" />
+                        </div>
+                    </div>
+                    
+                </div>
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        <input type="submit" value="Agregar Empleado" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Empleado", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

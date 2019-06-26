@@ -1,0 +1,146 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_cadenahotelera
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_cadenahotelera</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactoCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactoCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono1CadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono1CadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono2CadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono2CadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaginaWebCadenaHotelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaginaWebCadenaHotelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_pais.NombrePais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_vigencia.nombreVigencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_vigencia.nombreVigencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_zona.nombreZona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idCadenaHotelera }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

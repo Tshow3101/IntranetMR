@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b9021eb970cc400ca9aae6a3a9da4f51" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_agencia" Width="1.5" PointX="6" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_cadenahotelera" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Width="1.5" PointX="3.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_contactohotel" Width="1.5" PointX="13.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_hotel" Width="1.5" PointX="11.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_impuestos" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_moneda" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_pais" Width="1.5" PointX="1.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_tipocategoria" Width="1.5" PointX="1.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_tipohabitacion" Width="1.5" PointX="16.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_usuario" Width="1.5" PointX="9" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_vigencia" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_zona" Width="1.5" PointX="1.5" PointY="25.375" IsExpanded="true" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__docum__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__Forma__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__idCiu__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__idPai__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__idZon__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__Promo__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__reten__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__tipod__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_agenci__Vigen__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_cadena__idCiu__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_cadena__idPai__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_cadena__idVig__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_cadena__idZon__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_hotel__idCade__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_tipoha__idCad__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_catego__idTip__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_contac__idCat__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_hotel__idCate__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__areau__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__docum__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__empre__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__forma__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__Puest__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__sexou__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__tipod__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_ciudad__idPai__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_ciudad__idZon__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_hotel__idCiud__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_contac__idHot__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_hotel__idPais__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_hotel__idVige__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_hotel__idZona__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_tipoha__idHot__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_pais__idZona__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idPai__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__factu__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idZon__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__reten__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__vigen__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idAge__6C190EBB" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_aerolinea" Width="1.5" PointX="6" PointY="24.5" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_bancoagencia" Width="1.5" PointX="11.25" PointY="10.375" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_detalleserviciosgenerales" Width="1.5" PointX="14.25" PointY="23.75" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_serviciolineaaerea" Width="1.5" PointX="14" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_serviciosgenerales" Width="1.5" PointX="12" PointY="23.125" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_servicioshotel" Width="1.5" PointX="18.75" PointY="8.875" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Banco__0697FACD" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aeroli__Desti__05A3D694" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Pais__04AFB25B" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_aerolin__Zona__03BB8E22" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__idAge__5E8A0973" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__banco__5F7E2DAC" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_bancoa__tipoc__607251E5" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idCad__6442E2C9" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__promo__634EBE90" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tempo__6AEFE058" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipoa__671F4F74" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipob__6DCC4D03" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipop__6CD828CA" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipos__7B264821" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__681373AD" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__6BE40491" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__tipot__7C1A6C5A" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desde__7D0E9093" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6EC0713C" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__6FB49575" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__70A8B9AE" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__719CDDE7" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__desti__72910220" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__hasta__7E02B4CC" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__idSer__00DF2177" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idHot__65370702" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__73852659" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__74794A92" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__756D6ECB" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__76619304" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7755B73D" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__impue__7849DB76" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_servic__idTip__662B2B3B" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__TIPOU__078C1F06" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
