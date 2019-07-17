@@ -4,157 +4,168 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>tb_cadenahotelera</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombreCadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombreCadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombreCadenaHotelera, "", new { @class = "text-danger" })
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
             </div>
+            <h4 class="panel-title">Crear Cadena Hotelera</h4>
         </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idZona, "idZona", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idZona", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idZona, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Nombre-->
+                    <div class="col-md-2" style="width:42%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Nombre</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.nombreCadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idPais, "idPais", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idPais", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idPais, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Ruc-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Ruc</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.ruc, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idCiudad, "idCiudad", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idCiudad", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idCiudad, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Direccion-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Direccion</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.DireccionCadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
+                </div>
+                /*Segunda Fila*/
+                <div class="col-md-12">
+                    <!--Zona-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Zona</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DropDownList("idZona", null, htmlAttributes: new { @class = "combobox", @style = "width:100%; height:30px;" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DireccionCadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DireccionCadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DireccionCadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Pais-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Pais</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DropDownList("idPais", null, htmlAttributes: new { @class = "combobox", @style = "width:100%; height:30px;" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ContactoCadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ContactoCadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ContactoCadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Destino-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Destino</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DropDownList("idCiudad", null, htmlAttributes: new { @class = "combobox", @style = "width:100%; height:30px;" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CorreoCadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CorreoCadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CorreoCadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Correo-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Correo</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.CorreoCadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
+                </div>
+                /*Tercera Fila*/
+                <div class="col-md-12">
+                    <!--Contacto-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Contacto</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.ContactoCadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Telefono1CadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Telefono1CadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Telefono1CadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Telefono 1-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Telefono 1</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Telefono1CadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Telefono2CadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Telefono2CadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Telefono2CadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Telefono 2-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Telefono 2</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Telefono2CadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LogoCadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LogoCadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LogoCadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PaginaWebCadenaHotelera, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PaginaWebCadenaHotelera, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PaginaWebCadenaHotelera, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.idVigencia, "idVigencia", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idVigencia", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idVigencia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fecharegistro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fecharegistro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fecharegistro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.usuarioregistro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.usuarioregistro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.usuarioregistro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechamodificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechamodificacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fechamodificacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.usuariomodificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.usuariomodificacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.usuariomodificacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                    <!--Pagina Web-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Pagina Web</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.PaginaWebCadenaHotelera, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
+                </div>
+                /*Cuarta Fila*/
+                <div class="col-md-12">
+                    <!--Logo-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Logo</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.LogoCadenaHotelera, new { htmlAttributes = new { @style = "width:100%; height:30px;" } })
+                        </div>
+                    </div>
+                </div>
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        <input type="submit" value="Agregar Cadena Hotelera" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Cadena Hotelera", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

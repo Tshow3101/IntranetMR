@@ -1,0 +1,263 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_ingresohotel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<script src="~/Scripts/Scripts-Intranet/ScriptServicioHotel.js"></script>
+<br />
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Crear Agencia</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.idIngresoHotel)
+                @Html.HiddenFor(model => model.fecharegistro)
+                @Html.HiddenFor(model => model.usuarioregistro)
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="col-md-2">
+                            <label style="text-align:center;">Temporada Viaje</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="col-md-5" style="padding-right:0px;">
+                                @Html.EditorFor(model => model.fecviajeini, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
+                            </div>
+                            <div class="col-md-2">
+                                <span class="input-group-addon" style="height:35px;">Al</span>
+                            </div>
+                            <div class="col-md-5" style="padding-right:0px;">
+                                @Html.EditorFor(model => model.fecviajefin, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="col-md-2">
+                            <label style="text-align:center;">Temporada Compra</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="col-md-5" style="padding-right:0px;">
+                                @Html.EditorFor(model => model.feccompraini, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
+                            </div>
+                            <div class="col-md-2">
+                                <span class="input-group-addon" style="height:35px;">Al</span>
+                            </div>
+                            <div class="col-md-5" style="padding-right:0px;">
+                                @Html.EditorFor(model => model.feccomprafin, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                /*Segunda Fila*/
+                <div class="col-md-12">
+                    <!--Tarifa-->
+                    <div class="col-md-2">
+                        <div class="col-md-3">
+                            <label style="text-align:center;">Tarifa</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DropDownList("tarifa", null, "Seleccione", htmlAttributes: new { @class = "default-select2 form-control" })
+                        </div>
+                    </div>
+
+                    <!--Cod. Promocion-->
+                    <div class="col-md-2">
+                        <div class="col-md-3">
+                            <label style="text-align:center;">Cod. Promo</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.codprom, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <!--Monto Adulto-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">Monto Adulto</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.montoadulto, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <!--Monto Niño-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">Monto Niño</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.montoniño, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <!--Monto Infante-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">Monto Infante</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.montoinfante, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <!--Porcentaje-->
+                    <div class="col-md-2">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">%</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.porcentaje, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                /*Tercera Fia*/
+                <div class="col-md-12">
+                    <!--Cadena Hotelera-->
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">Cadena</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("idCadena", null, htmlAttributes: new { @class = "default-select2 form-control" })
+                        </div>
+                    </div>
+
+                    <!--Hotel-->
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">Hotel</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("idHotel", null, htmlAttributes: new { @class = "default-select2 form-control" })
+                        </div>
+                    </div>
+
+                    <!--Tipo Habitacion-->
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label style="text-align:center;">Tipo Hab.</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("idTipoHabitacion", null, htmlAttributes: new { @class = "default-select2 form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                /*Cuarta Fila*/
+                <div class="col-md-12">
+                    <table class="table" border="0">
+                        <tr>
+                            <td style="text-align:center;">
+                                <label>Doble</label>
+                            </td>
+                            <td style="text-align:center;">
+                                <label>Triple</label>
+                            </td>
+                            <td style="text-align:center;">
+                                <label>Cuadruple</label>
+                            </td>
+                            <td style="text-align:center">
+                                <label>Simple</label>
+                            </td>
+                            <td style="text-align:center">
+                                <label>Quintuple</label>
+                            </td>
+                            <td style="text-align:center;">
+                                <label>Sextuple</label>
+                            </td>
+                            <td style="text-align:center;">
+                                <label>Child 1</label><br />
+                                @Html.EditorFor(model => model.edad1child1, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                                @Html.EditorFor(model => model.edad2child1, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                            </td>
+                            <td style="text-align:center;">
+                                <label>Child 2</label><br />
+                                @Html.EditorFor(model => model.edad1child2, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                                @Html.EditorFor(model => model.edad2child2, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                            </td>
+                            <td style="text-align:center">
+                                <label>Child 3</label><br />
+                                @Html.EditorFor(model => model.edad1child3, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                                @Html.EditorFor(model => model.edad2child3, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                            </td>
+                            <td style="text-align:center">
+                                <label>Infante</label><br />
+                                @Html.EditorFor(model => model.edadinfante1, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                                @Html.EditorFor(model => model.edadinfante2, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                @Html.EditorFor(model => model.doble, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.doblereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.triple, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.triplereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.cuadruple, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.cuadruplereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.simple, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.simplereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.quintuple, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.quituplereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.sextuple, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.sextuplereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.child1, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.child1real, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.child2, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.child2real, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.child3, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.child3real, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.EditorFor(model => model.infante, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.infantereal, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        <input type="submit" value="Editar Registro Hotel" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Registro Hotel", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

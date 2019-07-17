@@ -57,6 +57,7 @@ namespace IntranetMundoRepresentaciones.Controllers
             {
                 tb_cadenahotelera.fecharegistro = DateTime.Today;
                 tb_cadenahotelera.usuarioregistro = 1;
+                tb_cadenahotelera.idVigencia = 1;
                 db.tb_cadenahotelera.Add(tb_cadenahotelera);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -131,7 +132,7 @@ namespace IntranetMundoRepresentaciones.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             tb_cadenahotelera tb_cadenahotelera = db.tb_cadenahotelera.Find(id);
-            db.tb_cadenahotelera.Remove(tb_cadenahotelera);
+            tb_cadenahotelera.idVigencia = 2;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

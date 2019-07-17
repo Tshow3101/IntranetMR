@@ -94,6 +94,7 @@
     <Property Name="usuarioregistro" Type="int" />
     <Property Name="fechamodificacion" Type="date" />
     <Property Name="usuariomodificacion" Type="int" />
+    <Property Name="ruc" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="tb_categoria">
     <Key>
@@ -136,23 +137,6 @@
     <Property Name="fechamodificacion" Type="date" />
     <Property Name="usuariomodificacion" Type="int" />
   </EntityType>
-  <EntityType Name="tb_detalleserviciosgenerales">
-    <Key>
-      <PropertyRef Name="idDetalleserviciosgenerales" />
-    </Key>
-    <Property Name="idDetalleserviciosgenerales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="idServiciosgenerales" Type="int" />
-    <Property Name="minpasajeros" Type="int" />
-    <Property Name="maxpasajeros" Type="int" />
-    <Property Name="costoadulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="costoniño" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ventaadulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ventaniño" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="fecharegistro" Type="date" />
-    <Property Name="usuarioregistro" Type="int" />
-    <Property Name="fechamodificacion" Type="date" />
-    <Property Name="usuariomodificacion" Type="int" />
-  </EntityType>
   <EntityType Name="tb_hotel">
     <Key>
       <PropertyRef Name="idHotel" />
@@ -174,6 +158,8 @@
     <Property Name="checkouthotel" Type="time" Precision="7" />
     <Property Name="mapahotel" Type="varchar" MaxLength="200" />
     <Property Name="logohotel" Type="varchar" MaxLength="200" />
+    <Property Name="tipoplanalimenticio" Type="int" />
+    <Property Name="soloadultos" Type="int" />
     <Property Name="fecharegistro" Type="date" />
     <Property Name="usuarioregistro" Type="int" />
     <Property Name="fechamodificacion" Type="date" />
@@ -186,6 +172,57 @@
     <Property Name="idImpuestos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombreImpuesto" Type="varchar" MaxLength="200" />
     <Property Name="precioImpuesto" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="fecharegistro" Type="date" />
+    <Property Name="usuarioregistro" Type="int" />
+    <Property Name="fechamodificacion" Type="date" />
+    <Property Name="usuariomodificacion" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_ingresohotel">
+    <Key>
+      <PropertyRef Name="idIngresoHotel" />
+    </Key>
+    <Property Name="idIngresoHotel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecviajeini" Type="date" />
+    <Property Name="fecviajefin" Type="date" />
+    <Property Name="feccompraini" Type="date" />
+    <Property Name="feccomprafin" Type="date" />
+    <Property Name="tarifa" Type="int" />
+    <Property Name="codprom" Type="varchar" MaxLength="200" />
+    <Property Name="idCadena" Type="int" />
+    <Property Name="idHotel" Type="int" />
+    <Property Name="idTipoHabitacion" Type="int" />
+    <Property Name="montoadulto" Type="int" />
+    <Property Name="montoniño" Type="int" />
+    <Property Name="montoinfante" Type="int" />
+    <Property Name="porcentaje" Type="int" />
+    <Property Name="doble" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="doblereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="triple" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="triplereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="cuadruple" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="cuadruplereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="simple" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="simplereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="quintuple" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="quituplereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="sextuple" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="sextuplereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="child1" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="child1real" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="edad1child1" Type="int" />
+    <Property Name="edad2child1" Type="int" />
+    <Property Name="child2" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="child2real" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="edad1child2" Type="int" />
+    <Property Name="edad2child2" Type="int" />
+    <Property Name="child3" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="child3real" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="edad1child3" Type="int" />
+    <Property Name="edad2child3" Type="int" />
+    <Property Name="infante" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="infantereal" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="edadinfante1" Type="int" />
+    <Property Name="edadinfante2" Type="int" />
     <Property Name="fecharegistro" Type="date" />
     <Property Name="usuarioregistro" Type="int" />
     <Property Name="fechamodificacion" Type="date" />
@@ -211,149 +248,6 @@
     <Property Name="NombrePais" Type="varchar" MaxLength="200" />
     <Property Name="idZona" Type="int" />
     <Property Name="fotoPais" Type="varchar" MaxLength="200" />
-    <Property Name="fecharegistro" Type="date" />
-    <Property Name="usuarioregistro" Type="int" />
-    <Property Name="fechamodificacion" Type="date" />
-    <Property Name="usuariomodificacion" Type="int" />
-  </EntityType>
-  <EntityType Name="tb_serviciolineaaerea">
-    <Key>
-      <PropertyRef Name="idServiciolineaaerea" />
-    </Key>
-    <Property Name="idServiciolineaaerea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="viajaini" Type="date" />
-    <Property Name="viajefin" Type="date" />
-    <Property Name="compraini" Type="date" />
-    <Property Name="comprafin" Type="date" />
-    <Property Name="farebasis" Type="varchar" MaxLength="200" />
-    <Property Name="clase" Type="varchar" MaxLength="200" />
-    <Property Name="claseinterna" Type="varchar" MaxLength="200" />
-    <Property Name="temporada" Type="int" />
-    <Property Name="tipotarifa" Type="int" />
-    <Property Name="tipopasajero" Type="int" />
-    <Property Name="cambioclase" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="tipoboleto" Type="int" />
-    <Property Name="destino1" Type="int" />
-    <Property Name="destino2" Type="int" />
-    <Property Name="destino3" Type="int" />
-    <Property Name="destino4" Type="int" />
-    <Property Name="destino5" Type="int" />
-    <Property Name="neto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="igvneto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="niño" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="igvniño" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="estadiaminima" Type="int" />
-    <Property Name="Cantidadparada" Type="int" />
-    <Property Name="paradasfree" Type="int" />
-    <Property Name="netoparada" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="impuesto1" Type="int" />
-    <Property Name="impuestoprecio1" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="impuesto2" Type="int" />
-    <Property Name="impuestoprecio2" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="impuesto3" Type="int" />
-    <Property Name="impuestoprecio3" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="impuesto4" Type="int" />
-    <Property Name="impuestoprecio4" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="impuesto5" Type="int" />
-    <Property Name="impuestoprecio5" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="impuesto6" Type="int" />
-    <Property Name="impuestoprecio6" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="notas" Type="varchar(max)" />
-    <Property Name="precioadulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="comisionadulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="totalcomisionadulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="overadulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="totaloveradulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="totalapagaradulto" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="preciochild" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="comisionchild" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="totalcomisionchild" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="overchild" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="totaloverchild" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="totalapagarchild" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="factor" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="fecharegistro" Type="date" />
-    <Property Name="usuarioregistro" Type="int" />
-    <Property Name="fechamodificacion" Type="date" />
-    <Property Name="usuariomodificacion" Type="int" />
-  </EntityType>
-  <EntityType Name="tb_serviciosgenerales">
-    <Key>
-      <PropertyRef Name="idServiciosgenerales" />
-    </Key>
-    <Property Name="idServiciosgenerales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="viajaini" Type="date" />
-    <Property Name="viajefin" Type="date" />
-    <Property Name="compraini" Type="date" />
-    <Property Name="comprafin" Type="date" />
-    <Property Name="tiposervicio" Type="int" />
-    <Property Name="tipotarifa" Type="int" />
-    <Property Name="desde" Type="int" />
-    <Property Name="hasta" Type="int" />
-    <Property Name="factor" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="fecharegistro" Type="date" />
-    <Property Name="usuarioregistro" Type="int" />
-    <Property Name="fechamodificacion" Type="date" />
-    <Property Name="usuariomodificacion" Type="int" />
-  </EntityType>
-  <EntityType Name="tb_servicioshotel">
-    <Key>
-      <PropertyRef Name="idServiciohotel" />
-    </Key>
-    <Property Name="idServiciohotel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="viajaini" Type="date" />
-    <Property Name="viajefin" Type="date" />
-    <Property Name="compraini" Type="date" />
-    <Property Name="comprafin" Type="date" />
-    <Property Name="promociones" Type="int" />
-    <Property Name="idCadena" Type="int" />
-    <Property Name="idHotel" Type="int" />
-    <Property Name="idTipoHabitacion" Type="int" />
-    <Property Name="tipoalimentacion" Type="int" />
-    <Property Name="noches" Type="int" />
-    <Property Name="minnoches" Type="int" />
-    <Property Name="comision" Type="int" />
-    <Property Name="tipotarifa" Type="int" />
-    <Property Name="valordoble" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="nadoble" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realDoble" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="valortriple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="natriple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realTriple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="valorsimple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="nasimple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realSimple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorCuadruple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NACuadruple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realCuadruple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorQuintuple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NAQuintuple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realQuintuple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorSextuple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NASextuple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realSextuple" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorChild1" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NAChild1" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad1Child1" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad2Child1" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realChild1" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorChild2" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NAChild2" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad1Child2" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad2Child2" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realChild2" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorJunior" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NAJunior" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad1Junior" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad2Junior" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realJunior" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="ValorInfante" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="NAInfante" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad1Infante" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="Edad2Infante" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="realInfante" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="factor" Type="decimal" Precision="9" Scale="2" />
-    <Property Name="notasgenerales" Type="varchar(max)" />
     <Property Name="fecharegistro" Type="date" />
     <Property Name="usuarioregistro" Type="int" />
     <Property Name="fechamodificacion" Type="date" />
@@ -728,7 +622,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_contac__idCat__2E1BDC42">
+  <Association Name="FK__tb_contac__idCat__55BFB948">
     <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
     <End Role="tb_contactohotel" Type="Self.tb_contactohotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -740,7 +634,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_contac__idHot__2D27B809">
+  <Association Name="FK__tb_contac__idHot__54CB950F">
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
     <End Role="tb_contactohotel" Type="Self.tb_contactohotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -752,19 +646,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_detall__idSer__00DF2177">
-    <End Role="tb_serviciosgenerales" Type="Self.tb_serviciosgenerales" Multiplicity="0..1" />
-    <End Role="tb_detalleserviciosgenerales" Type="Self.tb_detalleserviciosgenerales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_serviciosgenerales">
-        <PropertyRef Name="idServiciosgenerales" />
-      </Principal>
-      <Dependent Role="tb_detalleserviciosgenerales">
-        <PropertyRef Name="idServiciosgenerales" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_hotel__idCade__25869641">
+  <Association Name="FK__tb_hotel__idCade__477199F1">
     <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -776,7 +658,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_hotel__idCate__29572725">
+  <Association Name="FK__tb_hotel__idCate__4B422AD5">
     <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -788,7 +670,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_hotel__idCiud__286302EC">
+  <Association Name="FK__tb_hotel__idCiud__4A4E069C">
     <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -800,7 +682,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_hotel__idPais__276EDEB3">
+  <Association Name="FK__tb_hotel__idPais__4959E263">
     <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -812,7 +694,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_hotel__idVige__2A4B4B5E">
+  <Association Name="FK__tb_hotel__idVige__4C364F0E">
     <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -824,7 +706,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_hotel__idZona__267ABA7A">
+  <Association Name="FK__tb_hotel__idZona__4865BE2A">
     <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -833,6 +715,78 @@
       </Principal>
       <Dependent Role="tb_hotel">
         <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__soload__4E1E9780">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="soloadultos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_hotel__tipopl__4D2A7347">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_hotel">
+        <PropertyRef Name="tipoplanalimenticio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_ingres__idCad__59904A2C">
+    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
+    <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cadenahotelera">
+        <PropertyRef Name="idCadenaHotelera" />
+      </Principal>
+      <Dependent Role="tb_ingresohotel">
+        <PropertyRef Name="idCadena" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_ingres__idHot__5A846E65">
+    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
+    <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_hotel">
+        <PropertyRef Name="idHotel" />
+      </Principal>
+      <Dependent Role="tb_ingresohotel">
+        <PropertyRef Name="idHotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_ingres__idTip__5B78929E">
+    <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="0..1" />
+    <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipohabitacion">
+        <PropertyRef Name="idTipoHabitacion" />
+      </Principal>
+      <Dependent Role="tb_ingresohotel">
+        <PropertyRef Name="idTipoHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_ingres__tarif__589C25F3">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+    <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_ingresohotel">
+        <PropertyRef Name="tarifa" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -848,307 +802,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_servic__desde__7D0E9093">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciosgenerales" Type="Self.tb_serviciosgenerales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciosgenerales">
-        <PropertyRef Name="desde" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__desti__6EC0713C">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="destino1" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__desti__6FB49575">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="destino2" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__desti__70A8B9AE">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="destino3" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__desti__719CDDE7">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="destino4" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__desti__72910220">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="destino5" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__hasta__7E02B4CC">
-    <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
-    <End Role="tb_serviciosgenerales" Type="Self.tb_serviciosgenerales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_ciudad">
-        <PropertyRef Name="idCiudad" />
-      </Principal>
-      <Dependent Role="tb_serviciosgenerales">
-        <PropertyRef Name="hasta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__idCad__6442E2C9">
-    <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
-    <End Role="tb_servicioshotel" Type="Self.tb_servicioshotel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_cadenahotelera">
-        <PropertyRef Name="idCadenaHotelera" />
-      </Principal>
-      <Dependent Role="tb_servicioshotel">
-        <PropertyRef Name="idCadena" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__idHot__65370702">
-    <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
-    <End Role="tb_servicioshotel" Type="Self.tb_servicioshotel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_hotel">
-        <PropertyRef Name="idHotel" />
-      </Principal>
-      <Dependent Role="tb_servicioshotel">
-        <PropertyRef Name="idHotel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__idTip__662B2B3B">
-    <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="0..1" />
-    <End Role="tb_servicioshotel" Type="Self.tb_servicioshotel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_tipohabitacion">
-        <PropertyRef Name="idTipoHabitacion" />
-      </Principal>
-      <Dependent Role="tb_servicioshotel">
-        <PropertyRef Name="idTipoHabitacion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__impue__73852659">
-    <End Role="tb_impuestos" Type="Self.tb_impuestos" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_impuestos">
-        <PropertyRef Name="idImpuestos" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="impuesto1" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__impue__74794A92">
-    <End Role="tb_impuestos" Type="Self.tb_impuestos" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_impuestos">
-        <PropertyRef Name="idImpuestos" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="impuesto2" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__impue__756D6ECB">
-    <End Role="tb_impuestos" Type="Self.tb_impuestos" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_impuestos">
-        <PropertyRef Name="idImpuestos" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="impuesto3" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__impue__76619304">
-    <End Role="tb_impuestos" Type="Self.tb_impuestos" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_impuestos">
-        <PropertyRef Name="idImpuestos" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="impuesto4" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__impue__7755B73D">
-    <End Role="tb_impuestos" Type="Self.tb_impuestos" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_impuestos">
-        <PropertyRef Name="idImpuestos" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="impuesto5" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__impue__7849DB76">
-    <End Role="tb_impuestos" Type="Self.tb_impuestos" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_impuestos">
-        <PropertyRef Name="idImpuestos" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="impuesto6" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__promo__634EBE90">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_servicioshotel" Type="Self.tb_servicioshotel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_servicioshotel">
-        <PropertyRef Name="promociones" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tempo__6AEFE058">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="temporada" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipoa__671F4F74">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_servicioshotel" Type="Self.tb_servicioshotel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_servicioshotel">
-        <PropertyRef Name="tipoalimentacion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipob__6DCC4D03">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="tipoboleto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipop__6CD828CA">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="tipopasajero" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipos__7B264821">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_serviciosgenerales" Type="Self.tb_serviciosgenerales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_serviciosgenerales">
-        <PropertyRef Name="tiposervicio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipot__681373AD">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_servicioshotel" Type="Self.tb_servicioshotel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_servicioshotel">
-        <PropertyRef Name="tipotarifa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipot__6BE40491">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_serviciolineaaerea" Type="Self.tb_serviciolineaaerea" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_serviciolineaaerea">
-        <PropertyRef Name="tipotarifa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_servic__tipot__7C1A6C5A">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
-    <End Role="tb_serviciosgenerales" Type="Self.tb_serviciosgenerales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="idCategoria" />
-      </Principal>
-      <Dependent Role="tb_serviciosgenerales">
-        <PropertyRef Name="tipotarifa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_tipoha__idCad__3D5E1FD2">
+  <Association Name="FK__tb_tipoha__idCad__50FB042B">
     <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
     <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1160,7 +814,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_tipoha__idHot__3E52440B">
+  <Association Name="FK__tb_tipoha__idHot__51EF2864">
     <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
     <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1348,14 +1002,11 @@
     <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_ciudad" EntityType="Self.tb_ciudad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_contactohotel" EntityType="Self.tb_contactohotel" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tb_detalleserviciosgenerales" EntityType="Self.tb_detalleserviciosgenerales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_hotel" EntityType="Self.tb_hotel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_impuestos" EntityType="Self.tb_impuestos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_ingresohotel" EntityType="Self.tb_ingresohotel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_moneda" EntityType="Self.tb_moneda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_pais" EntityType="Self.tb_pais" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tb_serviciolineaaerea" EntityType="Self.tb_serviciolineaaerea" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tb_serviciosgenerales" EntityType="Self.tb_serviciosgenerales" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tb_servicioshotel" EntityType="Self.tb_servicioshotel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_tipocategoria" EntityType="Self.tb_tipocategoria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_tipohabitacion" EntityType="Self.tb_tipohabitacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="dbo" store:Type="Tables" />
@@ -1453,151 +1104,71 @@
       <End Role="tb_zona" EntitySet="tb_zona" />
       <End Role="tb_ciudad" EntitySet="tb_ciudad" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_contac__idCat__2E1BDC42" Association="Self.FK__tb_contac__idCat__2E1BDC42">
+    <AssociationSet Name="FK__tb_contac__idCat__55BFB948" Association="Self.FK__tb_contac__idCat__55BFB948">
       <End Role="tb_categoria" EntitySet="tb_categoria" />
       <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_contac__idHot__2D27B809" Association="Self.FK__tb_contac__idHot__2D27B809">
+    <AssociationSet Name="FK__tb_contac__idHot__54CB950F" Association="Self.FK__tb_contac__idHot__54CB950F">
       <End Role="tb_hotel" EntitySet="tb_hotel" />
       <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_detall__idSer__00DF2177" Association="Self.FK__tb_detall__idSer__00DF2177">
-      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
-      <End Role="tb_detalleserviciosgenerales" EntitySet="tb_detalleserviciosgenerales" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_hotel__idCade__25869641" Association="Self.FK__tb_hotel__idCade__25869641">
+    <AssociationSet Name="FK__tb_hotel__idCade__477199F1" Association="Self.FK__tb_hotel__idCade__477199F1">
       <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
       <End Role="tb_hotel" EntitySet="tb_hotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_hotel__idCate__29572725" Association="Self.FK__tb_hotel__idCate__29572725">
+    <AssociationSet Name="FK__tb_hotel__idCate__4B422AD5" Association="Self.FK__tb_hotel__idCate__4B422AD5">
       <End Role="tb_categoria" EntitySet="tb_categoria" />
       <End Role="tb_hotel" EntitySet="tb_hotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_hotel__idCiud__286302EC" Association="Self.FK__tb_hotel__idCiud__286302EC">
+    <AssociationSet Name="FK__tb_hotel__idCiud__4A4E069C" Association="Self.FK__tb_hotel__idCiud__4A4E069C">
       <End Role="tb_ciudad" EntitySet="tb_ciudad" />
       <End Role="tb_hotel" EntitySet="tb_hotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_hotel__idPais__276EDEB3" Association="Self.FK__tb_hotel__idPais__276EDEB3">
+    <AssociationSet Name="FK__tb_hotel__idPais__4959E263" Association="Self.FK__tb_hotel__idPais__4959E263">
       <End Role="tb_pais" EntitySet="tb_pais" />
       <End Role="tb_hotel" EntitySet="tb_hotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_hotel__idVige__2A4B4B5E" Association="Self.FK__tb_hotel__idVige__2A4B4B5E">
+    <AssociationSet Name="FK__tb_hotel__idVige__4C364F0E" Association="Self.FK__tb_hotel__idVige__4C364F0E">
       <End Role="tb_vigencia" EntitySet="tb_vigencia" />
       <End Role="tb_hotel" EntitySet="tb_hotel" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_hotel__idZona__267ABA7A" Association="Self.FK__tb_hotel__idZona__267ABA7A">
+    <AssociationSet Name="FK__tb_hotel__idZona__4865BE2A" Association="Self.FK__tb_hotel__idZona__4865BE2A">
       <End Role="tb_zona" EntitySet="tb_zona" />
       <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__soload__4E1E9780" Association="Self.FK__tb_hotel__soload__4E1E9780">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_hotel__tipopl__4D2A7347" Association="Self.FK__tb_hotel__tipopl__4D2A7347">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_ingres__idCad__59904A2C" Association="Self.FK__tb_ingres__idCad__59904A2C">
+      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
+      <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_ingres__idHot__5A846E65" Association="Self.FK__tb_ingres__idHot__5A846E65">
+      <End Role="tb_hotel" EntitySet="tb_hotel" />
+      <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_ingres__idTip__5B78929E" Association="Self.FK__tb_ingres__idTip__5B78929E">
+      <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
+      <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_ingres__tarif__589C25F3" Association="Self.FK__tb_ingres__tarif__589C25F3">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
     </AssociationSet>
     <AssociationSet Name="FK__tb_pais__idZona__1920BF5C" Association="Self.FK__tb_pais__idZona__1920BF5C">
       <End Role="tb_zona" EntitySet="tb_zona" />
       <End Role="tb_pais" EntitySet="tb_pais" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__desde__7D0E9093" Association="Self.FK__tb_servic__desde__7D0E9093">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__desti__6EC0713C" Association="Self.FK__tb_servic__desti__6EC0713C">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__desti__6FB49575" Association="Self.FK__tb_servic__desti__6FB49575">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__desti__70A8B9AE" Association="Self.FK__tb_servic__desti__70A8B9AE">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__desti__719CDDE7" Association="Self.FK__tb_servic__desti__719CDDE7">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__desti__72910220" Association="Self.FK__tb_servic__desti__72910220">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__hasta__7E02B4CC" Association="Self.FK__tb_servic__hasta__7E02B4CC">
-      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
-      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__idCad__6442E2C9" Association="Self.FK__tb_servic__idCad__6442E2C9">
-      <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
-      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__idHot__65370702" Association="Self.FK__tb_servic__idHot__65370702">
-      <End Role="tb_hotel" EntitySet="tb_hotel" />
-      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__idTip__662B2B3B" Association="Self.FK__tb_servic__idTip__662B2B3B">
-      <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
-      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__impue__73852659" Association="Self.FK__tb_servic__impue__73852659">
-      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__impue__74794A92" Association="Self.FK__tb_servic__impue__74794A92">
-      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__impue__756D6ECB" Association="Self.FK__tb_servic__impue__756D6ECB">
-      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__impue__76619304" Association="Self.FK__tb_servic__impue__76619304">
-      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__impue__7755B73D" Association="Self.FK__tb_servic__impue__7755B73D">
-      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__impue__7849DB76" Association="Self.FK__tb_servic__impue__7849DB76">
-      <End Role="tb_impuestos" EntitySet="tb_impuestos" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__promo__634EBE90" Association="Self.FK__tb_servic__promo__634EBE90">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tempo__6AEFE058" Association="Self.FK__tb_servic__tempo__6AEFE058">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipoa__671F4F74" Association="Self.FK__tb_servic__tipoa__671F4F74">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipob__6DCC4D03" Association="Self.FK__tb_servic__tipob__6DCC4D03">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipop__6CD828CA" Association="Self.FK__tb_servic__tipop__6CD828CA">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipos__7B264821" Association="Self.FK__tb_servic__tipos__7B264821">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipot__681373AD" Association="Self.FK__tb_servic__tipot__681373AD">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_servicioshotel" EntitySet="tb_servicioshotel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipot__6BE40491" Association="Self.FK__tb_servic__tipot__6BE40491">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_serviciolineaaerea" EntitySet="tb_serviciolineaaerea" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_servic__tipot__7C1A6C5A" Association="Self.FK__tb_servic__tipot__7C1A6C5A">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_serviciosgenerales" EntitySet="tb_serviciosgenerales" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_tipoha__idCad__3D5E1FD2" Association="Self.FK__tb_tipoha__idCad__3D5E1FD2">
+    <AssociationSet Name="FK__tb_tipoha__idCad__50FB042B" Association="Self.FK__tb_tipoha__idCad__50FB042B">
       <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
       <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_tipoha__idHot__3E52440B" Association="Self.FK__tb_tipoha__idHot__3E52440B">
+    <AssociationSet Name="FK__tb_tipoha__idHot__51EF2864" Association="Self.FK__tb_tipoha__idHot__51EF2864">
       <End Role="tb_hotel" EntitySet="tb_hotel" />
       <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
     </AssociationSet>

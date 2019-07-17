@@ -3,72 +3,92 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>tb_ciudad</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.idCiudad)
-        @Html.HiddenFor(model => model.usuarioregistro, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.HiddenFor(model => model.fecharegistro, new { htmlAttributes = new { @class = "form-control" } })
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombreCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombreCiudad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombreCiudad, "", new { @class = "text-danger" })
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
             </div>
+            <h4 class="panel-title">Editar Ciudad</h4>
         </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.idCiudad)
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Codigo-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Codigo</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.EditorFor(model => model.CodigoCiudad, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CodigoCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CodigoCiudad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CodigoCiudad, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Nombre-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-3">
+                            <label style="font-size:11px;">Nombre</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.nombreCiudad, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idZona, "idZona", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idZona", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idZona, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <!--Zona-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Zona</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("idZona", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idPais, "idPais", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idPais", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idPais, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fotoCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fotoCiudad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fotoCiudad, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+                    <!--Pais-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Pais</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("idPais", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+                </div>
+                /*Segunda Fila*/
+                <div class="col-md-12">
+                    <!--Foto-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Foto</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.EditorFor(model => model.fotoCiudad, new { htmlAttributes = new { @style = "width: 100%; height:30px;" } })
+                        </div>
+                    </div>
+                </div>
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        <input type="submit" value="Editar Ciudad" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Ciudad", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

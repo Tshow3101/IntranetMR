@@ -175,7 +175,190 @@ D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.R
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.resources.dll
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompileInputs.cache
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.dll
 D:\Nuevo CIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.pdb
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\IntranetMundoRepresentaciones.dll.config
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\IntranetMundoRepresentaciones.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\IntranetMundoRepresentaciones.pdb
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\csc.exe
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\csc.exe.config
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\csc.rsp
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\csi.exe
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\csi.exe.config
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\csi.rsp
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.Managed.Core.targets
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.AppContext.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Collections.Immutable.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Console.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.Compression.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.FileSystem.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.Pipes.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Reflection.Metadata.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.AccessControl.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Claims.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Principal.Windows.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.ValueTuple.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.XmlDocument.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.XPath.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\vbc.exe
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\vbc.exe.config
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\vbc.rsp
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\VBCSCompiler.exe
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\roslyn\VBCSCompiler.exe.config
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Antlr3.Runtime.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\EntityFramework.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\EntityFramework.SqlServer.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Microsoft.Web.Infrastructure.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Newtonsoft.Json.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Diagnostics.DiagnosticSource.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Helpers.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Mvc.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Optimization.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Razor.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Deployment.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Razor.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\WebGrease.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\EntityFramework.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\EntityFramework.SqlServer.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Helpers.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Mvc.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Optimization.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.Razor.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Deployment.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Razor.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Newtonsoft.Json.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Antlr3.Runtime.pdb
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\System.Diagnostics.DiagnosticSource.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Helpers.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Mvc.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Optimization.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Razor.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompileInputs.cache
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.dll
+D:\NuevoCIP\Intranet 07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.pdb
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\IntranetMundoRepresentaciones.dll.config
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\IntranetMundoRepresentaciones.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\IntranetMundoRepresentaciones.pdb
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\csc.exe
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\csc.exe.config
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\csc.rsp
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\csi.exe
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\csi.exe.config
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\csi.rsp
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.Managed.Core.targets
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.AppContext.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Collections.Immutable.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Console.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.Compression.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.FileSystem.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.IO.Pipes.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Reflection.Metadata.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.AccessControl.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Claims.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Security.Principal.Windows.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.ValueTuple.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.XmlDocument.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.XPath.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\vbc.exe
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\vbc.exe.config
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\vbc.rsp
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\VBCSCompiler.exe
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\roslyn\VBCSCompiler.exe.config
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Antlr3.Runtime.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\EntityFramework.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\EntityFramework.SqlServer.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Microsoft.Web.Infrastructure.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Newtonsoft.Json.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Diagnostics.DiagnosticSource.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Helpers.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Mvc.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Optimization.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Razor.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Deployment.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Razor.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\WebGrease.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\EntityFramework.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\EntityFramework.SqlServer.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Helpers.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Mvc.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Optimization.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.Razor.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Deployment.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Web.WebPages.Razor.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Newtonsoft.Json.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Antlr3.Runtime.pdb
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\System.Diagnostics.DiagnosticSource.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Helpers.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Mvc.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Optimization.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.Razor.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompileInputs.cache
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.dll
+D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.pdb

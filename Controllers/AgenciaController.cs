@@ -39,14 +39,14 @@ namespace IntranetMundoRepresentaciones.Controllers
         // GET: Agencia/Create
         public ActionResult Create()
         {
-            ViewBag.documentousuario = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria");
-            ViewBag.Formapago = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria");
+            ViewBag.documentousuario = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 26), "idCategoria", "nombreCategoria");
+            ViewBag.Formapago = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 27), "idCategoria", "nombreCategoria");
             ViewBag.idCiudad = new SelectList(db.tb_ciudad, "idCiudad", "nombreCiudad");
             ViewBag.idPais = new SelectList(db.tb_pais, "idPais", "NombrePais");
             ViewBag.idZona = new SelectList(db.tb_zona, "idZona", "nombreZona");
-            ViewBag.Promotor = new SelectList(db.tb_usuario, "idUsuario", "apellidopaternousuario");
+            ViewBag.Promotor = new SelectList(db.tb_usuario.Where(x => x.TIPOUSUARIO == 44), "idUsuario", "nombreusuario");
             ViewBag.retenedor = new SelectList(db.tb_vigencia, "idVigencia", "nombreVigencia");
-            ViewBag.tipodocumento = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria");
+            ViewBag.tipodocumento = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 15), "idCategoria", "nombreCategoria");
             ViewBag.Vigente = new SelectList(db.tb_vigencia, "idVigencia", "nombreVigencia");
             return View();
         }
@@ -62,6 +62,7 @@ namespace IntranetMundoRepresentaciones.Controllers
             {
                 tb_agencia.fecharegistro = DateTime.Today;
                 tb_agencia.usuarioregistro = 1;
+                tb_agencia.Vigente = 1;
                 db.tb_agencia.Add(tb_agencia);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -91,14 +92,14 @@ namespace IntranetMundoRepresentaciones.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.documentousuario = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_agencia.documentousuario);
-            ViewBag.Formapago = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_agencia.Formapago);
+            ViewBag.documentousuario = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 26), "idCategoria", "nombreCategoria", tb_agencia.documentousuario);
+            ViewBag.Formapago = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 27), "idCategoria", "nombreCategoria", tb_agencia.Formapago);
             ViewBag.idCiudad = new SelectList(db.tb_ciudad, "idCiudad", "nombreCiudad", tb_agencia.idCiudad);
             ViewBag.idPais = new SelectList(db.tb_pais, "idPais", "NombrePais", tb_agencia.idPais);
             ViewBag.idZona = new SelectList(db.tb_zona, "idZona", "nombreZona", tb_agencia.idZona);
             ViewBag.Promotor = new SelectList(db.tb_usuario, "idUsuario", "apellidopaternousuario", tb_agencia.Promotor);
             ViewBag.retenedor = new SelectList(db.tb_vigencia, "idVigencia", "nombreVigencia", tb_agencia.retenedor);
-            ViewBag.tipodocumento = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_agencia.tipodocumento);
+            ViewBag.tipodocumento = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 15), "idCategoria", "nombreCategoria", tb_agencia.tipodocumento);
             ViewBag.Vigente = new SelectList(db.tb_vigencia, "idVigencia", "nombreVigencia", tb_agencia.Vigente);
             return View(tb_agencia);
         }
@@ -151,7 +152,7 @@ namespace IntranetMundoRepresentaciones.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             tb_agencia tb_agencia = db.tb_agencia.Find(id);
-            db.tb_agencia.Remove(tb_agencia);
+            tb_agencia.Vigente = 2;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

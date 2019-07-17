@@ -4,247 +4,247 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Crear Agencia</h4>
+        </div>
+        <div class="panel-body">
 
-<div>
-    <h4>tb_agencia</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
+            <!--Primera Fila-->
+            <div class="col-md-12">
+                <!--Tipo Documento-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Tipo Documento</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_categoria2.nombreCategoria)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
+                <!--Documento-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="font-size:11px;">Documento</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Png_En_alta_vertical)
-        </dt>
+                <!--Numero Documento-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="font-size:11px;">Numero Documento</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.Numero_de_Ruc)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Png_En_alta_vertical)
-        </dd>
+                <!--Razon Social-->
+                <div class="col-md-2" style="width:36.5%">
+                    <div class="col-md-2">
+                        <label style="font-size:11px;">Razon Social</label>
+                    </div>
+                    <div class="col-md-8" style="width:79%">
+                        @Html.DisplayFor(model => model.RazonSocial)
+                    </div>
+                </div>
+            </div>
+            <!--Segunda Fila-->
+            <div class="col-md-12">
+                <!--Color-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Color</label>
+                    </div>
+                    <div class="col-md-7" style="text-align:match-parent">
+                        @Html.DisplayFor(model => model.Color)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono1)
-        </dt>
+                <!--Telefono 1-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Telefono 1</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.Telefono1)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono1)
-        </dd>
+                <!--Telefono 2-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Telefono 2</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.Telefono2)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Linea_Credito)
-        </dt>
+                <!--Direccion-->
+                <div class="col-md-2" style="width:36.5%">
+                    <div class="col-md-2">
+                        <label style="font-size:11px;">Direccion</label>
+                    </div>
+                    <div class="col-md-8" style="width:79%">
+                        @Html.DisplayFor(model => model.Direccion)
+                    </div>
+                </div>
+            </div>
+            <!--Tercera Fila-->
+            <div class="col-md-12" style="margin-top:5px;">
+                <!--Promotor-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Promotor</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_usuario.nombreusuario)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Linea_Credito)
-        </dd>
+                <!--Linea Credito-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Linea Credito</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.Linea_Credito)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Retencion)
-        </dt>
+                <!--Forma Pago-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Forma Pago</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_categoria1.nombreCategoria)
+                    </div>
+                </div>
+                <!--Landing Page-->
+                <div class="col-md-2" style="width:36.5%">
+                    <div class="col-md-2">
+                        <label style="font-size:11px;">Landing Page</label>
+                    </div>
+                    <div class="col-md-8" style="width: 79%;">
+                        @Html.DisplayFor(model => model.Landing_MR)
+                    </div>
+                </div>
+            </div>
+            <!--Cuarta Fila-->
+            <div class="col-md-12">
 
-        <dd>
-            @Html.DisplayFor(model => model.Retencion)
-        </dd>
+                <!--Agente Retenedor-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Agente Retenedor</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_vigencia.nombreVigencia)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.png_en_alta_horizontal)
-        </dt>
+                <!--% Retencion-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">% Retencion</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.Retencion)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.png_en_alta_horizontal)
-        </dd>
+                <!--Cuenta Detraccion-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Cuenta Detraccion</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.Cta_Detraccion)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Numero_de_Ruc)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Numero_de_Ruc)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono2)
-        </dt>
+                <!--Correo-->
+                <div class="col-md-1" style="width:16.5%;">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Correo</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.correo)
+                    </div>
+                </div>
+            </div>
+            <!--Quinta Fila-->
+            <div class="col-md-12">
+                <!--Zona-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Zona</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_zona.nombreZona)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono2)
-        </dd>
+                <!--Pais-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Pais</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_pais.NombrePais)
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cta_Detraccion)
-        </dt>
+                <!--Ciudad-->
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Ciudad</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cta_Detraccion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pie_de_Pagina_Flyers)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pie_de_Pagina_Flyers)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RazonSocial)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RazonSocial)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.correo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.correo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Logo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Logo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Encabezado_landing_reps)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Encabezado_landing_reps)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Landing_MR)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Landing_MR)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecharegistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecharegistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuarioregistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuarioregistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechamodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechamodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuariomodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuariomodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria1.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria1.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_pais.NombrePais)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_zona.nombreZona)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuario.apellidopaternousuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_vigencia.nombreVigencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_vigencia.nombreVigencia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria2.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria2.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_vigencia1.nombreVigencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_vigencia1.nombreVigencia)
-        </dd>
-
-    </dl>
+                <div class="col-md-2">
+                    <div class="col-md-5">
+                        <label style="font-size:11px;">Vigente</label>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.DisplayFor(model => model.tb_vigencia1.nombreVigencia)
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        @Html.ActionLink("Editar Agencia", "Edit", new { id = Model.idAgencia }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Regresar Lista Agencia", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idAgencia }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

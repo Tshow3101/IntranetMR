@@ -4,63 +4,59 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Editar Categoria</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-<div>
-    <h4>tb_categoria</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombreCategoria)
-        </dt>
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Nombre-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Tipo Documento</label>
+                        </div>
+                        <div class="col-md-7">                            
+                            @Html.DisplayFor(model => model.nombreCategoria)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecharegistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecharegistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuarioregistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuarioregistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechamodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechamodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuariomodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuariomodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_tipocategoria.nombreTipoCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_tipocategoria.nombreTipoCategoria)
-        </dd>
-
-    </dl>
+                    <!--Tipo Categoria-->
+                    <div class="col-md-2">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Tipo Documento</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DisplayFor(model => model.tb_tipocategoria.nombreTipoCategoria)
+                        </div>
+                    </div>
+                </div>
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        <input type="submit" value="Editar Categoria" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Categoria", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idCategoria }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -4,143 +4,165 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Crear Cadena Hotelera</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-<div>
-    <h4>tb_cadenahotelera</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombreCadenaHotelera)
-        </dt>
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Nombre-->
+                    <div class="col-md-2" style="width:42%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Nombre</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.nombreCadenaHotelera)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombreCadenaHotelera)
-        </dd>
+                    <!--Ruc-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Ruc</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.ruc)
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DireccionCadenaHotelera)
-        </dt>
+                    <!--Direccion-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Direccion</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.DireccionCadenaHotelera)
+                        </div>
+                    </div>
+                </div>
+                /*Segunda Fila*/
+                <div class="col-md-12">
+                    <!--Zona-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Zona</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.tb_zona.nombreZona)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DireccionCadenaHotelera)
-        </dd>
+                    <!--Pais-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Pais</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.tb_pais.NombrePais)
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactoCadenaHotelera)
-        </dt>
+                    <!--Destino-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Destino</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ContactoCadenaHotelera)
-        </dd>
+                    <!--Correo-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Correo</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.CorreoCadenaHotelera)
+                        </div>
+                    </div>
+                </div>
+                /*Tercera Fila*/
+                <div class="col-md-12">
+                    <!--Contacto-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Contacto</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.ContactoCadenaHotelera)
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CorreoCadenaHotelera)
-        </dt>
+                    <!--Telefono 1-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Telefono 1</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.Telefono1CadenaHotelera)
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CorreoCadenaHotelera)
-        </dd>
+                    <!--Telefono 2-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Telefono 2</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.Telefono2CadenaHotelera)
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono1CadenaHotelera)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono1CadenaHotelera)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono2CadenaHotelera)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono2CadenaHotelera)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LogoCadenaHotelera)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LogoCadenaHotelera)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PaginaWebCadenaHotelera)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PaginaWebCadenaHotelera)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecharegistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecharegistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuarioregistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuarioregistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechamodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechamodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuariomodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuariomodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_pais.NombrePais)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_vigencia.nombreVigencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_vigencia.nombreVigencia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_zona.nombreZona)
-        </dd>
-
-    </dl>
+                    <!--Pagina Web-->
+                    <div class="col-md-2" style="width:37%;">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Pagina Web</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.PaginaWebCadenaHotelera)
+                        </div>
+                    </div>
+                </div>
+                /*Cuarta Fila*/
+                <div class="col-md-12">
+                    <!--Logo-->
+                    <div class="col-md-2">
+                        <div class="col-md-2">
+                            <label style="font-size:11px;">Logo</label>
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.LogoCadenaHotelera)
+                        </div>
+                    </div>
+                </div>
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        @Html.ActionLink("Editar Cadena Hotelera", "Edit", new { id = Model.idCadenaHotelera }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Regresar Lista Cadena Hotelera", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idCadenaHotelera }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
