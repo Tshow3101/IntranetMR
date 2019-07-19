@@ -17,7 +17,7 @@ namespace IntranetMundoRepresentaciones.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_tipohabitacion()
         {
-            this.tb_ingresohotel = new HashSet<tb_ingresohotel>();
+            this.tb_detalleingresohotel = new HashSet<tb_detalleingresohotel>();
         }
     
         public int idTipoHabitacion { get; set; }
@@ -33,8 +33,8 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<int> usuariomodificacion { get; set; }
     
         public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
-        public virtual tb_hotel tb_hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_ingresohotel> tb_ingresohotel { get; set; }
+        public virtual ICollection<tb_detalleingresohotel> tb_detalleingresohotel { get; set; }
+        public virtual tb_hotel tb_hotel { get; set; }
     }
 }

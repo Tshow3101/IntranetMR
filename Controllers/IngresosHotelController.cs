@@ -17,7 +17,7 @@ namespace IntranetMundoRepresentaciones.Controllers
         // GET: IngresosHotel
         public ActionResult Index()
         {
-            var tb_ingresohotel = db.tb_ingresohotel.Include(t => t.tb_cadenahotelera).Include(t => t.tb_categoria).Include(t => t.tb_hotel).Include(t => t.tb_tipohabitacion);
+            var tb_ingresohotel = db.tb_ingresohotel.Include(t => t.tb_cadenahotelera).Include(t => t.tb_categoria).Include(t => t.tb_hotel);
             return View(tb_ingresohotel.ToList());
         }
 
@@ -62,8 +62,7 @@ namespace IntranetMundoRepresentaciones.Controllers
 
             ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);
             ViewBag.tarifa = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.tarifa);
-            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);
-            ViewBag.idTipoHabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion", tb_ingresohotel.idTipoHabitacion);
+            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);            
             return View(tb_ingresohotel);
         }
 
@@ -80,15 +79,9 @@ namespace IntranetMundoRepresentaciones.Controllers
                 return HttpNotFound();
             }
             ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);
-            ViewBag.edad1child1 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad1child1);
-            ViewBag.edad1child2 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad1child2);
-            ViewBag.edad1child3 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad1child3);
-            ViewBag.edad2child1 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad2child1);
-            ViewBag.edad2child2 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad2child2);
-            ViewBag.edad2child3 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad2child3);
+            
             ViewBag.tarifa = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.tarifa);
-            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);
-            ViewBag.idTipoHabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion", tb_ingresohotel.idTipoHabitacion);
+            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);            
             return View(tb_ingresohotel);
         }
 
@@ -105,16 +98,9 @@ namespace IntranetMundoRepresentaciones.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);
-            ViewBag.edad1child1 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad1child1);
-            ViewBag.edad1child2 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad1child2);
-            ViewBag.edad1child3 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad1child3);
-            ViewBag.edad2child1 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad2child1);
-            ViewBag.edad2child2 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad2child2);
-            ViewBag.edad2child3 = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.edad2child3);
+            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);           
             ViewBag.tarifa = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.tarifa);
             ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);
-            ViewBag.idTipoHabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion", tb_ingresohotel.idTipoHabitacion);
             return View(tb_ingresohotel);
         }
 

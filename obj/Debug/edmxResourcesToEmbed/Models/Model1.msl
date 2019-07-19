@@ -145,6 +145,99 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalleingresohotel">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalleingresohotel">
+        <MappingFragment StoreEntitySet="tb_detalleingresohotel">
+          <ScalarProperty Name="idDetalleIngresoHotel" ColumnName="idDetalleIngresoHotel" />
+          <ScalarProperty Name="idIngresoHotel" ColumnName="idIngresoHotel" />
+          <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
+          <ScalarProperty Name="doble" ColumnName="doble" />
+          <ScalarProperty Name="doblereal" ColumnName="doblereal" />
+          <ScalarProperty Name="triple" ColumnName="triple" />
+          <ScalarProperty Name="triplereal" ColumnName="triplereal" />
+          <ScalarProperty Name="cuadruple" ColumnName="cuadruple" />
+          <ScalarProperty Name="cuadruplereal" ColumnName="cuadruplereal" />
+          <ScalarProperty Name="simple" ColumnName="simple" />
+          <ScalarProperty Name="simplereal" ColumnName="simplereal" />
+          <ScalarProperty Name="quintuple" ColumnName="quintuple" />
+          <ScalarProperty Name="quituplereal" ColumnName="quituplereal" />
+          <ScalarProperty Name="sextuple" ColumnName="sextuple" />
+          <ScalarProperty Name="sextuplereal" ColumnName="sextuplereal" />
+          <ScalarProperty Name="child1" ColumnName="child1" />
+          <ScalarProperty Name="child1real" ColumnName="child1real" />
+          <ScalarProperty Name="edad1child1" ColumnName="edad1child1" />
+          <ScalarProperty Name="edad2child1" ColumnName="edad2child1" />
+          <ScalarProperty Name="child2" ColumnName="child2" />
+          <ScalarProperty Name="child2real" ColumnName="child2real" />
+          <ScalarProperty Name="edad1child2" ColumnName="edad1child2" />
+          <ScalarProperty Name="edad2child2" ColumnName="edad2child2" />
+          <ScalarProperty Name="child3" ColumnName="child3" />
+          <ScalarProperty Name="child3real" ColumnName="child3real" />
+          <ScalarProperty Name="edad1child3" ColumnName="edad1child3" />
+          <ScalarProperty Name="edad2child3" ColumnName="edad2child3" />
+          <ScalarProperty Name="infante" ColumnName="infante" />
+          <ScalarProperty Name="infantereal" ColumnName="infantereal" />
+          <ScalarProperty Name="edadinfante1" ColumnName="edadinfante1" />
+          <ScalarProperty Name="edadinfante2" ColumnName="edadinfante2" />
+          <ScalarProperty Name="capmaximaadu" ColumnName="capmaximaadu" />
+          <ScalarProperty Name="capmaximanin" ColumnName="capmaximanin" />
+          <ScalarProperty Name="supmontodoble" ColumnName="supmontodoble" />
+          <ScalarProperty Name="supporcentajedoble" ColumnName="supporcentajedoble" />
+          <ScalarProperty Name="supmontotriple" ColumnName="supmontotriple" />
+          <ScalarProperty Name="supporcentajetriple" ColumnName="supporcentajetriple" />
+          <ScalarProperty Name="tercerpaxmonto" ColumnName="tercerpaxmonto" />
+          <ScalarProperty Name="tercerpaxporcentaje" ColumnName="tercerpaxporcentaje" />
+          <ScalarProperty Name="supmontocuadruple" ColumnName="supmontocuadruple" />
+          <ScalarProperty Name="supporcentajecuadruple" ColumnName="supporcentajecuadruple" />
+          <ScalarProperty Name="cuartopaxmonto" ColumnName="cuartopaxmonto" />
+          <ScalarProperty Name="cuartopaxporcentaje" ColumnName="cuartopaxporcentaje" />
+          <ScalarProperty Name="supmontosimple" ColumnName="supmontosimple" />
+          <ScalarProperty Name="supporcentajesimple" ColumnName="supporcentajesimple" />
+          <ScalarProperty Name="supmontoquintuple" ColumnName="supmontoquintuple" />
+          <ScalarProperty Name="supporcentajequintuple" ColumnName="supporcentajequintuple" />
+          <ScalarProperty Name="quintopaxmonto" ColumnName="quintopaxmonto" />
+          <ScalarProperty Name="quintopaxporcentaje" ColumnName="quintopaxporcentaje" />
+          <ScalarProperty Name="supmontosextuple" ColumnName="supmontosextuple" />
+          <ScalarProperty Name="supporcentajesextuple" ColumnName="supporcentajesextuple" />
+          <ScalarProperty Name="sextopaxmonto" ColumnName="sextopaxmonto" />
+          <ScalarProperty Name="sextopaxporcentaje" ColumnName="sextopaxporcentaje" />
+          <ScalarProperty Name="supmontochild1" ColumnName="supmontochild1" />
+          <ScalarProperty Name="supporcentajechild1" ColumnName="supporcentajechild1" />
+          <ScalarProperty Name="supmontochild2" ColumnName="supmontochild2" />
+          <ScalarProperty Name="supporcentajechild2" ColumnName="supporcentajechild2" />
+          <ScalarProperty Name="supmontochild3" ColumnName="supmontochild3" />
+          <ScalarProperty Name="supporcentajechild3" ColumnName="supporcentajechild3" />
+          <ScalarProperty Name="supmontoinfante" ColumnName="supmontoinfante" />
+          <ScalarProperty Name="supporcentajeinfante" ColumnName="supporcentajeinfante" />
+          <ScalarProperty Name="serviciohabitacion1" ColumnName="serviciohabitacion1" />
+          <ScalarProperty Name="serviciomonto1doble" ColumnName="serviciomonto1doble" />
+          <ScalarProperty Name="serviciomonto1triple" ColumnName="serviciomonto1triple" />
+          <ScalarProperty Name="serviciomonto1cuadruple" ColumnName="serviciomonto1cuadruple" />
+          <ScalarProperty Name="serviciomonto1simple" ColumnName="serviciomonto1simple" />
+          <ScalarProperty Name="serviciomonto1quintuple" ColumnName="serviciomonto1quintuple" />
+          <ScalarProperty Name="serviciomonto1sextuple" ColumnName="serviciomonto1sextuple" />
+          <ScalarProperty Name="servicioporcentaje1doble" ColumnName="servicioporcentaje1doble" />
+          <ScalarProperty Name="servicioporcentaje1triple" ColumnName="servicioporcentaje1triple" />
+          <ScalarProperty Name="servicioporcentaje1cuadruple" ColumnName="servicioporcentaje1cuadruple" />
+          <ScalarProperty Name="servicioporcentaje1simple" ColumnName="servicioporcentaje1simple" />
+          <ScalarProperty Name="servicioporcentaje1quintuple" ColumnName="servicioporcentaje1quintuple" />
+          <ScalarProperty Name="servicioporcentaje1sextuple" ColumnName="servicioporcentaje1sextuple" />
+          <ScalarProperty Name="serviciohabitacion2" ColumnName="serviciohabitacion2" />
+          <ScalarProperty Name="serviciomonto2doble" ColumnName="serviciomonto2doble" />
+          <ScalarProperty Name="serviciomonto2triple" ColumnName="serviciomonto2triple" />
+          <ScalarProperty Name="serviciomonto2cuadruple" ColumnName="serviciomonto2cuadruple" />
+          <ScalarProperty Name="serviciomonto2simple" ColumnName="serviciomonto2simple" />
+          <ScalarProperty Name="serviciomonto2quintuple" ColumnName="serviciomonto2quintuple" />
+          <ScalarProperty Name="serviciomonto2sextuple" ColumnName="serviciomonto2sextuple" />
+          <ScalarProperty Name="servicioporcentaje2doble" ColumnName="servicioporcentaje2doble" />
+          <ScalarProperty Name="servicioporcentaje2triple" ColumnName="servicioporcentaje2triple" />
+          <ScalarProperty Name="servicioporcentaje2cuadruple" ColumnName="servicioporcentaje2cuadruple" />
+          <ScalarProperty Name="servicioporcentaje2simple" ColumnName="servicioporcentaje2simple" />
+          <ScalarProperty Name="servicioporcentaje2quintuple" ColumnName="servicioporcentaje2quintuple" />
+          <ScalarProperty Name="servicioporcentaje2sextuple" ColumnName="servicioporcentaje2sextuple" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_hotel">
       <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_hotel">
         <MappingFragment StoreEntitySet="tb_hotel">
@@ -199,39 +292,10 @@
           <ScalarProperty Name="codprom" ColumnName="codprom" />
           <ScalarProperty Name="idCadena" ColumnName="idCadena" />
           <ScalarProperty Name="idHotel" ColumnName="idHotel" />
-          <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
           <ScalarProperty Name="montoadulto" ColumnName="montoadulto" />
           <ScalarProperty Name="montoniño" ColumnName="montoniño" />
           <ScalarProperty Name="montoinfante" ColumnName="montoinfante" />
           <ScalarProperty Name="porcentaje" ColumnName="porcentaje" />
-          <ScalarProperty Name="doble" ColumnName="doble" />
-          <ScalarProperty Name="doblereal" ColumnName="doblereal" />
-          <ScalarProperty Name="triple" ColumnName="triple" />
-          <ScalarProperty Name="triplereal" ColumnName="triplereal" />
-          <ScalarProperty Name="cuadruple" ColumnName="cuadruple" />
-          <ScalarProperty Name="cuadruplereal" ColumnName="cuadruplereal" />
-          <ScalarProperty Name="simple" ColumnName="simple" />
-          <ScalarProperty Name="simplereal" ColumnName="simplereal" />
-          <ScalarProperty Name="quintuple" ColumnName="quintuple" />
-          <ScalarProperty Name="quituplereal" ColumnName="quituplereal" />
-          <ScalarProperty Name="sextuple" ColumnName="sextuple" />
-          <ScalarProperty Name="sextuplereal" ColumnName="sextuplereal" />
-          <ScalarProperty Name="child1" ColumnName="child1" />
-          <ScalarProperty Name="child1real" ColumnName="child1real" />
-          <ScalarProperty Name="edad1child1" ColumnName="edad1child1" />
-          <ScalarProperty Name="edad2child1" ColumnName="edad2child1" />
-          <ScalarProperty Name="child2" ColumnName="child2" />
-          <ScalarProperty Name="child2real" ColumnName="child2real" />
-          <ScalarProperty Name="edad1child2" ColumnName="edad1child2" />
-          <ScalarProperty Name="edad2child2" ColumnName="edad2child2" />
-          <ScalarProperty Name="child3" ColumnName="child3" />
-          <ScalarProperty Name="child3real" ColumnName="child3real" />
-          <ScalarProperty Name="edad1child3" ColumnName="edad1child3" />
-          <ScalarProperty Name="edad2child3" ColumnName="edad2child3" />
-          <ScalarProperty Name="infante" ColumnName="infante" />
-          <ScalarProperty Name="infantereal" ColumnName="infantereal" />
-          <ScalarProperty Name="edadinfante1" ColumnName="edadinfante1" />
-          <ScalarProperty Name="edadinfante2" ColumnName="edadinfante2" />
           <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
           <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
           <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />

@@ -142,6 +142,98 @@
           <Property Name="fechamodificacion" Type="date" />
           <Property Name="usuariomodificacion" Type="int" />
         </EntityType>
+        <EntityType Name="tb_detalleingresohotel">
+          <Key>
+            <PropertyRef Name="idDetalleIngresoHotel" />
+          </Key>
+          <Property Name="idDetalleIngresoHotel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idIngresoHotel" Type="int" />
+          <Property Name="idTipoHabitacion" Type="int" />
+          <Property Name="doble" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="doblereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="triple" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="triplereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="cuadruple" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="cuadruplereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="simple" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="simplereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="quintuple" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="quituplereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="sextuple" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="sextuplereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="child1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="child1real" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="edad1child1" Type="int" />
+          <Property Name="edad2child1" Type="int" />
+          <Property Name="child2" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="child2real" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="edad1child2" Type="int" />
+          <Property Name="edad2child2" Type="int" />
+          <Property Name="child3" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="child3real" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="edad1child3" Type="int" />
+          <Property Name="edad2child3" Type="int" />
+          <Property Name="infante" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="infantereal" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="edadinfante1" Type="int" />
+          <Property Name="edadinfante2" Type="int" />
+          <Property Name="capmaximaadu" Type="int" />
+          <Property Name="capmaximanin" Type="int" />
+          <Property Name="supmontodoble" Type="int" />
+          <Property Name="supporcentajedoble" Type="int" />
+          <Property Name="supmontotriple" Type="int" />
+          <Property Name="supporcentajetriple" Type="int" />
+          <Property Name="tercerpaxmonto" Type="int" />
+          <Property Name="tercerpaxporcentaje" Type="int" />
+          <Property Name="supmontocuadruple" Type="int" />
+          <Property Name="supporcentajecuadruple" Type="int" />
+          <Property Name="cuartopaxmonto" Type="int" />
+          <Property Name="cuartopaxporcentaje" Type="int" />
+          <Property Name="supmontosimple" Type="int" />
+          <Property Name="supporcentajesimple" Type="int" />
+          <Property Name="supmontoquintuple" Type="int" />
+          <Property Name="supporcentajequintuple" Type="int" />
+          <Property Name="quintopaxmonto" Type="int" />
+          <Property Name="quintopaxporcentaje" Type="int" />
+          <Property Name="supmontosextuple" Type="int" />
+          <Property Name="supporcentajesextuple" Type="int" />
+          <Property Name="sextopaxmonto" Type="int" />
+          <Property Name="sextopaxporcentaje" Type="int" />
+          <Property Name="supmontochild1" Type="int" />
+          <Property Name="supporcentajechild1" Type="int" />
+          <Property Name="supmontochild2" Type="int" />
+          <Property Name="supporcentajechild2" Type="int" />
+          <Property Name="supmontochild3" Type="int" />
+          <Property Name="supporcentajechild3" Type="int" />
+          <Property Name="supmontoinfante" Type="int" />
+          <Property Name="supporcentajeinfante" Type="int" />
+          <Property Name="serviciohabitacion1" Type="int" />
+          <Property Name="serviciomonto1doble" Type="int" />
+          <Property Name="serviciomonto1triple" Type="int" />
+          <Property Name="serviciomonto1cuadruple" Type="int" />
+          <Property Name="serviciomonto1simple" Type="int" />
+          <Property Name="serviciomonto1quintuple" Type="int" />
+          <Property Name="serviciomonto1sextuple" Type="int" />
+          <Property Name="servicioporcentaje1doble" Type="int" />
+          <Property Name="servicioporcentaje1triple" Type="int" />
+          <Property Name="servicioporcentaje1cuadruple" Type="int" />
+          <Property Name="servicioporcentaje1simple" Type="int" />
+          <Property Name="servicioporcentaje1quintuple" Type="int" />
+          <Property Name="servicioporcentaje1sextuple" Type="int" />
+          <Property Name="serviciohabitacion2" Type="int" />
+          <Property Name="serviciomonto2doble" Type="int" />
+          <Property Name="serviciomonto2triple" Type="int" />
+          <Property Name="serviciomonto2cuadruple" Type="int" />
+          <Property Name="serviciomonto2simple" Type="int" />
+          <Property Name="serviciomonto2quintuple" Type="int" />
+          <Property Name="serviciomonto2sextuple" Type="int" />
+          <Property Name="servicioporcentaje2doble" Type="int" />
+          <Property Name="servicioporcentaje2triple" Type="int" />
+          <Property Name="servicioporcentaje2cuadruple" Type="int" />
+          <Property Name="servicioporcentaje2simple" Type="int" />
+          <Property Name="servicioporcentaje2quintuple" Type="int" />
+          <Property Name="servicioporcentaje2sextuple" Type="int" />
+        </EntityType>
         <EntityType Name="tb_hotel">
           <Key>
             <PropertyRef Name="idHotel" />
@@ -195,39 +287,10 @@
           <Property Name="codprom" Type="varchar" MaxLength="200" />
           <Property Name="idCadena" Type="int" />
           <Property Name="idHotel" Type="int" />
-          <Property Name="idTipoHabitacion" Type="int" />
           <Property Name="montoadulto" Type="int" />
           <Property Name="montoniño" Type="int" />
           <Property Name="montoinfante" Type="int" />
           <Property Name="porcentaje" Type="int" />
-          <Property Name="doble" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="doblereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="triple" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="triplereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="cuadruple" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="cuadruplereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="simple" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="simplereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="quintuple" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="quituplereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="sextuple" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="sextuplereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="child1" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="child1real" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="edad1child1" Type="int" />
-          <Property Name="edad2child1" Type="int" />
-          <Property Name="child2" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="child2real" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="edad1child2" Type="int" />
-          <Property Name="edad2child2" Type="int" />
-          <Property Name="child3" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="child3real" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="edad1child3" Type="int" />
-          <Property Name="edad2child3" Type="int" />
-          <Property Name="infante" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="infantereal" Type="decimal" Precision="9" Scale="2" />
-          <Property Name="edadinfante1" Type="int" />
-          <Property Name="edadinfante2" Type="int" />
           <Property Name="fecharegistro" Type="date" />
           <Property Name="usuarioregistro" Type="int" />
           <Property Name="fechamodificacion" Type="date" />
@@ -651,6 +714,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tb_detall__idTip__67DE6983">
+          <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tipohabitacion">
+              <PropertyRef Name="idTipoHabitacion" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="idTipoHabitacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_detall__servi__68D28DBC">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="serviciohabitacion1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_detall__servi__69C6B1F5">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="serviciohabitacion2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tb_hotel__idCade__477199F1">
           <End Role="tb_cadenahotelera" Type="Self.tb_cadenahotelera" Multiplicity="0..1" />
           <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
@@ -768,18 +867,6 @@
             </Principal>
             <Dependent Role="tb_ingresohotel">
               <PropertyRef Name="idHotel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tb_ingres__idTip__5B78929E">
-          <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="0..1" />
-          <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_tipohabitacion">
-              <PropertyRef Name="idTipoHabitacion" />
-            </Principal>
-            <Dependent Role="tb_ingresohotel">
-              <PropertyRef Name="idTipoHabitacion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1007,6 +1094,7 @@
           <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ciudad" EntityType="Self.tb_ciudad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_contactohotel" EntityType="Self.tb_contactohotel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_detalleingresohotel" EntityType="Self.tb_detalleingresohotel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_hotel" EntityType="Self.tb_hotel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_impuestos" EntityType="Self.tb_impuestos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ingresohotel" EntityType="Self.tb_ingresohotel" Schema="dbo" store:Type="Tables" />
@@ -1117,6 +1205,18 @@
             <End Role="tb_hotel" EntitySet="tb_hotel" />
             <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
           </AssociationSet>
+          <AssociationSet Name="FK__tb_detall__idTip__67DE6983" Association="Self.FK__tb_detall__idTip__67DE6983">
+            <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_detall__servi__68D28DBC" Association="Self.FK__tb_detall__servi__68D28DBC">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_detall__servi__69C6B1F5" Association="Self.FK__tb_detall__servi__69C6B1F5">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
           <AssociationSet Name="FK__tb_hotel__idCade__477199F1" Association="Self.FK__tb_hotel__idCade__477199F1">
             <End Role="tb_cadenahotelera" EntitySet="tb_cadenahotelera" />
             <End Role="tb_hotel" EntitySet="tb_hotel" />
@@ -1155,10 +1255,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__tb_ingres__idHot__5A846E65" Association="Self.FK__tb_ingres__idHot__5A846E65">
             <End Role="tb_hotel" EntitySet="tb_hotel" />
-            <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tb_ingres__idTip__5B78929E" Association="Self.FK__tb_ingres__idTip__5B78929E">
-            <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
             <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
           </AssociationSet>
           <AssociationSet Name="FK__tb_ingres__tarif__589C25F3" Association="Self.FK__tb_ingres__tarif__589C25F3">
@@ -1379,6 +1475,8 @@
           <NavigationProperty Name="tb_bancoagencia1" Relationship="Self.FK__tb_bancoa__tipoc__607251E5" FromRole="tb_categoria" ToRole="tb_bancoagencia" />
           <NavigationProperty Name="tb_tipocategoria" Relationship="Self.FK__tb_catego__idTip__1273C1CD" FromRole="tb_categoria" ToRole="tb_tipocategoria" />
           <NavigationProperty Name="tb_contactohotel" Relationship="Self.FK__tb_contac__idCat__55BFB948" FromRole="tb_categoria" ToRole="tb_contactohotel" />
+          <NavigationProperty Name="tb_detalleingresohotel" Relationship="Self.FK__tb_detall__servi__68D28DBC" FromRole="tb_categoria" ToRole="tb_detalleingresohotel" />
+          <NavigationProperty Name="tb_detalleingresohotel1" Relationship="Self.FK__tb_detall__servi__69C6B1F5" FromRole="tb_categoria" ToRole="tb_detalleingresohotel" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idCate__4B422AD5" FromRole="tb_categoria" ToRole="tb_hotel" />
           <NavigationProperty Name="tb_hotel1" Relationship="Self.FK__tb_hotel__soload__4E1E9780" FromRole="tb_categoria" ToRole="tb_hotel" />
           <NavigationProperty Name="tb_hotel2" Relationship="Self.FK__tb_hotel__tipopl__4D2A7347" FromRole="tb_categoria" ToRole="tb_hotel" />
@@ -1428,6 +1526,101 @@
           <Property Name="usuariomodificacion" Type="Int32" />
           <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_contac__idCat__55BFB948" FromRole="tb_contactohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_contac__idHot__54CB950F" FromRole="tb_contactohotel" ToRole="tb_hotel" />
+        </EntityType>
+        <EntityType Name="tb_detalleingresohotel">
+          <Key>
+            <PropertyRef Name="idDetalleIngresoHotel" />
+          </Key>
+          <Property Name="idDetalleIngresoHotel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idIngresoHotel" Type="Int32" />
+          <Property Name="idTipoHabitacion" Type="Int32" />
+          <Property Name="doble" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="doblereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="triple" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="triplereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="cuadruple" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="cuadruplereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="simple" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="simplereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="quintuple" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="quituplereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="sextuple" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="sextuplereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="child1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="child1real" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="edad1child1" Type="Int32" />
+          <Property Name="edad2child1" Type="Int32" />
+          <Property Name="child2" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="child2real" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="edad1child2" Type="Int32" />
+          <Property Name="edad2child2" Type="Int32" />
+          <Property Name="child3" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="child3real" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="edad1child3" Type="Int32" />
+          <Property Name="edad2child3" Type="Int32" />
+          <Property Name="infante" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="infantereal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="edadinfante1" Type="Int32" />
+          <Property Name="edadinfante2" Type="Int32" />
+          <Property Name="capmaximaadu" Type="Int32" />
+          <Property Name="capmaximanin" Type="Int32" />
+          <Property Name="supmontodoble" Type="Int32" />
+          <Property Name="supporcentajedoble" Type="Int32" />
+          <Property Name="supmontotriple" Type="Int32" />
+          <Property Name="supporcentajetriple" Type="Int32" />
+          <Property Name="tercerpaxmonto" Type="Int32" />
+          <Property Name="tercerpaxporcentaje" Type="Int32" />
+          <Property Name="supmontocuadruple" Type="Int32" />
+          <Property Name="supporcentajecuadruple" Type="Int32" />
+          <Property Name="cuartopaxmonto" Type="Int32" />
+          <Property Name="cuartopaxporcentaje" Type="Int32" />
+          <Property Name="supmontosimple" Type="Int32" />
+          <Property Name="supporcentajesimple" Type="Int32" />
+          <Property Name="supmontoquintuple" Type="Int32" />
+          <Property Name="supporcentajequintuple" Type="Int32" />
+          <Property Name="quintopaxmonto" Type="Int32" />
+          <Property Name="quintopaxporcentaje" Type="Int32" />
+          <Property Name="supmontosextuple" Type="Int32" />
+          <Property Name="supporcentajesextuple" Type="Int32" />
+          <Property Name="sextopaxmonto" Type="Int32" />
+          <Property Name="sextopaxporcentaje" Type="Int32" />
+          <Property Name="supmontochild1" Type="Int32" />
+          <Property Name="supporcentajechild1" Type="Int32" />
+          <Property Name="supmontochild2" Type="Int32" />
+          <Property Name="supporcentajechild2" Type="Int32" />
+          <Property Name="supmontochild3" Type="Int32" />
+          <Property Name="supporcentajechild3" Type="Int32" />
+          <Property Name="supmontoinfante" Type="Int32" />
+          <Property Name="supporcentajeinfante" Type="Int32" />
+          <Property Name="serviciohabitacion1" Type="Int32" />
+          <Property Name="serviciomonto1doble" Type="Int32" />
+          <Property Name="serviciomonto1triple" Type="Int32" />
+          <Property Name="serviciomonto1cuadruple" Type="Int32" />
+          <Property Name="serviciomonto1simple" Type="Int32" />
+          <Property Name="serviciomonto1quintuple" Type="Int32" />
+          <Property Name="serviciomonto1sextuple" Type="Int32" />
+          <Property Name="servicioporcentaje1doble" Type="Int32" />
+          <Property Name="servicioporcentaje1triple" Type="Int32" />
+          <Property Name="servicioporcentaje1cuadruple" Type="Int32" />
+          <Property Name="servicioporcentaje1simple" Type="Int32" />
+          <Property Name="servicioporcentaje1quintuple" Type="Int32" />
+          <Property Name="servicioporcentaje1sextuple" Type="Int32" />
+          <Property Name="serviciohabitacion2" Type="Int32" />
+          <Property Name="serviciomonto2doble" Type="Int32" />
+          <Property Name="serviciomonto2triple" Type="Int32" />
+          <Property Name="serviciomonto2cuadruple" Type="Int32" />
+          <Property Name="serviciomonto2simple" Type="Int32" />
+          <Property Name="serviciomonto2quintuple" Type="Int32" />
+          <Property Name="serviciomonto2sextuple" Type="Int32" />
+          <Property Name="servicioporcentaje2doble" Type="Int32" />
+          <Property Name="servicioporcentaje2triple" Type="Int32" />
+          <Property Name="servicioporcentaje2cuadruple" Type="Int32" />
+          <Property Name="servicioporcentaje2simple" Type="Int32" />
+          <Property Name="servicioporcentaje2quintuple" Type="Int32" />
+          <Property Name="servicioporcentaje2sextuple" Type="Int32" />
+          <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_detall__servi__68D28DBC" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
+          <NavigationProperty Name="tb_categoria1" Relationship="Self.FK__tb_detall__servi__69C6B1F5" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
+          <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_detall__idTip__67DE6983" FromRole="tb_detalleingresohotel" ToRole="tb_tipohabitacion" />
         </EntityType>
         <EntityType Name="tb_hotel">
           <Key>
@@ -1493,39 +1686,10 @@
           <Property Name="codprom" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="idCadena" Type="Int32" />
           <Property Name="idHotel" Type="Int32" />
-          <Property Name="idTipoHabitacion" Type="Int32" />
           <Property Name="montoadulto" Type="Int32" />
           <Property Name="montoniño" Type="Int32" />
           <Property Name="montoinfante" Type="Int32" />
           <Property Name="porcentaje" Type="Int32" />
-          <Property Name="doble" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="doblereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="triple" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="triplereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="cuadruple" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="cuadruplereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="simple" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="simplereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="quintuple" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="quituplereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="sextuple" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="sextuplereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="child1" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="child1real" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="edad1child1" Type="Int32" />
-          <Property Name="edad2child1" Type="Int32" />
-          <Property Name="child2" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="child2real" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="edad1child2" Type="Int32" />
-          <Property Name="edad2child2" Type="Int32" />
-          <Property Name="child3" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="child3real" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="edad1child3" Type="Int32" />
-          <Property Name="edad2child3" Type="Int32" />
-          <Property Name="infante" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="infantereal" Type="Decimal" Precision="9" Scale="2" />
-          <Property Name="edadinfante1" Type="Int32" />
-          <Property Name="edadinfante2" Type="Int32" />
           <Property Name="fecharegistro" Type="DateTime" Precision="0" />
           <Property Name="usuarioregistro" Type="Int32" />
           <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
@@ -1533,7 +1697,6 @@
           <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_ingres__idCad__59904A2C" FromRole="tb_ingresohotel" ToRole="tb_cadenahotelera" />
           <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_ingres__tarif__589C25F3" FromRole="tb_ingresohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_ingres__idHot__5A846E65" FromRole="tb_ingresohotel" ToRole="tb_hotel" />
-          <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_ingres__idTip__5B78929E" FromRole="tb_ingresohotel" ToRole="tb_tipohabitacion" />
         </EntityType>
         <EntityType Name="tb_moneda">
           <Key>
@@ -1595,8 +1758,8 @@
           <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
           <Property Name="usuariomodificacion" Type="Int32" />
           <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_tipoha__idCad__50FB042B" FromRole="tb_tipohabitacion" ToRole="tb_cadenahotelera" />
+          <NavigationProperty Name="tb_detalleingresohotel" Relationship="Self.FK__tb_detall__idTip__67DE6983" FromRole="tb_tipohabitacion" ToRole="tb_detalleingresohotel" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_tipoha__idHot__51EF2864" FromRole="tb_tipohabitacion" ToRole="tb_hotel" />
-          <NavigationProperty Name="tb_ingresohotel" Relationship="Self.FK__tb_ingres__idTip__5B78929E" FromRole="tb_tipohabitacion" ToRole="tb_ingresohotel" />
         </EntityType>
         <EntityType Name="tb_usuario">
           <Key>
@@ -2005,6 +2168,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tb_detall__servi__68D28DBC">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="serviciohabitacion1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_detall__servi__69C6B1F5">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="serviciohabitacion2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tb_hotel__idCate__4B422AD5">
           <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="0..1" />
           <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
@@ -2197,6 +2384,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tb_detall__idTip__67DE6983">
+          <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tipohabitacion">
+              <PropertyRef Name="idTipoHabitacion" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="idTipoHabitacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tb_hotel__idPais__4959E263">
           <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
           <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
@@ -2254,18 +2453,6 @@
             </Principal>
             <Dependent Role="tb_tipohabitacion">
               <PropertyRef Name="idHotel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tb_ingres__idTip__5B78929E">
-          <End Role="tb_tipohabitacion" Type="Self.tb_tipohabitacion" Multiplicity="0..1" />
-          <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_tipohabitacion">
-              <PropertyRef Name="idTipoHabitacion" />
-            </Principal>
-            <Dependent Role="tb_ingresohotel">
-              <PropertyRef Name="idTipoHabitacion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2349,6 +2536,7 @@
           <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" />
           <EntitySet Name="tb_ciudad" EntityType="Self.tb_ciudad" />
           <EntitySet Name="tb_contactohotel" EntityType="Self.tb_contactohotel" />
+          <EntitySet Name="tb_detalleingresohotel" EntityType="Self.tb_detalleingresohotel" />
           <EntitySet Name="tb_hotel" EntityType="Self.tb_hotel" />
           <EntitySet Name="tb_impuestos" EntityType="Self.tb_impuestos" />
           <EntitySet Name="tb_ingresohotel" EntityType="Self.tb_ingresohotel" />
@@ -2463,6 +2651,14 @@
             <End Role="tb_categoria" EntitySet="tb_categoria" />
             <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
           </AssociationSet>
+          <AssociationSet Name="FK__tb_detall__servi__68D28DBC" Association="Self.FK__tb_detall__servi__68D28DBC">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_detall__servi__69C6B1F5" Association="Self.FK__tb_detall__servi__69C6B1F5">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
           <AssociationSet Name="FK__tb_hotel__idCate__4B422AD5" Association="Self.FK__tb_hotel__idCate__4B422AD5">
             <End Role="tb_categoria" EntitySet="tb_categoria" />
             <End Role="tb_hotel" EntitySet="tb_hotel" />
@@ -2527,6 +2723,10 @@
             <End Role="tb_hotel" EntitySet="tb_hotel" />
             <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
           </AssociationSet>
+          <AssociationSet Name="FK__tb_detall__idTip__67DE6983" Association="Self.FK__tb_detall__idTip__67DE6983">
+            <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
           <AssociationSet Name="FK__tb_hotel__idPais__4959E263" Association="Self.FK__tb_hotel__idPais__4959E263">
             <End Role="tb_pais" EntitySet="tb_pais" />
             <End Role="tb_hotel" EntitySet="tb_hotel" />
@@ -2546,10 +2746,6 @@
           <AssociationSet Name="FK__tb_tipoha__idHot__51EF2864" Association="Self.FK__tb_tipoha__idHot__51EF2864">
             <End Role="tb_hotel" EntitySet="tb_hotel" />
             <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tb_ingres__idTip__5B78929E" Association="Self.FK__tb_ingres__idTip__5B78929E">
-            <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
-            <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
           </AssociationSet>
           <AssociationSet Name="FK__tb_pais__idZona__1920BF5C" Association="Self.FK__tb_pais__idZona__1920BF5C">
             <End Role="tb_zona" EntitySet="tb_zona" />
@@ -2726,6 +2922,99 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tb_detalleingresohotel">
+            <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalleingresohotel">
+              <MappingFragment StoreEntitySet="tb_detalleingresohotel">
+                <ScalarProperty Name="idDetalleIngresoHotel" ColumnName="idDetalleIngresoHotel" />
+                <ScalarProperty Name="idIngresoHotel" ColumnName="idIngresoHotel" />
+                <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
+                <ScalarProperty Name="doble" ColumnName="doble" />
+                <ScalarProperty Name="doblereal" ColumnName="doblereal" />
+                <ScalarProperty Name="triple" ColumnName="triple" />
+                <ScalarProperty Name="triplereal" ColumnName="triplereal" />
+                <ScalarProperty Name="cuadruple" ColumnName="cuadruple" />
+                <ScalarProperty Name="cuadruplereal" ColumnName="cuadruplereal" />
+                <ScalarProperty Name="simple" ColumnName="simple" />
+                <ScalarProperty Name="simplereal" ColumnName="simplereal" />
+                <ScalarProperty Name="quintuple" ColumnName="quintuple" />
+                <ScalarProperty Name="quituplereal" ColumnName="quituplereal" />
+                <ScalarProperty Name="sextuple" ColumnName="sextuple" />
+                <ScalarProperty Name="sextuplereal" ColumnName="sextuplereal" />
+                <ScalarProperty Name="child1" ColumnName="child1" />
+                <ScalarProperty Name="child1real" ColumnName="child1real" />
+                <ScalarProperty Name="edad1child1" ColumnName="edad1child1" />
+                <ScalarProperty Name="edad2child1" ColumnName="edad2child1" />
+                <ScalarProperty Name="child2" ColumnName="child2" />
+                <ScalarProperty Name="child2real" ColumnName="child2real" />
+                <ScalarProperty Name="edad1child2" ColumnName="edad1child2" />
+                <ScalarProperty Name="edad2child2" ColumnName="edad2child2" />
+                <ScalarProperty Name="child3" ColumnName="child3" />
+                <ScalarProperty Name="child3real" ColumnName="child3real" />
+                <ScalarProperty Name="edad1child3" ColumnName="edad1child3" />
+                <ScalarProperty Name="edad2child3" ColumnName="edad2child3" />
+                <ScalarProperty Name="infante" ColumnName="infante" />
+                <ScalarProperty Name="infantereal" ColumnName="infantereal" />
+                <ScalarProperty Name="edadinfante1" ColumnName="edadinfante1" />
+                <ScalarProperty Name="edadinfante2" ColumnName="edadinfante2" />
+                <ScalarProperty Name="capmaximaadu" ColumnName="capmaximaadu" />
+                <ScalarProperty Name="capmaximanin" ColumnName="capmaximanin" />
+                <ScalarProperty Name="supmontodoble" ColumnName="supmontodoble" />
+                <ScalarProperty Name="supporcentajedoble" ColumnName="supporcentajedoble" />
+                <ScalarProperty Name="supmontotriple" ColumnName="supmontotriple" />
+                <ScalarProperty Name="supporcentajetriple" ColumnName="supporcentajetriple" />
+                <ScalarProperty Name="tercerpaxmonto" ColumnName="tercerpaxmonto" />
+                <ScalarProperty Name="tercerpaxporcentaje" ColumnName="tercerpaxporcentaje" />
+                <ScalarProperty Name="supmontocuadruple" ColumnName="supmontocuadruple" />
+                <ScalarProperty Name="supporcentajecuadruple" ColumnName="supporcentajecuadruple" />
+                <ScalarProperty Name="cuartopaxmonto" ColumnName="cuartopaxmonto" />
+                <ScalarProperty Name="cuartopaxporcentaje" ColumnName="cuartopaxporcentaje" />
+                <ScalarProperty Name="supmontosimple" ColumnName="supmontosimple" />
+                <ScalarProperty Name="supporcentajesimple" ColumnName="supporcentajesimple" />
+                <ScalarProperty Name="supmontoquintuple" ColumnName="supmontoquintuple" />
+                <ScalarProperty Name="supporcentajequintuple" ColumnName="supporcentajequintuple" />
+                <ScalarProperty Name="quintopaxmonto" ColumnName="quintopaxmonto" />
+                <ScalarProperty Name="quintopaxporcentaje" ColumnName="quintopaxporcentaje" />
+                <ScalarProperty Name="supmontosextuple" ColumnName="supmontosextuple" />
+                <ScalarProperty Name="supporcentajesextuple" ColumnName="supporcentajesextuple" />
+                <ScalarProperty Name="sextopaxmonto" ColumnName="sextopaxmonto" />
+                <ScalarProperty Name="sextopaxporcentaje" ColumnName="sextopaxporcentaje" />
+                <ScalarProperty Name="supmontochild1" ColumnName="supmontochild1" />
+                <ScalarProperty Name="supporcentajechild1" ColumnName="supporcentajechild1" />
+                <ScalarProperty Name="supmontochild2" ColumnName="supmontochild2" />
+                <ScalarProperty Name="supporcentajechild2" ColumnName="supporcentajechild2" />
+                <ScalarProperty Name="supmontochild3" ColumnName="supmontochild3" />
+                <ScalarProperty Name="supporcentajechild3" ColumnName="supporcentajechild3" />
+                <ScalarProperty Name="supmontoinfante" ColumnName="supmontoinfante" />
+                <ScalarProperty Name="supporcentajeinfante" ColumnName="supporcentajeinfante" />
+                <ScalarProperty Name="serviciohabitacion1" ColumnName="serviciohabitacion1" />
+                <ScalarProperty Name="serviciomonto1doble" ColumnName="serviciomonto1doble" />
+                <ScalarProperty Name="serviciomonto1triple" ColumnName="serviciomonto1triple" />
+                <ScalarProperty Name="serviciomonto1cuadruple" ColumnName="serviciomonto1cuadruple" />
+                <ScalarProperty Name="serviciomonto1simple" ColumnName="serviciomonto1simple" />
+                <ScalarProperty Name="serviciomonto1quintuple" ColumnName="serviciomonto1quintuple" />
+                <ScalarProperty Name="serviciomonto1sextuple" ColumnName="serviciomonto1sextuple" />
+                <ScalarProperty Name="servicioporcentaje1doble" ColumnName="servicioporcentaje1doble" />
+                <ScalarProperty Name="servicioporcentaje1triple" ColumnName="servicioporcentaje1triple" />
+                <ScalarProperty Name="servicioporcentaje1cuadruple" ColumnName="servicioporcentaje1cuadruple" />
+                <ScalarProperty Name="servicioporcentaje1simple" ColumnName="servicioporcentaje1simple" />
+                <ScalarProperty Name="servicioporcentaje1quintuple" ColumnName="servicioporcentaje1quintuple" />
+                <ScalarProperty Name="servicioporcentaje1sextuple" ColumnName="servicioporcentaje1sextuple" />
+                <ScalarProperty Name="serviciohabitacion2" ColumnName="serviciohabitacion2" />
+                <ScalarProperty Name="serviciomonto2doble" ColumnName="serviciomonto2doble" />
+                <ScalarProperty Name="serviciomonto2triple" ColumnName="serviciomonto2triple" />
+                <ScalarProperty Name="serviciomonto2cuadruple" ColumnName="serviciomonto2cuadruple" />
+                <ScalarProperty Name="serviciomonto2simple" ColumnName="serviciomonto2simple" />
+                <ScalarProperty Name="serviciomonto2quintuple" ColumnName="serviciomonto2quintuple" />
+                <ScalarProperty Name="serviciomonto2sextuple" ColumnName="serviciomonto2sextuple" />
+                <ScalarProperty Name="servicioporcentaje2doble" ColumnName="servicioporcentaje2doble" />
+                <ScalarProperty Name="servicioporcentaje2triple" ColumnName="servicioporcentaje2triple" />
+                <ScalarProperty Name="servicioporcentaje2cuadruple" ColumnName="servicioporcentaje2cuadruple" />
+                <ScalarProperty Name="servicioporcentaje2simple" ColumnName="servicioporcentaje2simple" />
+                <ScalarProperty Name="servicioporcentaje2quintuple" ColumnName="servicioporcentaje2quintuple" />
+                <ScalarProperty Name="servicioporcentaje2sextuple" ColumnName="servicioporcentaje2sextuple" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tb_hotel">
             <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_hotel">
               <MappingFragment StoreEntitySet="tb_hotel">
@@ -2780,39 +3069,10 @@
                 <ScalarProperty Name="codprom" ColumnName="codprom" />
                 <ScalarProperty Name="idCadena" ColumnName="idCadena" />
                 <ScalarProperty Name="idHotel" ColumnName="idHotel" />
-                <ScalarProperty Name="idTipoHabitacion" ColumnName="idTipoHabitacion" />
                 <ScalarProperty Name="montoadulto" ColumnName="montoadulto" />
                 <ScalarProperty Name="montoniño" ColumnName="montoniño" />
                 <ScalarProperty Name="montoinfante" ColumnName="montoinfante" />
                 <ScalarProperty Name="porcentaje" ColumnName="porcentaje" />
-                <ScalarProperty Name="doble" ColumnName="doble" />
-                <ScalarProperty Name="doblereal" ColumnName="doblereal" />
-                <ScalarProperty Name="triple" ColumnName="triple" />
-                <ScalarProperty Name="triplereal" ColumnName="triplereal" />
-                <ScalarProperty Name="cuadruple" ColumnName="cuadruple" />
-                <ScalarProperty Name="cuadruplereal" ColumnName="cuadruplereal" />
-                <ScalarProperty Name="simple" ColumnName="simple" />
-                <ScalarProperty Name="simplereal" ColumnName="simplereal" />
-                <ScalarProperty Name="quintuple" ColumnName="quintuple" />
-                <ScalarProperty Name="quituplereal" ColumnName="quituplereal" />
-                <ScalarProperty Name="sextuple" ColumnName="sextuple" />
-                <ScalarProperty Name="sextuplereal" ColumnName="sextuplereal" />
-                <ScalarProperty Name="child1" ColumnName="child1" />
-                <ScalarProperty Name="child1real" ColumnName="child1real" />
-                <ScalarProperty Name="edad1child1" ColumnName="edad1child1" />
-                <ScalarProperty Name="edad2child1" ColumnName="edad2child1" />
-                <ScalarProperty Name="child2" ColumnName="child2" />
-                <ScalarProperty Name="child2real" ColumnName="child2real" />
-                <ScalarProperty Name="edad1child2" ColumnName="edad1child2" />
-                <ScalarProperty Name="edad2child2" ColumnName="edad2child2" />
-                <ScalarProperty Name="child3" ColumnName="child3" />
-                <ScalarProperty Name="child3real" ColumnName="child3real" />
-                <ScalarProperty Name="edad1child3" ColumnName="edad1child3" />
-                <ScalarProperty Name="edad2child3" ColumnName="edad2child3" />
-                <ScalarProperty Name="infante" ColumnName="infante" />
-                <ScalarProperty Name="infantereal" ColumnName="infantereal" />
-                <ScalarProperty Name="edadinfante1" ColumnName="edadinfante1" />
-                <ScalarProperty Name="edadinfante2" ColumnName="edadinfante2" />
                 <ScalarProperty Name="fecharegistro" ColumnName="fecharegistro" />
                 <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
                 <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />

@@ -188,6 +188,9 @@
     <Compile Include="Models\tb_contactohotel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tb_detalleingresohotel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tb_hotel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -6454,7 +6457,9 @@
     <Content Include="Scripts\MRScript.js" />
     <Content Include="Scripts\Scripts-Intranet\ScriptHotel.js" />
     <Content Include="Scripts\Scripts-Intranet\ScriptServicioHotel.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

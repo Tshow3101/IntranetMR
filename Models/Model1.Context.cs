@@ -32,6 +32,7 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual DbSet<tb_categoria> tb_categoria { get; set; }
         public virtual DbSet<tb_ciudad> tb_ciudad { get; set; }
         public virtual DbSet<tb_contactohotel> tb_contactohotel { get; set; }
+        public virtual DbSet<tb_detalleingresohotel> tb_detalleingresohotel { get; set; }
         public virtual DbSet<tb_hotel> tb_hotel { get; set; }
         public virtual DbSet<tb_impuestos> tb_impuestos { get; set; }
         public virtual DbSet<tb_ingresohotel> tb_ingresohotel { get; set; }

@@ -24,6 +24,8 @@ namespace IntranetMundoRepresentaciones.Models
             this.tb_bancoagencia = new HashSet<tb_bancoagencia>();
             this.tb_bancoagencia1 = new HashSet<tb_bancoagencia>();
             this.tb_contactohotel = new HashSet<tb_contactohotel>();
+            this.tb_detalleingresohotel = new HashSet<tb_detalleingresohotel>();
+            this.tb_detalleingresohotel1 = new HashSet<tb_detalleingresohotel>();
             this.tb_hotel = new HashSet<tb_hotel>();
             this.tb_hotel1 = new HashSet<tb_hotel>();
             this.tb_hotel2 = new HashSet<tb_hotel>();
@@ -61,6 +63,10 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_tipocategoria tb_tipocategoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_contactohotel> tb_contactohotel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_detalleingresohotel> tb_detalleingresohotel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_detalleingresohotel> tb_detalleingresohotel1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_hotel> tb_hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

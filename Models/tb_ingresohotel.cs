@@ -23,39 +23,10 @@ namespace IntranetMundoRepresentaciones.Models
         public string codprom { get; set; }
         public Nullable<int> idCadena { get; set; }
         public Nullable<int> idHotel { get; set; }
-        public Nullable<int> idTipoHabitacion { get; set; }
         public Nullable<int> montoadulto { get; set; }
         public Nullable<int> montoniño { get; set; }
         public Nullable<int> montoinfante { get; set; }
         public Nullable<int> porcentaje { get; set; }
-        public Nullable<decimal> doble { get; set; }
-        public Nullable<decimal> doblereal { get; set; }
-        public Nullable<decimal> triple { get; set; }
-        public Nullable<decimal> triplereal { get; set; }
-        public Nullable<decimal> cuadruple { get; set; }
-        public Nullable<decimal> cuadruplereal { get; set; }
-        public Nullable<decimal> simple { get; set; }
-        public Nullable<decimal> simplereal { get; set; }
-        public Nullable<decimal> quintuple { get; set; }
-        public Nullable<decimal> quituplereal { get; set; }
-        public Nullable<decimal> sextuple { get; set; }
-        public Nullable<decimal> sextuplereal { get; set; }
-        public Nullable<decimal> child1 { get; set; }
-        public Nullable<decimal> child1real { get; set; }
-        public Nullable<int> edad1child1 { get; set; }
-        public Nullable<int> edad2child1 { get; set; }
-        public Nullable<decimal> child2 { get; set; }
-        public Nullable<decimal> child2real { get; set; }
-        public Nullable<int> edad1child2 { get; set; }
-        public Nullable<int> edad2child2 { get; set; }
-        public Nullable<decimal> child3 { get; set; }
-        public Nullable<decimal> child3real { get; set; }
-        public Nullable<int> edad1child3 { get; set; }
-        public Nullable<int> edad2child3 { get; set; }
-        public Nullable<decimal> infante { get; set; }
-        public Nullable<decimal> infantereal { get; set; }
-        public Nullable<int> edadinfante1 { get; set; }
-        public Nullable<int> edadinfante2 { get; set; }
         public Nullable<System.DateTime> fecharegistro { get; set; }
         public Nullable<int> usuarioregistro { get; set; }
         public Nullable<System.DateTime> fechamodificacion { get; set; }
@@ -64,6 +35,5 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
         public virtual tb_categoria tb_categoria { get; set; }
         public virtual tb_hotel tb_hotel { get; set; }
-        public virtual tb_tipohabitacion tb_tipohabitacion { get; set; }
     }
 }
