@@ -79,6 +79,7 @@
         <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idZon__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__reten__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__vigen__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.fk_ticket" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

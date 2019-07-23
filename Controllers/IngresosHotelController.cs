@@ -43,6 +43,8 @@ namespace IntranetMundoRepresentaciones.Controllers
             ViewBag.tarifa = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 17), "idCategoria", "nombreCategoria");
             ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel");
             ViewBag.idTipoHabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion");
+            ViewBag.serviciohabitacion1 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria ==29), "idCategoria", "NombreCategoria");
+            ViewBag.serviciohabitacion2 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 29), "idCategoria", "NombreCategoria");
             return View();
         }
 
@@ -137,6 +139,29 @@ namespace IntranetMundoRepresentaciones.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        /*New Create*/
+        [HttpPost]
+        public JsonResult SaveIngresoHotel(tb_ingresohotel ingresohotel)
+        {
+            bool status = false;
+
+            var isValidModel = TryUpdateModel(ingresohotel);
+
+            if (isValidModel)
+            {
+                using (db)
+                {
+                    ingresohotel.fecharegistro = DateTime.Today;
+                    ingresohotel.usuarioregistro = 1;
+                    db.tb_ingresohotel.Add(ingresohotel);
+                    db.SaveChanges();
+                    status = true;
+                }
+            }
+
+            return new JsonResult { Data = new { status = status } };
         }
     }
 }

@@ -168,7 +168,7 @@ namespace IntranetMundoRepresentaciones.Controllers
                 {
                     hotel.fecharegistro = DateTime.Today;
                     hotel.usuarioregistro = 1;
-                    hotel.idVigencia = 2;
+                    hotel.idVigencia = 1;
                     db.tb_hotel.Add(hotel);
                     db.SaveChanges();
                     status = true;

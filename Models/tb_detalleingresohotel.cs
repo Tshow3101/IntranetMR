@@ -105,5 +105,6 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_categoria tb_categoria { get; set; }
         public virtual tb_categoria tb_categoria1 { get; set; }
         public virtual tb_tipohabitacion tb_tipohabitacion { get; set; }
+        public virtual tb_ingresohotel tb_ingresohotel { get; set; }
     }
 }

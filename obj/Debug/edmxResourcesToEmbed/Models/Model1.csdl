@@ -286,6 +286,7 @@
     <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_detall__servi__68D28DBC" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
     <NavigationProperty Name="tb_categoria1" Relationship="Self.FK__tb_detall__servi__69C6B1F5" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
     <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_detall__idTip__67DE6983" FromRole="tb_detalleingresohotel" ToRole="tb_tipohabitacion" />
+    <NavigationProperty Name="tb_ingresohotel" Relationship="BD_MUNDOREPRESENTACIONESModel.fk_ticket" FromRole="tb_detalleingresohotel" ToRole="tb_ingresohotel" />
   </EntityType>
   <EntityType Name="tb_hotel">
     <Key>
@@ -362,6 +363,7 @@
     <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_ingres__idCad__59904A2C" FromRole="tb_ingresohotel" ToRole="tb_cadenahotelera" />
     <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_ingres__tarif__589C25F3" FromRole="tb_ingresohotel" ToRole="tb_categoria" />
     <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_ingres__idHot__5A846E65" FromRole="tb_ingresohotel" ToRole="tb_hotel" />
+    <NavigationProperty Name="tb_detalleingresohotel" Relationship="BD_MUNDOREPRESENTACIONESModel.fk_ticket" FromRole="tb_ingresohotel" ToRole="tb_detalleingresohotel" />
   </EntityType>
   <EntityType Name="tb_moneda">
     <Key>
@@ -1436,5 +1438,21 @@
       <End Role="tb_vigencia" EntitySet="tb_vigencia" />
       <End Role="tb_usuario" EntitySet="tb_usuario" />
     </AssociationSet>
+    <AssociationSet Name="fk_ticket" Association="BD_MUNDOREPRESENTACIONESModel.fk_ticket">
+      <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
+      <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="fk_ticket">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ingresohotel" Role="tb_ingresohotel" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_detalleingresohotel" Role="tb_detalleingresohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ingresohotel">
+        <PropertyRef Name="idIngresoHotel" />
+      </Principal>
+      <Dependent Role="tb_detalleingresohotel">
+        <PropertyRef Name="idIngresoHotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

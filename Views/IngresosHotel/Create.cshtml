@@ -3,7 +3,10 @@
 @{
     ViewBag.Title = "Create";
 }
+@* Operaciones *@
 <script src="~/Scripts/Scripts-Intranet/ScriptServicioHotel.js"></script>
+@* Maestro Detalle *@
+<script src="~/Scripts/Scripts-Intranet/ScriptServicioHotelDetalle.js"></script>
 <br />
 <div class="col-md-12">
     <div class="panel panel-inverse">
@@ -17,239 +20,579 @@
             <h4 class="panel-title">Crear Ingreso Hotel</h4>
         </div>
         <div class="panel-body">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                /*Primera Fila*/
-                <div class="col-md-12">
-                    <div class="col-md-6">
+            <!--Primera Fila-->
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Temporada Viaje</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @Html.EditorFor(model => model.fecviajeini, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
+                        </div>
                         <div class="col-md-2">
-                            <label style="text-align:center;">Temporada Viaje</label>
+                            <span class="input-group-addon" style="height:35px;">Al</span>
                         </div>
-                        <div class="col-md-10">
-                            <div class="col-md-5" style="padding-right:0px;">
-                                @Html.EditorFor(model => model.fecviajeini, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
-                            </div>
-                            <div class="col-md-2">
-                                <span class="input-group-addon" style="height:35px;">Al</span>
-                            </div>
-                            <div class="col-md-5" style="padding-right:0px;">
-                                @Html.EditorFor(model => model.fecviajefin, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
-                            </div>
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @Html.EditorFor(model => model.fecviajefin, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-6">
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Temporada Compra</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @Html.EditorFor(model => model.feccompraini, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
+                        </div>
                         <div class="col-md-2">
-                            <label style="text-align:center;">Temporada Compra</label>
+                            <span class="input-group-addon" style="height:35px;">Al</span>
                         </div>
-                        <div class="col-md-10">
-                            <div class="col-md-5" style="padding-right:0px;">
-                                @Html.EditorFor(model => model.feccompraini, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
-                            </div>
-                            <div class="col-md-2">
-                                <span class="input-group-addon" style="height:35px;">Al</span>
-                            </div>
-                            <div class="col-md-5" style="padding-right:0px;">
-                                @Html.EditorFor(model => model.feccomprafin, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
-                            </div>
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @Html.EditorFor(model => model.feccomprafin, new { htmlAttributes = new { @class = "form-control", @Type = "Date" } })
                         </div>
                     </div>
                 </div>
+            </div>
 
-                /*Segunda Fila*/
-                <div class="col-md-12">
-                    <!--Tarifa-->
-                    <div class="col-md-2">
-                        <div class="col-md-3">
-                            <label style="text-align:center;">Tarifa</label>
-                        </div>
-                        <div class="col-md-9">
-                            @Html.DropDownList("tarifa", null, "Seleccione", htmlAttributes: new { @class = "default-select2 form-control" })
-                        </div>
+            <!--Segunda Fila-->
+            <div class="col-md-12">
+                <!--Tarifa-->
+                <div class="col-md-2">
+                    <div class="col-md-3">
+                        <label style="text-align:center;">Tarifa</label>
                     </div>
-
-                    <!--Cod. Promocion-->
-                    <div class="col-md-2">
-                        <div class="col-md-3">
-                            <label style="text-align:center;">Cod. Promo</label>
-                        </div>
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.codprom, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-
-                    <!--Monto Adulto-->
-                    <div class="col-md-2">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">Monto Adulto</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.EditorFor(model => model.montoadulto, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-
-                    <!--Monto Niño-->
-                    <div class="col-md-2">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">Monto Niño</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.EditorFor(model => model.montoniño, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-
-                    <!--Monto Infante-->
-                    <div class="col-md-2">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">Monto Infante</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.EditorFor(model => model.montoinfante, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-
-                    <!--Porcentaje-->
-                    <div class="col-md-2">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">%</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.EditorFor(model => model.porcentaje, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("tarifa", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
                     </div>
                 </div>
 
-                /*Tercera Fia*/
-                <div class="col-md-12">
-                    <!--Cadena Hotelera-->
+                <!--Cod. Promocion-->
+                <div class="col-md-2">
+                    <div class="col-md-3">
+                        <label style="text-align:center;">Cod. Promo</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.codprom, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <!--Monto Adulto-->
+                <div class="col-md-2">
                     <div class="col-md-4">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">Cadena</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.DropDownList("idCadena", null, htmlAttributes: new { @class = "default-select2 form-control" })
-                        </div>
+                        <label style="text-align:center;">Monto Adulto</label>
                     </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.montoadulto, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
 
-                    <!--Hotel-->
+                <!--Monto Niño-->
+                <div class="col-md-2">
                     <div class="col-md-4">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">Hotel</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.DropDownList("idHotel", null, htmlAttributes: new { @class = "default-select2 form-control" })
-                        </div>
+                        <label style="text-align:center;">Monto Niño</label>
                     </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.montoniño, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
 
-                    <!--Tipo Habitacion-->
+                <!--Monto Infante-->
+                <div class="col-md-2">
                     <div class="col-md-4">
-                        <div class="col-md-4">
-                            <label style="text-align:center;">Tipo Hab.</label>
-                        </div>
-                        <div class="col-md-8">
-                            @Html.DropDownList("idTipoHabitacion", null, htmlAttributes: new { @class = "default-select2 form-control" })
-                        </div>
+                        <label style="text-align:center;">Monto Infante</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.montoinfante, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
 
-                /*Cuarta Fila*/
-                <div class="col-md-12">
-                    <table class="table" border="0">
-                        <tr>
-                            <td style="text-align:center;">
-                                <label>Doble</label>
-                            </td>
-                            <td style="text-align:center;">
-                                <label>Triple</label>
-                            </td>
-                            <td style="text-align:center;">
-                                <label>Cuadruple</label>
-                            </td>
-                            <td style="text-align:center">
-                                <label>Simple</label>
-                            </td>
-                            <td style="text-align:center">
-                                <label>Quintuple</label>
-                            </td>
-                            <td style="text-align:center;">
-                                <label>Sextuple</label>
-                            </td>
-                            <td style="text-align:center;">
-                                <label>Child 1</label><br />
-                                @Html.EditorFor(model => model.edad1child1, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                                @Html.EditorFor(model => model.edad2child1, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                            </td>
-                            <td style="text-align:center;">
-                                <label>Child 2</label><br />
-                                @Html.EditorFor(model => model.edad1child2, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                                @Html.EditorFor(model => model.edad2child2, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                            </td>
-                            <td style="text-align:center">
-                                <label>Child 3</label><br />
-                                @Html.EditorFor(model => model.edad1child3, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                                @Html.EditorFor(model => model.edad2child3, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                            </td>
-                            <td style="text-align:center">
-                                <label>Infante</label><br />
-                                @Html.EditorFor(model => model.edadinfante1, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                                @Html.EditorFor(model => model.edadinfante2, new { htmlAttributes = new { @style = "width:40px; height:25px" } })
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                @Html.EditorFor(model => model.doble, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.doblereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.triple, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.triplereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.cuadruple, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.cuadruplereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.simple, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.simplereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.quintuple, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.quituplereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.sextuple, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.sextuplereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.child1, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.child1real, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.child2, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.child2real, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.child3, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.child3real, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                            <td>
-                                @Html.EditorFor(model => model.infante, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.HiddenFor(model => model.infantereal, new { htmlAttributes = new { @class = "form-control" } })
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                /*Botones*/
-                <div class="col-md-12" style="text-align:center;">
-                    <div class="form-group">
-                        <input type="submit" value="Agregar Registro Hotel" class="btn btn-primary" />
-                        @Html.ActionLink("Regresar Registro Hotel", "Index", null, new { @class = "btn btn-danger" })
+                <!--Porcentaje-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="text-align:center;">%</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.porcentaje, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
-            }
+            </div>
+
+            <!--Tercera Fia-->
+            <div class="col-md-12">
+                <!--Cadena Hotelera-->
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Cadena</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DropDownList("idCadena", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <!--Hotel-->
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Hotel</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DropDownList("idHotel", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+
+            <!--Cuarta Fila-->
+            <div class="col-md-12">
+                <br />
+                <div class="details">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-bordered table-striped" border="1">
+                            <tr style="text-align:center;">
+                                <td style="text-align:center;">
+                                    <label>Habitacion</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Doble</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Triple</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Cuadruple</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Simple</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Quintuple</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Sextuple</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Child 1</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Child 2</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Child 3</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Infante</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Acciones</label>
+                                </td>
+                            </tr>
+                            <tr class="mycontainer" id="mainrow">
+                                <!--Habitacion-->
+                                <td style="text-align:center;">
+                                    @Html.DropDownList("idTipoHabitacion", null, "Seleccione", htmlAttributes: new { @class = "idTipoHabitacion form-control", @Style = "width:200px" }) 
+                                    <label>Capacidad Maxima</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="capmaximaadu" name="capmaximaadu" placeholder="Ad" class="capmaximaadu form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="capmaximanin" name="capmaximanin" placeholder="Ni" class="capmaximanin form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden">Adicional</label><br />
+                                    <div class="col-md-12" style="visibility:hidden">
+                                        <div class="col-md-6" style="visibility:hidden">
+                                            <input type="number" id="" name="" placeholder="$" class="form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="" name="" placeholder="%" class=" form-control" />
+                                        </div>
+                                    </div>
+                                    <label>Servicios Adicionales</label><br />
+                                    @Html.DropDownList("serviciohabitacion1", null, "Seleccione", htmlAttributes: new { @class = "serviciohabitacion1 form-control", @Style = "width:200px" })
+                                    @Html.DropDownList("serviciohabitacion2", null, "Seleccione", htmlAttributes: new { @class = "serviciohabitacion2 form-control", @Style = "width:200px" })
+                                </td>
+                                <!--Doble-->
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <input type="number" id="doble" name="doble" class="doble form-control" style="width:200px;" />
+                                        <input type="hidden" id="doblereal" name="doblereal" class="doblereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontodoble" name="supmontodoble" placeholder="$" class="supmontodoble form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajedoble" name="supporcentajedoble" placeholder="%" class="supporcentajedoble form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden">Adicional</label><br />
+                                    <div class="col-md-12" style="visibility:hidden">
+                                        <div class="col-md-6" style="visibility:hidden">
+                                            <input type="number" id="" name="" placeholder="$" class="form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="" name="" placeholder="%" class=" form-control" />
+                                        </div>
+                                    </div>
+
+                                    <label style="visibility:hidden;">Servicios Adicionales</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto1doble" name="serviciomonto1doble" placeholder="$" class="serviciomonto1doble form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje1doble" name="servicioporcentaje1doble" placeholder="%" class="servicioporcentaje1doble form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto2doble" name="serviciomonto2doble" placeholder="$" class="serviciomonto2doble form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje2doble" name="servicioporcentaje2doble" placeholder="%" class="servicioporcentaje2doble form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Triple-->
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <input type="number" id="triple" name="triple" class="triple form-control" style="width:200px;" />
+                                        <input type="hidden" id="triplereal" name="triplereal" class="triplereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontotriple" name="supmontotriple" placeholder="$" class="supmontotriple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajetriple" name="supporcentajetriple" placeholder="%" class="supporcentajetriple form-control" />
+                                        </div>
+                                    </div>
+                                    <label>Tercer Pax</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="tercerpaxmonto" name="tercerpaxmonto" placeholder="$" class="tercerpaxmonto form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="tercerpaxporcentaje" name="tercerpaxporcentaje" placeholder="%" class="tercerpaxporcentaje form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden;">Servicios Adicionales</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto1triple" name="serviciomonto1triple" placeholder="$" class="serviciomonto1triple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje1triple" name="servicioporcentaje1triple" placeholder="%" class="servicioporcentaje1triple form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto2triple" name="serviciomonto2triple" placeholder="$" class="serviciomonto2triple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje2triple" name="servicioporcentaje2triple" placeholder="%" class="servicioporcentaje2triple form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Cuadruple-->
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <input type="number" id="cuadruple" name="cuadruple" class="cuadruple form-control" style="width:200px;" />
+                                        <input type="hidden" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontocuadruple" name="supmontocuadruple" placeholder="$" class="supmontocuadruple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajecuadruple" name="supporcentajecuadruple" placeholder="%" class="supporcentajecuadruple form-control" />
+                                        </div>
+                                    </div>
+                                    <label>Cuarto Pax</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="cuartopaxmonto" name="cuartopaxmonto" placeholder="$" class="cuartopaxmonto form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="cuartopaxporcentaje" name="cuartopaxporcentaje" placeholder="%" class="cuartopaxporcentaje form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden;">Servicios Adicionales</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto1cuadruple" name="serviciomonto1cuadruple" placeholder="$" class="serviciomonto1cuadruple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje1cuadruple" name="servicioporcentaje1cuadruple" placeholder="%" class="servicioporcentaje1cuadruple form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto2cuadruple" name="serviciomonto2cuadruple" placeholder="$" class="serviciomonto2cuadruple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje2cuadruple" name="servicioporcentaje2cuadruple" placeholder="%" class="servicioporcentaje2cuadruple form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Simple-->
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <input type="number" id="simple" name="simple" class="simple form-control" style="width:200px;" />
+                                        <input type="hidden" id="simplereal" name="simplereal" class="simplereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontosimple" name="supmontosimple" placeholder="$" class="supmontosimple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajesimple" name="supporcentajesimple" placeholder="%" class="supporcentajesimple form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden">simple Pax</label><br />
+                                    <div class="col-md-12" style="visibility:hidden">
+                                        <div class="col-md-6">
+                                            <input type="number" id="" name="" placeholder="$" class=" form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="" name="" placeholder="%" class=" form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden;">Servicios Adicionales</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto1simple" name="serviciomonto1simple" placeholder="$" class="serviciomonto1simple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje1simple" name="servicioporcentaje1simple" placeholder="%" class="servicioporcentaje1simple form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto2simple" name="serviciomonto2simple" placeholder="$" class="serviciomonto2simple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje2simple" name="servicioporcentaje2simple" placeholder="%" class="servicioporcentaje2simple form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Quintuple-->
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <input type="number" id="quintuple" name="quintuple" class="quintuple form-control" style="width:200px;" />
+                                        <input type="hidden" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontoquintuple" name="supmontoquintuple" placeholder="$" class="supmontoquintuple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajequintuple" name="supporcentajequintuple" placeholder="%" class="supporcentajequintuple form-control" />
+                                        </div>
+                                    </div>
+                                    <label>Quinto Pax</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="quintopaxmonto" name="quintopaxmonto" placeholder="$" class="quintopaxmonto form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="quintopaxporcentaje" name="quintopaxporcentaje" placeholder="%" class="quintopaxporcentaje form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden;">Servicios Adicionales</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto1quintuple" name="serviciomonto1quintuple" placeholder="$" class="serviciomonto1quintuple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje1quintuple" name="servicioporcentaje1quintuple" placeholder="%" class="servicioporcentaje1quintuple form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto2quintuple" name="serviciomonto2quintuple" placeholder="$" class="serviciomonto2quintuple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje2quintuple" name="servicioporcentaje2quintuple" placeholder="%" class="servicioporcentaje2quintuple form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Sextuple-->
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <input type="number" id="sextuple" name="sextuple" class="sextuple form-control" style="width:200px;" />
+                                        <input type="hidden" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontosextuple" name="supmontosextuple" placeholder="$" class="supmontosextuple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajesextuple" name="supporcentajesextuple" placeholder="%" class="supporcentajesextuple form-control" />
+                                        </div>
+                                    </div>
+                                    <label>Sexto Pax</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="sextopaxmonto" name="sextopaxmonto" placeholder="$" class="sextopaxmonto form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="sextopaxporcentaje" name="sextopaxporcentaje" placeholder="%" class="sextopaxporcentaje form-control" />
+                                        </div>
+                                    </div>
+                                    <label style="visibility:hidden;">Servicios Adicionales</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto1sextuple" name="serviciomonto1sextuple" placeholder="$" class="serviciomonto1sextuple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje1sextuple" name="servicioporcentaje1sextuple" placeholder="%" class="servicioporcentaje1sextuple form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="serviciomonto2sextuple" name="serviciomonto2sextuple" placeholder="$" class="serviciomonto2sextuple form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="servicioporcentaje2sextuple" name="servicioporcentaje2sextuple" placeholder="%" class="servicioporcentaje2sextuple form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Child 1-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="edad1child1" name="edad1child1" placeholder="Min" class="edad1child1 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="edad2child1" name="edad2child1" placeholder="Max" class="edad2child1 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="child1" name="child1" class="child1 form-control" style="width:200px;" />
+                                        <input type="hidden" id="child1real" name="child1real" class="child1real form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontochild1" name="supmontochild1" placeholder="$" class="supmontochild1 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajechild1" name="supporcentajechild1" placeholder="%" class="supporcentajechild1 form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Child 2-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="edad1child2" name="edad1child2" placeholder="Min" class="edad1child2 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="edad2child2" name="edad2child2" placeholder="Max" class="edad2child2 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="child2" name="child2" class="child2 form-control" style="width:200px;" />
+                                        <input type="hidden" id="child2real" name="child2real" class="child2real form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontochild2" name="supmontochild2" placeholder="$" class="supmontochild2 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajechild2" name="supporcentajechild2" placeholder="%" class="supporcentajechild2 form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Child 3-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="edad1child3" name="edad1child3" placeholder="Min" class="edad1child3 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="edad2child3" name="edad2child3" placeholder="Max" class="edad2child3 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="child3" name="child3" class="child3 form-control" style="width:200px;" />
+                                        <input type="hidden" id="child3real" name="child3real" class="child3real form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontochild3" name="supmontochild3" placeholder="$" class="supmontochild3 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajechild3" name="supporcentajechild3" placeholder="%" class="supporcentajechild3 form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Infante-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="edadinfante1" name="edadinfante1" placeholder="Min" class="edadinfante1 form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="edadinfante2" name="edadinfante2" placeholder="Max" class="edadinfante2 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="infante" name="infante" class="infante form-control" style="width:200px;" />
+                                        <input type="hidden" id="infantereal" name="infantereal" class="infantereal form-control" style="width:200px;" />
+                                    </div>
+                                    <label>Suplementos</label><br />
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <input type="number" id="supmontoinfante" name="supmontoinfante" placeholder="$" class="supmontoinfante form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="supporcentajeinfante" name="supporcentajeinfante" placeholder="%" class="supporcentajeinfante form-control" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--Acciones-->
+                                <td style="vertical-align:middle;">
+                                    <input type="button" id="add" value="Agregar" style="width: 80px" class="btn btn-primary" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="orderItems">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+                    </div>
+                    <span id="orderItemError" style="color: red"></span>
+                </div>
+            </div>
+
+            <!--Botones-->
+            <div class="col-md-12" style="text-align:center;">
+                <div class="form-group">
+                    <input id="submit" type="button" value="Guardar Registro Hotel" class="btn btn-success" />
+                    @Html.ActionLink("Regresar Registro Hotel", "Index", null, new { @class = "btn btn-danger" })
+                </div>
+            </div>
         </div>
     </div>
 </div>

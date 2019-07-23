@@ -14,6 +14,12 @@ namespace IntranetMundoRepresentaciones.Models
     
     public partial class tb_ingresohotel
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_ingresohotel()
+        {
+            this.tb_detalleingresohotel = new HashSet<tb_detalleingresohotel>();
+        }
+    
         public int idIngresoHotel { get; set; }
         public Nullable<System.DateTime> fecviajeini { get; set; }
         public Nullable<System.DateTime> fecviajefin { get; set; }
@@ -35,5 +41,7 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
         public virtual tb_categoria tb_categoria { get; set; }
         public virtual tb_hotel tb_hotel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_detalleingresohotel> tb_detalleingresohotel { get; set; }
     }
 }

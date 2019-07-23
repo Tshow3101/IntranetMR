@@ -1081,6 +1081,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_ticket">
+    <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="0..1" />
+    <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ingresohotel">
+        <PropertyRef Name="idIngresoHotel" />
+      </Principal>
+      <Dependent Role="tb_detalleingresohotel">
+        <PropertyRef Name="idIngresoHotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="BD_MUNDOREPRESENTACIONESModelStoreContainer">
     <EntitySet Name="tb_aerolinea" EntityType="Self.tb_aerolinea" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_agencia" EntityType="Self.tb_agencia" Schema="dbo" store:Type="Tables" />
@@ -1323,6 +1335,10 @@
     <AssociationSet Name="FK__tb_usuari__vigen__5FB337D6" Association="Self.FK__tb_usuari__vigen__5FB337D6">
       <End Role="tb_vigencia" EntitySet="tb_vigencia" />
       <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ticket" Association="Self.fk_ticket">
+      <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
+      <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
