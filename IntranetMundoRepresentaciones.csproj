@@ -6457,7 +6457,6 @@
     <Content Include="Scripts\MRScript.js" />
     <Content Include="Scripts\Scripts-Intranet\ScriptHotel.js" />
     <Content Include="Scripts\Scripts-Intranet\ScriptServicioHotel.js" />
-    <Content Include="Scripts\Scripts-Intranet\ScriptServicioHotelDetalle.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

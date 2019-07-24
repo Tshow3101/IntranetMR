@@ -235,6 +235,18 @@
           <ScalarProperty Name="servicioporcentaje2simple" ColumnName="servicioporcentaje2simple" />
           <ScalarProperty Name="servicioporcentaje2quintuple" ColumnName="servicioporcentaje2quintuple" />
           <ScalarProperty Name="servicioporcentaje2sextuple" ColumnName="servicioporcentaje2sextuple" />
+          <ScalarProperty Name="preciserviciodoble1" ColumnName="preciserviciodoble1" />
+          <ScalarProperty Name="preciserviciotriple1" ColumnName="preciserviciotriple1" />
+          <ScalarProperty Name="preciserviciocuadruple1" ColumnName="preciserviciocuadruple1" />
+          <ScalarProperty Name="preciserviciosimple1" ColumnName="preciserviciosimple1" />
+          <ScalarProperty Name="preciservicioquintuple1" ColumnName="preciservicioquintuple1" />
+          <ScalarProperty Name="preciserviciosextuple1" ColumnName="preciserviciosextuple1" />
+          <ScalarProperty Name="preciserviciodoble2" ColumnName="preciserviciodoble2" />
+          <ScalarProperty Name="preciserviciotriple2" ColumnName="preciserviciotriple2" />
+          <ScalarProperty Name="preciserviciocuadruple2" ColumnName="preciserviciocuadruple2" />
+          <ScalarProperty Name="preciserviciosimple2" ColumnName="preciserviciosimple2" />
+          <ScalarProperty Name="preciservicioquintuple2" ColumnName="preciservicioquintuple2" />
+          <ScalarProperty Name="preciserviciosextuple2" ColumnName="preciserviciosextuple2" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

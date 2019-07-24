@@ -101,6 +101,18 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<int> servicioporcentaje2simple { get; set; }
         public Nullable<int> servicioporcentaje2quintuple { get; set; }
         public Nullable<int> servicioporcentaje2sextuple { get; set; }
+        public Nullable<int> preciserviciodoble1 { get; set; }
+        public Nullable<int> preciserviciotriple1 { get; set; }
+        public Nullable<int> preciserviciocuadruple1 { get; set; }
+        public Nullable<int> preciserviciosimple1 { get; set; }
+        public Nullable<int> preciservicioquintuple1 { get; set; }
+        public Nullable<int> preciserviciosextuple1 { get; set; }
+        public Nullable<int> preciserviciodoble2 { get; set; }
+        public Nullable<int> preciserviciotriple2 { get; set; }
+        public Nullable<int> preciserviciocuadruple2 { get; set; }
+        public Nullable<int> preciserviciosimple2 { get; set; }
+        public Nullable<int> preciservicioquintuple2 { get; set; }
+        public Nullable<int> preciserviciosextuple2 { get; set; }
     
         public virtual tb_categoria tb_categoria { get; set; }
         public virtual tb_categoria tb_categoria1 { get; set; }

@@ -5,8 +5,7 @@
 }
 @* Operaciones *@
 <script src="~/Scripts/Scripts-Intranet/ScriptServicioHotel.js"></script>
-@* Maestro Detalle *@
-<script src="~/Scripts/Scripts-Intranet/ScriptServicioHotelDetalle.js"></script>
+
 <br />
 <div class="col-md-12">
     <div class="panel panel-inverse">
@@ -65,7 +64,7 @@
                         <label style="text-align:center;">Tarifa</label>
                     </div>
                     <div class="col-md-9">
-                        @Html.DropDownList("tarifa", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+                        @Html.DropDownList("tarifa", null, "Seleccione", htmlAttributes: new { @class = "form-control",onchange = "UpdateInput()"})
                     </div>
                 </div>
 
@@ -85,7 +84,7 @@
                         <label style="text-align:center;">Monto Adulto</label>
                     </div>
                     <div class="col-md-8">
-                        @Html.EditorFor(model => model.montoadulto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.montoadulto, new { htmlAttributes = new { @class = "form-control", onchange = "UpdateInput()" } })
                     </div>
                 </div>
 
@@ -95,7 +94,7 @@
                         <label style="text-align:center;">Monto Niño</label>
                     </div>
                     <div class="col-md-8">
-                        @Html.EditorFor(model => model.montoniño, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.montoniño, new { htmlAttributes = new { @class = "form-control", onchange = "UpdateInput()" } })
                     </div>
                 </div>
 
@@ -105,7 +104,7 @@
                         <label style="text-align:center;">Monto Infante</label>
                     </div>
                     <div class="col-md-8">
-                        @Html.EditorFor(model => model.montoinfante, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.montoinfante, new { htmlAttributes = new { @class = "form-control", onchange = "UpdateInput()" } })
                     </div>
                 </div>
 
@@ -115,7 +114,7 @@
                         <label style="text-align:center;">%</label>
                     </div>
                     <div class="col-md-8">
-                        @Html.EditorFor(model => model.porcentaje, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.porcentaje, new { htmlAttributes = new { @class = "form-control", onchange = "UpdateInput()" } })
                     </div>
                 </div>
             </div>
@@ -216,8 +215,8 @@
                                 <!--Doble-->
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
-                                        <input type="number" id="doble" name="doble" class="doble form-control" style="width:200px;" />
-                                        <input type="hidden" id="doblereal" name="doblereal" class="doblereal form-control" style="width:200px;" />
+                                        <input type="number" id="doble" name="doble" class="doble form-control" style="width:200px;" onchange="UpdateInput()" />
+                                        <input type="number" id="doblereal" name="doblereal" class="doblereal form-control" style="width:200px;" onchange="UpdateInput();"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -259,25 +258,25 @@
                                 <!--Triple-->
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
-                                        <input type="number" id="triple" name="triple" class="triple form-control" style="width:200px;" />
-                                        <input type="hidden" id="triplereal" name="triplereal" class="triplereal form-control" style="width:200px;" />
+                                        <input type="number" id="triple" name="triple" class="triple form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="triplereal" name="triplereal" class="triplereal form-control" style="width:200px;" onchange="UpdateInput()" />
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontotriple" name="supmontotriple" placeholder="$" class="supmontotriple form-control" />
+                                            <input type="number" id="supmontotriple" name="supmontotriple" placeholder="$" class="supmontotriple form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajetriple" name="supporcentajetriple" placeholder="%" class="supporcentajetriple form-control" />
+                                            <input type="number" id="supporcentajetriple" name="supporcentajetriple" placeholder="%" class="supporcentajetriple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label>Tercer Pax</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="tercerpaxmonto" name="tercerpaxmonto" placeholder="$" class="tercerpaxmonto form-control" />
+                                            <input type="number" id="tercerpaxmonto" name="tercerpaxmonto" placeholder="$" class="tercerpaxmonto form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="tercerpaxporcentaje" name="tercerpaxporcentaje" placeholder="%" class="tercerpaxporcentaje form-control" />
+                                            <input type="number" id="tercerpaxporcentaje" name="tercerpaxporcentaje" placeholder="%" class="tercerpaxporcentaje form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
@@ -301,8 +300,8 @@
                                 <!--Cuadruple-->
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
-                                        <input type="number" id="cuadruple" name="cuadruple" class="cuadruple form-control" style="width:200px;" />
-                                        <input type="hidden" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:200px;" />
+                                        <input type="number" id="cuadruple" name="cuadruple" class="cuadruple form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -343,8 +342,8 @@
                                 <!--Simple-->
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
-                                        <input type="number" id="simple" name="simple" class="simple form-control" style="width:200px;" />
-                                        <input type="hidden" id="simplereal" name="simplereal" class="simplereal form-control" style="width:200px;" />
+                                        <input type="number" id="simple" name="simple" class="simple form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="simplereal" name="simplereal" class="simplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -385,8 +384,8 @@
                                 <!--Quintuple-->
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
-                                        <input type="number" id="quintuple" name="quintuple" class="quintuple form-control" style="width:200px;" />
-                                        <input type="hidden" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:200px;" />
+                                        <input type="number" id="quintuple" name="quintuple" class="quintuple form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -427,8 +426,8 @@
                                 <!--Sextuple-->
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
-                                        <input type="number" id="sextuple" name="sextuple" class="sextuple form-control" style="width:200px;" />
-                                        <input type="hidden" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:200px;" />
+                                        <input type="number" id="sextuple" name="sextuple" class="sextuple form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -479,8 +478,8 @@
                                     </div>
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
-                                        <input type="number" id="child1" name="child1" class="child1 form-control" style="width:200px;" />
-                                        <input type="hidden" id="child1real" name="child1real" class="child1real form-control" style="width:200px;" />
+                                        <input type="number" id="child1" name="child1" class="child1 form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="child1real" name="child1real" class="child1real form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -505,8 +504,8 @@
                                     </div>
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
-                                        <input type="number" id="child2" name="child2" class="child2 form-control" style="width:200px;" />
-                                        <input type="hidden" id="child2real" name="child2real" class="child2real form-control" style="width:200px;" />
+                                        <input type="number" id="child2" name="child2" class="child2 form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="child2real" name="child2real" class="child2real form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -531,8 +530,8 @@
                                     </div>
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
-                                        <input type="number" id="child3" name="child3" class="child3 form-control" style="width:200px;" />
-                                        <input type="hidden" id="child3real" name="child3real" class="child3real form-control" style="width:200px;" />
+                                        <input type="number" id="child3" name="child3" class="child3 form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="child3real" name="child3real" class="child3real form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -557,8 +556,8 @@
                                     </div>
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
-                                        <input type="number" id="infante" name="infante" class="infante form-control" style="width:200px;" />
-                                        <input type="hidden" id="infantereal" name="infantereal" class="infantereal form-control" style="width:200px;" />
+                                        <input type="number" id="infante" name="infante" class="infante form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="number" id="infantereal" name="infantereal" class="infantereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">

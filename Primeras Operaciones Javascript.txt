@@ -1,0 +1,198 @@
+
+function UpdateInput() {
+    var tarifav = document.getElementById("tarifa").value;
+    if (tarifav == 53) {
+        var descadu = document.getElementById("montoadulto").value;
+        var porcentajes = document.getElementById("porcentaje").value;
+        var descnino = document.getElementById("montoni_o").value;
+        var descinfante = document.getElementById("montoinfante").value;
+
+        if (porcentajes > 0) {
+            /*Inicio Doble*/
+            var doble = (document.getElementById("doble").value);
+            var dobleporcentaje = (document.getElementById("doble").value) * (porcentajes / 100);
+            document.getElementById("doblereal").value = doble - dobleporcentaje
+            /*Fin Doble*/
+
+            /*Inicio Triple*/
+            var triple = (document.getElementById("triple").value);
+            var tripleporcentaje = (document.getElementById("triple").value) * (porcentajes / 100);
+            document.getElementById("triplereal").value = triple - tripleporcentaje;
+            /*Fin Triple*/
+
+            /*Inicio Cuadruple*/
+            var cuadruple = (document.getElementById("cuadruple").value);
+            var cuadrupleporcentaje = (document.getElementById("cuadruple").value) * (porcentajes / 100);
+            document.getElementById("cuadruplereal").value = cuadruple - cuadrupleporcentaje;
+            /*Fin Cuadruple*/
+
+            /*Inicio Simple*/
+            var simple = (document.getElementById("simple").value);
+            var simpleporcentaje = (document.getElementById("simple").value) * (porcentajes / 100);
+            document.getElementById("simplereal").value = simple - simpleporcentaje;
+            /*Fin Simple*/
+
+            /*Inicio Quintuple*/
+            var quintuple = (document.getElementById("quintuple").value);
+            var quintupleporcentaje = (document.getElementById("quintuple").value) * (porcentajes / 100);
+            document.getElementById("quituplereal").value = quintuple - quintupleporcentaje;
+            /*Fin Quintuple*/
+
+            /*Inicio Sextuple*/
+            var sextuple = (document.getElementById("sextuple").value);
+            var sextupleporcentaje = (document.getElementById("sextuple").value) * (porcentajes / 100);
+            document.getElementById("sextuplereal").value = math.round(sextuple - sextupleporcentaje);
+            /*Fin Sextuple*/
+
+            /*Inicio Child 1*/
+            var child1 = (document.getElementById("child1").value);
+            var child1porcentaje = (document.getElementById("child1").value) * (porcentajes / 100);
+            document.getElementById("child1real").value = child1 - child1porcentaje;
+            /*Fin Child 1*/
+
+            /*Inicio Child 2*/
+            var child2 = (document.getElementById("child2").value);
+            var child2porcentaje = (document.getElementById("child2").value) * (porcentajes / 100);
+            document.getElementById("child2real").value = child2 - child2porcentaje;
+            /*Fin Child 2*/
+
+            /*Inicio Child 3*/
+            var child3 = (document.getElementById("child3").value);
+            var child3porcentaje = (document.getElementById("child3").value) * (porcentajes / 100);
+            document.getElementById("child3real").value = child3 - child3porcentaje;
+            /*Fin Child 3*/
+
+            /*Inicio Infante*/
+            var infante = (document.getElementById("infante").value);
+            var infanteporcentaje = (document.getElementById("infante").value) * (porcentajes / 100);
+            document.getElementById("infantereal").value = infante - infanteporcentaje;
+            /*Fin Infante*/
+        }
+        else if (descnino > 0) {
+            /*Inicio Child 1*/
+            var child1 = (document.getElementById("child1").value);
+            document.getElementById("child1real").value = child1 - descnino;
+            /*Fin Child 1*/
+
+            /*Inicio Child 2*/
+            var child2 = (document.getElementById("child2").value);
+            document.getElementById("child2real").value = child2 - descnino;
+            /*Fin Child 2*/
+
+            /*Inicio Child 3*/
+            var child3 = (document.getElementById("child3").value);
+            document.getElementById("child3real").value = child3 - descnino;
+            /*Fin Child 3*/
+        }
+        else if (descinfante > 0) {
+            /*Inicio Infante*/
+            var infante = (document.getElementById("infante").value);
+            document.getElementById("infantereal").value = infante - descinfante;
+            /*Fin Infante*/
+        }
+        else {
+            /*Inicio Doble*/
+            var doble = (document.getElementById("doble").value)
+            document.getElementById("doblereal").value = doble - descadu;
+            /*Fin Doble*/
+
+            /*Inicio Triple*/
+            var triple = (document.getElementById("triple").value)
+            document.getElementById("triplereal").value = triple - descadu;
+            /*Fin Triple*/
+
+            /*Inicio Cuadruple*/
+            var cuadruple = (document.getElementById("cuadruple").value)
+            document.getElementById("cuadruplereal").value = cuadruple - descadu;
+            /*Fin Cuadruple*/
+
+            /*Inicio Simple*/
+            var simple = (document.getElementById("simple").value)
+            document.getElementById("simplereal").value = simple - descadu;
+            /*Fin Simple*/
+
+            /*Inicio Quintuple*/
+            var quintuple = (document.getElementById("quintuple").value)
+            document.getElementById("quituplereal").value = quintuple - descadu;
+            /*Fin Quintuple*/
+
+            /*Inicio Sextuple*/
+            var sextuple = (document.getElementById("sextuple").value)
+            document.getElementById("sextuplereal").value = sextuple - descadu;
+            /*Fin Sextuple*/
+
+            /*Inicio Child 1*/
+            var child1 = (document.getElementById("child1").value)
+            document.getElementById("child1real").value = child1 - descadu;
+            /*Fin Child 1*/
+
+            /*Inicio Child 2*/
+            var child2 = (document.getElementById("child2").value)
+            document.getElementById("child2real").value = child2 - descadu;
+            /*Fin Child 2*/
+
+            /*Inicio Child 3*/
+            var child3 = (document.getElementById("child3").value)
+            document.getElementById("child3real").value = child3 - descadu;
+            /*Fin Child 3*/
+
+            /*Inicio Infante*/
+            var infante = (document.getElementById("infante").value)
+            document.getElementById("infantereal").value = infante - descadu;
+            /*Fin Infante*/
+        }
+    }
+    else {
+        /*Inicio Doble*/
+        var doble = (document.getElementById("doble").value)
+        document.getElementById("doblereal").value = doble;
+        /*Fin Doble*/
+
+        /*Inicio Triple*/
+        var triple = (document.getElementById("triple").value)
+        document.getElementById("triplereal").value = triple;
+        /*Fin Triple*/
+
+        /*Inicio Cuadruple*/
+        var cuadruple = (document.getElementById("cuadruple").value)
+        document.getElementById("cuadruplereal").value = cuadruple;
+        /*Fin Cuadruple*/
+
+        /*Inicio Simple*/
+        var simple = (document.getElementById("simple").value)
+        document.getElementById("simplereal").value = simple;
+        /*Fin Simple*/
+
+        /*Inicio Quintuple*/
+        var quintuple = (document.getElementById("quintuple").value)
+        document.getElementById("quituplereal").value = quintuple;
+        /*Fin Quintuple*/
+
+        /*Inicio Sextuple*/
+        var sextuple = (document.getElementById("sextuple").value)
+        document.getElementById("sextuplereal").value = sextuple;
+        /*Fin Sextuple*/
+
+        /*Inicio Child1*/
+        var child1 = (document.getElementById("child1").value)
+        document.getElementById("child1real").value = child1;
+        /*Fin Child1*/
+
+        /*Inicio Child2*/
+        var child2 = (document.getElementById("child2").value)
+        document.getElementById("child2real").value = child2;
+        /*Fin Child2*/
+
+        /*Inicio Child3*/
+        var child3 = (document.getElementById("child3").value)
+        document.getElementById("child3real").value = child3;
+        /*Fin Child3*/
+
+        /*Inicio Infante*/
+        var infante = (document.getElementById("infante").value)
+        document.getElementById("infantereal").value = infante;
+        /*Fin Infante*/
+    }
+
+   
+}

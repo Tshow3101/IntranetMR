@@ -40,8 +40,8 @@ namespace IntranetMundoRepresentaciones.Models
     
         public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
         public virtual tb_categoria tb_categoria { get; set; }
-        public virtual tb_hotel tb_hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_detalleingresohotel> tb_detalleingresohotel { get; set; }
+        public virtual tb_hotel tb_hotel { get; set; }
     }
 }

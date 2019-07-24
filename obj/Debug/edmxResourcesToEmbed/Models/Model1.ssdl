@@ -228,6 +228,18 @@
     <Property Name="servicioporcentaje2simple" Type="int" />
     <Property Name="servicioporcentaje2quintuple" Type="int" />
     <Property Name="servicioporcentaje2sextuple" Type="int" />
+    <Property Name="preciserviciodoble1" Type="int" />
+    <Property Name="preciserviciotriple1" Type="int" />
+    <Property Name="preciserviciocuadruple1" Type="int" />
+    <Property Name="preciserviciosimple1" Type="int" />
+    <Property Name="preciservicioquintuple1" Type="int" />
+    <Property Name="preciserviciosextuple1" Type="int" />
+    <Property Name="preciserviciodoble2" Type="int" />
+    <Property Name="preciserviciotriple2" Type="int" />
+    <Property Name="preciserviciocuadruple2" Type="int" />
+    <Property Name="preciserviciosimple2" Type="int" />
+    <Property Name="preciservicioquintuple2" Type="int" />
+    <Property Name="preciserviciosextuple2" Type="int" />
   </EntityType>
   <EntityType Name="tb_hotel">
     <Key>

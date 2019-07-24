@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BD_MUNDOREPRESENTACIONESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BD_MUNDOREPRESENTACIONESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tb_aerolinea">
           <Key>
             <PropertyRef Name="idaerolinea" />
@@ -233,6 +233,18 @@
           <Property Name="servicioporcentaje2simple" Type="int" />
           <Property Name="servicioporcentaje2quintuple" Type="int" />
           <Property Name="servicioporcentaje2sextuple" Type="int" />
+          <Property Name="preciserviciodoble1" Type="int" />
+          <Property Name="preciserviciotriple1" Type="int" />
+          <Property Name="preciserviciocuadruple1" Type="int" />
+          <Property Name="preciserviciosimple1" Type="int" />
+          <Property Name="preciservicioquintuple1" Type="int" />
+          <Property Name="preciserviciosextuple1" Type="int" />
+          <Property Name="preciserviciodoble2" Type="int" />
+          <Property Name="preciserviciotriple2" Type="int" />
+          <Property Name="preciserviciocuadruple2" Type="int" />
+          <Property Name="preciserviciosimple2" Type="int" />
+          <Property Name="preciservicioquintuple2" Type="int" />
+          <Property Name="preciserviciosextuple2" Type="int" />
         </EntityType>
         <EntityType Name="tb_hotel">
           <Key>
@@ -1346,7 +1358,8 @@
             <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_MUNDOREPRESENTACIONESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1633,10 +1646,22 @@
           <Property Name="servicioporcentaje2simple" Type="Int32" />
           <Property Name="servicioporcentaje2quintuple" Type="Int32" />
           <Property Name="servicioporcentaje2sextuple" Type="Int32" />
+          <Property Name="preciserviciodoble1" Type="Int32" />
+          <Property Name="preciserviciotriple1" Type="Int32" />
+          <Property Name="preciserviciocuadruple1" Type="Int32" />
+          <Property Name="preciserviciosimple1" Type="Int32" />
+          <Property Name="preciservicioquintuple1" Type="Int32" />
+          <Property Name="preciserviciosextuple1" Type="Int32" />
+          <Property Name="preciserviciodoble2" Type="Int32" />
+          <Property Name="preciserviciotriple2" Type="Int32" />
+          <Property Name="preciserviciocuadruple2" Type="Int32" />
+          <Property Name="preciserviciosimple2" Type="Int32" />
+          <Property Name="preciservicioquintuple2" Type="Int32" />
+          <Property Name="preciserviciosextuple2" Type="Int32" />
           <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_detall__servi__68D28DBC" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_categoria1" Relationship="Self.FK__tb_detall__servi__69C6B1F5" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_detall__idTip__67DE6983" FromRole="tb_detalleingresohotel" ToRole="tb_tipohabitacion" />
-          <NavigationProperty Name="tb_ingresohotel" Relationship="BD_MUNDOREPRESENTACIONESModel.fk_ticket" FromRole="tb_detalleingresohotel" ToRole="tb_ingresohotel" />
+          <NavigationProperty Name="tb_ingresohotel" Relationship="Self.fk_ticket" FromRole="tb_detalleingresohotel" ToRole="tb_ingresohotel" />
         </EntityType>
         <EntityType Name="tb_hotel">
           <Key>
@@ -1712,8 +1737,8 @@
           <Property Name="usuariomodificacion" Type="Int32" />
           <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_ingres__idCad__59904A2C" FromRole="tb_ingresohotel" ToRole="tb_cadenahotelera" />
           <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_ingres__tarif__589C25F3" FromRole="tb_ingresohotel" ToRole="tb_categoria" />
+          <NavigationProperty Name="tb_detalleingresohotel" Relationship="Self.fk_ticket" FromRole="tb_ingresohotel" ToRole="tb_detalleingresohotel" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_ingres__idHot__5A846E65" FromRole="tb_ingresohotel" ToRole="tb_hotel" />
-          <NavigationProperty Name="tb_detalleingresohotel" Relationship="BD_MUNDOREPRESENTACIONESModel.fk_ticket" FromRole="tb_ingresohotel" ToRole="tb_detalleingresohotel" />
         </EntityType>
         <EntityType Name="tb_moneda">
           <Key>
@@ -2413,6 +2438,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_ticket">
+          <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="0..1" />
+          <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_ingresohotel">
+              <PropertyRef Name="idIngresoHotel" />
+            </Principal>
+            <Dependent Role="tb_detalleingresohotel">
+              <PropertyRef Name="idIngresoHotel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tb_hotel__idPais__4959E263">
           <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
           <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="*" />
@@ -2744,6 +2781,10 @@
             <End Role="tb_tipohabitacion" EntitySet="tb_tipohabitacion" />
             <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
           </AssociationSet>
+          <AssociationSet Name="fk_ticket" Association="Self.fk_ticket">
+            <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
+            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
           <AssociationSet Name="FK__tb_hotel__idPais__4959E263" Association="Self.FK__tb_hotel__idPais__4959E263">
             <End Role="tb_pais" EntitySet="tb_pais" />
             <End Role="tb_hotel" EntitySet="tb_hotel" />
@@ -2788,23 +2829,7 @@
             <End Role="tb_vigencia" EntitySet="tb_vigencia" />
             <End Role="tb_usuario" EntitySet="tb_usuario" />
           </AssociationSet>
-          <AssociationSet Name="fk_ticket" Association="BD_MUNDOREPRESENTACIONESModel.fk_ticket">
-            <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
-            <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="fk_ticket">
-          <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ingresohotel" Role="tb_ingresohotel" Multiplicity="0..1" />
-          <End Type="BD_MUNDOREPRESENTACIONESModel.tb_detalleingresohotel" Role="tb_detalleingresohotel" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_ingresohotel">
-              <PropertyRef Name="idIngresoHotel" />
-            </Principal>
-            <Dependent Role="tb_detalleingresohotel">
-              <PropertyRef Name="idIngresoHotel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3045,6 +3070,18 @@
                 <ScalarProperty Name="servicioporcentaje2simple" ColumnName="servicioporcentaje2simple" />
                 <ScalarProperty Name="servicioporcentaje2quintuple" ColumnName="servicioporcentaje2quintuple" />
                 <ScalarProperty Name="servicioporcentaje2sextuple" ColumnName="servicioporcentaje2sextuple" />
+                <ScalarProperty Name="preciserviciodoble1" ColumnName="preciserviciodoble1" />
+                <ScalarProperty Name="preciserviciotriple1" ColumnName="preciserviciotriple1" />
+                <ScalarProperty Name="preciserviciocuadruple1" ColumnName="preciserviciocuadruple1" />
+                <ScalarProperty Name="preciserviciosimple1" ColumnName="preciserviciosimple1" />
+                <ScalarProperty Name="preciservicioquintuple1" ColumnName="preciservicioquintuple1" />
+                <ScalarProperty Name="preciserviciosextuple1" ColumnName="preciserviciosextuple1" />
+                <ScalarProperty Name="preciserviciodoble2" ColumnName="preciserviciodoble2" />
+                <ScalarProperty Name="preciserviciotriple2" ColumnName="preciserviciotriple2" />
+                <ScalarProperty Name="preciserviciocuadruple2" ColumnName="preciserviciocuadruple2" />
+                <ScalarProperty Name="preciserviciosimple2" ColumnName="preciserviciosimple2" />
+                <ScalarProperty Name="preciservicioquintuple2" ColumnName="preciservicioquintuple2" />
+                <ScalarProperty Name="preciserviciosextuple2" ColumnName="preciserviciosextuple2" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
