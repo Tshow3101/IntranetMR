@@ -37,6 +37,7 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<int> usuarioregistro { get; set; }
         public Nullable<System.DateTime> fechamodificacion { get; set; }
         public Nullable<int> usuariomodificacion { get; set; }
+        public Nullable<int> preciodoble { get; set; }
     
         public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
         public virtual tb_categoria tb_categoria { get; set; }

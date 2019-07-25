@@ -21,8 +21,10 @@ namespace IntranetMundoRepresentaciones.Models
             this.tb_agencia = new HashSet<tb_agencia>();
             this.tb_cadenahotelera = new HashSet<tb_cadenahotelera>();
             this.tb_ciudad = new HashSet<tb_ciudad>();
+            this.tb_detalletarifastopovers = new HashSet<tb_detalletarifastopovers>();
             this.tb_hotel = new HashSet<tb_hotel>();
             this.tb_usuario = new HashSet<tb_usuario>();
+            this.tb_tarifa_aerea = new HashSet<tb_tarifa_aerea>();
         }
     
         public int idPais { get; set; }
@@ -43,9 +45,13 @@ namespace IntranetMundoRepresentaciones.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_ciudad> tb_ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_detalletarifastopovers> tb_detalletarifastopovers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_hotel> tb_hotel { get; set; }
         public virtual tb_zona tb_zona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_usuario> tb_usuario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_tarifa_aerea> tb_tarifa_aerea { get; set; }
     }
 }

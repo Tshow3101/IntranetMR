@@ -191,6 +191,15 @@
     <Compile Include="Models\tb_detalleingresohotel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tb_detalletarifaaerea.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_detalletarifablackouts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_detalletarifastopovers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tb_hotel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -204,6 +213,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_pais.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_tarifa_aerea.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_tipocategoria.cs">

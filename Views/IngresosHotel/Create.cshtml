@@ -122,7 +122,7 @@
             <!--Tercera Fia-->
             <div class="col-md-12">
                 <!--Cadena Hotelera-->
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="col-md-2">
                         <label style="text-align:center;">Cadena</label>
                     </div>
@@ -132,12 +132,22 @@
                 </div>
 
                 <!--Hotel-->
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="col-md-2">
                         <label style="text-align:center;">Hotel</label>
                     </div>
                     <div class="col-md-8">
                         @Html.DropDownList("idHotel", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <!--Precio Doble-->
+                <div class="col-md-4">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Precio Doble</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.preciodoble, new { htmlAttributes = new { @class = "form-control", onchange = "UpdateInput()" } })
                     </div>
                 </div>
             </div>
@@ -202,10 +212,10 @@
                                     <label style="visibility:hidden">Adicional</label><br />
                                     <div class="col-md-12" style="visibility:hidden">
                                         <div class="col-md-6" style="visibility:hidden">
-                                            <input type="number" id="" name="" placeholder="$" class="form-control" />
+                                            <input type="number" name="" placeholder="$" class="form-control" />
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="" name="" placeholder="%" class=" form-control" />
+                                            <input type="number" name="" placeholder="%" class=" form-control" />
                                         </div>
                                     </div>
                                     <label>Servicios Adicionales</label><br />
@@ -216,42 +226,44 @@
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
                                         <input type="number" id="doble" name="doble" class="doble form-control" style="width:200px;" onchange="UpdateInput()" />
-                                        <input type="number" id="doblereal" name="doblereal" class="doblereal form-control" style="width:200px;" onchange="UpdateInput();"/>
+                                        <input type="hidden" id="doblereal" name="doblereal" class="doblereal form-control" style="width:200px;" onchange="UpdateInput();" />
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontodoble" name="supmontodoble" placeholder="$" class="supmontodoble form-control" />
+                                            <input type="number" id="supmontodoble" name="supmontodoble" placeholder="$" class="supmontodoble form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajedoble" name="supporcentajedoble" placeholder="%" class="supporcentajedoble form-control" />
+                                            <input type="number" id="supporcentajedoble" name="supporcentajedoble" placeholder="%" class="supporcentajedoble form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label style="visibility:hidden">Adicional</label><br />
                                     <div class="col-md-12" style="visibility:hidden">
                                         <div class="col-md-6" style="visibility:hidden">
-                                            <input type="number" id="" name="" placeholder="$" class="form-control" />
+                                            <input type="number" name="" placeholder="$" class="form-control" />
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="" name="" placeholder="%" class=" form-control" />
+                                            <input type="number" name="" placeholder="%" class=" form-control" />
                                         </div>
                                     </div>
 
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto1doble" name="serviciomonto1doble" placeholder="$" class="serviciomonto1doble form-control" />
+                                            <input type="number" id="serviciomonto1doble" name="serviciomonto1doble" placeholder="$" class="serviciomonto1doble form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciodoble1" name="preciserviciodoble1" class="preciserviciodoble1 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje1doble" name="servicioporcentaje1doble" placeholder="%" class="servicioporcentaje1doble form-control" />
+                                            <input type="number" id="servicioporcentaje1doble" name="servicioporcentaje1doble" placeholder="%" class="servicioporcentaje1doble form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto2doble" name="serviciomonto2doble" placeholder="$" class="serviciomonto2doble form-control" />
+                                            <input type="number" id="serviciomonto2doble" name="serviciomonto2doble" placeholder="$" class="serviciomonto2doble form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciodoble2" name="preciserviciodoble2" class="preciserviciodoble2 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje2doble" name="servicioporcentaje2doble" placeholder="%" class="servicioporcentaje2doble form-control" />
+                                            <input type="number" id="servicioporcentaje2doble" name="servicioporcentaje2doble" placeholder="%" class="servicioporcentaje2doble form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -259,7 +271,7 @@
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
                                         <input type="number" id="triple" name="triple" class="triple form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="triplereal" name="triplereal" class="triplereal form-control" style="width:200px;" onchange="UpdateInput()" />
+                                        <input type="hidden" id="triplereal" name="triplereal" class="triplereal form-control" style="width:200px;" onchange="UpdateInput()" />
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -282,18 +294,20 @@
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto1triple" name="serviciomonto1triple" placeholder="$" class="serviciomonto1triple form-control" />
+                                            <input type="number" id="serviciomonto1triple" name="serviciomonto1triple" placeholder="$" class="serviciomonto1triple form-control"  onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciotriple1" name="preciserviciotriple1" class="preciserviciotriple1 form-control"  onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje1triple" name="servicioporcentaje1triple" placeholder="%" class="servicioporcentaje1triple form-control" />
+                                            <input type="number" id="servicioporcentaje1triple" name="servicioporcentaje1triple" placeholder="%" class="servicioporcentaje1triple form-control"  onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto2triple" name="serviciomonto2triple" placeholder="$" class="serviciomonto2triple form-control" />
+                                            <input type="number" id="serviciomonto2triple" name="serviciomonto2triple" placeholder="$" class="serviciomonto2triple form-control"  onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciotriple2" name="preciserviciotriple2" class="preciserviciotriple2 form-control"  onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje2triple" name="servicioporcentaje2triple" placeholder="%" class="servicioporcentaje2triple form-control" />
+                                            <input type="number" id="servicioporcentaje2triple" name="servicioporcentaje2triple" placeholder="%" class="servicioporcentaje2triple form-control"  onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -301,41 +315,43 @@
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
                                         <input type="number" id="cuadruple" name="cuadruple" class="cuadruple form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontocuadruple" name="supmontocuadruple" placeholder="$" class="supmontocuadruple form-control" />
+                                            <input type="number" id="supmontocuadruple" name="supmontocuadruple" placeholder="$" class="supmontocuadruple form-control"  onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajecuadruple" name="supporcentajecuadruple" placeholder="%" class="supporcentajecuadruple form-control" />
+                                            <input type="number" id="supporcentajecuadruple" name="supporcentajecuadruple" placeholder="%" class="supporcentajecuadruple form-control"  onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label>Cuarto Pax</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="cuartopaxmonto" name="cuartopaxmonto" placeholder="$" class="cuartopaxmonto form-control" />
+                                            <input type="number" id="cuartopaxmonto" name="cuartopaxmonto" placeholder="$" class="cuartopaxmonto form-control"  onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="cuartopaxporcentaje" name="cuartopaxporcentaje" placeholder="%" class="cuartopaxporcentaje form-control" />
+                                            <input type="number" id="cuartopaxporcentaje" name="cuartopaxporcentaje" placeholder="%" class="cuartopaxporcentaje form-control"  onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto1cuadruple" name="serviciomonto1cuadruple" placeholder="$" class="serviciomonto1cuadruple form-control" />
+                                            <input type="number" id="serviciomonto1cuadruple" name="serviciomonto1cuadruple" placeholder="$" class="serviciomonto1cuadruple form-control"  onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciocuadruple1" name="preciserviciocuadruple1" class="preciserviciocuadruple1 form-control"  onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje1cuadruple" name="servicioporcentaje1cuadruple" placeholder="%" class="servicioporcentaje1cuadruple form-control" />
+                                            <input type="number" id="servicioporcentaje1cuadruple" name="servicioporcentaje1cuadruple" placeholder="%" class="servicioporcentaje1cuadruple form-control"  onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto2cuadruple" name="serviciomonto2cuadruple" placeholder="$" class="serviciomonto2cuadruple form-control" />
+                                            <input type="number" id="serviciomonto2cuadruple" name="serviciomonto2cuadruple" placeholder="$" class="serviciomonto2cuadruple form-control"  onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciocuadruple2" name="preciserviciocuadruple2" class="preciserviciocuadruple2 form-control"  onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje2cuadruple" name="servicioporcentaje2cuadruple" placeholder="%" class="servicioporcentaje2cuadruple form-control" />
+                                            <input type="number" id="servicioporcentaje2cuadruple" name="servicioporcentaje2cuadruple" placeholder="%" class="servicioporcentaje2cuadruple form-control"  onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -343,41 +359,43 @@
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
                                         <input type="number" id="simple" name="simple" class="simple form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="simplereal" name="simplereal" class="simplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="simplereal" name="simplereal" class="simplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontosimple" name="supmontosimple" placeholder="$" class="supmontosimple form-control" />
+                                            <input type="number" id="supmontosimple" name="supmontosimple" placeholder="$" class="supmontosimple form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajesimple" name="supporcentajesimple" placeholder="%" class="supporcentajesimple form-control" />
+                                            <input type="number" id="supporcentajesimple" name="supporcentajesimple" placeholder="%" class="supporcentajesimple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label style="visibility:hidden">simple Pax</label><br />
                                     <div class="col-md-12" style="visibility:hidden">
                                         <div class="col-md-6">
-                                            <input type="number" id="" name="" placeholder="$" class=" form-control" />
+                                            <input type="number" name="" placeholder="$" class=" form-control" />
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="" name="" placeholder="%" class=" form-control" />
+                                            <input type="number" name="" placeholder="%" class=" form-control" />
                                         </div>
                                     </div>
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto1simple" name="serviciomonto1simple" placeholder="$" class="serviciomonto1simple form-control" />
+                                            <input type="number" id="serviciomonto1simple" name="serviciomonto1simple" placeholder="$" class="serviciomonto1simple form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciosimple1" name="preciserviciosimple1" class="preciserviciosimple1 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje1simple" name="servicioporcentaje1simple" placeholder="%" class="servicioporcentaje1simple form-control" />
+                                            <input type="number" id="servicioporcentaje1simple" name="servicioporcentaje1simple" placeholder="%" class="servicioporcentaje1simple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto2simple" name="serviciomonto2simple" placeholder="$" class="serviciomonto2simple form-control" />
+                                            <input type="number" id="serviciomonto2simple" name="serviciomonto2simple" placeholder="$" class="serviciomonto2simple form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciosimple2" name="preciserviciosimple2" class="preciserviciosimple2 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje2simple" name="servicioporcentaje2simple" placeholder="%" class="servicioporcentaje2simple form-control" />
+                                            <input type="number" id="servicioporcentaje2simple" name="servicioporcentaje2simple" placeholder="%" class="servicioporcentaje2simple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -385,41 +403,43 @@
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
                                         <input type="number" id="quintuple" name="quintuple" class="quintuple form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontoquintuple" name="supmontoquintuple" placeholder="$" class="supmontoquintuple form-control" />
+                                            <input type="number" id="supmontoquintuple" name="supmontoquintuple" placeholder="$" class="supmontoquintuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajequintuple" name="supporcentajequintuple" placeholder="%" class="supporcentajequintuple form-control" />
+                                            <input type="number" id="supporcentajequintuple" name="supporcentajequintuple" placeholder="%" class="supporcentajequintuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label>Quinto Pax</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="quintopaxmonto" name="quintopaxmonto" placeholder="$" class="quintopaxmonto form-control" />
+                                            <input type="number" id="quintopaxmonto" name="quintopaxmonto" placeholder="$" class="quintopaxmonto form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="quintopaxporcentaje" name="quintopaxporcentaje" placeholder="%" class="quintopaxporcentaje form-control" />
+                                            <input type="number" id="quintopaxporcentaje" name="quintopaxporcentaje" placeholder="%" class="quintopaxporcentaje form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto1quintuple" name="serviciomonto1quintuple" placeholder="$" class="serviciomonto1quintuple form-control" />
+                                            <input type="number" id="serviciomonto1quintuple" name="serviciomonto1quintuple" placeholder="$" class="serviciomonto1quintuple form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciservicioquintuple1" name="preciservicioquintuple1" class="preciservicioquintuple1 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje1quintuple" name="servicioporcentaje1quintuple" placeholder="%" class="servicioporcentaje1quintuple form-control" />
+                                            <input type="number" id="servicioporcentaje1quintuple" name="servicioporcentaje1quintuple" placeholder="%" class="servicioporcentaje1quintuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto2quintuple" name="serviciomonto2quintuple" placeholder="$" class="serviciomonto2quintuple form-control" />
+                                            <input type="number" id="serviciomonto2quintuple" name="serviciomonto2quintuple" placeholder="$" class="serviciomonto2quintuple form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciservicioquintuple2" name="preciservicioquintuple2" class="preciservicioquintuple2 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje2quintuple" name="servicioporcentaje2quintuple" placeholder="%" class="servicioporcentaje2quintuple form-control" />
+                                            <input type="number" id="servicioporcentaje2quintuple" name="servicioporcentaje2quintuple" placeholder="%" class="servicioporcentaje2quintuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -427,7 +447,7 @@
                                 <td style="text-align:center;">
                                     <div class="col-md-12" style="text-align:center">
                                         <input type="number" id="sextuple" name="sextuple" class="sextuple form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
@@ -435,33 +455,35 @@
                                             <input type="number" id="supmontosextuple" name="supmontosextuple" placeholder="$" class="supmontosextuple form-control" />
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajesextuple" name="supporcentajesextuple" placeholder="%" class="supporcentajesextuple form-control" />
+                                            <input type="number" id="supporcentajesextuple" name="supporcentajesextuple" placeholder="%" class="supporcentajesextuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label>Sexto Pax</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="sextopaxmonto" name="sextopaxmonto" placeholder="$" class="sextopaxmonto form-control" />
+                                            <input type="number" id="sextopaxmonto" name="sextopaxmonto" placeholder="$" class="sextopaxmonto form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="sextopaxporcentaje" name="sextopaxporcentaje" placeholder="%" class="sextopaxporcentaje form-control" />
+                                            <input type="number" id="sextopaxporcentaje" name="sextopaxporcentaje" placeholder="%" class="sextopaxporcentaje form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <label style="visibility:hidden;">Servicios Adicionales</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto1sextuple" name="serviciomonto1sextuple" placeholder="$" class="serviciomonto1sextuple form-control" />
+                                            <input type="number" id="serviciomonto1sextuple" name="serviciomonto1sextuple" placeholder="$" class="serviciomonto1sextuple form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciosextuple1" name="preciserviciosextuple1" class="preciserviciosextuple1 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje1sextuple" name="servicioporcentaje1sextuple" placeholder="%" class="servicioporcentaje1sextuple form-control" />
+                                            <input type="number" id="servicioporcentaje1sextuple" name="servicioporcentaje1sextuple" placeholder="%" class="servicioporcentaje1sextuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="serviciomonto2sextuple" name="serviciomonto2sextuple" placeholder="$" class="serviciomonto2sextuple form-control" />
+                                            <input type="number" id="serviciomonto2sextuple" name="serviciomonto2sextuple" placeholder="$" class="serviciomonto2sextuple form-control" onchange="UpdateInput()"/>
+                                            <input type="hidden" id="preciserviciosextuple2" name="preciserviciosextuple2" class="preciserviciosextuple2 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="servicioporcentaje2sextuple" name="servicioporcentaje2sextuple" placeholder="%" class="servicioporcentaje2sextuple form-control" />
+                                            <input type="number" id="servicioporcentaje2sextuple" name="servicioporcentaje2sextuple" placeholder="%" class="servicioporcentaje2sextuple form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -479,15 +501,15 @@
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
                                         <input type="number" id="child1" name="child1" class="child1 form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="child1real" name="child1real" class="child1real form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="child1real" name="child1real" class="child1real form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontochild1" name="supmontochild1" placeholder="$" class="supmontochild1 form-control" />
+                                            <input type="number" id="supmontochild1" name="supmontochild1" placeholder="$" class="supmontochild1 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajechild1" name="supporcentajechild1" placeholder="%" class="supporcentajechild1 form-control" />
+                                            <input type="number" id="supporcentajechild1" name="supporcentajechild1" placeholder="%" class="supporcentajechild1 form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -505,15 +527,15 @@
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
                                         <input type="number" id="child2" name="child2" class="child2 form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="child2real" name="child2real" class="child2real form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="child2real" name="child2real" class="child2real form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontochild2" name="supmontochild2" placeholder="$" class="supmontochild2 form-control" />
+                                            <input type="number" id="supmontochild2" name="supmontochild2" placeholder="$" class="supmontochild2 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajechild2" name="supporcentajechild2" placeholder="%" class="supporcentajechild2 form-control" />
+                                            <input type="number" id="supporcentajechild2" name="supporcentajechild2" placeholder="%" class="supporcentajechild2 form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -531,15 +553,15 @@
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
                                         <input type="number" id="child3" name="child3" class="child3 form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="child3real" name="child3real" class="child3real form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="child3real" name="child3real" class="child3real form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontochild3" name="supmontochild3" placeholder="$" class="supmontochild3 form-control" />
+                                            <input type="number" id="supmontochild3" name="supmontochild3" placeholder="$" class="supmontochild3 form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajechild3" name="supporcentajechild3" placeholder="%" class="supporcentajechild3 form-control" />
+                                            <input type="number" id="supporcentajechild3" name="supporcentajechild3" placeholder="%" class="supporcentajechild3 form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>
@@ -557,15 +579,15 @@
                                     <div class="col-md-12" style="text-align:center">
                                         <br />
                                         <input type="number" id="infante" name="infante" class="infante form-control" style="width:200px;" onchange="UpdateInput()"/>
-                                        <input type="number" id="infantereal" name="infantereal" class="infantereal form-control" style="width:200px;" onchange="UpdateInput()"/>
+                                        <input type="hidden" id="infantereal" name="infantereal" class="infantereal form-control" style="width:200px;" onchange="UpdateInput()"/>
                                     </div>
                                     <label>Suplementos</label><br />
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <input type="number" id="supmontoinfante" name="supmontoinfante" placeholder="$" class="supmontoinfante form-control" />
+                                            <input type="number" id="supmontoinfante" name="supmontoinfante" placeholder="$" class="supmontoinfante form-control" onchange="UpdateInput()"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="number" id="supporcentajeinfante" name="supporcentajeinfante" placeholder="%" class="supporcentajeinfante form-control" />
+                                            <input type="number" id="supporcentajeinfante" name="supporcentajeinfante" placeholder="%" class="supporcentajeinfante form-control" onchange="UpdateInput()"/>
                                         </div>
                                     </div>
                                 </td>

@@ -233,18 +233,45 @@
           <Property Name="servicioporcentaje2simple" Type="int" />
           <Property Name="servicioporcentaje2quintuple" Type="int" />
           <Property Name="servicioporcentaje2sextuple" Type="int" />
-          <Property Name="preciserviciodoble1" Type="int" />
-          <Property Name="preciserviciotriple1" Type="int" />
-          <Property Name="preciserviciocuadruple1" Type="int" />
-          <Property Name="preciserviciosimple1" Type="int" />
-          <Property Name="preciservicioquintuple1" Type="int" />
-          <Property Name="preciserviciosextuple1" Type="int" />
-          <Property Name="preciserviciodoble2" Type="int" />
-          <Property Name="preciserviciotriple2" Type="int" />
-          <Property Name="preciserviciocuadruple2" Type="int" />
-          <Property Name="preciserviciosimple2" Type="int" />
-          <Property Name="preciservicioquintuple2" Type="int" />
-          <Property Name="preciserviciosextuple2" Type="int" />
+          <Property Name="preciserviciodoble1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciotriple1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciocuadruple1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosimple1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciservicioquintuple1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosextuple1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciodoble2" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciotriple2" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciocuadruple2" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosimple2" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciservicioquintuple2" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosextuple2" Type="decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="tb_detalletarifaaerea">
+          <Key>
+            <PropertyRef Name="id_detalle_tarifa_aerea" />
+          </Key>
+          <Property Name="id_detalle_tarifa_aerea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tarifa_aerea" Type="int" />
+          <Property Name="impuesto" Type="varchar" MaxLength="255" />
+          <Property Name="precio_impuesto" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="tb_detalletarifablackouts">
+          <Key>
+            <PropertyRef Name="id_detalle_tarifa_blackouts" />
+          </Key>
+          <Property Name="id_detalle_tarifa_blackouts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tarifa_aerea" Type="int" />
+          <Property Name="fecha_rango_1" Type="date" />
+          <Property Name="fecha_rango_2" Type="date" />
+        </EntityType>
+        <EntityType Name="tb_detalletarifastopovers">
+          <Key>
+            <PropertyRef Name="id_detalle_tarifa_stopovers" />
+          </Key>
+          <Property Name="id_detalle_tarifa_stopovers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tarifa_aerea" Type="int" />
+          <Property Name="id_pais" Type="int" />
+          <Property Name="id_ciudad" Type="int" />
         </EntityType>
         <EntityType Name="tb_hotel">
           <Key>
@@ -307,6 +334,7 @@
           <Property Name="usuarioregistro" Type="int" />
           <Property Name="fechamodificacion" Type="date" />
           <Property Name="usuariomodificacion" Type="int" />
+          <Property Name="preciodoble" Type="int" />
         </EntityType>
         <EntityType Name="tb_moneda">
           <Key>
@@ -332,6 +360,40 @@
           <Property Name="usuarioregistro" Type="int" />
           <Property Name="fechamodificacion" Type="date" />
           <Property Name="usuariomodificacion" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_tarifa_aerea">
+          <Key>
+            <PropertyRef Name="id_tarifa_aerea" />
+          </Key>
+          <Property Name="id_tarifa_aerea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_zona" Type="int" />
+          <Property Name="id_pais" Type="int" />
+          <Property Name="id_ciudad" Type="int" />
+          <Property Name="clase" Type="varchar" MaxLength="255" />
+          <Property Name="id_laerea" Type="int" />
+          <Property Name="dest_abre" Type="varchar" MaxLength="255" />
+          <Property Name="total_tarifa" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="neto" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="min_estadia" Type="varchar(max)" />
+          <Property Name="max_estadia" Type="varchar(max)" />
+          <Property Name="time_compra_1" Type="date" />
+          <Property Name="time_compra_2" Type="date" />
+          <Property Name="fecha_emisiion" Type="varchar(max)" />
+          <Property Name="porc_chd" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="prec_chd" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="porc_inf" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="prec_inf" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="edad_chd_1" Type="int" />
+          <Property Name="edad_chd_2" Type="int" />
+          <Property Name="edad_inf_1" Type="int" />
+          <Property Name="edad_inf_2" Type="int" />
+          <Property Name="cod_fb" Type="varchar" MaxLength="255" />
+          <Property Name="time_viaje_1" Type="date" />
+          <Property Name="time_viaje_2" Type="date" />
+          <Property Name="queue" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="igv" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="estado" Type="int" />
+          <Property Name="tipo_tarifa" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="tb_tipocategoria">
           <Key>
@@ -1098,6 +1160,114 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_deta001">
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="0..1" />
+          <End Role="tb_detalletarifaaerea" Type="Self.tb_detalletarifaaerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Principal>
+            <Dependent Role="tb_detalletarifaaerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_taso_001">
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="0..1" />
+          <End Role="tb_detalletarifastopovers" Type="Self.tb_detalletarifastopovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Principal>
+            <Dependent Role="tb_detalletarifastopovers">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_taso_002">
+          <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+          <End Role="tb_detalletarifastopovers" Type="Self.tb_detalletarifastopovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="tb_detalletarifastopovers">
+              <PropertyRef Name="id_pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_taso_003">
+          <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+          <End Role="tb_detalletarifastopovers" Type="Self.tb_detalletarifastopovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="tb_detalletarifastopovers">
+              <PropertyRef Name="id_ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detbo_001">
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="0..1" />
+          <End Role="tb_detalletarifablackouts" Type="Self.tb_detalletarifablackouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Principal>
+            <Dependent Role="tb_detalletarifablackouts">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta001">
+          <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_zona">
+              <PropertyRef Name="idZona" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta002">
+          <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta003">
+          <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta004">
+          <End Role="tb_aerolinea" Type="Self.tb_aerolinea" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_aerolinea">
+              <PropertyRef Name="idaerolinea" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_laerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_ticket">
           <End Role="tb_ingresohotel" Type="Self.tb_ingresohotel" Multiplicity="0..1" />
           <End Role="tb_detalleingresohotel" Type="Self.tb_detalleingresohotel" Multiplicity="*" />
@@ -1119,11 +1289,15 @@
           <EntitySet Name="tb_ciudad" EntityType="Self.tb_ciudad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_contactohotel" EntityType="Self.tb_contactohotel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_detalleingresohotel" EntityType="Self.tb_detalleingresohotel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_detalletarifaaerea" EntityType="Self.tb_detalletarifaaerea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_detalletarifablackouts" EntityType="Self.tb_detalletarifablackouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_detalletarifastopovers" EntityType="Self.tb_detalletarifastopovers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_hotel" EntityType="Self.tb_hotel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_impuestos" EntityType="Self.tb_impuestos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ingresohotel" EntityType="Self.tb_ingresohotel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_moneda" EntityType="Self.tb_moneda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_pais" EntityType="Self.tb_pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_tarifa_aerea" EntityType="Self.tb_tarifa_aerea" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_tipocategoria" EntityType="Self.tb_tipocategoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_tipohabitacion" EntityType="Self.tb_tipohabitacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="dbo" store:Type="Tables" />
@@ -1353,6 +1527,42 @@
             <End Role="tb_vigencia" EntitySet="tb_vigencia" />
             <End Role="tb_usuario" EntitySet="tb_usuario" />
           </AssociationSet>
+          <AssociationSet Name="fk_deta001" Association="Self.fk_deta001">
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+            <End Role="tb_detalletarifaaerea" EntitySet="tb_detalletarifaaerea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_taso_001" Association="Self.fk_detalle_taso_001">
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+            <End Role="tb_detalletarifastopovers" EntitySet="tb_detalletarifastopovers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_taso_002" Association="Self.fk_detalle_taso_002">
+            <End Role="tb_pais" EntitySet="tb_pais" />
+            <End Role="tb_detalletarifastopovers" EntitySet="tb_detalletarifastopovers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_taso_003" Association="Self.fk_detalle_taso_003">
+            <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+            <End Role="tb_detalletarifastopovers" EntitySet="tb_detalletarifastopovers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detbo_001" Association="Self.fk_detbo_001">
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+            <End Role="tb_detalletarifablackouts" EntitySet="tb_detalletarifablackouts" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta001" Association="Self.fk_ta001">
+            <End Role="tb_zona" EntitySet="tb_zona" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta002" Association="Self.fk_ta002">
+            <End Role="tb_pais" EntitySet="tb_pais" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta003" Association="Self.fk_ta003">
+            <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta004" Association="Self.fk_ta004">
+            <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+          </AssociationSet>
           <AssociationSet Name="fk_ticket" Association="Self.fk_ticket">
             <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
             <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
@@ -1389,6 +1599,7 @@
           <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_aeroli__Desti__05A3D694" FromRole="tb_aerolinea" ToRole="tb_ciudad" />
           <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_aerolin__Pais__04AFB25B" FromRole="tb_aerolinea" ToRole="tb_pais" />
           <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_aerolin__Zona__03BB8E22" FromRole="tb_aerolinea" ToRole="tb_zona" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_ta004" FromRole="tb_aerolinea" ToRole="tb_tarifa_aerea" />
         </EntityType>
         <EntityType Name="tb_agencia">
           <Key>
@@ -1538,6 +1749,8 @@
           <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_ciudad__idPai__1BFD2C07" FromRole="tb_ciudad" ToRole="tb_pais" />
           <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_ciudad__idZon__1CF15040" FromRole="tb_ciudad" ToRole="tb_zona" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idCiud__4A4E069C" FromRole="tb_ciudad" ToRole="tb_hotel" />
+          <NavigationProperty Name="tb_detalletarifastopovers" Relationship="Self.fk_detalle_taso_003" FromRole="tb_ciudad" ToRole="tb_detalletarifastopovers" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_ta003" FromRole="tb_ciudad" ToRole="tb_tarifa_aerea" />
         </EntityType>
         <EntityType Name="tb_contactohotel">
           <Key>
@@ -1646,22 +1859,54 @@
           <Property Name="servicioporcentaje2simple" Type="Int32" />
           <Property Name="servicioporcentaje2quintuple" Type="Int32" />
           <Property Name="servicioporcentaje2sextuple" Type="Int32" />
-          <Property Name="preciserviciodoble1" Type="Int32" />
-          <Property Name="preciserviciotriple1" Type="Int32" />
-          <Property Name="preciserviciocuadruple1" Type="Int32" />
-          <Property Name="preciserviciosimple1" Type="Int32" />
-          <Property Name="preciservicioquintuple1" Type="Int32" />
-          <Property Name="preciserviciosextuple1" Type="Int32" />
-          <Property Name="preciserviciodoble2" Type="Int32" />
-          <Property Name="preciserviciotriple2" Type="Int32" />
-          <Property Name="preciserviciocuadruple2" Type="Int32" />
-          <Property Name="preciserviciosimple2" Type="Int32" />
-          <Property Name="preciservicioquintuple2" Type="Int32" />
-          <Property Name="preciserviciosextuple2" Type="Int32" />
+          <Property Name="preciserviciodoble1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciotriple1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciocuadruple1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosimple1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciservicioquintuple1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosextuple1" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciodoble2" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciotriple2" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciocuadruple2" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosimple2" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciservicioquintuple2" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="preciserviciosextuple2" Type="Decimal" Precision="9" Scale="2" />
           <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_detall__servi__68D28DBC" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_categoria1" Relationship="Self.FK__tb_detall__servi__69C6B1F5" FromRole="tb_detalleingresohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_tipohabitacion" Relationship="Self.FK__tb_detall__idTip__67DE6983" FromRole="tb_detalleingresohotel" ToRole="tb_tipohabitacion" />
           <NavigationProperty Name="tb_ingresohotel" Relationship="Self.fk_ticket" FromRole="tb_detalleingresohotel" ToRole="tb_ingresohotel" />
+        </EntityType>
+        <EntityType Name="tb_detalletarifaaerea">
+          <Key>
+            <PropertyRef Name="id_detalle_tarifa_aerea" />
+          </Key>
+          <Property Name="id_detalle_tarifa_aerea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tarifa_aerea" Type="Int32" />
+          <Property Name="impuesto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="precio_impuesto" Type="Decimal" Precision="18" Scale="4" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_deta001" FromRole="tb_detalletarifaaerea" ToRole="tb_tarifa_aerea" />
+        </EntityType>
+        <EntityType Name="tb_detalletarifablackouts">
+          <Key>
+            <PropertyRef Name="id_detalle_tarifa_blackouts" />
+          </Key>
+          <Property Name="id_detalle_tarifa_blackouts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tarifa_aerea" Type="Int32" />
+          <Property Name="fecha_rango_1" Type="DateTime" Precision="0" />
+          <Property Name="fecha_rango_2" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_detbo_001" FromRole="tb_detalletarifablackouts" ToRole="tb_tarifa_aerea" />
+        </EntityType>
+        <EntityType Name="tb_detalletarifastopovers">
+          <Key>
+            <PropertyRef Name="id_detalle_tarifa_stopovers" />
+          </Key>
+          <Property Name="id_detalle_tarifa_stopovers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tarifa_aerea" Type="Int32" />
+          <Property Name="id_pais" Type="Int32" />
+          <Property Name="id_ciudad" Type="Int32" />
+          <NavigationProperty Name="tb_ciudad" Relationship="Self.fk_detalle_taso_003" FromRole="tb_detalletarifastopovers" ToRole="tb_ciudad" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_detalle_taso_001" FromRole="tb_detalletarifastopovers" ToRole="tb_tarifa_aerea" />
+          <NavigationProperty Name="tb_pais" Relationship="Self.fk_detalle_taso_002" FromRole="tb_detalletarifastopovers" ToRole="tb_pais" />
         </EntityType>
         <EntityType Name="tb_hotel">
           <Key>
@@ -1735,6 +1980,7 @@
           <Property Name="usuarioregistro" Type="Int32" />
           <Property Name="fechamodificacion" Type="DateTime" Precision="0" />
           <Property Name="usuariomodificacion" Type="Int32" />
+          <Property Name="preciodoble" Type="Int32" />
           <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_ingres__idCad__59904A2C" FromRole="tb_ingresohotel" ToRole="tb_cadenahotelera" />
           <NavigationProperty Name="tb_categoria" Relationship="Self.FK__tb_ingres__tarif__589C25F3" FromRole="tb_ingresohotel" ToRole="tb_categoria" />
           <NavigationProperty Name="tb_detalleingresohotel" Relationship="Self.fk_ticket" FromRole="tb_ingresohotel" ToRole="tb_detalleingresohotel" />
@@ -1768,9 +2014,52 @@
           <NavigationProperty Name="tb_agencia" Relationship="Self.FK__tb_agenci__idPai__68487DD7" FromRole="tb_pais" ToRole="tb_agencia" />
           <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_cadena__idPai__20C1E124" FromRole="tb_pais" ToRole="tb_cadenahotelera" />
           <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_ciudad__idPai__1BFD2C07" FromRole="tb_pais" ToRole="tb_ciudad" />
+          <NavigationProperty Name="tb_detalletarifastopovers" Relationship="Self.fk_detalle_taso_002" FromRole="tb_pais" ToRole="tb_detalletarifastopovers" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idPais__4959E263" FromRole="tb_pais" ToRole="tb_hotel" />
           <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_pais__idZona__1920BF5C" FromRole="tb_pais" ToRole="tb_zona" />
           <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_usuari__idPai__5BE2A6F2" FromRole="tb_pais" ToRole="tb_usuario" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_ta002" FromRole="tb_pais" ToRole="tb_tarifa_aerea" />
+        </EntityType>
+        <EntityType Name="tb_tarifa_aerea">
+          <Key>
+            <PropertyRef Name="id_tarifa_aerea" />
+          </Key>
+          <Property Name="id_tarifa_aerea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_zona" Type="Int32" />
+          <Property Name="id_pais" Type="Int32" />
+          <Property Name="id_ciudad" Type="Int32" />
+          <Property Name="clase" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_laerea" Type="Int32" />
+          <Property Name="dest_abre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="total_tarifa" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="neto" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="min_estadia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="max_estadia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="time_compra_1" Type="DateTime" Precision="0" />
+          <Property Name="time_compra_2" Type="DateTime" Precision="0" />
+          <Property Name="fecha_emisiion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="porc_chd" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="prec_chd" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="porc_inf" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="prec_inf" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="edad_chd_1" Type="Int32" />
+          <Property Name="edad_chd_2" Type="Int32" />
+          <Property Name="edad_inf_1" Type="Int32" />
+          <Property Name="edad_inf_2" Type="Int32" />
+          <Property Name="cod_fb" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="time_viaje_1" Type="DateTime" Precision="0" />
+          <Property Name="time_viaje_2" Type="DateTime" Precision="0" />
+          <Property Name="queue" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="igv" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="estado" Type="Int32" />
+          <Property Name="tipo_tarifa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_aerolinea" Relationship="Self.fk_ta004" FromRole="tb_tarifa_aerea" ToRole="tb_aerolinea" />
+          <NavigationProperty Name="tb_ciudad" Relationship="Self.fk_ta003" FromRole="tb_tarifa_aerea" ToRole="tb_ciudad" />
+          <NavigationProperty Name="tb_detalletarifaaerea" Relationship="Self.fk_deta001" FromRole="tb_tarifa_aerea" ToRole="tb_detalletarifaaerea" />
+          <NavigationProperty Name="tb_detalletarifablackouts" Relationship="Self.fk_detbo_001" FromRole="tb_tarifa_aerea" ToRole="tb_detalletarifablackouts" />
+          <NavigationProperty Name="tb_detalletarifastopovers" Relationship="Self.fk_detalle_taso_001" FromRole="tb_tarifa_aerea" ToRole="tb_detalletarifastopovers" />
+          <NavigationProperty Name="tb_pais" Relationship="Self.fk_ta002" FromRole="tb_tarifa_aerea" ToRole="tb_pais" />
+          <NavigationProperty Name="tb_zona" Relationship="Self.fk_ta001" FromRole="tb_tarifa_aerea" ToRole="tb_zona" />
         </EntityType>
         <EntityType Name="tb_tipocategoria">
           <Key>
@@ -1896,6 +2185,7 @@
           <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_ciudad__idZon__1CF15040" FromRole="tb_zona" ToRole="tb_ciudad" />
           <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idZona__4865BE2A" FromRole="tb_zona" ToRole="tb_hotel" />
           <NavigationProperty Name="tb_pais" Relationship="Self.FK__tb_pais__idZona__1920BF5C" FromRole="tb_zona" ToRole="tb_pais" />
+          <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_ta001" FromRole="tb_zona" ToRole="tb_tarifa_aerea" />
           <NavigationProperty Name="tb_usuario" Relationship="Self.FK__tb_usuari__idZon__60A75C0F" FromRole="tb_zona" ToRole="tb_usuario" />
         </EntityType>
         <Association Name="FK__tb_aeroli__Banco__0697FACD">
@@ -1943,6 +2233,18 @@
             </Principal>
             <Dependent Role="tb_aerolinea">
               <PropertyRef Name="Zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta004">
+          <End Role="tb_aerolinea" Type="Self.tb_aerolinea" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_aerolinea">
+              <PropertyRef Name="idaerolinea" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_laerea" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2414,6 +2716,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_detalle_taso_003">
+          <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+          <End Role="tb_detalletarifastopovers" Type="Self.tb_detalletarifastopovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="tb_detalletarifastopovers">
+              <PropertyRef Name="id_ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta003">
+          <End Role="tb_ciudad" Type="Self.tb_ciudad" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tb_contac__idHot__54CB950F">
           <End Role="tb_hotel" Type="Self.tb_hotel" Multiplicity="0..1" />
           <End Role="tb_contactohotel" Type="Self.tb_contactohotel" Multiplicity="*" />
@@ -2447,6 +2773,54 @@
             </Principal>
             <Dependent Role="tb_detalleingresohotel">
               <PropertyRef Name="idIngresoHotel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_deta001">
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="0..1" />
+          <End Role="tb_detalletarifaaerea" Type="Self.tb_detalletarifaaerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Principal>
+            <Dependent Role="tb_detalletarifaaerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detbo_001">
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="0..1" />
+          <End Role="tb_detalletarifablackouts" Type="Self.tb_detalletarifablackouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Principal>
+            <Dependent Role="tb_detalletarifablackouts">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_taso_001">
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="0..1" />
+          <End Role="tb_detalletarifastopovers" Type="Self.tb_detalletarifastopovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Principal>
+            <Dependent Role="tb_detalletarifastopovers">
+              <PropertyRef Name="id_tarifa_aerea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_taso_002">
+          <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+          <End Role="tb_detalletarifastopovers" Type="Self.tb_detalletarifastopovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="tb_detalletarifastopovers">
+              <PropertyRef Name="id_pais" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2534,6 +2908,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_ta002">
+          <End Role="tb_pais" Type="Self.tb_pais" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ta001">
+          <End Role="tb_zona" Type="Self.tb_zona" Multiplicity="0..1" />
+          <End Role="tb_tarifa_aerea" Type="Self.tb_tarifa_aerea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_zona">
+              <PropertyRef Name="idZona" />
+            </Principal>
+            <Dependent Role="tb_tarifa_aerea">
+              <PropertyRef Name="id_zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tb_usuari__factu__59FA5E80">
           <End Role="tb_vigencia" Type="Self.tb_vigencia" Multiplicity="0..1" />
           <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
@@ -2591,11 +2989,15 @@
           <EntitySet Name="tb_ciudad" EntityType="Self.tb_ciudad" />
           <EntitySet Name="tb_contactohotel" EntityType="Self.tb_contactohotel" />
           <EntitySet Name="tb_detalleingresohotel" EntityType="Self.tb_detalleingresohotel" />
+          <EntitySet Name="tb_detalletarifaaerea" EntityType="Self.tb_detalletarifaaerea" />
+          <EntitySet Name="tb_detalletarifablackouts" EntityType="Self.tb_detalletarifablackouts" />
+          <EntitySet Name="tb_detalletarifastopovers" EntityType="Self.tb_detalletarifastopovers" />
           <EntitySet Name="tb_hotel" EntityType="Self.tb_hotel" />
           <EntitySet Name="tb_impuestos" EntityType="Self.tb_impuestos" />
           <EntitySet Name="tb_ingresohotel" EntityType="Self.tb_ingresohotel" />
           <EntitySet Name="tb_moneda" EntityType="Self.tb_moneda" />
           <EntitySet Name="tb_pais" EntityType="Self.tb_pais" />
+          <EntitySet Name="tb_tarifa_aerea" EntityType="Self.tb_tarifa_aerea" />
           <EntitySet Name="tb_tipocategoria" EntityType="Self.tb_tipocategoria" />
           <EntitySet Name="tb_tipohabitacion" EntityType="Self.tb_tipohabitacion" />
           <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" />
@@ -2616,6 +3018,10 @@
           <AssociationSet Name="FK__tb_aerolin__Zona__03BB8E22" Association="Self.FK__tb_aerolin__Zona__03BB8E22">
             <End Role="tb_zona" EntitySet="tb_zona" />
             <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta004" Association="Self.fk_ta004">
+            <End Role="tb_aerolinea" EntitySet="tb_aerolinea" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
           </AssociationSet>
           <AssociationSet Name="FK__tb_agenci__docum__6754599E" Association="Self.FK__tb_agenci__docum__6754599E">
             <End Role="tb_categoria" EntitySet="tb_categoria" />
@@ -2773,6 +3179,14 @@
             <End Role="tb_ciudad" EntitySet="tb_ciudad" />
             <End Role="tb_hotel" EntitySet="tb_hotel" />
           </AssociationSet>
+          <AssociationSet Name="fk_detalle_taso_003" Association="Self.fk_detalle_taso_003">
+            <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+            <End Role="tb_detalletarifastopovers" EntitySet="tb_detalletarifastopovers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta003" Association="Self.fk_ta003">
+            <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+          </AssociationSet>
           <AssociationSet Name="FK__tb_contac__idHot__54CB950F" Association="Self.FK__tb_contac__idHot__54CB950F">
             <End Role="tb_hotel" EntitySet="tb_hotel" />
             <End Role="tb_contactohotel" EntitySet="tb_contactohotel" />
@@ -2784,6 +3198,22 @@
           <AssociationSet Name="fk_ticket" Association="Self.fk_ticket">
             <End Role="tb_ingresohotel" EntitySet="tb_ingresohotel" />
             <End Role="tb_detalleingresohotel" EntitySet="tb_detalleingresohotel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_deta001" Association="Self.fk_deta001">
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+            <End Role="tb_detalletarifaaerea" EntitySet="tb_detalletarifaaerea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detbo_001" Association="Self.fk_detbo_001">
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+            <End Role="tb_detalletarifablackouts" EntitySet="tb_detalletarifablackouts" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_taso_001" Association="Self.fk_detalle_taso_001">
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+            <End Role="tb_detalletarifastopovers" EntitySet="tb_detalletarifastopovers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_taso_002" Association="Self.fk_detalle_taso_002">
+            <End Role="tb_pais" EntitySet="tb_pais" />
+            <End Role="tb_detalletarifastopovers" EntitySet="tb_detalletarifastopovers" />
           </AssociationSet>
           <AssociationSet Name="FK__tb_hotel__idPais__4959E263" Association="Self.FK__tb_hotel__idPais__4959E263">
             <End Role="tb_pais" EntitySet="tb_pais" />
@@ -2812,6 +3242,14 @@
           <AssociationSet Name="FK__tb_usuari__idPai__5BE2A6F2" Association="Self.FK__tb_usuari__idPai__5BE2A6F2">
             <End Role="tb_pais" EntitySet="tb_pais" />
             <End Role="tb_usuario" EntitySet="tb_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta002" Association="Self.fk_ta002">
+            <End Role="tb_pais" EntitySet="tb_pais" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ta001" Association="Self.fk_ta001">
+            <End Role="tb_zona" EntitySet="tb_zona" />
+            <End Role="tb_tarifa_aerea" EntitySet="tb_tarifa_aerea" />
           </AssociationSet>
           <AssociationSet Name="FK__tb_usuari__factu__59FA5E80" Association="Self.FK__tb_usuari__factu__59FA5E80">
             <End Role="tb_vigencia" EntitySet="tb_vigencia" />
@@ -3085,6 +3523,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tb_detalletarifaaerea">
+            <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalletarifaaerea">
+              <MappingFragment StoreEntitySet="tb_detalletarifaaerea">
+                <ScalarProperty Name="id_detalle_tarifa_aerea" ColumnName="id_detalle_tarifa_aerea" />
+                <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+                <ScalarProperty Name="impuesto" ColumnName="impuesto" />
+                <ScalarProperty Name="precio_impuesto" ColumnName="precio_impuesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_detalletarifablackouts">
+            <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalletarifablackouts">
+              <MappingFragment StoreEntitySet="tb_detalletarifablackouts">
+                <ScalarProperty Name="id_detalle_tarifa_blackouts" ColumnName="id_detalle_tarifa_blackouts" />
+                <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+                <ScalarProperty Name="fecha_rango_1" ColumnName="fecha_rango_1" />
+                <ScalarProperty Name="fecha_rango_2" ColumnName="fecha_rango_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_detalletarifastopovers">
+            <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalletarifastopovers">
+              <MappingFragment StoreEntitySet="tb_detalletarifastopovers">
+                <ScalarProperty Name="id_detalle_tarifa_stopovers" ColumnName="id_detalle_tarifa_stopovers" />
+                <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+                <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+                <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tb_hotel">
             <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_hotel">
               <MappingFragment StoreEntitySet="tb_hotel">
@@ -3147,6 +3615,7 @@
                 <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
                 <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
                 <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+                <ScalarProperty Name="preciodoble" ColumnName="preciodoble" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3174,6 +3643,41 @@
                 <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
                 <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
                 <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_tarifa_aerea">
+            <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_tarifa_aerea">
+              <MappingFragment StoreEntitySet="tb_tarifa_aerea">
+                <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+                <ScalarProperty Name="id_zona" ColumnName="id_zona" />
+                <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+                <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+                <ScalarProperty Name="clase" ColumnName="clase" />
+                <ScalarProperty Name="id_laerea" ColumnName="id_laerea" />
+                <ScalarProperty Name="dest_abre" ColumnName="dest_abre" />
+                <ScalarProperty Name="total_tarifa" ColumnName="total_tarifa" />
+                <ScalarProperty Name="neto" ColumnName="neto" />
+                <ScalarProperty Name="min_estadia" ColumnName="min_estadia" />
+                <ScalarProperty Name="max_estadia" ColumnName="max_estadia" />
+                <ScalarProperty Name="time_compra_1" ColumnName="time_compra_1" />
+                <ScalarProperty Name="time_compra_2" ColumnName="time_compra_2" />
+                <ScalarProperty Name="fecha_emisiion" ColumnName="fecha_emisiion" />
+                <ScalarProperty Name="porc_chd" ColumnName="porc_chd" />
+                <ScalarProperty Name="prec_chd" ColumnName="prec_chd" />
+                <ScalarProperty Name="porc_inf" ColumnName="porc_inf" />
+                <ScalarProperty Name="prec_inf" ColumnName="prec_inf" />
+                <ScalarProperty Name="edad_chd_1" ColumnName="edad_chd_1" />
+                <ScalarProperty Name="edad_chd_2" ColumnName="edad_chd_2" />
+                <ScalarProperty Name="edad_inf_1" ColumnName="edad_inf_1" />
+                <ScalarProperty Name="edad_inf_2" ColumnName="edad_inf_2" />
+                <ScalarProperty Name="cod_fb" ColumnName="cod_fb" />
+                <ScalarProperty Name="time_viaje_1" ColumnName="time_viaje_1" />
+                <ScalarProperty Name="time_viaje_2" ColumnName="time_viaje_2" />
+                <ScalarProperty Name="queue" ColumnName="queue" />
+                <ScalarProperty Name="igv" ColumnName="igv" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="tipo_tarifa" ColumnName="tipo_tarifa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -250,6 +250,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalletarifaaerea">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalletarifaaerea">
+        <MappingFragment StoreEntitySet="tb_detalletarifaaerea">
+          <ScalarProperty Name="id_detalle_tarifa_aerea" ColumnName="id_detalle_tarifa_aerea" />
+          <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+          <ScalarProperty Name="impuesto" ColumnName="impuesto" />
+          <ScalarProperty Name="precio_impuesto" ColumnName="precio_impuesto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalletarifablackouts">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalletarifablackouts">
+        <MappingFragment StoreEntitySet="tb_detalletarifablackouts">
+          <ScalarProperty Name="id_detalle_tarifa_blackouts" ColumnName="id_detalle_tarifa_blackouts" />
+          <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+          <ScalarProperty Name="fecha_rango_1" ColumnName="fecha_rango_1" />
+          <ScalarProperty Name="fecha_rango_2" ColumnName="fecha_rango_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalletarifastopovers">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalletarifastopovers">
+        <MappingFragment StoreEntitySet="tb_detalletarifastopovers">
+          <ScalarProperty Name="id_detalle_tarifa_stopovers" ColumnName="id_detalle_tarifa_stopovers" />
+          <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+          <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_hotel">
       <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_hotel">
         <MappingFragment StoreEntitySet="tb_hotel">
@@ -312,6 +342,7 @@
           <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
           <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
           <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+          <ScalarProperty Name="preciodoble" ColumnName="preciodoble" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -339,6 +370,41 @@
           <ScalarProperty Name="usuarioregistro" ColumnName="usuarioregistro" />
           <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
           <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tarifa_aerea">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_tarifa_aerea">
+        <MappingFragment StoreEntitySet="tb_tarifa_aerea">
+          <ScalarProperty Name="id_tarifa_aerea" ColumnName="id_tarifa_aerea" />
+          <ScalarProperty Name="id_zona" ColumnName="id_zona" />
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+          <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+          <ScalarProperty Name="clase" ColumnName="clase" />
+          <ScalarProperty Name="id_laerea" ColumnName="id_laerea" />
+          <ScalarProperty Name="dest_abre" ColumnName="dest_abre" />
+          <ScalarProperty Name="total_tarifa" ColumnName="total_tarifa" />
+          <ScalarProperty Name="neto" ColumnName="neto" />
+          <ScalarProperty Name="min_estadia" ColumnName="min_estadia" />
+          <ScalarProperty Name="max_estadia" ColumnName="max_estadia" />
+          <ScalarProperty Name="time_compra_1" ColumnName="time_compra_1" />
+          <ScalarProperty Name="time_compra_2" ColumnName="time_compra_2" />
+          <ScalarProperty Name="fecha_emisiion" ColumnName="fecha_emisiion" />
+          <ScalarProperty Name="porc_chd" ColumnName="porc_chd" />
+          <ScalarProperty Name="prec_chd" ColumnName="prec_chd" />
+          <ScalarProperty Name="porc_inf" ColumnName="porc_inf" />
+          <ScalarProperty Name="prec_inf" ColumnName="prec_inf" />
+          <ScalarProperty Name="edad_chd_1" ColumnName="edad_chd_1" />
+          <ScalarProperty Name="edad_chd_2" ColumnName="edad_chd_2" />
+          <ScalarProperty Name="edad_inf_1" ColumnName="edad_inf_1" />
+          <ScalarProperty Name="edad_inf_2" ColumnName="edad_inf_2" />
+          <ScalarProperty Name="cod_fb" ColumnName="cod_fb" />
+          <ScalarProperty Name="time_viaje_1" ColumnName="time_viaje_1" />
+          <ScalarProperty Name="time_viaje_2" ColumnName="time_viaje_2" />
+          <ScalarProperty Name="queue" ColumnName="queue" />
+          <ScalarProperty Name="igv" ColumnName="igv" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="tipo_tarifa" ColumnName="tipo_tarifa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
