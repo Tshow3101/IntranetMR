@@ -4,367 +4,330 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>tb_ingresohotel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.fecviajeini)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecviajeini)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecviajefin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecviajefin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.feccompraini)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.feccompraini)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.feccomprafin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.feccomprafin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codprom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codprom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.montoadulto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.montoadulto)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.montoniño)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.montoniño)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.porcentaje)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.porcentaje)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.doble)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.doble)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.doblereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.doblereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.triple)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.triple)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.triplereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.triplereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cuadruple)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cuadruple)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cuadruplereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cuadruplereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.simple)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.simple)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.simplereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.simplereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.quintuple)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.quintuple)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.quituplereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.quituplereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.sextuple)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.sextuple)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.sextuplereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.sextuplereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.child1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.child1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.child1real)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.child1real)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.child2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.child2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.child2real)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.child2real)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.child3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.child3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.child3real)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.child3real)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.infante)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.infante)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.infantereal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.infantereal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.edadinfante1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.edadinfante1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.edadinfante2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.edadinfante2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecharegistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecharegistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuarioregistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuarioregistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechamodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechamodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuariomodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuariomodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria1.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria1.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria2.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria2.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria3.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria3.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria4.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria4.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria5.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria5.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria6.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria6.nombreCategoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_hotel.nombrehotel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_hotel.nombrehotel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
-        </dd>
-
-    </dl>
+<br />
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Detalle Ingreso Hotel</h4>
+        </div>
+        <div class="panel-body">
+            <!--Primera Fila-->
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Temporada Viaje</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @String.Format("{0:dd/MM/yyyy}", Model.fecviajeini)
+                        </div>
+                        <div class="col-md-2">
+                            <span class="input-group-addon" style="height:35px;">Al</span>
+                        </div>
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @String.Format("{0:dd/MM/yyyy}", Model.fecviajefin)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Temporada Compra</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @String.Format("{0:dd/MM/yyyy}", Model.feccompraini)
+                        </div>
+                        <div class="col-md-2">
+                            <span class="input-group-addon" style="height:35px;">Al</span>
+                        </div>
+                        <div class="col-md-5" style="padding-right:0px;">
+                            @String.Format("{0:dd/MM/yyyy}", Model.feccomprafin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Segunda Fila-->
+            <div class="col-md-12">
+                <!--Tarifa-->
+                <div class="col-md-2">
+                    <div class="col-md-3">
+                        <label style="text-align:center;">Tarifa</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
+                    </div>
+                </div>
+
+                <!--Cod. Promocion-->
+                <div class="col-md-2">
+                    <div class="col-md-3">
+                        <label style="text-align:center;">Cod. Promo</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.codprom)
+                    </div>
+                </div>
+
+                <!--Monto Adulto-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="text-align:center;">Monto Adulto</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.montoadulto)
+                    </div>
+                </div>
+
+                <!--Monto Niño-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="text-align:center;">Monto Niño</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.montoniño)
+                    </div>
+                </div>
+
+                <!--Monto Infante-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="text-align:center;">Monto Infante</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.montoinfante)
+                    </div>
+                </div>
+
+                <!--Porcentaje-->
+                <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label style="text-align:center;">%</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.porcentaje)
+                    </div>
+                </div>
+            </div>
+
+            <!--Tercera Fia-->
+            <div class="col-md-12">
+                <!--Cadena Hotelera-->
+                <div class="col-md-4">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Cadena</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
+                    </div>
+                </div>
+
+                <!--Hotel-->
+                <div class="col-md-4">
+                    <div class="col-md-2">
+                        <label style="text-align:center;">Hotel</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(model => model.tb_hotel.nombrehotel)
+                    </div>
+                </div>
+            </div>
+
+            <!--Cuarta Fila-->
+            @foreach (var detalle in Model.tb_detalleingresohotel)
+            {
+                /*Precios Netos*/
+                <div class="col-md-12">
+                    <h4>
+                        Precios Netos
+                    </h4>
+                    <table id="example" class="table table-bordered table-striped" border="1">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Habitacion
+                                    A: @detalle.capmaximaadu
+                                    -
+                                    N: @detalle.capmaximanin
+                                </td>
+                                <td>Doble</td>
+                                <td>Triple</td>
+                                <td>Cuadruple</td>
+                                <td>Simple</td>
+                                <td>Quintuple</td>
+                                <td>Sextuple</td>
+                                <td>
+                                    Child 1:
+                                    @detalle.edad1child1
+                                    -
+                                    @detalle.edad2child1
+                                </td>
+                                <td>
+                                    Child 2:
+                                    @detalle.edad1child2
+                                    -
+                                    @detalle.edad2child2
+                                </td>
+                                <td>
+                                    Child 3:
+                                    @detalle.edad1child3
+                                    -
+                                    @detalle.edad2child3
+                                </td>
+                                <td>
+                                    Infante:
+                                    @detalle.edadinfante1
+                                    -
+                                    @detalle.edadinfante2
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @detalle.tb_tipohabitacion.NombreTipoHabitacion
+                                </td>
+                                <td>
+                                    @detalle.doble
+                                </td>
+                                <td>
+                                    @detalle.triple
+                                </td>
+                                <td>
+                                    @detalle.cuadruple
+                                </td>
+                                <td>
+                                    @detalle.simple
+                                </td>
+                                <td>
+                                    @detalle.quintuple
+                                </td>
+                                <td>
+                                    @detalle.sextuple
+                                </td>
+                                <td>
+                                    @detalle.child1
+                                </td>
+                                <td>
+                                    @detalle.child2
+                                </td>
+                                <td>
+                                    @detalle.child3
+                                </td>
+                                <td>
+                                    @detalle.infante
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                /*Precios Ventas*/
+                <div class="col-md-12">
+                    <h4>
+                        Precios Venta
+                    </h4>
+                    <table id="example" class="table table-bordered table-striped" border="1">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Habitacion
+                                    A: @detalle.capmaximaadu
+                                    -
+                                    N: @detalle.capmaximanin
+                                </td>
+                                <td>Doble</td>
+                                <td>Triple</td>
+                                <td>Cuadruple</td>
+                                <td>Simple</td>
+                                <td>Quintuple</td>
+                                <td>Sextuple</td>
+                                <td>
+                                    Child 1:
+                                    @detalle.edad1child1
+                                    -
+                                    @detalle.edad2child1
+                                </td>
+                                <td>
+                                    Child 2:
+                                    @detalle.edad1child2
+                                    -
+                                    @detalle.edad2child2
+                                </td>
+                                <td>
+                                    Child 3:
+                                    @detalle.edad1child3
+                                    -
+                                    @detalle.edad2child3
+                                </td>
+                                <td>
+                                    Infante:
+                                    @detalle.edadinfante1
+                                    -
+                                    @detalle.edadinfante2
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @detalle.tb_tipohabitacion.NombreTipoHabitacion
+                                </td>
+                                <td>
+                                    @detalle.doblereal
+                                </td>
+                                <td>
+                                    @detalle.triplereal
+                                </td>
+                                <td>
+                                    @detalle.cuadruplereal
+                                </td>
+                                <td>
+                                    @detalle.simplereal
+                                </td>
+                                <td>
+                                    @detalle.quituplereal
+                                </td>
+                                <td>
+                                    @detalle.sextuplereal
+                                </td>
+                                <td>
+                                    @detalle.child1real
+                                </td>
+                                <td>
+                                    @detalle.child2real
+                                </td>
+                                <td>
+                                    @detalle.child3real
+                                </td>
+                                <td>
+                                    @detalle.infantereal
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            }
+
+            <!--Botones-->
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        @Html.ActionLink("Editar Ingreso Hotel", "Edit", new { id = Model.idIngresoHotel }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Regresar Lista Ingreso Hotel", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idIngresoHotel }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
