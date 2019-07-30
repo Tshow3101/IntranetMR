@@ -453,3 +453,4 @@ D:\MR\IntranetMR\bin\es\System.Web.WebPages.Razor.resources.dll
 D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompileInputs.cache
 D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
 D:\MR\IntranetMR\bin\Rotativa.dll
+D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache

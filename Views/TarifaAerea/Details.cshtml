@@ -4,239 +4,243 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
 
-<div>
-    <h4>tb_tarifa_aerea</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.clase)
-        </dt>
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+<style type="text/css">
+    .inputmedio {
+        width: 250px;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.clase)
-        </dd>
+    .inputmediot {
+        width: 250px;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.dest_abre)
-        </dt>
+    .inputmedion {
+        width: 100px;
+        text-align: center;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.dest_abre)
-        </dd>
+    .inputmediom {
+        width: 50px;
+        text-align: center;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.total_tarifa)
-        </dt>
+    .titulo-tabla {
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        border: solid 1px white;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.total_tarifa)
-        </dd>
+    .cabecera-tabla {
+        background-color: #6A6A6A;
+        font-weight: bold;
+        font-size: 23px !important;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+        text-transform: uppercase !important;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.neto)
-        </dt>
+    .tabla-diseño {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        background: white;
+        border-radius: 10px 10px 10px 10px;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.neto)
-        </dd>
+    .tbody1 {
+        background-color: #CFCFCF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.min_estadia)
-        </dt>
+    .tbody2 {
+        background-color: #FFFFFF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.min_estadia)
-        </dd>
+    .datos {
+        font-family: Arial;
+        font-size: 18px;
+        color: black;
+        border: solid 1px white;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.max_estadia)
-        </dt>
+    .datos2 {
+        font-family: Arial;
+        font-size: 18px;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.max_estadia)
-        </dd>
+    th {
+        text-align: center;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.time_compra_1)
-        </dt>
+    .totales {
+        background-color: yellow !important;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.time_compra_1)
-        </dd>
+    .mayusculas {
+        text-transform: uppercase;
+    }
+</style>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.time_compra_2)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.time_compra_2)
-        </dd>
+<br />
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Detalle Tarifa Aerea</h4>
+        </div>
+        <div class="panel-body">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_emisiion)
-        </dt>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha_emisiion)
-        </dd>
+                <article id="post-63" class="item post-63 post type-post status-publish format-standard hentry category-data-technical-tips category-technical-tips tag-data tag-database-optimization tag-loading-speed tag-query-performance tag-summary-table" content="text/html;charset=UTF-8" style="background-color:#EEEEEE">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.porc_chd)
-        </dt>
+                    <fieldset id="prueba">
+                        <br />
+                        <div class="row" style="text-align:center">
+                            <table class="tabla-diseño" style="text-transform:uppercase">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">TARIFAS AEREAS</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-3" style="text-align:left">DESTINO</td>
+                                    <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)</td>
+                                    <td class="titulo-tabla datos col-md-3" style="text-align:left">LINEA AERA</td>
+                                    <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.tb_aerolinea.NombreComercial)</td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-3" style="text-align:left">TARIFA</td>
+                                    <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.tipo_tarifa)</td>
+                                    <td class="titulo-tabla datos col-md-3" style="text-align:left">CLASE</td>
+                                    <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.clase)</td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-3" style="border-radius:0px 0px 0px 10px;text-align:left">FECHA COMPRA</td>
+                                    <td class="col-md-3 datos">&nbsp;@String.Format("{0:dd-MM-yyyy}", Model.time_compra_1) /  @String.Format("{0:dd-MM-yyyy}", Model.time_compra_2)</td>
+                                    <td class="titulo-tabla datos col-md-3" style="text-align:left">FECHA VIAJE</td>
+                                    <td class="col-md-3 datos" style="border-radius: 0px 0px 10px 0px !important;">&nbsp;@String.Format("{0:dd-MM-yyyy}", Model.time_viaje_1) /  @String.Format("{0:dd-MM-yyyy}", Model.time_viaje_2)</td>
+                                </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.porc_chd)
-        </dd>
+                            </table>
+                            <br />
+                            <div class="col-md-12" style="text-transform:uppercase !important">
+                                <table class="col-md-4" style="border-radius:0px 0px 10px 10px">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">Tarifa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titulo-tabla datos">Neto</td>
+                                            <td class="datos">@String.Format("{0:0.00}", Model.neto)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos">Queue</td>
+                                            <td class="datos">@String.Format("{0:0.00}", Model.queue)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos">IGV</td>
+                                            <td class="datos">@String.Format("{0:0.00}", Model.igv)</td>
+                                        </tr>
+                                        @foreach (var item in Model.tb_detalletarifaaerea)
+                                        {
+                                            <tr>
+                                                <td class="titulo-tabla datos">@item.impuesto</td>
+                                                <td class="datos">@String.Format("{0:0.00}", item.precio_impuesto)</td>
+                                            </tr>
+                                        }
+                                        <tr style="background-color:yellow">
+                                            <td class="titulo-tabla datos" style="border-radius:0px 0px 0px 10px">TOTAL</td>
+                                            <td class="titulo-tabla datos" style="border-radius:0px 0px 10px 0px">@String.Format("{0:0.00}", Model.total_tarifa)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.prec_chd)
-        </dt>
+                                <table class="col-md-4">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">BLACKOUTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titulo-tabla">Desde</td>
+                                            <td class="titulo-tabla">Hasta</td>
+                                        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.prec_chd)
-        </dd>
+                                        @foreach (var item in Model.tb_detalletarifablackouts)
+                                        {
+                                            <tr>
+                                                <td class="datos">@String.Format("{0:dd-MM-yyyy}", item.fecha_rango_1)</td>
+                                                <td class="datos">@String.Format("{0:dd-MM-yyyy}", item.fecha_rango_2)</td>
+                                            </tr>
+                                        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.porc_inf)
-        </dt>
+                                    </tbody>
+                                </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.porc_inf)
-        </dd>
+                                <table class="col-md-4">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">STOP OVERS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titulo-tabla">Pais</td>
+                                            <td class="titulo-tabla">Ciudad</td>
+                                        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.prec_inf)
-        </dt>
+                                        @foreach (var item in Model.tb_detalletarifastopovers)
+                                        {
+                                            <tr>
+                                                <td class="datos">@item.tb_pais.NombrePais</td>
+                                                <td class="datos">@item.tb_ciudad.nombreCiudad</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="col-md-12" style="text-align:center">
+                                <div class="col-md-6" style="text-align:center">
+                                    <label><a class="btn btn-inverse m-r-5 m-b-5" href="~/Costeo/Index" style="width:150px">REGRESAR</a></label>
+                                </div>
+                                <div class="col-md-6" style="text-align:center">
+                                    <a class="btn btn-inverse m-r-5 m-b-5" href="@Url.Action("GeneratePDF", "TarifaAerea", new { id = Model.id_tarifa_aerea })">DESCARGAR</a>
 
-        <dd>
-            @Html.DisplayFor(model => model.prec_inf)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.edad_chd_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.edad_chd_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.edad_chd_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.edad_chd_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.edad_inf_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.edad_inf_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.edad_inf_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.edad_inf_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cod_fb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cod_fb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.time_viaje_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.time_viaje_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.time_viaje_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.time_viaje_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.queue)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.queue)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.igv)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.igv)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tipo_tarifa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tipo_tarifa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_aerolinea.NombreComercial)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_aerolinea.NombreComercial)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_pais.NombrePais)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_zona.nombreZona)
-        </dd>
-
-    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </article>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_tarifa_aerea }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -6569,6 +6569,8 @@
     <Content Include="Views\TarifaAerea\Details.cshtml" />
     <Content Include="Views\TarifaAerea\Edit.cshtml" />
     <Content Include="Views\TarifaAerea\Index.cshtml" />
+    <Content Include="Views\TarifaAerea\DetailsR.cshtml" />
+    <Content Include="Views\Shared\_LayoutReporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

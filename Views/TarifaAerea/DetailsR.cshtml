@@ -1,0 +1,306 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_tarifa_aerea
+
+@{
+    ViewBag.Title = "DetailsR";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
+
+}
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+
+<style type="text/css">
+    body {
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+        zoom: 95%;
+    }
+
+    td.td-tc table tbody tr td {
+        letter-spacing: 2px !important;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 14px !important
+    }
+
+
+    td.td-tc table tbody tr th, td.td-tc table thead tr th {
+        letter-spacing: 1px !important;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 18px !important
+    }
+
+    p {
+        margin: 0 0 0 0 !important;
+    }
+
+    table {
+        margin-bottom: 10px;
+    }
+
+    .inputmedio {
+        width: 250px;
+    }
+
+    .inputmediot {
+        width: 250px;
+    }
+
+    .inputmedion {
+        width: 100px;
+        text-align: center;
+    }
+
+    .inputmediom {
+        width: 50px;
+        text-align: center;
+    }
+
+    .titulo-tabla {
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        border: solid 1px white;
+    }
+
+    .cabecera-tabla {
+        background-color: #6A6A6A;
+        font-weight: bold;
+        font-size: 23px !important;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+    }
+
+    .tabla-diseño {
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+        background: white;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    fieldset {
+        border-color: rgb(238, 238, 238) !important;
+    }
+
+    .tbody1 {
+        background-color: #CFCFCF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .tbody2 {
+        background-color: #FFFFFF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .datos {
+        font-family: Arial;
+        font-size: 18px;
+        color: black;
+        border: solid 1px white;
+        letter-spacing: 2px !important;
+    }
+
+    .datos2 {
+        font-family: Arial;
+        font-size: 18px;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .totales {
+        background-color: yellow !important;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .mayusculas {
+        text-transform: uppercase;
+    }
+</style>
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+<style type='text/css'>
+    #tabla-contenido tr.tr-tc {
+        background: #eeeeee;
+    }
+
+        #tabla-contenido tr.tr-tc td.td-tc {
+            border-color: #eeeeee;
+            padding: 0 !important;
+        }
+</style>
+<div id="content" class="content" style="margin-left:0!important; margin-right:0px !important;padding-top: 0 !important;position: relative;">
+    <!-- begin breadcrumb -->
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <!-- end page-header -->
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12" style="height: 100% !important;background:#eeeeee">
+            <!-- begin panel -->
+            <div class="panel panel-inverse" data-sortable-id="form-stuff-1" style="margin: 0 !important;">
+
+
+                <div class="panel-body" style="background:#eeeeee; padding: 0 !important">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+
+                        <article id="post-63" class="item post-63 post type-post status-publish format-standard hentry category-data-technical-tips category-technical-tips tag-data tag-database-optimization tag-loading-speed tag-query-performance tag-summary-table" content="text/html;charset=UTF-8" style="background-color:#EEEEEE">
+
+                            <fieldset>
+                                <div style="text-align:center; page-break-after: auto">
+                                    <br />
+                                    <table id="tabla-contenido" class="table table-responsive" style="page-break-after:auto; margin-bottom: 10px !important">
+                                        <tr class="tr-tc">
+                                            <td class="td-tc" colspan="3">
+                                                <table class="tabla-diseño" style="text-transform:uppercase">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="4" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">TARIFA AEREA</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tr>
+                                                        <td class="titulo-tabla datos col-md-3" style="text-align:left">DESTINO</td>
+                                                        <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)</td>
+                                                        <td class="titulo-tabla datos col-md-3" style="text-align:left">LINEA AERA</td>
+                                                        <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.tb_aerolinea.NombreComercial)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="titulo-tabla datos col-md-3" style="text-align:left">TARIFA</td>
+                                                        <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.tipo_tarifa)</td>
+                                                        <td class="titulo-tabla datos col-md-3" style="text-align:left">CLASE</td>
+                                                        <td class="col-md-3 datos">&nbsp;@Html.DisplayFor(model => model.clase)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="titulo-tabla datos col-md-3" style="border-radius:0px 0px 0px 10px;text-align:left">FECHA COMPRA</td>
+                                                        <td class="col-md-3 datos">&nbsp;@String.Format("{0:dd-MM-yyyy}", Model.time_compra_1) /  @String.Format("{0:dd-MM-yyyy}", Model.time_compra_2)</td>
+                                                        <td class="titulo-tabla datos col-md-3" style="text-align:left">FECHA VIAJE</td>
+                                                        <td class="col-md-3 datos" style="border-radius: 0px 0px 10px 0px !important;">&nbsp;@String.Format("{0:dd-MM-yyyy}", Model.time_viaje_1) /  @String.Format("{0:dd-MM-yyyy}", Model.time_viaje_2)</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="tr-tc">
+                                            <td class="td-tc" style="vertical-align:top">
+                                                <table class="tabla-diseño" style="float: left">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">Tarifa</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="titulo-tabla datos">Neto</td>
+                                                            <td class="datos">@String.Format("{0:0.00}", Model.neto)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="titulo-tabla datos">Queue</td>
+                                                            <td class="datos">@String.Format("{0:0.00}", Model.queue)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="titulo-tabla datos">IGV</td>
+                                                            <td class="datos">@String.Format("{0:0.00}", Model.igv)</td>
+                                                        </tr>
+                                                        @foreach (var item in Model.tb_detalletarifaaerea)
+                                                        {
+                                                            <tr>
+                                                                <td class="titulo-tabla datos">@item.impuesto</td>
+                                                                <td class="datos">@String.Format("{0:0.00}", item.precio_impuesto)</td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="background-color:yellow">
+                                                            <td class="titulo-tabla datos" style="border-radius:0px 0px 0px 10px">TOTAL</td>
+                                                            <td class="titulo-tabla datos" style="border-radius:0px 0px 10px 0px">@String.Format("{0:0.00}", Model.total_tarifa)</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="td-tc" style="vertical-align:top">
+                                                <table class="tabla-diseño" style="float: left">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">BLACKOUTS</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="titulo-tabla">Desde</td>
+                                                            <td class="titulo-tabla">Hasta</td>
+                                                        </tr>
+
+                                                        @foreach (var item in Model.tb_detalletarifablackouts)
+                                                        {
+                                                            <tr>
+                                                                <td class="datos">@String.Format("{0:dd-MM-yyyy}", item.fecha_rango_1)</td>
+                                                                <td class="datos">@String.Format("{0:dd-MM-yyyy}", item.fecha_rango_2)</td>
+                                                            </tr>
+                                                        }
+
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td class="td-tc" style="vertical-align:top">
+                                                <table class="tabla-diseño" style="float: left">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">STOP OVERS</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="titulo-tabla">Pais</td>
+                                                            <td class="titulo-tabla">Ciudad</td>
+                                                        </tr>
+
+                                                        @foreach (var item in Model.tb_detalletarifastopovers)
+                                                        {
+                                                            <tr>
+                                                                <td class="datos">@item.tb_pais.NombrePais</td>
+                                                                <td class="datos">@item.tb_ciudad.nombreCiudad</td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+
+                                    </table>
+                                </div>
+                            </fieldset>
+                        </article>
+
+                    }
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
