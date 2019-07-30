@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -145,6 +148,7 @@
     <Compile Include="Controllers\IngresosHotelController.cs" />
     <Compile Include="Controllers\MonedaController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\TarifaAereaController.cs" />
     <Compile Include="Controllers\TipoCategoriaController.cs" />
     <Compile Include="Controllers\TipoHabitacionController.cs" />
     <Compile Include="Controllers\VigenciaController.cs" />
@@ -5655,6 +5659,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\less\bootstrap\alerts.less" />
@@ -6455,6 +6463,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -6555,6 +6564,11 @@
     <Content Include="Views\IngresosHotel\Details.cshtml" />
     <Content Include="Views\IngresosHotel\Edit.cshtml" />
     <Content Include="Views\IngresosHotel\Index.cshtml" />
+    <Content Include="Views\TarifaAerea\Create.cshtml" />
+    <Content Include="Views\TarifaAerea\Delete.cshtml" />
+    <Content Include="Views\TarifaAerea\Details.cshtml" />
+    <Content Include="Views\TarifaAerea\Edit.cshtml" />
+    <Content Include="Views\TarifaAerea\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6594,7 +6608,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58930</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58930/</IISUrl>
+          <IISUrl>http://localhost:58931/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

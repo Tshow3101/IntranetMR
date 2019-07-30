@@ -1,0 +1,248 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_tarifa_aerea
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tb_tarifa_aerea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.clase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dest_abre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dest_abre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_tarifa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_tarifa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.neto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.neto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.min_estadia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.min_estadia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.max_estadia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.max_estadia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_compra_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_compra_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_compra_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_compra_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_emisiion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_emisiion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.porc_chd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.porc_chd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prec_chd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prec_chd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.porc_inf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.porc_inf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prec_inf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prec_inf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad_chd_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad_chd_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad_chd_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad_chd_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad_inf_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad_inf_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad_inf_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad_inf_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_fb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_fb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_viaje_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_viaje_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_viaje_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_viaje_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.queue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.queue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.igv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.igv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_tarifa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_tarifa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_aerolinea.NombreComercial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_aerolinea.NombreComercial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_pais.NombrePais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_zona.nombreZona)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

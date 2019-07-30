@@ -1,0 +1,560 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_tarifa_aerea
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<br />
+
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Crear Tarifa Aerea</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="master">
+
+                    <fieldset>
+                        <label>INFORMACION GENERAL:</label>
+                        <!--FORMULARIO-->
+                        <div class="well">
+                            <div class="row">
+
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad"><label>DESTINO</label></div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        @Html.DropDownList("id_destino", null, htmlAttributes: new { @class = "form-control", @style = "text-transform:uppercase" })
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-lg-1"></div>
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad"><label>TARIFA:</label></div>
+                                <div class="col-md-4 col-lg-4 titleform textoCentrado labelpad">
+                                    @Html.EditorFor(model => model.tipo_tarifa, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase" } })
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad"><label>LINEA AEREA:</label></div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        @Html.DropDownList("id_laerea", null, htmlAttributes: new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-lg-1"></div>
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad"><label>CLASE:</label></div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.clase, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase" } })
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad"><label>FECHA DE COMPRA:</label></div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control time_compra_1" type="date" style="text-transform: uppercase;font-size: 14px;padding: 0px;" id="time_compra_1">
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-lg-1"></div>
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <label>A</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control time_compra_2" type="date" style="text-transform: uppercase;font-size: 14px;padding: 0px;" id="time_compra_2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad"><label>FECHA DE VIAJE:</label></div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control time_viaje_1" type="date" style="text-transform: uppercase;font-size: 14px;padding: 0px;" id="time_viaje_1">
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-lg-1"></div>
+                                <div class="col-md-1 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <label>A</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control time_viaje_2" type="date" style="text-transform: uppercase;font-size: 14px;padding: 0px;" id="time_viaje_2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="col-lg-4 col-md-4">
+                        <legend>
+                            <div class="col-md-12">
+                                <div class="col-md-6 col-lg-6">
+                                    <label>TARIFAS:</label>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+
+                                    <button type="button" class="btn btn-success" style="float:right" id="addtar"><i class="fa fa-plus-circle"></i></button>
+                                </div>
+                            </div>
+                        </legend>
+                        <!--FORMULARIO-->
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 titleform textoCentrado labelpad"><label>NETO:</label></div>
+                                <div class="col-md-9 col-lg-9 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control" id="neto" onchange="actigv();" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 titleform textoCentrado labelpad"><label>QUEUE:</label></div>
+                                <div class="col-md-9 col-lg-9 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control" id="queue" onchange="actigv();" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 titleform textoCentrado labelpad"><label>IGV:</label></div>
+                                <div class="col-md-9 col-lg-9 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control" id="igv" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <table class="md1" id="md1">
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-3 col-lg-3">
+                                            <input class="form-control nomimp" style="text-transform:uppercase" id="nomimp" />
+                                        </td>
+                                        <td class="col-md-9 col-lg-9">
+                                            <input class="preimp form-control preimp" id="preimp" onchange="sumapr()" />
+                                        </td>
+                                        <td class="col-md-2 col-lg-2">
+                                            <button type="button" class="btn btn-danger" style="float:right" id="remtar"><i class="fa fa-minus-circle"></i></button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <div class="row">
+                                <br />
+                                <div class="col-md-3 col-lg-3 titleform textoCentrado labelpad"><label>TOTAL:</label></div>
+                                <div class="col-md-9 col-lg-9 titleform textoCentrado labelpad">
+                                    <div class="form-group">
+                                        <input class="form-control" id="pretotal" />
+                                    </div>
+                                </div>
+                            </div>
+                    </fieldset>
+
+                    <fieldset class="col-lg-4 col-md-4">
+                        <legend>
+                            <div class="col-md-12">
+                                <div class="col-md-6 col-lg-6">
+                                    <label>BLACKOUTS:</label>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <button type="button" class="btn btn-primary" style="float:right" id="addbo"><i class="fa fa-plus-circle"></i></button>
+                                </div>
+                            </div>
+                        </legend>
+                        <!--FORMULARIO-->
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-5 col-lg-5 titleform textoCentrado labelpad" style="text-align-last:center">
+                                    <div class="form-group">
+                                        <label>DESDE</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5 titleform textoCentrado labelpad" style="text-align-last:center">
+                                    <div class="form-group">
+                                        <label>HASTA</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad" style="text-align-last:center">
+                                    <div class="form-group">
+                                        <label>+/-</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table class="md2" id="md2">
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-4 col-lg-4">
+                                            <input class="form-control fecbo1" type="date" style="text-transform: uppercase;width: 130px;font-size: 14px;padding: 0px;" id="fecbo1" />
+                                        </td>
+                                        <td class="col-md-4 col-lg-4">
+                                            <input class="form-control fecbo2" type="date" style="text-transform: uppercase;width: 130px;font-size: 14px;padding: 0px;" id="fecbo2" />
+                                        </td>
+                                        <td class="col-md-2 col-lg-2">
+                                            <button type="button" class="btn btn-danger" style="float:right" id="rembo" disabled><i class="fa fa-minus-circle"></i></button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="col-lg-4 col-md-4">
+                        <legend>
+                            <div class="col-md-12">
+                                <div class="col-md-6 col-lg-6">
+                                    <label>STOP OVERS:</label>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <button type="button" class="btn btn-warning" style="float:right" id="addso"><i class="fa fa-plus-circle"></i></button>
+                                </div>
+                            </div>
+                        </legend>
+                        <!--FORMULARIO-->
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-5 col-lg-5 titleform textoCentrado labelpad" style="text-align-last:center">
+                                    <div class="form-group">
+                                        <label>PAIS</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5 titleform textoCentrado labelpad" style="text-align-last:center">
+                                    <div class="form-group">
+                                        <label>CIUDAD</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 titleform textoCentrado labelpad" style="text-align-last:center">
+                                    <div class="form-group">
+                                        <label>+/-</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table class="md3" id="md3">
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-5 col-lg-5">
+                                            @Html.DropDownList("id_pais", null, htmlAttributes: new { @class = "form-control idpaisso", @id = "idpaisso" })
+                                        </td>
+                                        <td class="col-md-5 col-lg-5">
+                                            @Html.DropDownList("id_destino", null, htmlAttributes: new { @class = "form-control iddestinoso", @id = "iddestinoso" })
+                                        </td>
+                                        <td class="col-md-2 col-lg-2">
+                                            <button type="button" class="btn btn-danger" style="float:right" id="remso" disabled><i class="fa fa-minus-circle"></i></button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <br />
+
+
+                </div>
+
+                <div class="col-md-12 col-lg-12" style="text-align:center">
+                    <input value="Guardar" id="submit" type="button" class="btn btn-success" />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $(document).ready(function () {
+        $('#neto').val(0.00);
+        $('#queue').val(0.00);
+        $('#preimp').val(0.00);
+
+        $("#addtar").click(function () {
+            console.log('alertita')
+            var nuevafila = $('#md1 tbody tr:last').clone();
+            nuevafila.find('#nomimp').val("");
+            nuevafila.find('#preimp').val("0");
+            nuevafila.find('button').removeAttr('disabled');
+            $('#remtar').removeAttr('disabled');
+            $('#md1 tbody').append(nuevafila);
+            sumapr();
+        })
+
+
+        $('#md1').on('click', '#remtar', function () {
+            if ($('#md1 tbody tr').length == 2) {
+                $('#md1 tbody tr').eq(0).find("#remtar").attr("disabled", "disabled")
+                $('#md1 tbody tr').eq(1).find("#remtar").attr("disabled", "disabled")
+                $(this).parents('tr').remove();
+                sumapr();
+            }
+            else {
+                $(this).parents('tr').remove();
+                sumapr();
+            }
+        });
+
+        $("#addbo").click(function () {
+            console.log('alertita2')
+            var nuevafila = $('#md2 tbody tr:last').clone();
+            nuevafila.find('input').val("");
+            nuevafila.find('button').removeAttr('disabled');
+            $('#rembo').removeAttr('disabled');
+            $('#md2 tbody').append(nuevafila);
+        })
+
+
+        $('#md2').on('click', '#rembo', function () {
+            if ($('#md2 tbody tr').length == 2) {
+                $('#md2 tbody tr').eq(0).find("#rembo").attr("disabled", "disabled")
+                $('#md2 tbody tr').eq(1).find("#rembo").attr("disabled", "disabled")
+                $(this).parents('tr').remove();
+            }
+            else {
+                $(this).parents('tr').remove();
+            }
+        });
+
+
+        $("#addso").click(function () {
+            console.log('alertita3')
+            var nuevafila = $('#md3 tbody tr:last').clone();
+            nuevafila.find('select').val("");
+            nuevafila.find('button').removeAttr('disabled');
+            $('#remso').removeAttr('disabled');
+            $('#md3 tbody').append(nuevafila);
+        })
+
+
+        $('#md3').on('click', '#remso', function () {
+            if ($('#md3 tbody tr').length == 2) {
+                $('#md3 tbody tr').eq(0).find("#remso").attr("disabled", "disabled")
+                $('#md3 tbody tr').eq(1).find("#remso").attr("disabled", "disabled")
+                $(this).parents('tr').remove();
+            }
+            else {
+                $(this).parents('tr').remove();
+            }
+        });
+
+    });
+
+    function actigv() {
+        var neto = parseFloat($('#neto').val());
+        var q = parseFloat($('#queue').val());
+        var igv = (neto + q) * 0.18;
+        $('#igv').val(parseFloat(igv).toFixed(2))
+        sumapr();
+    }
+
+    function sumapr() {
+        var neto = parseFloat($('#neto').val());
+        var q = parseFloat($('#queue').val());
+        var igv = parseFloat($('#igv').val());
+        var total = 0
+        $(".preimp").each(function () {
+            total = parseFloat(total) + parseFloat($(this).val());
+            console.log(total);
+        })
+
+        var stotal = parseFloat(neto) + parseFloat(q) + parseFloat(igv) + parseFloat(total);
+        console.log(stotal);
+        $('#pretotal').val(parseFloat(stotal).toFixed(2));
+    }
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#con_tar").click(function () {
+                //Se limpia el contenido del dropdownlist
+                $.ajax({
+                    type: 'POST',
+                    //Llamado al metodo en el controlador
+                    url: '@Url.Action("getImpuestos", "TarifaAerea")',
+                dataType: 'json',
+                    //Parametros que se envian al metodo del controlador
+                    data: { id_destino: $("#id_destino").val(), id_laerea: $("#id_laerea").val() },
+                //En caso de resultado exitoso
+                success: function (data) {
+                    if (data.length == 0) {
+                        alert('IMPUESTOS NO REGISTRADOS')
+                    }
+                    else {
+
+                        $.each(data, function (i, val) {
+                            console.log(data)
+                            $('#queue').val(val.queue)
+                            $('#md1 tbody').remove();
+                            $('#md1').append('<tbody></tbody>')
+
+                            $.each(val.ta, function (i, va) {
+                                $('#md1 tbody').append(
+                                    '<tr><td class="col-md-3 col-lg-3"><input class="form-control nomimp" style="text-transform:uppercase" id="nomimp" value="' + va.nom_imp +'"></td>' +
+                                    '<td class="col-md-9 col-lg-9"><input class="preimp form-control preimp" id="preimp" onchange="sumapr()" value=' + va.pre_imp + '></td></tr></br>'
+                                )
+                            })
+
+                        })
+                        }
+                    },
+                //Mensaje de error en caso de fallo
+                error: function (ex) {
+                    alert('Escoge al menos una opción.' + ex);
+                }
+            });
+            return false;
+        })
+    })
+
+
+
+
+    $('#submit').click(function () {
+        var isAllValid = true;
+
+        $('#orderItemError').text('');
+        var list = [];
+        var list2 = [];
+        var list3 = [];
+        var errorItemCount = 0;
+
+        $('#md1 tbody tr').each(function (index, ele) {
+            var orderItem = {
+                impuesto: $('.nomimp', this).val(),
+                precio_impuesto: $('.preimp', this).val(),
+            }
+            list.push(orderItem);
+
+        })
+
+        $('#md2 tbody tr').each(function (index, ele) {
+            var orderItem2 = {
+                fecha_rango_1: $('.fecbo1', this).val(),
+                fecha_rango_2: $('.fecbo2', this).val(),
+
+            }
+            list2.push(orderItem2);
+
+        })
+
+        $('#md3 tbody tr').each(function (index, ele) {
+            var orderItem3 = {
+                id_pais: $('select.idpaisso', this).val(),
+                id_ciudad: $('select.iddestinoso', this).val(),
+
+            }
+            list3.push(orderItem3);
+
+        })
+
+        console.log(list);
+        console.log(list2);
+        console.log(list3);
+
+        if (isAllValid) {
+            var data = {
+                id_zona: $('select#id_zona').val(),
+                id_pais: $('select#id_pais').val(),
+                id_ciudad: $('select#id_destino').val(),
+                id_laerea: $('select#id_laerea').val(),
+                clase: $('#clase').val(),
+                tipo_tarifa: $('#tipo_tarifa').val(),
+                cod_fb: $('#cod_fb').val(),
+                time_compra_1: $('#time_compra_1').val(),
+                time_compra_2: $('#time_compra_2').val(),
+                time_viaje_1: $('#time_viaje_1').val(),
+                time_viaje_2: $('#time_viaje_2').val(),
+                max_estadia: $('#max_estadia').val(),
+                min_estadia: $('#min_estadia').val(),
+                fecha_emisiion: $('#fecha_emisiion').val(),
+                edad_chd_1: $('#edad_chd_1').val(),
+                edad_chd_2: $('#edad_chd_2').val(),
+                porc_chd: $('#porc_chd').val(),
+                edad_inf_1: $('#edad_inf_1').val(),
+                edad_inf_2: $('#edad_inf_2').val(),
+                porc_inf: $('#porc_inf').val(),
+                neto: $('#neto').val(),
+                queue: $('#queue').val(),
+                igv: $('#igv').val(),
+                tb_detalletarifaaerea: list,
+                tb_detalletarifablackouts: list2,
+                tb_detalletarifastopovers: list3,
+                total_tarifa: $('#pretotal').val(),
+                prec_chd: $('#preniño').val(),
+                prec_inf: $('#preinf').val(),
+                estado: 1,
+
+            }
+            console.log(data);
+            $.ajax({
+
+                type: 'POST',
+                url: '/TarifaAerea/GuardarTarifa',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.status) {
+                        sweetAlert({
+                            title: 'Correcto',
+                            text: 'La Tarifa ha sido registrada correctamente.',
+                            type: 'success'
+                        }).then(function () {
+                            window.location.reload();
+
+                        });
+
+
+                    }
+
+                    else {
+                        sweetAlert({
+                            title: 'Error',
+                            text: 'La Tarifa no ha podido ser registrada.',
+                            type: 'error'
+                        }).then(function () {
+                            window.location.reload();
+
+                        });
+                    }
+                    $('#submit').text('Save');
+                },
+                error: function (error) {
+                    console.log(error);
+                    $('#submit').text('Save');
+                }
+            });
+        }
+
+    });
+
+
+</script>
+
