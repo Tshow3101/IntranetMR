@@ -39,11 +39,11 @@ namespace IntranetMundoRepresentaciones.Controllers
         // GET: IngresosHotel/Create
         public ActionResult Create()
         {
-            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera");            
+            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera");
             ViewBag.tarifa = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 17), "idCategoria", "nombreCategoria");
             ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel");
             ViewBag.idTipoHabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion");
-            ViewBag.serviciohabitacion1 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria ==29), "idCategoria", "NombreCategoria");
+            ViewBag.serviciohabitacion1 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 29), "idCategoria", "NombreCategoria");
             ViewBag.serviciohabitacion2 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 29), "idCategoria", "NombreCategoria");
             return View();
         }
@@ -64,7 +64,7 @@ namespace IntranetMundoRepresentaciones.Controllers
 
             ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);
             ViewBag.tarifa = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.tarifa);
-            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);            
+            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);
             return View(tb_ingresohotel);
         }
 
@@ -81,9 +81,12 @@ namespace IntranetMundoRepresentaciones.Controllers
                 return HttpNotFound();
             }
             ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);
-            
-            ViewBag.tarifa = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.tarifa);
-            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);            
+            ViewBag.tarifa = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 17), "idCategoria", "nombreCategoria",tb_ingresohotel.tarifa);
+            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);
+
+            ViewBag.idTipoHabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion");
+            ViewBag.serviciohabitacion1 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 29), "idCategoria", "NombreCategoria");
+            ViewBag.serviciohabitacion2 = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 29), "idCategoria", "NombreCategoria");
             return View(tb_ingresohotel);
         }
 
@@ -100,7 +103,7 @@ namespace IntranetMundoRepresentaciones.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);           
+            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera", tb_ingresohotel.idCadena);
             ViewBag.tarifa = new SelectList(db.tb_categoria, "idCategoria", "nombreCategoria", tb_ingresohotel.tarifa);
             ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel", tb_ingresohotel.idHotel);
             return View(tb_ingresohotel);
@@ -161,6 +164,45 @@ namespace IntranetMundoRepresentaciones.Controllers
                 }
             }
 
+            return new JsonResult { Data = new { status = status } };
+        }
+
+        [HttpPost]
+        public ActionResult eliminaDetalles(List<tb_detalleingresohotel> tb_detalleingresohotel, int id = 0)
+        {
+            bool status = false;
+            db.Database.ExecuteSqlCommand("DELETE FROM tb_detalleingresohotel WHERE idIngresoHotel = @id", new
+            object[] { new System.Data.SqlClient.SqlParameter("id", id) });
+            db.Database.Connection.Close();
+
+            if (tb_detalleingresohotel != null)
+            {
+                foreach (var det in tb_detalleingresohotel)
+                {
+                    db.tb_detalleingresohotel.Add(det);
+                    db.SaveChanges();
+                }
+            }
+
+            status = true;
+            return new JsonResult { Data = new { status = status } };
+
+        }
+
+        public JsonResult EditarIngreso(tb_ingresohotel tb_ingresohotel)
+        {
+            bool status = false;
+            var v = db.tb_ingresohotel.Find(tb_ingresohotel.idIngresoHotel);
+            var isValidModel = TryUpdateModel(tb_ingresohotel);
+            if (isValidModel)
+            {
+                using (db)
+                {
+                    db.Entry(v).CurrentValues.SetValues(tb_ingresohotel);
+                    db.SaveChanges();
+                    status = true;
+                }
+            }
             return new JsonResult { Data = new { status = status } };
         }
     }
