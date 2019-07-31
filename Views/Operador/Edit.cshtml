@@ -1,0 +1,391 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_usuario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Editar Operador</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                /*Primera Fila*/
+                @Html.HiddenFor(model => model.idUsuario)
+                @Html.HiddenFor(model => model.fecharegistro)
+                @Html.HiddenFor(model => model.usuarioregistro)
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Tipo Documento-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Tipo Documento</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("tipodocumento", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Documento-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Documento</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("documentousuario", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Numero Documento-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Numero Documento</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="numerodocumentousuario" style="width:100%; height:30px;" value="@Model.numerodocumentousuario" />
+                        </div>
+                    </div>
+                </div>
+
+                /*Segunda Fila*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <div class="col-md-6">
+                        <!--Razon Social-->
+                        <div class="col-md-3">
+                            <label>Razon Social</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="razonsocial" style="width:100%; height:30px;" value="@Model.razonsocialusuario" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Nombre Comercial-->
+                        <div class="col-md-3">
+                            <label>Nombre Comercial</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="NombreComercial" style="width:100%; height:30px;" value="@Model.nombreusuario" />
+                        </div>
+                    </div>
+                </div>
+                /*Tercera Fila*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <!--Correo-->
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            <label>Correo</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="correousuario" style="width:100%; height:30px;" value="@Model.correousuario" />
+                        </div>
+                    </div>
+                    <!--Direccion-->
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            <label>Direccion</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="direccionusuario" style="width:100%; height:30px;" value="@Model.direccionusuario" />
+                        </div>
+                    </div>
+                </div>
+
+                /*Cuarta Fila*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <!--Telefono-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Telefono</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="telefonousuario" style="width:100%; height:30px;" value="@Model.telefonousuario" />
+                        </div>
+                    </div>
+
+                    <!--Contacto-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Contacto</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="contacto" style="width:100%; height:30px;" value="@Model.contactousuario" />
+                        </div>
+                    </div>
+
+                    <!--Correo Sunat-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Correo Sunat</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="correosunat" style="width:100%; height:30px;" value="@Model.correosunatusuario" />
+                        </div>
+                    </div>
+                </div>
+
+                /*Quinta Fila*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <!--Forma de Pago-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Forma de Pago</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("formapagousuario", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Contacto-->
+                    <div class="col-md-4">
+                        <div class="col-md-6">
+                            <label style="font-size:11px;">Vigente</label>
+                        </div>
+                        @if (Model.vigenteusuario == 1)
+                        {
+                            <div class="col-md-3">
+                                <input type="radio" id="si" name="vigencia" value="1"
+                                       checked>
+                                <label for="si">Si</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="radio" id="no" name="vigencia" value="2">
+                                <label for="no">No</label>
+                            </div>
+                        }
+                        @if (Model.vigenteusuario == 2)
+                        {
+                            <div class="col-md-3">
+                                <input type="radio" id="si" name="vigencia" value="1">
+                                <label for="si">Si</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="radio" id="no" name="vigencia" value="2"
+                                       checked>
+                                <label for="no">No</label>
+                            </div>
+                        }
+                    </div>
+
+                    <!--Correo Sunat-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Numero Contacto</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="numerocontacto" style="width:100%; height:30px;" value="@Model.numerocontactousuario" />
+                        </div>
+                    </div>
+
+                </div>
+
+                /*Sexta Fila*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <!--Linea de Credito-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Linea de Credito</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="lineacredito" style="width:100%; height:30px;" value="@Model.lineacreditousuario" />
+                        </div>
+                    </div>
+
+                    <!--Cta Detraccion-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Cta Detraccion</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="ctadetraccion" style="width:100%; height:30px;" value="@Model.ctadetraccionusuario" />
+                        </div>
+                    </div>
+
+                    <!--Retenedor-->
+                    <div class="col-md-4">
+                        <div class="col-md-6">
+                            <label style="font-size:11px;">Retenedor</label>
+                        </div>
+                        @if (Model.retenedorusuario == 1)
+                        {
+                            <div class="col-md-3">
+                                <input type="radio" id="si" name="retenedor" value="1"
+                                       checked>
+                                <label for="si">Si</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="radio" id="no" name="retenedor" value="2">
+                                <label for="no">No</label>
+                            </div>
+                        }
+                        @if (Model.retenedorusuario == 2)
+                        {
+                            <div class="col-md-3">
+                                <input type="radio" id="si" name="retenedor" value="1">
+                                <label for="si">Si</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="radio" id="no" name="retenedor" value="2"
+                                       checked>
+                                <label for="no">No</label>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+                /*Septima Fila*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <!--Retenedor-->
+                    <div class="col-md-4">
+                        <div class="col-md-6">
+                            <label style="font-size:11px;">Factura Electronica</label>
+                        </div>
+                        @if (Model.facturaelectronicausuario == 1)
+                        {
+                            <div class="col-md-3">
+                                <input type="radio" id="si" name="facturaelect" value="1"
+                                       checked>
+                                <label for="si">Si</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="radio" id="no" name="facturaelect" value="2">
+                                <label for="no">No</label>
+                            </div>
+                        }
+                        @if (Model.facturaelectronicausuario == 2)
+                        {
+                            <div class="col-md-3">
+                                <input type="radio" id="si" name="facturaelect" value="1">
+                                <label for="si">Si</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="radio" id="no" name="facturaelect" value="2"
+                                       checked>
+                                <label for="no">No</label>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+
+                /*Botones*/
+
+                <div class="col-md-12" style="text-align:center; margin-top:5px;">
+                    <div class="form-group">
+                        <input type="button" id="submit" value="Editar Operador" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Operador", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $('#submit').click(function () {
+        var isAllValid = true;
+
+        $('#orderItemError').text('');
+        var errorItemCount = 0;
+
+
+
+        var detalle = {
+            id: $('#idUsuario').val(),
+        }
+
+        if (isAllValid) {
+            var data = {
+                idUsuario: $('#idUsuario').val(),
+                fecharegistro: $('#fecharegistro').val(),
+                usuarioregistro: $('#usuarioregistro').val(),
+                tipodocumento: $('select#tipodocumento').val(),
+                documentousuario: $('select#documentousuario').val(),
+                numerodocumentousuario: $('#numerodocumentousuario').val(),
+                razonsocialusuario: $('#razonsocial').val(),
+                nombreusuario: $('#NombreComercial').val(),
+                correousuario: $('#correousuario').val(),
+                direccionusuario: $('#direccionusuario').val(),
+                telefonousuario: $('#telefonousuario').val(),
+                contactousuario: $('#contacto').val(),
+                correosunatusuario: $('#correosunat').val(),
+                formapagousuario: $('select#formapagousuario').val(),
+                vigenteusuario: $('input:radio[name=vigencia]:checked').val(),
+                numerocontactousuario: $('#numerocontacto').val(),
+                lineacreditousuario: $('#lineacredito').val(),
+                ctadetraccionusuario: $('#ctadetraccion').val(),
+                retenedorusuario: $('input:radio[name=retenedor]:checked').val(),
+                facturaelectronicausuario: $('input:radio[name=facturaelect]:checked').val(),
+                TIPOUSUARIO: 56,
+            }
+            console.log(data);
+
+            var id = $('#idUsuario').val();
+
+            $.ajax({
+
+                type: 'POST',
+                url: '/Operador/EditarOperador',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.status) {
+                        sweetAlert({
+                            title: 'Correcto',
+                            text: 'Operador ha sido editado correctamente.',
+                            type: 'success'
+                        }).then(function () {
+                            window.location.reload();
+
+                        });
+                    }
+
+                    else {
+                        sweetAlert({
+                            title: 'Error',
+                            text: 'Operador no ha podido ser editado.',
+                            type: 'error'
+                        }).then(function () {
+                            window.location.reload();
+
+                        });
+                    }
+                    $('#submit').text('Save');
+                },
+                error: function (error) {
+                    console.log(error);
+                    $('#submit').text('Save');
+                }
+            });
+        }
+
+    });
+
+</script>

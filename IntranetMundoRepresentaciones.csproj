@@ -147,6 +147,7 @@
     <Compile Include="Controllers\ImpuestosController.cs" />
     <Compile Include="Controllers\IngresosHotelController.cs" />
     <Compile Include="Controllers\MonedaController.cs" />
+    <Compile Include="Controllers\OperadorController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
     <Compile Include="Controllers\TarifaAereaController.cs" />
     <Compile Include="Controllers\TipoCategoriaController.cs" />
@@ -6571,6 +6572,12 @@
     <Content Include="Views\TarifaAerea\Index.cshtml" />
     <Content Include="Views\TarifaAerea\DetailsR.cshtml" />
     <Content Include="Views\Shared\_LayoutReporte.cshtml" />
+    <Content Include="Views\Operador\Create.cshtml" />
+    <Content Include="Views\Operador\Delete.cshtml" />
+    <Content Include="Views\Operador\Details.cshtml" />
+    <Content Include="Views\Operador\Edit.cshtml" />
+    <Content Include="Views\Operador\Index.cshtml" />
+    <Content Include="Views\Operador\DetailsR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

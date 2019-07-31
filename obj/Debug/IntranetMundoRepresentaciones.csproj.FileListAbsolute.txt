@@ -362,8 +362,6 @@ D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMun
 D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
 D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.dll
 D:\NuevoCIP\Intranet07062019\IntranetMundoRepresentaciones\obj\Debug\IntranetMundoRepresentaciones.pdb
-D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.dll
-D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.pdb
 D:\MR\IntranetMR\bin\IntranetMundoRepresentaciones.dll.config
 D:\MR\IntranetMR\bin\IntranetMundoRepresentaciones.dll
 D:\MR\IntranetMR\bin\IntranetMundoRepresentaciones.pdb
@@ -420,6 +418,7 @@ D:\MR\IntranetMR\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 D:\MR\IntranetMR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\MR\IntranetMR\bin\Microsoft.Web.Infrastructure.dll
 D:\MR\IntranetMR\bin\Newtonsoft.Json.dll
+D:\MR\IntranetMR\bin\Rotativa.dll
 D:\MR\IntranetMR\bin\System.Diagnostics.DiagnosticSource.dll
 D:\MR\IntranetMR\bin\System.Web.Helpers.dll
 D:\MR\IntranetMR\bin\System.Web.Mvc.dll
@@ -450,7 +449,8 @@ D:\MR\IntranetMR\bin\es\System.Web.Razor.resources.dll
 D:\MR\IntranetMR\bin\es\System.Web.WebPages.resources.dll
 D:\MR\IntranetMR\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\MR\IntranetMR\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache
 D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompileInputs.cache
 D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
-D:\MR\IntranetMR\bin\Rotativa.dll
-D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache
+D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.dll
+D:\MR\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.pdb

@@ -1,0 +1,269 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_usuario
+
+@{
+    ViewBag.Title = "DetailsR";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
+}
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+<style type="text/css">
+    body {
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+        zoom: 95%;
+    }
+
+    td.td-tc table tbody tr td {
+        letter-spacing: 2px !important;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 14px !important
+    }
+
+
+    td.td-tc table tbody tr th, td.td-tc table thead tr th {
+        letter-spacing: 1px !important;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 18px !important
+    }
+
+    p {
+        margin: 0 0 0 0 !important;
+    }
+
+    table {
+        margin-bottom: 10px;
+    }
+
+    .inputmedio {
+        width: 250px;
+    }
+
+    .inputmediot {
+        width: 250px;
+    }
+
+    .inputmedion {
+        width: 100px;
+        text-align: center;
+    }
+
+    .inputmediom {
+        width: 50px;
+        text-align: center;
+    }
+
+    .titulo-tabla {
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        border: solid 1px white;
+    }
+
+    .cabecera-tabla {
+        background-color: #6A6A6A;
+        font-weight: bold;
+        font-size: 23px !important;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+    }
+
+    .tabla-diseño {
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+        background: white;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    fieldset {
+        border-color: rgb(238, 238, 238) !important;
+    }
+
+    .tbody1 {
+        background-color: #CFCFCF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .tbody2 {
+        background-color: #FFFFFF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .datos {
+        font-family: Arial;
+        font-size: 18px;
+        color: black;
+        border: solid 1px white;
+        letter-spacing: 2px !important;
+    }
+
+    .datos2 {
+        font-family: Arial;
+        font-size: 18px;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .totales {
+        background-color: yellow !important;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .mayusculas {
+        text-transform: uppercase;
+    }
+</style>
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+<style type='text/css'>
+    #tabla-contenido tr.tr-tc {
+        background: #eeeeee;
+    }
+
+        #tabla-contenido tr.tr-tc td.td-tc {
+            border-color: #eeeeee;
+            padding: 0 !important;
+        }
+</style>
+<div id="content" class="content" style="margin-left:0!important; margin-right:0px !important;padding-top: 0 !important;position: relative;">
+    <!-- begin breadcrumb -->
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <!-- end page-header -->
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12" style="height: 100% !important;background:#eeeeee">
+            <!-- begin panel -->
+            <div class="panel panel-inverse" data-sortable-id="form-stuff-1" style="margin: 0 !important;">
+
+
+                <div class="panel-body" style="background:#eeeeee; padding: 0 !important">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+
+                        <article id="post-63" class="item post-63 post type-post status-publish format-standard hentry category-data-technical-tips category-technical-tips tag-data tag-database-optimization tag-loading-speed tag-query-performance tag-summary-table" content="text/html;charset=UTF-8" style="background-color:#EEEEEE">
+
+                            <fieldset id="prueba">
+                                <br />
+                                <div class="row" style="text-align:center">
+                                    <table class="tabla-diseño" style="text-transform:uppercase">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="6" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">OPERADOR</th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">TIPO DOCUMENTO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_categoria7.nombreCategoria)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">DOCUMENTO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_categoria1.nombreCategoria)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">N°DOCUMENTO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.numerodocumentousuario)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">RAZON SOCIAL</td>
+                                            <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.razonsocialusuario)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">NOMBRE COMERCIAL</td>
+                                            <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.nombreusuario)</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">CORREO</td>
+                                            <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.correousuario)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">DIRECCION</td>
+                                            <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.direccionusuario)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">TELEFONO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.telefonousuario)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">CONTACTO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.contactousuario)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">CORREO SUNAT</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.correosunatusuario)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">FORMA DE PAGO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_categoria3.nombreCategoria)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">VIGENTE</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_vigencia.nombreVigencia)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">N° CONTACTO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.numerocontactousuario)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">LINEA DE CREDITO</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.lineacreditousuario)</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">CTA DETRACCION</td>
+                                            <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.ctadetraccionusuario)</td>
+                                            <td class="titulo-tabla datos col-md-1" style="text-align:left">RETENEDOR</td>
+                                            <td class="col-md-1 datos">
+                                                &nbsp;
+                                                @if (Model.retenedorusuario == 1)
+                                                {
+                                                    @String.Format("SI", "SI");
+                                                }
+                                                @if (Model.retenedorusuario == 2)
+                                                {
+                                                    @String.Format("NO", "NO");
+                                                }
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">FACTURA ELEC.</td>
+                                            <td class="col-md-2 datos">
+                                                &nbsp;
+                                                @if (Model.facturaelectronicausuario == 1)
+                                                {
+                                                    @String.Format("SI", "SI");
+                                                }
+                                                @if (Model.facturaelectronicausuario == 2)
+                                                {
+                                                    @String.Format("NO", "NO");
+                                                }
+                                            </td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">&nbsp;</td>
+                                            <td class="col-md-2 datos">&nbsp;</td>
+                                            <td class="titulo-tabla datos col-md-2" style="text-align:left">&nbsp;</td>
+                                            <td class="col-md-2 datos">&nbsp;</td>
+                                        </tr>
+                                    </table>
+
+                                   
+                                </div>
+                            </fieldset>
+                        </article>
+
+
+                    }
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

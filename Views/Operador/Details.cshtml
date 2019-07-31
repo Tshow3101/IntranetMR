@@ -1,0 +1,223 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_usuario
+
+@{
+    /**/
+
+    ViewBag.Title = "Details";
+}
+
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+<style type="text/css">
+    .inputmedio {
+        width: 250px;
+    }
+
+    .inputmediot {
+        width: 250px;
+    }
+
+    .inputmedion {
+        width: 100px;
+        text-align: center;
+    }
+
+    .inputmediom {
+        width: 50px;
+        text-align: center;
+    }
+
+    .titulo-tabla {
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        border: solid 1px white;
+    }
+
+    .cabecera-tabla {
+        background-color: #6A6A6A;
+        font-weight: bold;
+        font-size: 23px !important;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+        text-transform: uppercase !important;
+    }
+
+    .tabla-diseño {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        background: white;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .tbody1 {
+        background-color: #CFCFCF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .tbody2 {
+        background-color: #FFFFFF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .datos {
+        font-family: Arial;
+        font-size: 18px;
+        color: black;
+        border: solid 1px white;
+    }
+
+    .datos2 {
+        font-family: Arial;
+        font-size: 18px;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .totales {
+        background-color: yellow !important;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .mayusculas {
+        text-transform: uppercase;
+    }
+</style>
+
+
+<br />
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Detalle Operador</h4>
+        </div>
+        <div class="panel-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <article id="post-63" class="item post-63 post type-post status-publish format-standard hentry category-data-technical-tips category-technical-tips tag-data tag-database-optimization tag-loading-speed tag-query-performance tag-summary-table" content="text/html;charset=UTF-8" style="background-color:#EEEEEE">
+
+                    <fieldset id="prueba">
+                        <br />
+                        <div class="row" style="text-align:center">
+                            <table class="tabla-diseño" style="text-transform:uppercase">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">OPERADOR</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">TIPO DOCUMENTO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_categoria7.nombreCategoria)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">DOCUMENTO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_categoria1.nombreCategoria)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">N°DOCUMENTO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.numerodocumentousuario)</td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">RAZON SOCIAL</td>
+                                    <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.razonsocialusuario)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">NOMBRE COMERCIAL</td>
+                                    <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.nombreusuario)</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">CORREO</td>
+                                    <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.correousuario)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">DIRECCION</td>
+                                    <td class="col-md-2 datos" colspan="2">&nbsp;@Html.DisplayFor(model => model.direccionusuario)</td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">TELEFONO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.telefonousuario)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">CONTACTO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.contactousuario)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">CORREO SUNAT</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.correosunatusuario)</td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">FORMA DE PAGO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_categoria3.nombreCategoria)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">VIGENTE</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_vigencia.nombreVigencia)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">N° CONTACTO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.numerocontactousuario)</td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">LINEA DE CREDITO</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.lineacreditousuario)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">CTA DETRACCION</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.ctadetraccionusuario)</td>
+                                    <td class="titulo-tabla datos col-md-1" style="text-align:left">RETENEDOR</td>
+                                    <td class="col-md-1 datos">
+                                        &nbsp;
+                                        @if (Model.retenedorusuario == 1)
+                                        {
+                                            @String.Format("SI", "SI");
+                                        }
+                                        @if (Model.retenedorusuario == 2)
+                                        {
+                                            @String.Format("NO", "NO");
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">FACTURA ELEC.</td>
+                                    <td class="col-md-2 datos">
+                                        &nbsp;
+                                        @if (Model.facturaelectronicausuario == 1)
+                                        {
+                                            @String.Format("SI", "SI");
+                                        }
+                                        @if (Model.facturaelectronicausuario == 2)
+                                        {
+                                            @String.Format("NO", "NO");
+                                        }
+                                    </td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">&nbsp;</td>
+                                    <td class="col-md-2 datos">&nbsp;</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">&nbsp;</td>
+                                    <td class="col-md-2 datos">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <div class="col-md-12" style="text-align:center">
+                                <div class="col-md-6" style="text-align:center">
+                                    <label><a class="btn btn-inverse m-r-5 m-b-5" href="~/TarifaAerea/Index" style="width:150px">REGRESAR</a></label>
+                                </div>
+                                <div class="col-md-6" style="text-align:center">
+                                    <a class="btn btn-inverse m-r-5 m-b-5" href="@Url.Action("GeneratePDF", "TarifaAerea", new { id = Model.idUsuario })">DESCARGAR</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </article>
+
+
+            }
+        </div>
+    </div>
+</div>
