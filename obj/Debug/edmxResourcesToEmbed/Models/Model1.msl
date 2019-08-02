@@ -506,5 +506,58 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_tarjetaasistencia">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_tarjetaasistencia">
+        <MappingFragment StoreEntitySet="tb_tarjetaasistencia">
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="cobertura" ColumnName="cobertura" />
+          <ScalarProperty Name="idOperador" ColumnName="idOperador" />
+          <ScalarProperty Name="nombreTarjetaasistencia" ColumnName="nombreTarjetaasistencia" />
+          <ScalarProperty Name="idTarjetaasistencia" ColumnName="idTarjetaasistencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_detalleTraslado">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_detalleTraslado">
+        <MappingFragment StoreEntitySet="tb_detalleTraslado">
+          <ScalarProperty Name="precion3" ColumnName="precion3" />
+          <ScalarProperty Name="rango2n3" ColumnName="rango2n3" />
+          <ScalarProperty Name="rango1n3" ColumnName="rango1n3" />
+          <ScalarProperty Name="precion2" ColumnName="precion2" />
+          <ScalarProperty Name="rango2n2" ColumnName="rango2n2" />
+          <ScalarProperty Name="rango1n2" ColumnName="rango1n2" />
+          <ScalarProperty Name="precion1" ColumnName="precion1" />
+          <ScalarProperty Name="rango2n1" ColumnName="rango2n1" />
+          <ScalarProperty Name="rango1n1" ColumnName="rango1n1" />
+          <ScalarProperty Name="preciod_lujo" ColumnName="preciod_lujo" />
+          <ScalarProperty Name="rango2d_lujo" ColumnName="rango2d_lujo" />
+          <ScalarProperty Name="rango1d_lujo" ColumnName="rango1d_lujo" />
+          <ScalarProperty Name="precioc_priv" ColumnName="precioc_priv" />
+          <ScalarProperty Name="rango2c_priv" ColumnName="rango2c_priv" />
+          <ScalarProperty Name="rango1c_priv" ColumnName="rango1c_priv" />
+          <ScalarProperty Name="preciob_priv" ColumnName="preciob_priv" />
+          <ScalarProperty Name="rango2b_priv" ColumnName="rango2b_priv" />
+          <ScalarProperty Name="rango1b_priv" ColumnName="rango1b_priv" />
+          <ScalarProperty Name="precioa_priv" ColumnName="precioa_priv" />
+          <ScalarProperty Name="rango2a_priv" ColumnName="rango2a_priv" />
+          <ScalarProperty Name="rango1a_priv" ColumnName="rango1a_priv" />
+          <ScalarProperty Name="precio_compartido" ColumnName="precio_compartido" />
+          <ScalarProperty Name="id_tramo" ColumnName="id_tramo" />
+          <ScalarProperty Name="id_destino" ColumnName="id_destino" />
+          <ScalarProperty Name="id_traslado" ColumnName="id_traslado" />
+          <ScalarProperty Name="id_detalleTraslado" ColumnName="id_detalleTraslado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_traslado">
+      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_traslado">
+        <MappingFragment StoreEntitySet="tb_traslado">
+          <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
+          <ScalarProperty Name="id_puntosalida" ColumnName="id_puntosalida" />
+          <ScalarProperty Name="id_operador" ColumnName="id_operador" />
+          <ScalarProperty Name="id_traslado" ColumnName="id_traslado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

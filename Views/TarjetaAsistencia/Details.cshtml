@@ -1,0 +1,51 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_tarjetaasistencia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_tarjetaasistencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreTarjetaasistencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreTarjetaasistencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cobertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cobertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuario.apellidopaternousuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTarjetaasistencia }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

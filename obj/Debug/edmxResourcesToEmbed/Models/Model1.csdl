@@ -155,6 +155,7 @@
     <NavigationProperty Name="tb_usuario5" Relationship="Self.FK__tb_usuari__sexou__5DCAEF64" FromRole="tb_categoria" ToRole="tb_usuario" />
     <NavigationProperty Name="tb_usuario6" Relationship="Self.FK__tb_usuari__tipod__5EBF139D" FromRole="tb_categoria" ToRole="tb_usuario" />
     <NavigationProperty Name="tb_usuario7" Relationship="Self.FK__tb_usuari__TIPOU__078C1F06" FromRole="tb_categoria" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_detalleTraslado" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2F650636" FromRole="tb_categoria" ToRole="tb_detalleTraslado" />
   </EntityType>
   <EntityType Name="tb_ciudad">
     <Key>
@@ -178,6 +179,8 @@
     <NavigationProperty Name="tb_hotel" Relationship="Self.FK__tb_hotel__idCiud__4A4E069C" FromRole="tb_ciudad" ToRole="tb_hotel" />
     <NavigationProperty Name="tb_detalletarifastopovers" Relationship="Self.fk_detalle_taso_003" FromRole="tb_ciudad" ToRole="tb_detalletarifastopovers" />
     <NavigationProperty Name="tb_tarifa_aerea" Relationship="Self.fk_ta003" FromRole="tb_ciudad" ToRole="tb_tarifa_aerea" />
+    <NavigationProperty Name="tb_detalleTraslado" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_de__2E70E1FD" FromRole="tb_ciudad" ToRole="tb_detalleTraslado" />
+    <NavigationProperty Name="tb_traslado" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__id_pu__2AA05119" FromRole="tb_ciudad" ToRole="tb_traslado" />
   </EntityType>
   <EntityType Name="tb_contactohotel">
     <Key>
@@ -577,6 +580,8 @@
     <NavigationProperty Name="tb_zona" Relationship="Self.FK__tb_usuari__idZon__60A75C0F" FromRole="tb_usuario" ToRole="tb_zona" />
     <NavigationProperty Name="tb_vigencia1" Relationship="Self.FK__tb_usuari__reten__5CD6CB2B" FromRole="tb_usuario" ToRole="tb_vigencia" />
     <NavigationProperty Name="tb_vigencia2" Relationship="Self.FK__tb_usuari__vigen__5FB337D6" FromRole="tb_usuario" ToRole="tb_vigencia" />
+    <NavigationProperty Name="tb_tarjetaasistencia" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_tarjet__idOpe__22FF2F51" FromRole="tb_usuario" ToRole="tb_tarjetaasistencia" />
+    <NavigationProperty Name="tb_traslado" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__fecha__29AC2CE0" FromRole="tb_usuario" ToRole="tb_traslado" />
   </EntityType>
   <EntityType Name="tb_vigencia">
     <Key>
@@ -1694,5 +1699,161 @@
       <End Role="tb_vigencia" EntitySet="tb_vigencia" />
       <End Role="tb_usuario" EntitySet="tb_usuario" />
     </AssociationSet>
+    <EntitySet Name="tb_tarjetaasistencia" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_tarjetaasistencia" />
+    <AssociationSet Name="FK__tb_tarjet__idOpe__22FF2F51" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_tarjet__idOpe__22FF2F51">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_tarjetaasistencia" EntitySet="tb_tarjetaasistencia" />
+    </AssociationSet>
+    <EntitySet Name="tb_detalleTraslado" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_detalleTraslado" />
+    <EntitySet Name="tb_traslado" EntityType="BD_MUNDOREPRESENTACIONESModel.tb_traslado" />
+    <AssociationSet Name="FK__tb_detall__id_tr__2F650636" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2F650636">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_detalleTraslado" EntitySet="tb_detalleTraslado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_detall__id_de__2E70E1FD" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_de__2E70E1FD">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_detalleTraslado" EntitySet="tb_detalleTraslado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_trasla__id_pu__2AA05119" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__id_pu__2AA05119">
+      <End Role="tb_ciudad" EntitySet="tb_ciudad" />
+      <End Role="tb_traslado" EntitySet="tb_traslado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_detall__id_tr__2D7CBDC4" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2D7CBDC4">
+      <End Role="tb_traslado" EntitySet="tb_traslado" />
+      <End Role="tb_detalleTraslado" EntitySet="tb_detalleTraslado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_trasla__fecha__29AC2CE0" Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__fecha__29AC2CE0">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_traslado" EntitySet="tb_traslado" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="tb_tarjetaasistencia">
+    <Key>
+      <PropertyRef Name="idTarjetaasistencia" />
+    </Key>
+    <Property Name="idTarjetaasistencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreTarjetaasistencia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idOperador" Type="Int32" />
+    <Property Name="cobertura" Type="Int32" />
+    <Property Name="costo" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="tb_usuario" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_tarjet__idOpe__22FF2F51" FromRole="tb_tarjetaasistencia" ToRole="tb_usuario" />
+  </EntityType>
+  <Association Name="FK__tb_tarjet__idOpe__22FF2F51">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_usuario" Role="tb_usuario" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_tarjetaasistencia" Role="tb_tarjetaasistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tb_tarjetaasistencia">
+        <PropertyRef Name="idOperador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tb_detalleTraslado">
+    <Key>
+      <PropertyRef Name="id_detalleTraslado" />
+    </Key>
+    <Property Name="id_detalleTraslado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_traslado" Type="Int32" />
+    <Property Name="id_destino" Type="Int32" />
+    <Property Name="id_tramo" Type="Int32" />
+    <Property Name="precio_compartido" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1a_priv" Type="Int32" />
+    <Property Name="rango2a_priv" Type="Int32" />
+    <Property Name="precioa_priv" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1b_priv" Type="Int32" />
+    <Property Name="rango2b_priv" Type="Int32" />
+    <Property Name="preciob_priv" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1c_priv" Type="Int32" />
+    <Property Name="rango2c_priv" Type="Int32" />
+    <Property Name="precioc_priv" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1d_lujo" Type="Int32" />
+    <Property Name="rango2d_lujo" Type="Int32" />
+    <Property Name="preciod_lujo" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1n1" Type="Int32" />
+    <Property Name="rango2n1" Type="Int32" />
+    <Property Name="precion1" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1n2" Type="Int32" />
+    <Property Name="rango2n2" Type="Int32" />
+    <Property Name="precion2" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="rango1n3" Type="Int32" />
+    <Property Name="rango2n3" Type="Int32" />
+    <Property Name="precion3" Type="Decimal" Precision="9" Scale="4" />
+    <NavigationProperty Name="tb_categoria" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2F650636" FromRole="tb_detalleTraslado" ToRole="tb_categoria" />
+    <NavigationProperty Name="tb_ciudad" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_de__2E70E1FD" FromRole="tb_detalleTraslado" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_traslado" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2D7CBDC4" FromRole="tb_detalleTraslado" ToRole="tb_traslado" />
+  </EntityType>
+  <EntityType Name="tb_traslado">
+    <Key>
+      <PropertyRef Name="id_traslado" />
+    </Key>
+    <Property Name="id_traslado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_operador" Type="Int32" Nullable="false" />
+    <Property Name="id_puntosalida" Type="Int32" Nullable="false" />
+    <Property Name="fecha_vigencia" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tb_ciudad" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__id_pu__2AA05119" FromRole="tb_traslado" ToRole="tb_ciudad" />
+    <NavigationProperty Name="tb_detalleTraslado" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2D7CBDC4" FromRole="tb_traslado" ToRole="tb_detalleTraslado" />
+    <NavigationProperty Name="tb_usuario" Relationship="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__fecha__29AC2CE0" FromRole="tb_traslado" ToRole="tb_usuario" />
+  </EntityType>
+  <Association Name="FK__tb_detall__id_tr__2F650636">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_categoria" Role="tb_categoria" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_detalleTraslado" Role="tb_detalleTraslado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="tb_detalleTraslado">
+        <PropertyRef Name="id_tramo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_detall__id_de__2E70E1FD">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_detalleTraslado" Role="tb_detalleTraslado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_detalleTraslado">
+        <PropertyRef Name="id_destino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_trasla__id_pu__2AA05119">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_ciudad" Role="tb_ciudad" Multiplicity="1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_traslado" Role="tb_traslado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="tb_traslado">
+        <PropertyRef Name="id_puntosalida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_detall__id_tr__2D7CBDC4">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_traslado" Role="tb_traslado" Multiplicity="0..1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_detalleTraslado" Role="tb_detalleTraslado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_traslado">
+        <PropertyRef Name="id_traslado" />
+      </Principal>
+      <Dependent Role="tb_detalleTraslado">
+        <PropertyRef Name="id_traslado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_trasla__fecha__29AC2CE0">
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_usuario" Role="tb_usuario" Multiplicity="1" />
+    <End Type="BD_MUNDOREPRESENTACIONESModel.tb_traslado" Role="tb_traslado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tb_traslado">
+        <PropertyRef Name="id_operador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

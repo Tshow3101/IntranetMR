@@ -93,6 +93,15 @@
         <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__idZon__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__reten__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_usuari__vigen__5FB337D6" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_tarjetaasistencia" Width="1.5" PointX="21.75" PointY="33" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_tarjet__idOpe__22FF2F51" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_detalleTraslado" Width="1.5" PointX="24" PointY="34.25" />
+        <EntityTypeShape EntityType="BD_MUNDOREPRESENTACIONESModel.tb_traslado" Width="1.5" PointX="21.75" PointY="36.125" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2F650636" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_de__2E70E1FD" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__id_pu__2AA05119" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_detall__id_tr__2D7CBDC4" />
+        <AssociationConnector Association="BD_MUNDOREPRESENTACIONESModel.FK__tb_trasla__fecha__29AC2CE0" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

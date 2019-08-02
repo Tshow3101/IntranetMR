@@ -160,7 +160,7 @@
                 idCadena: $('#idCadena').val(),
                 idHotel: $('#idHotel').val(),
                 montoadulto: $('#montoadulto').val(),
-                montoniño: $('#montoniño').val(),
+                montoniño: $('#montoni_o').val(),
                 montoinfante: $('#montoinfante').val(),
                 porcentaje: $('#porcentaje').val(),
                 preciodoble: $('#preciodoble').val(),
@@ -326,7 +326,7 @@
             idCadena: $('#idCadena').val(),
             idHotel: $('#idHotel').val(),
             montoadulto: $('#montoadulto').val(),
-            montoniño: $('#montoniño').val(),
+            montoniño: $('#montoni_o').val(),
             montoinfante: $('#montoinfante').val(),
             porcentaje: $('#porcentaje').val(),
             preciodoble: $('#preciodoble').val()

@@ -47,5 +47,8 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual DbSet<tb_usuario> tb_usuario { get; set; }
         public virtual DbSet<tb_vigencia> tb_vigencia { get; set; }
         public virtual DbSet<tb_zona> tb_zona { get; set; }
+        public virtual DbSet<tb_tarjetaasistencia> tb_tarjetaasistencia { get; set; }
+        public virtual DbSet<tb_detalleTraslado> tb_detalleTraslado { get; set; }
+        public virtual DbSet<tb_traslado> tb_traslado { get; set; }
     }
 }

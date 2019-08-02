@@ -141,13 +141,14 @@
             </div>
 
             <!--Cuarta Fila-->
-            @foreach (var detalle in Model.tb_detalleingresohotel)
-            {
-                /*Precios Netos*/
-                <div class="col-md-12">
-                    <h4>
-                        Precios Contrato
-                    </h4>
+            /*Precios Netos*/
+            <div class="col-md-12">
+                <h4>
+                    Precios Contrato
+                </h4>
+                @foreach (var detalle in Model.tb_detalleingresohotel)
+                {
+
                     <table id="example" class="table table-bordered table-striped" border="1">
                         <thead>
                             <tr>
@@ -227,13 +228,16 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                }
+            </div>
+            <!--Precios Ventas-->
+            <div class="col-md-12">
+                <h4>
+                    Precios Venta
+                </h4>
+                @foreach (var detalle in Model.tb_detalleingresohotel)
+                {
 
-                /*Precios Ventas*/
-                <div class="col-md-12">
-                    <h4>
-                        Precios Venta
-                    </h4>
                     <table id="example" class="table table-bordered table-striped" border="1">
                         <thead>
                             <tr>
@@ -313,9 +317,9 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            }
 
+                }
+            </div>
             <!--Botones-->
             @using (Html.BeginForm())
             {

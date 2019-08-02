@@ -38,6 +38,7 @@ namespace IntranetMundoRepresentaciones.Models
             this.tb_usuario5 = new HashSet<tb_usuario>();
             this.tb_usuario6 = new HashSet<tb_usuario>();
             this.tb_usuario7 = new HashSet<tb_usuario>();
+            this.tb_detalleTraslado = new HashSet<tb_detalleTraslado>();
         }
     
         public int idCategoria { get; set; }
@@ -91,5 +92,7 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual ICollection<tb_usuario> tb_usuario6 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_usuario> tb_usuario7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_detalleTraslado> tb_detalleTraslado { get; set; }
     }
 }

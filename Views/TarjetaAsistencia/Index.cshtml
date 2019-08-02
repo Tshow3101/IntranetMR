@@ -1,0 +1,52 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_tarjetaasistencia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreTarjetaasistencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cobertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreTarjetaasistencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cobertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_usuario.apellidopaternousuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idTarjetaasistencia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idTarjetaasistencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idTarjetaasistencia })
+        </td>
+    </tr>
+}
+
+</table>

@@ -18,6 +18,8 @@ namespace IntranetMundoRepresentaciones.Models
         public tb_usuario()
         {
             this.tb_agencia = new HashSet<tb_agencia>();
+            this.tb_tarjetaasistencia = new HashSet<tb_tarjetaasistencia>();
+            this.tb_traslado = new HashSet<tb_traslado>();
         }
     
         public int idUsuario { get; set; }
@@ -76,5 +78,9 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_zona tb_zona { get; set; }
         public virtual tb_vigencia tb_vigencia1 { get; set; }
         public virtual tb_vigencia tb_vigencia2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_tarjetaasistencia> tb_tarjetaasistencia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_traslado> tb_traslado { get; set; }
     }
 }
