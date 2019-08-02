@@ -12,22 +12,19 @@ namespace IntranetMundoRepresentaciones.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_tarjetaasistencia
+    public partial class tb_tematica
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_tarjetaasistencia()
+        public tb_tematica()
         {
             this.tb_paquete = new HashSet<tb_paquete>();
         }
     
-        public int idTarjetaasistencia { get; set; }
-        public string nombreTarjetaasistencia { get; set; }
-        public Nullable<int> idOperador { get; set; }
-        public Nullable<int> cobertura { get; set; }
-        public Nullable<decimal> costo { get; set; }
+        public int idTematica { get; set; }
+        public string nombretematica { get; set; }
+        public string fototematica { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_paquete> tb_paquete { get; set; }
-        public virtual tb_usuario tb_usuario { get; set; }
     }
 }

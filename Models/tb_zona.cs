@@ -23,6 +23,7 @@ namespace IntranetMundoRepresentaciones.Models
             this.tb_ciudad = new HashSet<tb_ciudad>();
             this.tb_hotel = new HashSet<tb_hotel>();
             this.tb_pais = new HashSet<tb_pais>();
+            this.tb_paquete = new HashSet<tb_paquete>();
             this.tb_tarifa_aerea = new HashSet<tb_tarifa_aerea>();
             this.tb_usuario = new HashSet<tb_usuario>();
         }
@@ -46,6 +47,8 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual ICollection<tb_hotel> tb_hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_pais> tb_pais { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_tarifa_aerea> tb_tarifa_aerea { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

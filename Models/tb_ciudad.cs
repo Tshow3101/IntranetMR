@@ -20,11 +20,13 @@ namespace IntranetMundoRepresentaciones.Models
             this.tb_aerolinea = new HashSet<tb_aerolinea>();
             this.tb_agencia = new HashSet<tb_agencia>();
             this.tb_cadenahotelera = new HashSet<tb_cadenahotelera>();
+            this.tb_detalleTraslado = new HashSet<tb_detalleTraslado>();
             this.tb_hotel = new HashSet<tb_hotel>();
+            this.tb_paquete = new HashSet<tb_paquete>();
+            this.tb_paquete1 = new HashSet<tb_paquete>();
+            this.tb_traslado = new HashSet<tb_traslado>();
             this.tb_detalletarifastopovers = new HashSet<tb_detalletarifastopovers>();
             this.tb_tarifa_aerea = new HashSet<tb_tarifa_aerea>();
-            this.tb_detalleTraslado = new HashSet<tb_detalleTraslado>();
-            this.tb_traslado = new HashSet<tb_traslado>();
         }
     
         public int idCiudad { get; set; }
@@ -47,14 +49,18 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_pais tb_pais { get; set; }
         public virtual tb_zona tb_zona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_detalleTraslado> tb_detalleTraslado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_hotel> tb_hotel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_paquete> tb_paquete1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_traslado> tb_traslado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_detalletarifastopovers> tb_detalletarifastopovers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_tarifa_aerea> tb_tarifa_aerea { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_detalleTraslado> tb_detalleTraslado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_traslado> tb_traslado { get; set; }
     }
 }

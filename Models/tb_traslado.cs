@@ -18,16 +18,28 @@ namespace IntranetMundoRepresentaciones.Models
         public tb_traslado()
         {
             this.tb_detalleTraslado = new HashSet<tb_detalleTraslado>();
+            this.tb_servicios_paquete = new HashSet<tb_servicios_paquete>();
         }
     
         public int id_traslado { get; set; }
         public int id_operador { get; set; }
         public int id_puntosalida { get; set; }
         public Nullable<System.DateTime> fecha_vigencia { get; set; }
+        public Nullable<int> rango1n1 { get; set; }
+        public Nullable<int> rango2n1 { get; set; }
+        public Nullable<decimal> precion1 { get; set; }
+        public Nullable<int> rango1n2 { get; set; }
+        public Nullable<int> rango2n2 { get; set; }
+        public Nullable<decimal> precion2 { get; set; }
+        public Nullable<int> rango1n3 { get; set; }
+        public Nullable<int> rango2n3 { get; set; }
+        public Nullable<decimal> precion3 { get; set; }
     
         public virtual tb_ciudad tb_ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_detalleTraslado> tb_detalleTraslado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_servicios_paquete> tb_servicios_paquete { get; set; }
         public virtual tb_usuario tb_usuario { get; set; }
     }
 }

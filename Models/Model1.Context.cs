@@ -36,19 +36,24 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual DbSet<tb_detalletarifaaerea> tb_detalletarifaaerea { get; set; }
         public virtual DbSet<tb_detalletarifablackouts> tb_detalletarifablackouts { get; set; }
         public virtual DbSet<tb_detalletarifastopovers> tb_detalletarifastopovers { get; set; }
+        public virtual DbSet<tb_detalleTraslado> tb_detalleTraslado { get; set; }
         public virtual DbSet<tb_hotel> tb_hotel { get; set; }
+        public virtual DbSet<tb_hotel_paquete> tb_hotel_paquete { get; set; }
         public virtual DbSet<tb_impuestos> tb_impuestos { get; set; }
         public virtual DbSet<tb_ingresohotel> tb_ingresohotel { get; set; }
+        public virtual DbSet<tb_lineaerea_paquete> tb_lineaerea_paquete { get; set; }
         public virtual DbSet<tb_moneda> tb_moneda { get; set; }
         public virtual DbSet<tb_pais> tb_pais { get; set; }
+        public virtual DbSet<tb_paquete> tb_paquete { get; set; }
+        public virtual DbSet<tb_servicios_paquete> tb_servicios_paquete { get; set; }
         public virtual DbSet<tb_tarifa_aerea> tb_tarifa_aerea { get; set; }
+        public virtual DbSet<tb_tarjetaasistencia> tb_tarjetaasistencia { get; set; }
+        public virtual DbSet<tb_tematica> tb_tematica { get; set; }
         public virtual DbSet<tb_tipocategoria> tb_tipocategoria { get; set; }
         public virtual DbSet<tb_tipohabitacion> tb_tipohabitacion { get; set; }
+        public virtual DbSet<tb_traslado> tb_traslado { get; set; }
         public virtual DbSet<tb_usuario> tb_usuario { get; set; }
         public virtual DbSet<tb_vigencia> tb_vigencia { get; set; }
         public virtual DbSet<tb_zona> tb_zona { get; set; }
-        public virtual DbSet<tb_tarjetaasistencia> tb_tarjetaasistencia { get; set; }
-        public virtual DbSet<tb_detalleTraslado> tb_detalleTraslado { get; set; }
-        public virtual DbSet<tb_traslado> tb_traslado { get; set; }
     }
 }

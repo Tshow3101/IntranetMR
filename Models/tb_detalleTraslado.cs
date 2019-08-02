@@ -31,15 +31,6 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<int> rango1d_lujo { get; set; }
         public Nullable<int> rango2d_lujo { get; set; }
         public Nullable<decimal> preciod_lujo { get; set; }
-        public Nullable<int> rango1n1 { get; set; }
-        public Nullable<int> rango2n1 { get; set; }
-        public Nullable<decimal> precion1 { get; set; }
-        public Nullable<int> rango1n2 { get; set; }
-        public Nullable<int> rango2n2 { get; set; }
-        public Nullable<decimal> precion2 { get; set; }
-        public Nullable<int> rango1n3 { get; set; }
-        public Nullable<int> rango2n3 { get; set; }
-        public Nullable<decimal> precion3 { get; set; }
     
         public virtual tb_categoria tb_categoria { get; set; }
         public virtual tb_ciudad tb_ciudad { get; set; }

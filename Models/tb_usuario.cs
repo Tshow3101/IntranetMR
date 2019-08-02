@@ -74,13 +74,13 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_categoria tb_categoria6 { get; set; }
         public virtual tb_categoria tb_categoria7 { get; set; }
         public virtual tb_pais tb_pais { get; set; }
-        public virtual tb_vigencia tb_vigencia { get; set; }
-        public virtual tb_zona tb_zona { get; set; }
-        public virtual tb_vigencia tb_vigencia1 { get; set; }
-        public virtual tb_vigencia tb_vigencia2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_tarjetaasistencia> tb_tarjetaasistencia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_traslado> tb_traslado { get; set; }
+        public virtual tb_vigencia tb_vigencia { get; set; }
+        public virtual tb_zona tb_zona { get; set; }
+        public virtual tb_vigencia tb_vigencia1 { get; set; }
+        public virtual tb_vigencia tb_vigencia2 { get; set; }
     }
 }

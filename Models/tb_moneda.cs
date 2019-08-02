@@ -14,6 +14,12 @@ namespace IntranetMundoRepresentaciones.Models
     
     public partial class tb_moneda
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_moneda()
+        {
+            this.tb_paquete = new HashSet<tb_paquete>();
+        }
+    
         public int idMoneda { get; set; }
         public string NombreMoneda { get; set; }
         public Nullable<decimal> precioMoneda { get; set; }
@@ -21,5 +27,8 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<int> usuarioregistro { get; set; }
         public Nullable<System.DateTime> fechamodificacion { get; set; }
         public Nullable<int> usuariomodificacion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
     }
 }

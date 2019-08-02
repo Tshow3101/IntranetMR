@@ -17,6 +17,7 @@ namespace IntranetMundoRepresentaciones.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_cadenahotelera()
         {
+            this.tb_hotel_paquete = new HashSet<tb_hotel_paquete>();
             this.tb_hotel = new HashSet<tb_hotel>();
             this.tb_ingresohotel = new HashSet<tb_ingresohotel>();
             this.tb_tipohabitacion = new HashSet<tb_tipohabitacion>();
@@ -45,6 +46,8 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_pais tb_pais { get; set; }
         public virtual tb_vigencia tb_vigencia { get; set; }
         public virtual tb_zona tb_zona { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_hotel_paquete> tb_hotel_paquete { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_hotel> tb_hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
