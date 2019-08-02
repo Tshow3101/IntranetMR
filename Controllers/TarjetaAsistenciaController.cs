@@ -73,7 +73,7 @@ namespace IntranetMundoRepresentaciones.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idOperador = new SelectList(db.tb_usuario.Where(x => x.TIPOUSUARIO == 56), "idUsuario", "nombreusuario");
+            ViewBag.idOperador = new SelectList(db.tb_usuario.Where(x => x.TIPOUSUARIO == 56), "idUsuario", "nombreusuario", tb_tarjetaasistencia.idOperador);
             return View(tb_tarjetaasistencia);
         }
 
