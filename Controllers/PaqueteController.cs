@@ -47,6 +47,10 @@ namespace IntranetMundoRepresentaciones.Controllers
             ViewBag.tarjetaasistencia = new SelectList(db.tb_tarjetaasistencia, "idTarjetaasistencia", "nombreTarjetaasistencia");
             ViewBag.tematica = new SelectList(db.tb_tematica, "idTematica", "nombretematica");
             ViewBag.zona = new SelectList(db.tb_zona, "idZona", "nombreZona");
+            ViewBag.Cadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera");
+            ViewBag.Hotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel");
+            ViewBag.tipohabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion");
+            ViewBag.idLineaAerea = new SelectList(db.tb_aerolinea, "idAerolinea", "nombrecomercial");
             return View();
         }
 
@@ -94,7 +98,7 @@ namespace IntranetMundoRepresentaciones.Controllers
             ViewBag.pais = new SelectList(db.tb_pais, "idPais", "NombrePais", tb_paquete.pais);
             ViewBag.tarjetaasistencia = new SelectList(db.tb_tarjetaasistencia, "idTarjetaasistencia", "nombreTarjetaasistencia", tb_paquete.tarjetaasistencia);
             ViewBag.tematica = new SelectList(db.tb_tematica, "idTematica", "nombretematica", tb_paquete.tematica);
-            ViewBag.zona = new SelectList(db.tb_zona, "idZona", "nombreZona", tb_paquete.zona);
+            ViewBag.zona = new SelectList(db.tb_zona, "idZona", "nombreZona", tb_paquete.zona);            
             return View(tb_paquete);
         }
 

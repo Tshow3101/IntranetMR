@@ -581,6 +581,7 @@
           <ScalarProperty Name="precion1p" ColumnName="precion1p" />
           <ScalarProperty Name="precion2p" ColumnName="precion2p" />
           <ScalarProperty Name="precion3p" ColumnName="precion3p" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

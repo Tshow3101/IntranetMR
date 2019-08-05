@@ -696,6 +696,7 @@
     <Property Name="precion1p" Type="Decimal" Precision="9" Scale="4" />
     <Property Name="precion2p" Type="Decimal" Precision="9" Scale="4" />
     <Property Name="precion3p" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="estado" Type="Int32" />
     <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_trasla__id_pu__2AA05119" FromRole="tb_traslado" ToRole="tb_ciudad" />
     <NavigationProperty Name="tb_detalleTraslado" Relationship="Self.FK__tb_detall__id_tr__2D7CBDC4" FromRole="tb_traslado" ToRole="tb_detalleTraslado" />
     <NavigationProperty Name="tb_servicios_paquete" Relationship="Self.FK__tb_servic__trasl__4B0D20AB" FromRole="tb_traslado" ToRole="tb_servicios_paquete" />

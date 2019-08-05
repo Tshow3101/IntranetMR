@@ -37,6 +37,7 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<decimal> precion1p { get; set; }
         public Nullable<decimal> precion2p { get; set; }
         public Nullable<decimal> precion3p { get; set; }
+        public Nullable<int> estado { get; set; }
     
         public virtual tb_ciudad tb_ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

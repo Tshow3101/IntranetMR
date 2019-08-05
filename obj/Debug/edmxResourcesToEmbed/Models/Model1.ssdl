@@ -555,6 +555,7 @@
     <Property Name="precion1p" Type="decimal" Precision="9" Scale="4" />
     <Property Name="precion2p" Type="decimal" Precision="9" Scale="4" />
     <Property Name="precion3p" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="estado" Type="int" />
   </EntityType>
   <EntityType Name="tb_usuario">
     <Key>

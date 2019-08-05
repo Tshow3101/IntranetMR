@@ -26,7 +26,7 @@
                         <label>Incentivo</label>
                     </div>
                     <div class="col-md-9">
-
+                        @Html.EditorFor(model => model.incentivo, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
                 <!--Factor-->
@@ -35,7 +35,7 @@
                         <label>Factor</label>
                     </div>
                     <div class="col-md-9">
-
+                        @Html.EditorFor(model => model.factor, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
                 <!--Comision-->
@@ -44,235 +44,382 @@
                         <label>Comision</label>
                     </div>
                     <div class="col-md-9">
-
+                        @Html.EditorFor(model => model.comision, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
-                <!---->
+                <!--Moneda-->
                 <div class="col-md-3">
                     <div class="col-md-3">
-                        <label>Incentivo</label>
+                        <label>Moneda</label>
                     </div>
                     <div class="col-md-9">
-
+                        @Html.DropDownList("moneda", null, htmlAttributes: new { @class = "form-control" })
                     </div>
+                </div>
+            </div>
+            <!--Segunda Fila-->
+            <div class="col-md-12">
+                <!--Seccion-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Seccion</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("seccion", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <!--Tematica-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Tematica</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("tematica", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <!--Nombre Paquete-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Nombre Paquete</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.nombrepaquete, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <!--Tipo Cambio-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Tipo Cambio</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.tipocambio, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <!--Tercera Fila-->
+            <div class="col-md-12">
+                <!--Temporada Viaje-->
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label>Temporada Viaje</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.tempviajeini, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.tempviajefin, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
+                        </div>
+                    </div>
+                </div>
+                <!--Fecha Compra-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Fecha Compra</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.fechacompra, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
+                    </div>
+                </div>
+                <!--Tarjeta Asistencia-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Tarjeta Asistencia</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("tarjetaasistencia", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <!--Cuarta Fila-->
+            <div class="col-md-12">
+                <!--Zona-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Zona</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("zona", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <!--Pais-->
+                <div class="col-md-3">
+                    <div class="col-md-3">
+                        <label>Pais</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("pais", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <!--Destino-->
+                <div class="col-md-6">
+                    <div class="col-md-2">
+                        <label>Destinos</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-6">
+                            @Html.DropDownList("destino1", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.DropDownList("destino2", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Quinta Fila-->
+            <div class="col-md-12">
+                <!--Flyer-->
+                <div class="col-md-6">
+                    <div class="col-md-3">
+                        <label>Flyer</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.flyer, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <!--Word-->
+                <div class="col-md-6">
+                    <div class="col-md-3">
+                        <label>Word</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.word, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <!--Sexta Fila-->
+            <div class="col-md-12">
+                <label>Incluye: </label>
+                @Html.EditorFor(model => model.incluye, new { htmlAttributes = new { @class = "summernote" } })
+            </div>
+            <!--Septima Fila-->
+            <div class="col-md-12">
+                <label>Hotel</label><br />
+                <div class="details">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-bordered table-striped" border="1">
+                            <tr style="text-align:center;">
+                                <td style="text-align:center;">
+                                    <label>Hotel</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Precios</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Precios</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Child 1</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Child 2</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Child 3</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Infante</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Acciones</label>
+                                </td>
+                            </tr>
+                            <tr class="mycontainer" id="mainrow">
+                                <td style="text-align:center;">
+                                    <!--Habitacion-->
+                                    Cadena: @Html.DropDownList("Cadena", null, "Seleccione", htmlAttributes: new { @class = "Cadena form-control", @Style = "width:120px" })
+
+                                    <!--Habitacion-->
+                                    Hotel: @Html.DropDownList("Hotel", null, "Seleccione", htmlAttributes: new { @class = "Hotel form-control", @Style = "width:120px" })
+
+                                    <!--Habitacion-->
+                                    Habitacion: @Html.DropDownList("TipoHabitacion", null, "Seleccione", htmlAttributes: new { @class = "TipoHabitacion form-control", @Style = "width:120px" })
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <!--Doble-->
+                                        Doble: <input type="number" id="doblereal" name="doblereal" class="doblereal form-control" style="width:100px;" onchange="UpdateInput();" />
+
+                                        <!--Triple-->
+                                        Triple: <input type="number" id="triplereal" name="triplereal" class="triplereal form-control" style="width:100px;" onchange="UpdateInput()" />
+
+                                        <!--Cuadruple-->
+                                        Cuadruple: <input type="number" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:100px;" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <!--Simple-->
+                                        Simple: <input type="number" id="simplereal" name="simplereal" class="simplereal form-control" style="width:100px;" onchange="UpdateInput()" />
+
+                                        <!--Quintuple-->
+                                        Quintuple: <input type="number" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:100px;" onchange="UpdateInput()" />
+
+                                        <!--Sextuple-->
+                                        Sextuple: <input type="number" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:100px;" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+
+                                <!--Child 1-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edad1child1" name="edad1child1" placeholder="Min" class="edad1child1 form-control" />
+                                        </div>
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edad2child1" name="edad2child1" placeholder="Max" class="edad2child1 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="child1real" name="child1real" class="child1real form-control" style="width:100px;" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+                                <!--Child 2-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edad1child2" name="edad1child2" placeholder="Min" class="edad1child2 form-control" />
+                                        </div>
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edad2child2" name="edad2child2" placeholder="Max" class="edad2child2 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="child2real" name="child2real" class="child2real form-control" style="width:100px;" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+                                <!--Child 3-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label><br />
+                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edad1child3" name="edad1child3" placeholder="Min" class="edad1child3 form-control" />
+                                        </div>
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edad2child3" name="edad2child3" placeholder="Max" class="edad2child3 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="child3real" name="child3real" class="child3real form-control" style="width:100px;" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+                                <!--Infante-->
+                                <td style="text-align:center;">
+                                    <label>Edades</label>
+                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edadinfante1" name="edadinfante1" placeholder="Min" class="edadinfante1 form-control" />
+                                        </div>
+                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
+                                            <input type="number" id="edadinfante2" name="edadinfante2" placeholder="Max" class="edadinfante2 form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:center">
+                                        <br />
+                                        <input type="number" id="infantereal" name="infantereal" class="infantereal form-control" style="width:100px;" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+                                <!--Acciones-->
+                                <td style="vertical-align:middle;">
+                                    <input type="button" id="add" value="Agregar" style="width: 80px" class="btn btn-primary" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="orderItems">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+                    </div>
+                </div>
+            </div>
+            <!--Octava Fila-->
+            <div class="col-md-12">
+                <label>Linea Aerea</label><br />
+                <div class="details">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-bordered table-striped" border="1">
+                            <tr style="text-align:center;">
+                                <td style="text-align:center;">
+                                    <label>Linea Aerea</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Clase</label>
+                                </td>
+                                <td style="text-align:center;">
+                                    <label>Precio</label>
+                                </td>
+                                <td style="text-align:center">
+                                    <label>Acciones</label>
+                                </td>
+                            </tr>
+                            <tr class="mycontainer" id="mainrow">
+                                <td style="text-align:center;">
+                                    <!--Aerolinea-->
+                                    @Html.DropDownList("idLineaAerea", null, "Seleccione", htmlAttributes: new { @class = "Cadena form-control", @style = "width:300px" })
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <!--Clase-->
+                                        <input type="text" id="clase" name="clase" class="clase form-control" style="width:300px" onchange="UpdateInput();" />
+                                    </div>
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <div class="col-md-12" style="text-align:center">
+                                        <!--Precio-->
+                                        <input type="number" id="precio" name="precio" class="precio form-control" style="width:300px" onchange="UpdateInput()" />
+                                    </div>
+                                </td>
+
+                                <!--Acciones-->
+                                <td style="vertical-align:middle; text-align:center;">
+                                    <input type="button" id="add" value="Agregar" style="width: 80px" class="btn btn-primary" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="orderItems">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+                    </div>
+                </div>
+            </div>
+            <!--Novena Fila-->
+            <div class="col-md-12">
+                <label>Servicios</label><br />
+            </div>
+            <!--Decima Fila-->
+            <div class="col-md-12">
+                <label>Notas: </label>
+                @Html.EditorFor(model => model.notas, new { htmlAttributes = new { @class = "summernote" } })
+            </div>
+            <!--Botones-->
+            <div class="col-md-12" style="text-align:center;"><br />
+                <div class="form-group">
+                    <input id="submit" type="button" value="Guardar Paquete" class="btn btn-success" />
+                    @Html.ActionLink("Regresar Lista Paquetes", "Index", null, new { @class = "btn btn-danger" })
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>tb_paquete</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.incentivo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.incentivo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.incentivo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.factor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.factor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.factor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.comision, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.comision, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.comision, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechacompra, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechacompra, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fechacompra, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.seccion, "seccion", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("seccion", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.seccion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tematica, "tematica", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("tematica", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.tematica, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.moneda, "moneda", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("moneda", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.moneda, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tipocambio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tipocambio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tipocambio, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombrepaquete, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombrepaquete, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombrepaquete, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tempviajeini, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tempviajeini, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tempviajeini, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tempviajefin, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tempviajefin, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tempviajefin, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.zona, "zona", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("zona", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.zona, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.pais, "pais", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("pais", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.pais, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.destino1, "destino1", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("destino1", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.destino1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.destino2, "destino2", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("destino2", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.destino2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.flyer, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.flyer, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.flyer, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.word, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.word, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.word, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tarjetaasistencia, "tarjetaasistencia", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("tarjetaasistencia", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.tarjetaasistencia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.incluye, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.incluye, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.incluye, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.notas, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.notas, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.notas, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechacreacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechacreacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fechacreacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.usuariocreacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.usuariocreacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.usuariocreacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechamodificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechamodificacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fechamodificacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.usuariomodificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.usuariomodificacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.usuariomodificacion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
+<script>
+    $(document).ready(function () {
+        FormSummernote.init();
+    });
+</script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
