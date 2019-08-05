@@ -545,13 +545,16 @@
     <Property Name="fecha_vigencia" Type="date" />
     <Property Name="rango1n1" Type="int" />
     <Property Name="rango2n1" Type="int" />
-    <Property Name="precion1" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="precion1f" Type="decimal" Precision="9" Scale="4" />
     <Property Name="rango1n2" Type="int" />
     <Property Name="rango2n2" Type="int" />
-    <Property Name="precion2" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="precion2f" Type="decimal" Precision="9" Scale="4" />
     <Property Name="rango1n3" Type="int" />
     <Property Name="rango2n3" Type="int" />
-    <Property Name="precion3" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="precion3f" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="precion1p" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="precion2p" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="precion3p" Type="decimal" Precision="9" Scale="4" />
   </EntityType>
   <EntityType Name="tb_usuario">
     <Key>

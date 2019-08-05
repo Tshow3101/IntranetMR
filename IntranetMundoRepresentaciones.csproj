@@ -149,6 +149,7 @@
     <Compile Include="Controllers\MonedaController.cs" />
     <Compile Include="Controllers\OperadorController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\PaqueteController.cs" />
     <Compile Include="Controllers\TarifaAereaController.cs" />
     <Compile Include="Controllers\TarjetaAsistenciaController.cs" />
     <Compile Include="Controllers\TipoCategoriaController.cs" />
@@ -6608,6 +6609,11 @@
     <Content Include="Views\TarjetaAsistencia\Details.cshtml" />
     <Content Include="Views\TarjetaAsistencia\Edit.cshtml" />
     <Content Include="Views\TarjetaAsistencia\Index.cshtml" />
+    <Content Include="Views\Paquete\Create.cshtml" />
+    <Content Include="Views\Paquete\Delete.cshtml" />
+    <Content Include="Views\Paquete\Details.cshtml" />
+    <Content Include="Views\Paquete\Edit.cshtml" />
+    <Content Include="Views\Paquete\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,211 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_paquete
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_paquete</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.incentivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incentivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.factor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.factor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechacompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechacompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipocambio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipocambio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombrepaquete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombrepaquete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempviajeini)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempviajeini)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempviajefin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempviajefin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flyer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flyer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.word)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.word)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.incluye)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incluye)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechacreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechacreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariocreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariocreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudad1.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudad1.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_moneda.NombreMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_moneda.NombreMoneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_pais.NombrePais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_tematica.nombretematica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tematica.nombretematica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_zona.nombreZona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPaquete }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

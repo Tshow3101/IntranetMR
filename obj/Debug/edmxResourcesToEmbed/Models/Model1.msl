@@ -571,13 +571,16 @@
           <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
           <ScalarProperty Name="rango1n1" ColumnName="rango1n1" />
           <ScalarProperty Name="rango2n1" ColumnName="rango2n1" />
-          <ScalarProperty Name="precion1" ColumnName="precion1" />
+          <ScalarProperty Name="precion1f" ColumnName="precion1f" />
           <ScalarProperty Name="rango1n2" ColumnName="rango1n2" />
           <ScalarProperty Name="rango2n2" ColumnName="rango2n2" />
-          <ScalarProperty Name="precion2" ColumnName="precion2" />
+          <ScalarProperty Name="precion2f" ColumnName="precion2f" />
           <ScalarProperty Name="rango1n3" ColumnName="rango1n3" />
           <ScalarProperty Name="rango2n3" ColumnName="rango2n3" />
-          <ScalarProperty Name="precion3" ColumnName="precion3" />
+          <ScalarProperty Name="precion3f" ColumnName="precion3f" />
+          <ScalarProperty Name="precion1p" ColumnName="precion1p" />
+          <ScalarProperty Name="precion2p" ColumnName="precion2p" />
+          <ScalarProperty Name="precion3p" ColumnName="precion3p" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

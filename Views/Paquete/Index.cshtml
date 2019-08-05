@@ -1,0 +1,172 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_paquete>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.incentivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.factor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechacompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipocambio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrepaquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tempviajeini)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tempviajefin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flyer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.word)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.incluye)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechacreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariocreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_ciudad1.nombreCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_moneda.NombreMoneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_tematica.nombretematica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.incentivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.factor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechacompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipocambio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrepaquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tempviajeini)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tempviajefin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flyer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.word)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.incluye)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechacreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariocreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuariomodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_categoria.nombreCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_ciudad.nombreCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_ciudad1.nombreCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_moneda.NombreMoneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_pais.NombrePais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tarjetaasistencia.nombreTarjetaasistencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tematica.nombretematica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_zona.nombreZona)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idPaquete }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idPaquete }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idPaquete })
+        </td>
+    </tr>
+}
+
+</table>

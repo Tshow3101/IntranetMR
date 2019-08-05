@@ -27,13 +27,16 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<System.DateTime> fecha_vigencia { get; set; }
         public Nullable<int> rango1n1 { get; set; }
         public Nullable<int> rango2n1 { get; set; }
-        public Nullable<decimal> precion1 { get; set; }
+        public Nullable<decimal> precion1f { get; set; }
         public Nullable<int> rango1n2 { get; set; }
         public Nullable<int> rango2n2 { get; set; }
-        public Nullable<decimal> precion2 { get; set; }
+        public Nullable<decimal> precion2f { get; set; }
         public Nullable<int> rango1n3 { get; set; }
         public Nullable<int> rango2n3 { get; set; }
-        public Nullable<decimal> precion3 { get; set; }
+        public Nullable<decimal> precion3f { get; set; }
+        public Nullable<decimal> precion1p { get; set; }
+        public Nullable<decimal> precion2p { get; set; }
+        public Nullable<decimal> precion3p { get; set; }
     
         public virtual tb_ciudad tb_ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

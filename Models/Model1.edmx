@@ -550,13 +550,16 @@
           <Property Name="fecha_vigencia" Type="date" />
           <Property Name="rango1n1" Type="int" />
           <Property Name="rango2n1" Type="int" />
-          <Property Name="precion1" Type="decimal" Precision="9" Scale="4" />
+          <Property Name="precion1f" Type="decimal" Precision="9" Scale="4" />
           <Property Name="rango1n2" Type="int" />
           <Property Name="rango2n2" Type="int" />
-          <Property Name="precion2" Type="decimal" Precision="9" Scale="4" />
+          <Property Name="precion2f" Type="decimal" Precision="9" Scale="4" />
           <Property Name="rango1n3" Type="int" />
           <Property Name="rango2n3" Type="int" />
-          <Property Name="precion3" Type="decimal" Precision="9" Scale="4" />
+          <Property Name="precion3f" Type="decimal" Precision="9" Scale="4" />
+          <Property Name="precion1p" Type="decimal" Precision="9" Scale="4" />
+          <Property Name="precion2p" Type="decimal" Precision="9" Scale="4" />
+          <Property Name="precion3p" Type="decimal" Precision="9" Scale="4" />
         </EntityType>
         <EntityType Name="tb_usuario">
           <Key>
@@ -2771,13 +2774,16 @@
           <Property Name="fecha_vigencia" Type="DateTime" Precision="0" />
           <Property Name="rango1n1" Type="Int32" />
           <Property Name="rango2n1" Type="Int32" />
-          <Property Name="precion1" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="precion1f" Type="Decimal" Precision="9" Scale="4" />
           <Property Name="rango1n2" Type="Int32" />
           <Property Name="rango2n2" Type="Int32" />
-          <Property Name="precion2" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="precion2f" Type="Decimal" Precision="9" Scale="4" />
           <Property Name="rango1n3" Type="Int32" />
           <Property Name="rango2n3" Type="Int32" />
-          <Property Name="precion3" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="precion3f" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="precion1p" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="precion2p" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="precion3p" Type="Decimal" Precision="9" Scale="4" />
           <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_trasla__id_pu__2AA05119" FromRole="tb_traslado" ToRole="tb_ciudad" />
           <NavigationProperty Name="tb_detalleTraslado" Relationship="Self.FK__tb_detall__id_tr__2D7CBDC4" FromRole="tb_traslado" ToRole="tb_detalleTraslado" />
           <NavigationProperty Name="tb_servicios_paquete" Relationship="Self.FK__tb_servic__trasl__4B0D20AB" FromRole="tb_traslado" ToRole="tb_servicios_paquete" />
@@ -4914,13 +4920,16 @@
                 <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
                 <ScalarProperty Name="rango1n1" ColumnName="rango1n1" />
                 <ScalarProperty Name="rango2n1" ColumnName="rango2n1" />
-                <ScalarProperty Name="precion1" ColumnName="precion1" />
+                <ScalarProperty Name="precion1f" ColumnName="precion1f" />
                 <ScalarProperty Name="rango1n2" ColumnName="rango1n2" />
                 <ScalarProperty Name="rango2n2" ColumnName="rango2n2" />
-                <ScalarProperty Name="precion2" ColumnName="precion2" />
+                <ScalarProperty Name="precion2f" ColumnName="precion2f" />
                 <ScalarProperty Name="rango1n3" ColumnName="rango1n3" />
                 <ScalarProperty Name="rango2n3" ColumnName="rango2n3" />
-                <ScalarProperty Name="precion3" ColumnName="precion3" />
+                <ScalarProperty Name="precion3f" ColumnName="precion3f" />
+                <ScalarProperty Name="precion1p" ColumnName="precion1p" />
+                <ScalarProperty Name="precion2p" ColumnName="precion2p" />
+                <ScalarProperty Name="precion3p" ColumnName="precion3p" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
