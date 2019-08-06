@@ -51,6 +51,7 @@ namespace IntranetMundoRepresentaciones.Controllers
             ViewBag.Hotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel");
             ViewBag.tipohabitacion = new SelectList(db.tb_tipohabitacion, "idTipoHabitacion", "NombreTipoHabitacion");
             ViewBag.idLineaAerea = new SelectList(db.tb_aerolinea, "idAerolinea", "nombrecomercial");
+            ViewBag.tiposervicio = new SelectList(db.tb_categoria.Where(x => x.idTipocategoria == 37), "idAerolinea", "nombrecomercial");
             return View();
         }
 

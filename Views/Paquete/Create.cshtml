@@ -360,10 +360,10 @@
                                     <label>Acciones</label>
                                 </td>
                             </tr>
-                            <tr class="mycontainer" id="mainrow">
+                            <tr class="mycontainer2" id="mainrow2">
                                 <td style="text-align:center;">
                                     <!--Aerolinea-->
-                                    @Html.DropDownList("idLineaAerea", null, "Seleccione", htmlAttributes: new { @class = "Cadena form-control", @style = "width:300px" })
+                                    @Html.DropDownList("idLineaAerea", null, "Seleccione", htmlAttributes: new { @class = "idLineaAerea form-control", @style = "width:300px" })
                                 </td>
 
                                 <td style="text-align:center;">
@@ -382,21 +382,74 @@
 
                                 <!--Acciones-->
                                 <td style="vertical-align:middle; text-align:center;">
-                                    <input type="button" id="add" value="Agregar" style="width: 80px" class="btn btn-primary" />
+                                    <input type="button" id="add2" value="Agregar" style="width:80px" class="btn btn-primary" />
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                <div id="orderItems">
+                <div id="orderItems2">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+                        <table class="table table-bordered table-striped" id="orderdetailsItems2"></table>
                     </div>
                 </div>
             </div>
             <!--Novena Fila-->
             <div class="col-md-12">
                 <label>Servicios</label><br />
+                <div class="col-md-12">
+                    <label>Linea Aerea</label><br />
+                    <div class="details">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-bordered table-striped" border="1">
+                                <tr style="text-align:center;">
+                                    <td style="text-align:center;">
+                                        <label>Tipo Servicio</label>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <label>Servicio</label>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <label>Precio</label>
+                                    </td>
+                                    <td style="text-align:center">
+                                        <label>Acciones</label>
+                                    </td>
+                                </tr>
+                                <tr class="mycontainer3" id="mainrow3">
+                                    <td style="text-align:center;">
+                                        <!--Aerolinea-->
+                                        @Html.DropDownList("tiposervicio", null, "Seleccione", htmlAttributes: new { @class = "tiposervicio form-control", @style = "width:300px" })
+                                    </td>
+
+                                    <td style="text-align:center;">
+                                        <div class="col-md-12" style="text-align:center">
+                                            <!--Clase-->
+                                            <input type="text" id="traslados" name="traslados" class="traslados form-control" style="width:300px" onchange="UpdateInput();" />
+                                        </div>
+                                    </td>
+
+                                    <td style="text-align:center;">
+                                        <div class="col-md-12" style="text-align:center">
+                                            <!--Precio-->
+                                            <input type="number" id="precio" name="precio" class="precio form-control" style="width:300px" onchange="UpdateInput()" />
+                                        </div>
+                                    </td>
+
+                                    <!--Acciones-->
+                                    <td style="vertical-align:middle; text-align:center;">
+                                        <input type="button" id="add3" value="Agregar" style="width:80px" class="btn btn-primary" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="orderItems3">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped" id="orderdetailsItems3"></table>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!--Decima Fila-->
             <div class="col-md-12">
