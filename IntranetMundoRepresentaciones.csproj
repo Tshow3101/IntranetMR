@@ -154,6 +154,7 @@
     <Compile Include="Controllers\TarjetaAsistenciaController.cs" />
     <Compile Include="Controllers\TipoCategoriaController.cs" />
     <Compile Include="Controllers\TipoHabitacionController.cs" />
+    <Compile Include="Controllers\TrasladoController.cs" />
     <Compile Include="Controllers\VigenciaController.cs" />
     <Compile Include="Controllers\ZonaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -6614,6 +6615,12 @@
     <Content Include="Views\Paquete\Details.cshtml" />
     <Content Include="Views\Paquete\Edit.cshtml" />
     <Content Include="Views\Paquete\Index.cshtml" />
+    <Content Include="Views\Traslado\Create.cshtml" />
+    <Content Include="Views\Traslado\Delete.cshtml" />
+    <Content Include="Views\Traslado\Details.cshtml" />
+    <Content Include="Views\Traslado\DetailsR.cshtml" />
+    <Content Include="Views\Traslado\Edit.cshtml" />
+    <Content Include="Views\Traslado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

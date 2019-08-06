@@ -1,0 +1,569 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_traslado
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Editar Traslado</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                /*Primera Fila*/
+                <div class="col-md-12">
+                    <!--Tipo Documento-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Operador</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="id_traslado" value="@Model.id_traslado" hidden />
+                            @Html.DropDownList("id_operador", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Documento-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Punto de Salida</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.DropDownList("id_puntosalida", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                        </div>
+                    </div>
+
+                    <!--Numero Documento-->
+                    <div class="col-md-4">
+                        <div class="col-md-5">
+                            <label style="font-size:11px;">Vigencia</label>
+                        </div>
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.fecha_vigencia, "{0:yyyy-MM-dd}", new { @class = "form-control fecha_vigencia", @style = "width:100%; height:30px;", @type = "date" })
+                        </div>
+                    </div>
+                </div> /*Tabla Detalle Maestro*/
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <div class="details">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-bordered table-striped" border="1">
+                                <thead>
+                                    <tr style="text-align:center;">
+                                        <td style="text-align:center;">
+                                            <label>Punto Salida / Tramo</label>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <label>Traslados Compartidos</label>
+                                        </td>
+                                        <td style="text-align:center;" colspan="3">
+                                            <label>Traslados Privados</label>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <label>Traslados de Lujo</label>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <label>Acciones</label>
+                                        </td>
+                                    </tr>
+                                    @foreach (var item in Model.tb_detalleTraslado.Take(1))
+                                    {
+                                        <tr style="text-align:center;">
+                                            <td style="text-align:center;">
+                                                <label></label>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <label></label>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango1a_priv" name="rango1a_priv" placeholder="Min" class="rango1a_priv form-control" value="@item.rango1a_priv" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango2a_priv" name="rango2a_priv" placeholder="Max" class="rango2a_priv form-control" value="@item.rango2a_priv" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango1b_priv" name="rango1b_priv" placeholder="Min" class="rango1b_priv form-control" value="@item.rango1b_priv" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango2b_priv" name="rango2b_priv" placeholder="Max" class="rango2b_priv form-control" value="@item.rango2b_priv" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango1c_priv" name="rango1c_priv" placeholder="Min" class="rango1c_priv form-control" value="@item.rango1c_priv" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango2c_priv" name="rango2c_priv" placeholder="Max" class="rango2c_priv form-control" value="@item.rango2c_priv" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango1d_lujo" name="rango1d_lujo" placeholder="Min" class="rango1d_lujo form-control" value="@item.rango1d_lujo" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="number" id="rango2d_lujo" name="rango2d_lujo" placeholder="Max" class="rango2d_lujo form-control" value="@item.rango2d_lujo" />
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td style="text-align:center">
+                                                <button class="btn btn-primary" id="add" style="width:50px" type="button"><i class="fa fa-plus"></i></button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </thead>
+                                <tbody class="tbodyreg" id="tbodyreg">
+                                    @foreach (var item in Model.tb_detalleTraslado)
+                                    {
+                                        <tr>
+                                            <!--Habitacion-->
+                                            <td style="text-align:center;">
+                                                <div class="col-md-12">
+                                                    <label>Punta Llegada</label>
+                                                    <select id="idDestino" class="idDestino form-control">
+                                                        <option value="@item.id_destino" selected>@item.tb_ciudad.nombreCiudad</option>
+                                                    </select>
+                                                    <br />
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label>Tramo</label>
+                                                    <select id="idTramo" class="idTramo form-control">
+                                                        <option value="@item.id_tramo" selected>@item.tb_categoria.nombreCategoria</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <!--Precio Compartido-->
+                                            <td style="text-align:center;vertical-align:middle">
+                                                <div class="col-md-12">
+                                                    <input type="text" id="precio_compartido" name="precio_compartido" class="precio_compartido form-control" value="@String.Format("{0:0.00}", item.precio_compartido)" />
+                                                </div>
+                                            </td>
+                                            <!--Precio Compartido-->
+                                            <td style="text-align:center;vertical-align:middle">
+                                                <div class="col-md-12">
+                                                    <input type="text" id="precioa_priv" name="precioa_priv" class="precioa_priv form-control" value="@String.Format("{0:0.00}", item.precioa_priv)" />
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;vertical-align:middle">
+                                                <div class="col-md-12">
+                                                    <input type="text" id="preciob_priv" name="preciob_priv" class="preciob_priv form-control" value="@String.Format("{0:0.00}", item.preciob_priv)" />
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;vertical-align:middle">
+                                                <div class="col-md-12">
+                                                    <input type="text" id="precioc_priv" name="precioc_priv" class="precioc_priv form-control" value="@String.Format("{0:0.00}", item.precioc_priv)" />
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;vertical-align:middle">
+                                                <div class="col-md-12">
+                                                    <input type="text" id="preciod_lujo" name="preciod_lujo" class="preciod_lujo form-control" value="@String.Format("{0:0.00}", item.preciod_lujo)" />
+                                                </div>
+                                            </td>
+                                            <!--Acciones-->
+                                            <td style="text-align:center;vertical-align:middle">
+                                                <button class="btn btn-danger remove" id="remove" style="width:50px" type="button"><i class="fa fa-minus"></i></button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tbody>
+                                    <tr class="troculto" id="troculto" hidden>
+                                        <!--Habitacion-->
+                                        <td style="text-align:center;">
+                                            <div class="col-md-12">
+                                                <label>Punta Llegada</label>
+                                                <select id="idDestino" class="idDestino form-control">
+                                                    <option value="0">Seleccione</option>
+                                                </select>
+                                                <br />
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Tramo</label>
+                                                <select id="idTramo" class="idTramo form-control">
+                                                    <option value="0">Seleccione</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <!--Precio Compartido-->
+                                        <td style="text-align:center;vertical-align:middle">
+                                            <div class="col-md-12">
+                                                <input type="text" id="precio_compartido" name="precio_compartido" class="precio_compartido form-control" />
+                                            </div>
+                                        </td>
+                                        <!--Precio Compartido-->
+                                        <td style="text-align:center;vertical-align:middle">
+                                            <div class="col-md-12">
+                                                <input type="text" id="precioa_priv" name="precioa_priv" class="precioa_priv form-control" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;vertical-align:middle">
+                                            <div class="col-md-12">
+                                                <input type="text" id="preciob_priv" name="preciob_priv" class="preciob_priv form-control" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;vertical-align:middle">
+                                            <div class="col-md-12">
+                                                <input type="text" id="precioc_priv" name="precioc_priv" class="precioc_priv form-control" />
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;vertical-align:middle">
+                                            <div class="col-md-12">
+                                                <input type="text" id="preciod_lujo" name="preciod_lujo" class="preciod_lujo form-control" />
+                                            </div>
+                                        </td>
+                                        <!--Acciones-->
+                                        <td style="text-align:center;vertical-align:middle">
+                                            <button class="btn btn-danger remove" id="remove" style="width:50px" type="button" disabled><i class="fa fa-minus"></i></button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div id="orderItems">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+                        </div>
+                        <span id="orderItemError" style="color: red"></span>
+                    </div>
+                </div>
+
+                /*Tabla Detalle Maestro Niño*/
+
+                <h4>PRECIO EN NIÑOS</h4>
+                <div class="col-md-12" style="margin-top:5px !important">
+                    <div class="details">
+                        <div class="table-responsive">
+                            <table id="example2" class="table table-bordered table-striped" border="1">
+                                <thead>
+                                    <tr style="text-align:center;">
+                                        <td style="text-align:center;">
+                                            <label>Rango Edad</label>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <label>Precio</label>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody id="edadniños">
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <input type="number" id="rango1n1" name="rango1n1" placeholder="Min" class="rango1n1 form-control" value="@Model.rango1n1" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="number" id="rango2n1" name="rango2n1" placeholder="Max" class="rango2n1 form-control" value="@Model.rango2n1" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <input type="text" id="precion1f" name="precion1f" class="precion1f form-control" placeholder="0.00" value="@String.Format("{0:0.00}", Model.precion1f)" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="precion1p" name="precion1p" class="precion1p form-control" placeholder="%" value="@String.Format("{0:0.00}", Model.precion1p)" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <input type="number" id="rango1n2" name="rango1n2" placeholder="Min" class="rango1n2 form-control" value="@Model.rango1n2" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="number" id="rango2n2" name="rango2n2" placeholder="Max" class="rango2n2 form-control" value="@Model.rango2n2" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <input type="text" id="precion2f" name="precion2f" class="precion2f form-control" placeholder="0.00" value="@String.Format("{0:0.00}", Model.precion2f)" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="precion2p" name="precion2p" class="precion2p form-control" placeholder="%" value="@String.Format("{0:0.00}", Model.precion2p)" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <input type="number" id="rango1n3" name="rango1n3" placeholder="Min" class="rango1n3 form-control" value="@Model.rango1n3" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="number" id="rango2n3" name="rango2n3" placeholder="Max" class="rango2n3 form-control" value="@Model.rango2n3" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <input type="text" id="precion3f" name="precion3f" class="precion3f form-control" placeholder="0.00" value="@String.Format("{0:0.00}", Model.precion3f)" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="precion3p" name="precion3p" class="precion3p form-control" placeholder="%" value="@String.Format("{0:0.00}", Model.precion3p)" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div id="orderItems">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+                        </div>
+                        <span id="orderItemError" style="color: red"></span>
+                    </div>
+                </div>
+
+
+
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;">
+                    <div class="form-group">
+                        <input type="button" id="submit" value="Editar Traslado" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista de Traslado", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("getDestinos", "Traslado")',
+            dataType: 'json',
+            success: function (States) {
+                if (States.length == 0) {
+                    $('.idDestino').append('<option value=""></option>');
+                }
+                else {
+                    $(".idDestino").append('<option value=""></option>');
+                    $.each(States, function (i, State) {
+                        $(".idDestino").append('<option value="' + State.idDestino + '">' +
+                            State.Destino + '</option>');
+                    });
+                }
+            },
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        })
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("getTramo", "Traslado")',
+            dataType: 'json',
+            success: function (States) {
+                if (States.length == 0) {
+                    $('.idTramo').append('<option value=""></option>');
+                }
+                else {
+                    $(".idTramo").append('<option value=""></option>');
+                    $.each(States, function (i, State) {
+                        $(".idTramo").append('<option value="' + State.idCategoria + '">' +
+                            State.Categoria + '</option>');
+                    });
+                }
+            },
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        })
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#add").click(function () {
+            console.log('alertita')
+            var nuevafila = $('#troculto').clone();
+            nuevafila.find('button').removeAttr('disabled');
+            nuevafila.removeAttr('hidden');
+            $('.remove').removeAttr('disabled');
+            $('#tbodyreg').append(nuevafila);
+            $('#precio_compartido, #precioa_priv, #preciob_priv, #precioc_priv, #preciod_lujo', nuevafila).val("0");
+        })
+
+        $('#example').on('click', '#remove', function () {
+            $(this).parents('tr').remove();
+        });
+    });
+</script>
+
+<script>
+    $('#submit').click(function () {
+        var isAllValid = true;
+
+        $('#orderItemError').text('');
+        var list = [];
+        var errorItemCount = 0;
+
+        $('#tbodyreg tr').each(function (index, ele) {
+            var orderItem = {
+                id_traslado: $("#id_traslado").val(),
+                id_destino: $('select.idDestino', this).val(),
+                id_tramo: $('select.idTramo', this).val(),
+                precio_compartido: $('.precio_compartido', this).val(),
+                rango1a_priv: $('#rango1a_priv').val(),
+                rango2a_priv: $('#rango2a_priv').val(),
+                precioa_priv: $('.precioa_priv', this).val(),
+                rango1b_priv: $('#rango1b_priv').val(),
+                rango2b_priv: $('#rango2b_priv').val(),
+                preciob_priv: $('.preciob_priv', this).val(),
+                rango1c_priv: $('#rango1c_priv').val(),
+                rango2c_priv: $('#rango2c_priv').val(),
+                precioc_priv: $('.precioc_priv', this).val(),
+                rango1d_lujo: $('#rango1d_lujo').val(),
+                rango2d_lujo: $('#rango2d_lujo').val(),
+                preciod_lujo: $('.preciod_lujo', this).val(),
+                estado: 1,
+
+            }
+            list.push(orderItem);
+
+        })
+
+        var detalle = {
+            id: $('#id_traslado').val(),
+            tb_detalleTraslado: list,
+        }
+
+        if (isAllValid) {
+            var data = {
+                id_traslado: $("#id_traslado").val(),
+                id_operador: $('select#id_operador').val(),
+                id_puntosalida: $('select#id_puntosalida').val(),
+                fecha_vigencia: $('#fecha_vigencia').val(),
+                rango1n1: $('#rango1n1').val(),
+                rango2n1: $('#rango2n1').val(),
+                precion1f: $('#precion1f').val(),
+                rango1n2: $('#rango1n2').val(),
+                rango2n2: $('#rango2n2').val(),
+                precion2f: $('#precion2f').val(),
+                rango1n3: $('#rango1n3').val(),
+                rango2n3: $('#rango2n3').val(),
+                precion3f: $('#precion3f').val(),
+                precion1p: $('#precion1p').val(),
+                precion2p: $('#precion2p').val(),
+                precion3p: $('#precion3p').val(),
+                tb_detalleTraslado: list,
+            }
+            console.log(data);
+            console.log(detalle);
+
+            var id = $('#id_traslado').val();
+
+            $.ajax({
+
+                type: 'POST',
+                url: '/Traslado/EditarTraslado',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.status) {
+                        $.ajax({
+
+                            type: 'POST',
+                            url: '/Traslado/eliminaDetalles',
+                            data: JSON.stringify(detalle),
+                            contentType: 'application/json',
+                            success: function (data) {
+                                if (data.status) {
+                                    sweetAlert({
+                                        title: 'Correcto',
+                                        text: 'Traslado ha sido registrado correctamente.',
+                                        type: 'success'
+                                    }).then(function () {
+                                        window.location.reload();
+
+                                    });
+                                }
+
+                                else {
+                                    sweetAlert({
+                                        title: 'Error',
+                                        text: 'Traslado no ha podido ser registrada.',
+                                        type: 'error'
+                                    }).then(function () {
+                                        window.location.reload();
+
+                                    });
+                                }
+                                $('#submit').text('Save');
+                            },
+                            error: function (error) {
+                                console.log(error);
+                                $('#submit').text('Save');
+                            }
+                        });
+                    }
+
+                    else {
+                        sweetAlert({
+                            title: 'Error',
+                            text: 'Traslado no ha podido ser registrada',
+                            type: 'error'
+                        }).then(function () {
+                            window.location.reload();
+
+                        });
+                    }
+                    $('#submit').text('Save');
+                },
+                error: function (error) {
+                    console.log(error);
+                    $('#submit').text('Save');
+                }
+            });
+        }
+
+    });
+
+</script>
+

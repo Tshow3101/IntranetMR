@@ -1,0 +1,49 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_traslado
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tb_traslado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_vigencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_vigencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuario.apellidopaternousuario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

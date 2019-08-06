@@ -1,0 +1,245 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_traslado
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type='text/css'>
+    tr:nth-child(odd) {
+        background-color: #CFCFCF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+</style>
+<style type="text/css">
+    .inputmedio {
+        width: 250px;
+    }
+
+    .inputmediot {
+        width: 250px;
+    }
+
+    .inputmedion {
+        width: 100px;
+        text-align: center;
+    }
+
+    .inputmediom {
+        width: 50px;
+        text-align: center;
+    }
+
+    .titulo-tabla {
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        border: solid 1px white;
+    }
+
+    .cabecera-tabla {
+        background-color: #6A6A6A;
+        font-weight: bold;
+        font-size: 20px !important;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+        text-transform: uppercase !important;
+    }
+
+    .tabla-diseño {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        background: white;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .tbody1 {
+        background-color: #CFCFCF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .tbody2 {
+        background-color: #FFFFFF !important;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .datos {
+        font-family: Arial;
+        font-size: 18px;
+        color: black;
+        border: solid 1px white;
+    }
+
+    .datos2 {
+        font-family: Arial;
+        font-size: 18px;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .totales {
+        background-color: yellow !important;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .mayusculas {
+        text-transform: uppercase;
+    }
+</style>
+
+
+<br />
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Detalle Traslado</h4>
+        </div>
+        <div class="panel-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+
+                <article id="post-63" class="item post-63 post type-post status-publish format-standard hentry category-data-technical-tips category-technical-tips tag-data tag-database-optimization tag-loading-speed tag-query-performance tag-summary-table" content="text/html;charset=UTF-8" style="background-color:#EEEEEE">
+
+                    <fieldset id="prueba">
+                        <br />
+                        <div class="row" style="text-align:center">
+                            <table class="tabla-diseño" style="text-transform:uppercase">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">TRASLADOS</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">OPERADOR</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_usuario.nombreusuario)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">DESTINO DE SALIDA</td>
+                                    <td class="col-md-2 datos">&nbsp;@Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)</td>
+                                    <td class="titulo-tabla datos col-md-2" style="text-align:left">FECHA DE VIGENCIA</td>
+                                    <td class="col-md-2 datos">&nbsp;@String.Format("{0:yyyy-MM-dd}", Model.fecha_vigencia)</td>
+                                </tr>
+
+                            </table>
+                            <br />
+                            <table class="tabla-diseño" style="border-radius:0px 0px 10px 10px; border-color:white !important">
+                                @foreach (var item in Model.tb_detalleTraslado.Take(1))
+                                {
+                                    <thead>
+                                        <tr>
+                                            <th class="cabecera-tabla" style="border-radius: 10px 0px 0px 0px !important;">Punto Salida / Tramo</th>
+                                            <th class="cabecera-tabla" style="">Traslados Compartidos</th>
+                                            <th colspan="3" class="cabecera-tabla" style="">Traslados Privados</th>
+                                            <th class="cabecera-tabla" style="border-radius: 0px 10px 0px 0px !important;">Traslados de Lujo</th>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="cabecera-tabla" style="font-size:18px !important">&nbsp;</th>
+                                            <th class="cabecera-tabla" style="font-size:18px !important">&nbsp;</th>
+                                            <th class="cabecera-tabla" style="font-size:18px !important">@item.rango1a_priv a @item.rango2a_priv Pax</th>
+                                            <th class="cabecera-tabla" style="font-size:18px !important">@item.rango1b_priv a @item.rango2b_priv Pax</th>
+                                            <th class="cabecera-tabla" style="font-size:18px !important">@item.rango1c_priv a @item.rango2c_priv Pax</th>
+                                            <th class="cabecera-tabla" style="font-size:18px !important">@item.rango1d_lujo a @item.rango2d_lujo Pax</th>
+                                        </tr>
+
+                                    </thead>
+                                }
+                                @foreach (var item in Model.tb_detalleTraslado)
+                                {
+                                    <tbody>
+                                        <tr>
+                                            <td class="titulo-tabla datos">@item.tb_ciudad.nombreCiudad <br /> @item.tb_categoria.nombreCategoria</td>
+                                            <td class="datos">@String.Format("{0:0.00}", item.precio_compartido)</td>
+                                            <td class="datos">@String.Format("{0:0.00}", item.precioa_priv)</td>
+                                            <td class="datos">@String.Format("{0:0.00}", item.preciob_priv)</td>
+                                            <td class="datos">@String.Format("{0:0.00}", item.precioc_priv)</td>
+                                            <td class="datos">@String.Format("{0:0.00}", item.preciod_lujo)</td>
+                                        </tr>
+                                    </tbody>
+                                }
+                            </table>
+                            <br />
+                            <table class="tabla-diseño" style="border-radius:0px 0px 10px 10px">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" class="cabecera-tabla" style="border-radius: 10px 10px 0px 0px !important;">PRECIO EN NIÑOS</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="cabecera-tabla">RANGO DE EDAD</th>
+                                        <th class="cabecera-tabla">PRECIO / REGLA</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="datos">@Model.rango1n1 a @Model.rango2n1 años</td>
+                                        <td class="datos">
+                                            @if (Model.precion1f == null)
+                                            {
+                                                @String.Format("{0:0.00}", Model.precion1p)
+                                            }
+                                            else
+                                            {
+                                                @String.Format("{0:0.00}", Model.precion1f)
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="datos">@Model.rango1n2 a @Model.rango2n2 años</td>
+                                        <td class="datos">
+                                            @if (Model.precion2f == null)
+                                            {
+                                                @String.Format("{0:0.00}", Model.precion2p)
+                                            }
+                                            else
+                                            {
+                                                @String.Format("{0:0.00}", Model.precion2f)
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="datos">@Model.rango1n3 a @Model.rango2n3 años</td>
+                                        <td class="datos">
+                                            @if (Model.precion3f == null)
+                                            {
+                                                @String.Format("{0:0.00}", Model.precion3p)
+                                            }
+                                            else
+                                            {
+                                                @String.Format("{0:0.00}", Model.precion3f)
+                                            }
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <br />
+                            <div class="col-md-12" style="text-align:center">
+                                <div class="col-md-6" style="text-align:center">
+                                    <label><a class="btn btn-inverse m-r-5 m-b-5" href="~/Traslado/Index" style="width:150px">REGRESAR</a></label>
+                                </div>
+                                <div class="col-md-6" style="text-align:center">
+                                    <a class="btn btn-inverse m-r-5 m-b-5" href="@Url.Action("GeneratePDF", "Traslado", new { id = Model.id_traslado })">DESCARGAR</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </article>
+            }
+        </div>
+    </div>
+</div>
