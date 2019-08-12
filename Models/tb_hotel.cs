@@ -18,8 +18,8 @@ namespace IntranetMundoRepresentaciones.Models
         public tb_hotel()
         {
             this.tb_contactohotel = new HashSet<tb_contactohotel>();
-            this.tb_hotel_paquete = new HashSet<tb_hotel_paquete>();
             this.tb_ingresohotel = new HashSet<tb_ingresohotel>();
+            this.tb_paquete = new HashSet<tb_paquete>();
             this.tb_tipohabitacion = new HashSet<tb_tipohabitacion>();
         }
     
@@ -54,13 +54,13 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_ciudad tb_ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_contactohotel> tb_contactohotel { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_hotel_paquete> tb_hotel_paquete { get; set; }
         public virtual tb_pais tb_pais { get; set; }
         public virtual tb_vigencia tb_vigencia { get; set; }
         public virtual tb_zona tb_zona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_ingresohotel> tb_ingresohotel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_tipohabitacion> tb_tipohabitacion { get; set; }
     }

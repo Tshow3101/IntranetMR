@@ -18,7 +18,7 @@ namespace IntranetMundoRepresentaciones.Models
         public tb_tipohabitacion()
         {
             this.tb_detalleingresohotel = new HashSet<tb_detalleingresohotel>();
-            this.tb_hotel_paquete = new HashSet<tb_hotel_paquete>();
+            this.tb_paquete = new HashSet<tb_paquete>();
         }
     
         public int idTipoHabitacion { get; set; }
@@ -38,6 +38,6 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual ICollection<tb_detalleingresohotel> tb_detalleingresohotel { get; set; }
         public virtual tb_hotel tb_hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_hotel_paquete> tb_hotel_paquete { get; set; }
+        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
     }
 }

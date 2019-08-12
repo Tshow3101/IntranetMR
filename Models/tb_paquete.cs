@@ -14,53 +14,44 @@ namespace IntranetMundoRepresentaciones.Models
     
     public partial class tb_paquete
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_paquete()
-        {
-            this.tb_hotel_paquete = new HashSet<tb_hotel_paquete>();
-            this.tb_lineaerea_paquete = new HashSet<tb_lineaerea_paquete>();
-            this.tb_servicios_paquete = new HashSet<tb_servicios_paquete>();
-        }
-    
         public int idPaquete { get; set; }
-        public Nullable<int> incentivo { get; set; }
+        public Nullable<int> idZona { get; set; }
+        public Nullable<int> idPais { get; set; }
+        public Nullable<int> idCiudad { get; set; }
+        public Nullable<System.DateTime> fecha_compra_in { get; set; }
+        public Nullable<System.DateTime> fecha_compra_out { get; set; }
+        public Nullable<System.DateTime> fecha_viajes_in { get; set; }
+        public Nullable<System.DateTime> fecha_viaje_out { get; set; }
+        public Nullable<int> idCadenaH { get; set; }
+        public Nullable<int> idHotelH { get; set; }
+        public Nullable<int> idTipoHabitacionH { get; set; }
+        public string acomodacionH { get; set; }
+        public Nullable<decimal> precioH { get; set; }
+        public Nullable<int> idOperadorT { get; set; }
+        public Nullable<int> idCiudadT { get; set; }
+        public string planT { get; set; }
+        public Nullable<decimal> precioT { get; set; }
+        public Nullable<int> idOperadorTA { get; set; }
+        public Nullable<int> planTA { get; set; }
+        public Nullable<decimal> precioTA { get; set; }
+        public Nullable<decimal> incentivo { get; set; }
         public Nullable<decimal> factor { get; set; }
-        public Nullable<int> comision { get; set; }
-        public Nullable<System.DateTime> fechacompra { get; set; }
-        public Nullable<int> seccion { get; set; }
-        public Nullable<int> tematica { get; set; }
-        public Nullable<int> moneda { get; set; }
-        public Nullable<decimal> tipocambio { get; set; }
-        public string nombrepaquete { get; set; }
-        public Nullable<System.DateTime> tempviajeini { get; set; }
-        public Nullable<System.DateTime> tempviajefin { get; set; }
-        public Nullable<int> zona { get; set; }
-        public Nullable<int> pais { get; set; }
-        public Nullable<int> destino1 { get; set; }
-        public Nullable<int> destino2 { get; set; }
-        public string flyer { get; set; }
-        public string word { get; set; }
-        public Nullable<int> tarjetaasistencia { get; set; }
-        public string incluye { get; set; }
-        public string notas { get; set; }
-        public Nullable<System.DateTime> fechacreacion { get; set; }
-        public Nullable<int> usuariocreacion { get; set; }
-        public Nullable<System.DateTime> fechamodificacion { get; set; }
-        public Nullable<int> usuariomodificacion { get; set; }
+        public Nullable<int> aerolinea { get; set; }
+        public Nullable<int> npax { get; set; }
+        public Nullable<decimal> precio_A { get; set; }
+        public Nullable<decimal> precio_TTA { get; set; }
+        public Nullable<decimal> preciototal { get; set; }
     
-        public virtual tb_categoria tb_categoria { get; set; }
+        public virtual tb_aerolinea tb_aerolinea { get; set; }
+        public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
         public virtual tb_ciudad tb_ciudad { get; set; }
         public virtual tb_ciudad tb_ciudad1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_hotel_paquete> tb_hotel_paquete { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_lineaerea_paquete> tb_lineaerea_paquete { get; set; }
-        public virtual tb_moneda tb_moneda { get; set; }
+        public virtual tb_hotel tb_hotel { get; set; }
         public virtual tb_pais tb_pais { get; set; }
-        public virtual tb_tarjetaasistencia tb_tarjetaasistencia { get; set; }
-        public virtual tb_tematica tb_tematica { get; set; }
+        public virtual tb_usuario tb_usuario { get; set; }
+        public virtual tb_usuario tb_usuario1 { get; set; }
+        public virtual tb_tipohabitacion tb_tipohabitacion { get; set; }
         public virtual tb_zona tb_zona { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_servicios_paquete> tb_servicios_paquete { get; set; }
+        public virtual tb_tarjetaasistencia tb_tarjetaasistencia { get; set; }
     }
 }

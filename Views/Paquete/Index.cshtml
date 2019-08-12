@@ -13,55 +13,55 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.fecha_compra_in)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_compra_out)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_viajes_in)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_viaje_out)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.acomodacionH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.planT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioTA)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.incentivo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.factor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.comision)
+            @Html.DisplayNameFor(model => model.npax)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fechacompra)
+            @Html.DisplayNameFor(model => model.precio_A)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tipocambio)
+            @Html.DisplayNameFor(model => model.precio_TTA)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombrepaquete)
+            @Html.DisplayNameFor(model => model.preciototal)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tempviajeini)
+            @Html.DisplayNameFor(model => model.tb_aerolinea.NombreComercial)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tempviajefin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.flyer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.word)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.incluye)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.notas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fechacreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.usuariocreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fechamodificacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.usuariomodificacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
+            @Html.DisplayNameFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
@@ -70,19 +70,25 @@
             @Html.DisplayNameFor(model => model.tb_ciudad1.nombreCiudad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tb_moneda.NombreMoneda)
+            @Html.DisplayNameFor(model => model.tb_hotel.nombrehotel)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tb_tematica.nombretematica)
+            @Html.DisplayNameFor(model => model.tb_usuario1.apellidopaternousuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
         </th>
         <th></th>
     </tr>
@@ -90,55 +96,55 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.fecha_compra_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_compra_out)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_viajes_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_viaje_out)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.acomodacionH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precioH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.planT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precioT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precioTA)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.incentivo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.factor)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.comision)
+            @Html.DisplayFor(modelItem => item.npax)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fechacompra)
+            @Html.DisplayFor(modelItem => item.precio_A)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tipocambio)
+            @Html.DisplayFor(modelItem => item.precio_TTA)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.nombrepaquete)
+            @Html.DisplayFor(modelItem => item.preciototal)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tempviajeini)
+            @Html.DisplayFor(modelItem => item.tb_aerolinea.NombreComercial)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tempviajefin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.flyer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.word)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.incluye)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.notas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fechacreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuariocreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fechamodificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuariomodificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tb_categoria.nombreCategoria)
+            @Html.DisplayFor(modelItem => item.tb_cadenahotelera.nombreCadenaHotelera)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.tb_ciudad.nombreCiudad)
@@ -147,19 +153,25 @@
             @Html.DisplayFor(modelItem => item.tb_ciudad1.nombreCiudad)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tb_moneda.NombreMoneda)
+            @Html.DisplayFor(modelItem => item.tb_hotel.nombrehotel)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.tb_pais.NombrePais)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tb_tarjetaasistencia.nombreTarjetaasistencia)
+            @Html.DisplayFor(modelItem => item.tb_usuario.apellidopaternousuario)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tb_tematica.nombretematica)
+            @Html.DisplayFor(modelItem => item.tb_usuario1.apellidopaternousuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tipohabitacion.NombreTipoHabitacion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.tb_zona.nombreZona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tarjetaasistencia.nombreTarjetaasistencia)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.idPaquete }) |

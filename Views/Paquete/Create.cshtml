@@ -4,8 +4,17 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <br />
+<style>
+    .col-md-2 {
+        width: 21%;
+    }
+
+    .classelected {
+     background-color : yellow;
+     font-weight : bold;
+    }
+</style>
 <div class="col-md-12">
     <div class="panel panel-inverse">
         <div class="panel-heading">
@@ -15,464 +24,672 @@
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
             </div>
-            <h4 class="panel-title">Crear Ingreso Hotel</h4>
+            <h4 class="panel-title">Crear Paquete</h4>
         </div>
         <div class="panel-body">
-            <!--Primera Fila-->
-            <div class="col-md-12">
-                <!--Incentivo-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Incentivo</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.incentivo, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-                <!--Factor-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Factor</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.factor, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-                <!--Comision-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Comision</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.comision, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-                <!--Moneda-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Moneda</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.DropDownList("moneda", null, htmlAttributes: new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-            <!--Segunda Fila-->
-            <div class="col-md-12">
-                <!--Seccion-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Seccion</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.DropDownList("seccion", null, htmlAttributes: new { @class = "form-control" })
-                    </div>
-                </div>
-                <!--Tematica-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Tematica</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.DropDownList("tematica", null, htmlAttributes: new { @class = "form-control" })
-                    </div>
-                </div>
-                <!--Nombre Paquete-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Nombre Paquete</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.nombrepaquete, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-                <!--Tipo Cambio-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Tipo Cambio</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.tipocambio, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-            </div>
-            <!--Tercera Fila-->
-            <div class="col-md-12">
-                <!--Temporada Viaje-->
-                <div class="col-md-6">
-                    <div class="col-md-2">
-                        <label>Temporada Viaje</label>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="col-md-6">
-                            @Html.EditorFor(model => model.tempviajeini, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
-                        </div>
-                        <div class="col-md-6">
-                            @Html.EditorFor(model => model.tempviajefin, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
-                        </div>
-                    </div>
-                </div>
-                <!--Fecha Compra-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Fecha Compra</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.fechacompra, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
-                    </div>
-                </div>
-                <!--Tarjeta Asistencia-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Tarjeta Asistencia</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.DropDownList("tarjetaasistencia", null, htmlAttributes: new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-            <!--Cuarta Fila-->
-            <div class="col-md-12">
-                <!--Zona-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Zona</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.DropDownList("zona", null, htmlAttributes: new { @class = "form-control" })
-                    </div>
-                </div>
-                <!--Pais-->
-                <div class="col-md-3">
-                    <div class="col-md-3">
-                        <label>Pais</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.DropDownList("pais", null, htmlAttributes: new { @class = "form-control" })
-                    </div>
-                </div>
-                <!--Destino-->
-                <div class="col-md-6">
-                    <div class="col-md-2">
-                        <label>Destinos</label>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="col-md-6">
-                            @Html.DropDownList("destino1", null, htmlAttributes: new { @class = "form-control" })
-                        </div>
-                        <div class="col-md-6">
-                            @Html.DropDownList("destino2", null, htmlAttributes: new { @class = "form-control" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Quinta Fila-->
-            <div class="col-md-12">
-                <!--Flyer-->
-                <div class="col-md-6">
-                    <div class="col-md-3">
-                        <label>Flyer</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.flyer, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-                <!--Word-->
-                <div class="col-md-6">
-                    <div class="col-md-3">
-                        <label>Word</label>
-                    </div>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.word, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                </div>
-            </div>
-            <!--Sexta Fila-->
-            <div class="col-md-12">
-                <label>Incluye: </label>
-                @Html.EditorFor(model => model.incluye, new { htmlAttributes = new { @class = "summernote" } })
-            </div>
-            <!--Septima Fila-->
-            <div class="col-md-12">
-                <label>Hotel</label><br />
-                <div class="details">
-                    <div class="table-responsive">
-                        <table id="example" class="table table-bordered table-striped" border="1">
-                            <tr style="text-align:center;">
-                                <td style="text-align:center;">
-                                    <label>Hotel</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Precios</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Precios</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Child 1</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Child 2</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Child 3</label>
-                                </td>
-                                <td style="text-align:center">
-                                    <label>Infante</label>
-                                </td>
-                                <td style="text-align:center">
-                                    <label>Acciones</label>
-                                </td>
-                            </tr>
-                            <tr class="mycontainer" id="mainrow">
-                                <td style="text-align:center;">
-                                    <!--Habitacion-->
-                                    Cadena: @Html.DropDownList("Cadena", null, "Seleccione", htmlAttributes: new { @class = "Cadena form-control", @Style = "width:120px" })
-
-                                    <!--Habitacion-->
-                                    Hotel: @Html.DropDownList("Hotel", null, "Seleccione", htmlAttributes: new { @class = "Hotel form-control", @Style = "width:120px" })
-
-                                    <!--Habitacion-->
-                                    Habitacion: @Html.DropDownList("TipoHabitacion", null, "Seleccione", htmlAttributes: new { @class = "TipoHabitacion form-control", @Style = "width:120px" })
-                                </td>
-
-                                <td style="text-align:center;">
-                                    <div class="col-md-12" style="text-align:center">
-                                        <!--Doble-->
-                                        Doble: <input type="number" id="doblereal" name="doblereal" class="doblereal form-control" style="width:100px;" onchange="UpdateInput();" />
-
-                                        <!--Triple-->
-                                        Triple: <input type="number" id="triplereal" name="triplereal" class="triplereal form-control" style="width:100px;" onchange="UpdateInput()" />
-
-                                        <!--Cuadruple-->
-                                        Cuadruple: <input type="number" id="cuadruplereal" name="cuadruplereal" class="cuadruplereal form-control" style="width:100px;" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-
-                                <td style="text-align:center;">
-                                    <div class="col-md-12" style="text-align:center">
-                                        <!--Simple-->
-                                        Simple: <input type="number" id="simplereal" name="simplereal" class="simplereal form-control" style="width:100px;" onchange="UpdateInput()" />
-
-                                        <!--Quintuple-->
-                                        Quintuple: <input type="number" id="quituplereal" name="quituplereal" class="quituplereal form-control" style="width:100px;" onchange="UpdateInput()" />
-
-                                        <!--Sextuple-->
-                                        Sextuple: <input type="number" id="sextuplereal" name="sextuplereal" class="sextuplereal form-control" style="width:100px;" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-
-                                <!--Child 1-->
-                                <td style="text-align:center;">
-                                    <label>Edades</label><br />
-                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edad1child1" name="edad1child1" placeholder="Min" class="edad1child1 form-control" />
-                                        </div>
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edad2child1" name="edad2child1" placeholder="Max" class="edad2child1 form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="text-align:center">
-                                        <br />
-                                        <input type="number" id="child1real" name="child1real" class="child1real form-control" style="width:100px;" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-                                <!--Child 2-->
-                                <td style="text-align:center;">
-                                    <label>Edades</label><br />
-                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edad1child2" name="edad1child2" placeholder="Min" class="edad1child2 form-control" />
-                                        </div>
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edad2child2" name="edad2child2" placeholder="Max" class="edad2child2 form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="text-align:center">
-                                        <br />
-                                        <input type="number" id="child2real" name="child2real" class="child2real form-control" style="width:100px;" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-                                <!--Child 3-->
-                                <td style="text-align:center;">
-                                    <label>Edades</label><br />
-                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edad1child3" name="edad1child3" placeholder="Min" class="edad1child3 form-control" />
-                                        </div>
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edad2child3" name="edad2child3" placeholder="Max" class="edad2child3 form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="text-align:center">
-                                        <br />
-                                        <input type="number" id="child3real" name="child3real" class="child3real form-control" style="width:100px;" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-                                <!--Infante-->
-                                <td style="text-align:center;">
-                                    <label>Edades</label>
-                                    <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edadinfante1" name="edadinfante1" placeholder="Min" class="edadinfante1 form-control" />
-                                        </div>
-                                        <div class="col-md-6" style="padding-right: 0px; padding-left: 0px;">
-                                            <input type="number" id="edadinfante2" name="edadinfante2" placeholder="Max" class="edadinfante2 form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="text-align:center">
-                                        <br />
-                                        <input type="number" id="infantereal" name="infantereal" class="infantereal form-control" style="width:100px;" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-                                <!--Acciones-->
-                                <td style="vertical-align:middle;">
-                                    <input type="button" id="add" value="Agregar" style="width: 80px" class="btn btn-primary" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div id="orderItems">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
-                    </div>
-                </div>
-            </div>
-            <!--Octava Fila-->
-            <div class="col-md-12">
-                <label>Linea Aerea</label><br />
-                <div class="details">
-                    <div class="table-responsive">
-                        <table id="example" class="table table-bordered table-striped" border="1">
-                            <tr style="text-align:center;">
-                                <td style="text-align:center;">
-                                    <label>Linea Aerea</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Clase</label>
-                                </td>
-                                <td style="text-align:center;">
-                                    <label>Precio</label>
-                                </td>
-                                <td style="text-align:center">
-                                    <label>Acciones</label>
-                                </td>
-                            </tr>
-                            <tr class="mycontainer2" id="mainrow2">
-                                <td style="text-align:center;">
-                                    <!--Aerolinea-->
-                                    @Html.DropDownList("idLineaAerea", null, "Seleccione", htmlAttributes: new { @class = "idLineaAerea form-control", @style = "width:300px" })
-                                </td>
-
-                                <td style="text-align:center;">
-                                    <div class="col-md-12" style="text-align:center">
-                                        <!--Clase-->
-                                        <input type="text" id="clase" name="clase" class="clase form-control" style="width:300px" onchange="UpdateInput();" />
-                                    </div>
-                                </td>
-
-                                <td style="text-align:center;">
-                                    <div class="col-md-12" style="text-align:center">
-                                        <!--Precio-->
-                                        <input type="number" id="precio" name="precio" class="precio form-control" style="width:300px" onchange="UpdateInput()" />
-                                    </div>
-                                </td>
-
-                                <!--Acciones-->
-                                <td style="vertical-align:middle; text-align:center;">
-                                    <input type="button" id="add2" value="Agregar" style="width:80px" class="btn btn-primary" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div id="orderItems2">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped" id="orderdetailsItems2"></table>
-                    </div>
-                </div>
-            </div>
-            <!--Novena Fila-->
-            <div class="col-md-12">
-                <label>Servicios</label><br />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                /*Primera Fila*/
                 <div class="col-md-12">
-                    <label>Linea Aerea</label><br />
-                    <div class="details">
-                        <div class="table-responsive">
-                            <table id="example" class="table table-bordered table-striped" border="1">
-                                <tr style="text-align:center;">
-                                    <td style="text-align:center;">
-                                        <label>Tipo Servicio</label>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <label>Servicio</label>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <label>Precio</label>
-                                    </td>
-                                    <td style="text-align:center">
-                                        <label>Acciones</label>
-                                    </td>
-                                </tr>
-                                <tr class="mycontainer3" id="mainrow3">
-                                    <td style="text-align:center;">
-                                        <!--Aerolinea-->
-                                        @Html.DropDownList("tiposervicio", null, "Seleccione", htmlAttributes: new { @class = "tiposervicio form-control", @style = "width:300px" })
-                                    </td>
+                    <fieldset>
+                        <legend>Información Inicial</legend>
+                        <div class="col-md-12">
+                            <!--Zona-->
+                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Zona</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idZona", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
 
-                                    <td style="text-align:center;">
-                                        <div class="col-md-12" style="text-align:center">
-                                            <!--Clase-->
-                                            <input type="text" id="traslados" name="traslados" class="traslados form-control" style="width:300px" onchange="UpdateInput();" />
-                                        </div>
-                                    </td>
+                            <!--País-->
+                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">País</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idPais", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
 
-                                    <td style="text-align:center;">
-                                        <div class="col-md-12" style="text-align:center">
-                                            <!--Precio-->
-                                            <input type="number" id="precio" name="precio" class="precio form-control" style="width:300px" onchange="UpdateInput()" />
-                                        </div>
-                                    </td>
-
-                                    <!--Acciones-->
-                                    <td style="vertical-align:middle; text-align:center;">
-                                        <input type="button" id="add3" value="Agregar" style="width:80px" class="btn btn-primary" />
-                                    </td>
-                                </tr>
-                            </table>
+                            <!--Ciudad-->
+                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Ciudad</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idCiudad", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="col-md-12" style="margin-top:5px !important">
+                            <div class="col-md-6">
+                                <div class="col-md-3">
+                                    <label style="font-size:11px;">Fecha de Viaje</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input id="fecha_viajes_in" type="date" style="width:100%; height:30px" />
+                                </div>
+                                <div class="col-md-3" style="text-align:center">
+                                    <label style="font-size:11px;">a</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input id="fecha_viajes_out" type="date" style="width:100%; height:30px" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-3">
+                                    <label style="font-size:11px;">Fecha de Compra</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input id="fecha_compra_in" type="date" style="width:100%; height:30px" />
+                                </div>
+                                <div class="col-md-3" style="text-align:center">
+                                    <label style="font-size:11px;">a</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input id="fecha_compra_out" type="date" style="width:100%; height:30px" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>
+                            Hotel
+                            <button type="button" id="chotel" class="btn btn-search"><i class="fa fa-search"></i></button>
+
+                        </legend>
+
+                        <div class="col-md-12">
+                            <!--Zona-->
+                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Cadena Hotelera</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idCadenaH", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+
+                            <!--País-->
+                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Hotel</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idHotelH", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+
+                            <!--Ciudad-->
+                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Tipo Habitacion</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idTipoHabitacionH", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="margin-top:10px !important" id="divhotel">
+                        </div>
+
+                        <div class="col-md-12" style="margin-top:5px !important" id="preciohotel">
+                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>
+                            Traslado
+                            <button type="button" id="ctraslado" class="btn btn-search"><i class="fa fa-search"></i></button>
+                        </legend>
+
+                        <div class="col-md-12">
+                            <!--Zona-->
+                            <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Operador</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idOperadorT", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+
+                            <!--País-->
+                            <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Destino Llegada</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idCiudadT", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="margin-top:5px !important" id="divtraslado">
+                        </div>
+                        <div class="col-md-12" style="margin-top:5px !important" id="preciotraslado">
+                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Tarjeta de Asistencia</legend>
+
+                        <div class="col-md-12">
+                            <!--Zona-->
+                            <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Operador</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("idOperadorTA", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+
+                            <!--País-->
+                            <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Plan</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("planTA", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="margin-top:5px !important" id="divtraslado">
+                        </div>
+                        <div class="col-md-12" style="margin-top:5px !important" id="preciotraslado">
+                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Aereo</legend>
+
+                        <div class="col-md-12">
+                            <!--Zona-->
+                            <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">Linea Aerea</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("aerolinea", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                </div>
+                            </div>
+
+                            <!--País-->
+                            <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label style="font-size:11px;">N° Pax</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input id="npax" type="text" style="width:100%; height:30px" placeholder="0.00" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="margin-top:5px !important" id="divaereo">
+                        </div>
+                        <div class="col-md-12" style="margin-top:5px !important" id="divaereo">
+                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <div class="col-md-4">
+                        <fieldset>
+                            <legend>Incentivo</legend>
+                            <div class="col-md-12">
+                                <input id="incentivo" type="text" style="width:100%; height:30px" placeholder="0.00" />
+                            </div>
+                        </fieldset>
                     </div>
-                    <div id="orderItems3">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped" id="orderdetailsItems3"></table>
-                        </div>
+                    <div class="col-md-4">
+                        <fieldset>
+                            <legend>Factor</legend>
+                            <div class="col-md-12">
+                                <input id="factor" type="text" style="width:100%; height:30px" placeholder="0.00" />
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br />
+
+                    <br />
+                </div>
+
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;margin-top:10px !important">
+                    <div class="form-group">
+                        <input type="submit" value="Agregar Empleado" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Empleado", "Index", null, new { @class = "btn btn-danger" })
                     </div>
                 </div>
-            </div>
-            <!--Decima Fila-->
-            <div class="col-md-12">
-                <label>Notas: </label>
-                @Html.EditorFor(model => model.notas, new { htmlAttributes = new { @class = "summernote" } })
-            </div>
-            <!--Botones-->
-            <div class="col-md-12" style="text-align:center;"><br />
-                <div class="form-group">
-                    <input id="submit" type="button" value="Guardar Paquete" class="btn btn-success" />
-                    @Html.ActionLink("Regresar Lista Paquetes", "Index", null, new { @class = "btn btn-danger" })
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+    $("#idZona").change(function () {
+        //Se limpia el contenido del dropdownlist
+        $("#idPais").empty();
+        $.ajax({
+            type: 'POST',
+            //Llamado al metodo en el controlador
+            url: '@Url.Action("getPais", "Paquete")',
+            dataType: 'json',
+            //Parametros que se envian al metodo del controlador
+            data: { id: $("#idZona").val() },
+            //En caso de resultado exitoso
+            success: function (States) {
+                if (States.length == 0) {
+                    $("#idPais").append('<option value=""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    $("#idPais").append('<option value=""></option>');
+                    $.each(States, function (i, State) {
+                        $("#idPais").append('<option value="' + State.idPais + '">' +
+                            State.Pais + '</option>');
+                    });
+                }
+                //Recargar el plugin para que tenga la funcionalidad del componente
+                $("#idPais").select({ placeholder: "Seleccione un Pais" });
+            },
+            //Mensaje de error en caso de fallo
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        });
+        return false;
+    })
+})
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $("#idPais").change(function () {
+        //Se limpia el contenido del dropdownlist
+        $("#idCiudad").empty();
+        $.ajax({
+            type: 'POST',
+            //Llamado al metodo en el controlador
+            url: '@Url.Action("getDestinos", "Paquete")',
+            dataType: 'json',
+            //Parametros que se envian al metodo del controlador
+            data: { id: $("#idPais").val() },
+            //En caso de resultado exitoso
+            success: function (States) {
+                if (States.length == 0) {
+                    $("#idCiudad").append('<option value=""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    $("#idCiudad").append('<option value=""></option>');
+                    $.each(States, function (i, State) {
+                        $("#idCiudad").append('<option value="' + State.idCiudad + '">' +
+                            State.Ciudad + '</option>');
+                    });
+                }
+                //Recargar el plugin para que tenga la funcionalidad del componente
+                $("#idCiudad").select({ placeholder: "Seleccione una Ciudad" });
+            },
+            //Mensaje de error en caso de fallo
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        });
+        return false;
+    })
+})
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#idCadenaH").change(function () {
+        //Se limpia el contenido del dropdownlist
+            $("#idHotelH").empty();
+        $.ajax({
+            type: 'POST',
+            //Llamado al metodo en el controlador
+            url: '@Url.Action("getHotel", "Paquete")',
+            dataType: 'json',
+            //Parametros que se envian al metodo del controlador
+            data: { id: $("#idCadenaH").val() },
+            //En caso de resultado exitoso
+            success: function (States) {
+                if (States.length == 0) {
+                    $("#idHotelH").append('<option value=""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    $("#idHotelH").append('<option value=""></option>');
+                    $.each(States, function (i, State) {
+                        $("#idHotelH").append('<option value="' + State.idHotel + '">' +
+                            State.Hotel + '</option>');
+                    });
+                }
+                //Recargar el plugin para que tenga la funcionalidad del componente
+                $("#idHotelH").select({ placeholder: "Seleccione un Hotel" });
+            },
+            //Mensaje de error en caso de fallo
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        });
+        return false;
+    })
+})
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#idHotelH").change(function () {
+        //Se limpia el contenido del dropdownlist
+            $("#idTipoHabitacionH").empty();
+        $.ajax({
+            type: 'POST',
+            //Llamado al metodo en el controlador
+            url: '@Url.Action("getTipoHabitacion", "Paquete")',
+            dataType: 'json',
+            //Parametros que se envian al metodo del controlador
+            data: { id: $("#idHotelH").val() },
+            //En caso de resultado exitoso
+            success: function (States) {
+                if (States.length == 0) {
+                    $("#idTipoHabitacionH").append('<option value=""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    $("#idTipoHabitacionH").append('<option value=""></option>');
+                    $.each(States, function (i, State) {
+                        $("#idTipoHabitacionH").append('<option value="' + State.idTipoHabitacion + '">' +
+                            State.TipoHabitacion + '</option>');
+                    });
+                }
+                //Recargar el plugin para que tenga la funcionalidad del componente
+                $("#idTipoHabitacionH").select({ placeholder: "Seleccione un Hotel" });
+            },
+            //Mensaje de error en caso de fallo
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        });
+        return false;
+    })
+})
+</script>
 
 <script>
-    $(document).ready(function () {
-        FormSummernote.init();
+    $('#chotel').click(function () {
+
+        var data = {
+            ch: $("#idCadenaH").val(),
+            ht: $("#idHotelH").val(),
+            fechaini: $("#fecha_compra_in").val(),
+            fechaout: $("#fecha_compra_out").val(),
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/Paquete/getPreTarifaHotelera',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function (States) {
+                if (States.length == 0) {
+                    sweetAlert({
+                        title: 'Error',
+                        text: 'No hay tarifas.',
+                        type: 'error'
+                    }).then(function () {
+                    });
+                }
+                else {
+                    $.each(States, function (i, State) {
+                        var ingresoh = State.idIngresoHotel;
+                        console.log(ingresoh);
+                        var detalle = {
+                            ih: ingresoh,
+                            th: $("#idTipoHabitacionH").val(),
+                        }
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/Paquete/getTarifaHotelera',
+                            data: JSON.stringify(detalle),
+                            contentType: 'application/json',
+                            success: function (States) {
+                                if (States.length == 0) {
+                                    sweetAlert({
+                                        title: 'Error',
+                                        text: 'No hay tarifas.',
+                                        type: 'error'
+                                    }).then(function () {
+                                    });
+                                }
+                                else {
+                                    $("#divhotel").empty();
+                                    $.each(States, function (i, State) {
+                                        if (State.doblereal == null) { var doblereal = "-" } else { var doblereal = State.doblereal}
+                                        if (State.triplereal == null) { var triplereal = "-" } else { var triplereal = State.triplereal}
+                                        if (State.infantereal == null) { var infantereal = "-" } else { var infantereal = State.infantereal}
+                                        if (State.cuadruplereal == null) { var cuadruplereal = "-" } else { var cuadruplereal = State.cuadruplereal}
+                                        if (State.simplereal == null) { var simplereal = "-" } else { var simplereal = State.simplereal}
+                                        if (State.quituplereal == null) { var quituplereal = "-" } else { var quituplereal = State.quituplereal}
+                                        if (State.sextuplereal == null) { var sextuplereal = "-" } else { var sextuplereal = State.sextuplereal}
+                                        if (State.child1real == null) { var child1real = "-" } else { var child1real = State.child1real}
+                                        if (State.edad1child1 == null) { var edad1child1 = "-" } else { var edad1child1 = State.edad1child1}
+                                        if (State.edad2child1 == null) { var edad2child1 = "-" } else { var edad2child1 = State.edad2child1}
+                                        if (State.child2real == null) { var child2real = "-" } else { var child2real = State.child2real}
+                                        if (State.edad1child2 == null) { var edad1child2 = "-" } else { var edad1child2 = State.edad1child2}
+                                        if (State.edad2child2 == null) { var edad2child2 = "-" } else { var edad2child2 = State.edad2child2}
+                                        if (State.child3real == null) { var child3real = "-" } else { var child3real = State.child3real}
+                                        if (State.edad1child3 == null) { var edad1child3 = "-" } else { var edad1child3 = State.edad1child3}
+                                        if (State.edad2child3 == null) { var edad2child3 = "-" } else { var edad2child3 = State.edad2child3}
+                                        if (State.edadinfante1 == null) { var edadinfante1 = "-" } else { var edadinfante1 = State.edadinfante1}
+                                        if (State.edadinfante2 == null) { var edadinfante2 = "-" } else { var edadinfante2 = State.edadinfante2}
+                                        if (State.capmaximaadu == null) { var capmaximaadu = "-" } else { var capmaximaadu = State.capmaximaadu}
+                                        if (State.capmaximanin == null) { var capmaximanin = "-" } else { var capmaximanin = State.capmaximanin}
+                                        if (State.serviciohabitacion1 == null) { var serviciohabitacion1 = "-" } else { var serviciohabitacion1 = State.serviciohabitacion1}
+                                        if (State.serviciohabitacion2 == null) { var serviciohabitacion2 = "-" } else { var serviciohabitacion2 = State.serviciohabitacion2}
+                                        if (State.preciserviciodoble1 == null) { var preciserviciodoble1 = "-" } else { var preciserviciodoble1 = State.preciserviciodoble1}
+                                        if (State.preciserviciotriple1 == null) { var preciserviciotriple1 = "-" } else { var preciserviciotriple1 = State.preciserviciotriple1}
+                                        if (State.preciserviciocuadruple1 == null) { var preciserviciocuadruple1 = "-" } else { var preciserviciocuadruple1 = State.preciserviciocuadruple1}
+                                        if (State.preciserviciosimple1 == null) { var preciserviciosimple1 = "-" } else { var preciserviciosimple1 = State.preciserviciosimple1}
+                                        if (State.preciservicioquintuple1 == null) { var preciservicioquintuple1 = "-" } else { var preciservicioquintuple1 = State.preciservicioquintuple1}
+                                        if (State.preciserviciosextuple1 == null) { var preciserviciosextuple1 = "-" } else { var preciserviciosextuple1 = State.preciserviciosextuple1}
+                                        if (State.preciserviciodoble2 == null) { var preciserviciodoble2 = "-" } else { var preciserviciodoble2 = State.preciserviciodoble2}
+                                        if (State.preciserviciotriple2 == null) { var preciserviciotriple2 = "-" } else { var preciserviciotriple2 = State.preciserviciotriple2}
+                                        if (State.preciserviciocuadruple2 == null) { var preciserviciocuadruple2 = "-" } else { var preciserviciocuadruple2 = State.preciserviciocuadruple2}
+                                        if (State.preciserviciosimple2 == null) { var preciserviciosimple2 = "-" } else { var preciserviciosimple2 = State.preciserviciosimple2}
+                                        if (State.preciservicioquintuple2 == null) { var preciservicioquintuple2 = "-" } else { var preciservicioquintuple2 = State.preciservicioquintuple2}
+                                        if (State.preciserviciosextuple2 == null) { var preciserviciosextuple2 = "-" } else { var preciserviciosextuple2 = State.preciserviciosextuple2}
+                                        if (State.tipohabitacion == null) { var tipohabitacion = "-" } else { var tipohabitacion = State.tipohabitacion}
+                                        $('#divhotel').append(
+                                            "<table id='example' class='table table-bordered table-striped' border='1'>" +
+                                            "<thead>" +
+                                            "<tr>" +
+                                            "<td style='text-align-last:center'> Habitacion A:" + capmaximaadu + " - N:" + capmaximanin + "</td>" +
+                                            "<td style='text-align-last:center'> Doble </td>" +
+                                            "<td style='text-align-last:center'> Triple </td>" +
+                                            "<td style='text-align-last:center'> Cuadruple </td>" +
+                                            "<td style='text-align-last:center'> Simple </td>" +
+                                            "<td style='text-align-last:center'> Quintuple </td>" +
+                                            "<td style='text-align-last:center'> Sextuple </td>" +
+                                            "<td style='text-align-last:center'> Child 1 : " + edad1child1 + " a " + edad2child1 + " años</td>" +
+                                            "<td style='text-align-last:center'> Child 2 : " + edad1child2 + " a " + edad2child2 + " años</td>" +
+                                            "<td style='text-align-last:center'> Child 3 : " + edad1child3 + " a " + edad2child3 + " años</td>" +
+                                            "<td style='text-align-last:center'> Infante : " + edadinfante1 + " a " + edadinfante2 + " años</td></tr>" +
+                                            "<tr>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + tipohabitacion + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + doblereal + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + triplereal + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + cuadruplereal + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + simplereal + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + quituplereal + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + sextuplereal + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + child1real + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + child2real + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + child3real + "</td>" +
+                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + infantereal + "</td></tr>" +
+                                            "</table>"
+                                        )
+
+                                    });
+
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        });
+
+                    });
+
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
     });
+
 </script>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+<script>
+    $('#ctraslado').click(function () {
+
+        var data = {
+            op: $("#idOperadorT").val(),
+            ds: $("#idCiudad").val(),
+            fechain: $("#fecha_compra_in").val(),
+            fechaout: $("#fecha_compra_out").val(),
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/Paquete/getPreTraslado',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function (States) {
+                if (States.length == 0) {
+                    sweetAlert({
+                        title: 'Error',
+                        text: 'No hay tarifas.',
+                        type: 'error'
+                    }).then(function () {
+                    });
+                }
+                else {
+                    $.each(States, function (i, State) {
+                        var idtraslado = State.idTraslado;
+                        console.log(idtraslado);
+                        var detalle = {
+                            it: idtraslado,
+                            dll: $("#idCiudadT").val(),
+                        }
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/Paquete/getTraslado',
+                            data: JSON.stringify(detalle),
+                            contentType: 'application/json',
+                            success: function (States) {
+                                if (States.length == 0) {
+                                    sweetAlert({
+                                        title: 'Error',
+                                        text: 'No hay traslados.',
+                                        type: 'error'
+                                    }).then(function () {
+                                    });
+                                }
+                                else {
+                                    console.log(States)
+                                    $("#divtraslado").empty();
+                                    $.each(States, function (i, State) {
+                                        if (State.tramo == null) { var tramo = "-" } else { var tramo = State.tramo}
+                                        if (State.destinoll == null) { var destinoll = "-" } else { var destinoll = State.destinoll }
+                                        if (State.precio_compartido == null) { var precio_compartido = "-" } else { var precio_compartido = State.precio_compartido }
+                                        if (State.rango1a_priv == null) { var rango1a_priv = "-" } else { var rango1a_priv = State.rango1a_priv }
+                                        if (State.rango2a_priv == null) { var rango2a_priv = "-" } else { var rango2a_priv = State.rango2a_priv }
+                                        if (State.precioa_priv == null) { var precioa_priv = "-" } else { var precioa_priv = State.precioa_priv }
+                                        if (State.rango1b_priv == null) { var rango1b_priv = "-" } else { var rango1b_priv = State.rango1b_priv }
+                                        if (State.rango2b_priv == null) { var rango2b_priv = "-" } else { var rango2b_priv = State.rango2b_priv }
+                                        if (State.preciob_priv == null) { var preciob_priv = "-" } else { var preciob_priv = State.preciob_priv }
+                                        if (State.rango1c_priv == null) { var rango1c_priv = "-" } else { var rango1c_priv = State.rango1c_priv }
+                                        if (State.rango2c_priv == null) { var rango2c_priv = "-" } else { var rango2c_priv = State.rango2c_priv }
+                                        if (State.precioc_priv == null) { var precioc_priv = "-" } else { var precioc_priv = State.precioc_priv }
+                                        if (State.rango1d_lujo == null) { var rango1d_lujo = "-" } else { var rango1d_lujo = State.rango1d_lujo }
+                                        if (State.rango2d_lujo == null) { var rango2d_lujo = "-" } else { var rango2d_lujo = State.rango2d_lujo }
+                                        if (State.preciod_lujo == null) { var preciod_lujo = "-" } else { var preciod_lujo = State.preciod_lujo }
+                                            $('#divtraslado').append(
+                                                "<table id='example2' class='table table-bordered table-striped' border='1'>" +
+                                                "<thead>" +
+                                                "<tr>" +
+                                                "<td style='text-align-last:center'>Punto de Salida / Tramo</td>" +
+                                                "<td style='text-align-last:center'> Traslados Compartidos </td>" +
+                                                "<td style='text-align-last:center' colspan='3'> Traslados Privados </td>" +
+                                                "<td style='text-align-last:center'> Traslados de Lujo </td>" +
+                                                "</tr>" +
+                                                "<tr>" +
+                                                "<td style='text-align-last:center'> &nbsp;</td>" +
+                                                "<td style='text-align-last:center'> &nbsp;</td>" +
+                                                "<td style='text-align-last:center'> De " + rango1a_priv + " a " + rango2a_priv + " pax</td>" +
+                                                "<td style='text-align-last:center'> De " + rango1b_priv + " a " + rango2b_priv + " pax</td>" +
+                                                "<td style='text-align-last:center'> De" + rango1c_priv + " a " + rango2c_priv + " pax</td>" +
+                                                "<td style='text-align-last:center'> De " + rango1d_lujo + " a " + rango2d_lujo + "pax</td>" +
+                                                "</tr>" +
+                                                "<tr>" +
+                                                "<td style='text-align-last:center;vertical-align: middle'>" + destinoll + "<br />" + tramo + "</td>" +
+                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + precio_compartido + "</td>" +
+                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + precioa_priv + "</td>" +
+                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + preciob_priv + "</td>" +
+                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + precioc_priv + "</td>" +
+                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + preciod_lujo + "</td>" +
+                                                "</table>"
+                                            )
+
+                                    });
+
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        });
+
+                    });
+
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+
+</script>
+
+<script>
+    function selecth(obj) {
+        console.log('entro');
+        obj.style.background = (obj.style.background == '') ? 'yellow' : '';
+        var vprecio = obj.val;
+        var vtipohab = $(obj).parent('tr').children('td').val;
+        console.log(vprecio);
+        console.log(vtipohab);
+    }
+</script>

@@ -17,7 +17,7 @@ namespace IntranetMundoRepresentaciones.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_aerolinea()
         {
-            this.tb_lineaerea_paquete = new HashSet<tb_lineaerea_paquete>();
+            this.tb_paquete = new HashSet<tb_paquete>();
             this.tb_tarifa_aerea = new HashSet<tb_tarifa_aerea>();
         }
     
@@ -45,7 +45,7 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_pais tb_pais { get; set; }
         public virtual tb_zona tb_zona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_lineaerea_paquete> tb_lineaerea_paquete { get; set; }
+        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_tarifa_aerea> tb_tarifa_aerea { get; set; }
     }

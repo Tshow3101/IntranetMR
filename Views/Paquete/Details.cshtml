@@ -12,6 +12,78 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.fecha_compra_in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_compra_in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_compra_out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_compra_out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_viajes_in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_viajes_in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_viaje_out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_viaje_out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acomodacionH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acomodacionH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precioH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precioH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.planT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.planT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precioT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precioT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precioTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precioTA)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.incentivo)
         </dt>
 
@@ -28,123 +100,51 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.comision)
+            @Html.DisplayNameFor(model => model.npax)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.comision)
+            @Html.DisplayFor(model => model.npax)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fechacompra)
+            @Html.DisplayNameFor(model => model.precio_A)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fechacompra)
+            @Html.DisplayFor(model => model.precio_A)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tipocambio)
+            @Html.DisplayNameFor(model => model.precio_TTA)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tipocambio)
+            @Html.DisplayFor(model => model.precio_TTA)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nombrepaquete)
+            @Html.DisplayNameFor(model => model.preciototal)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombrepaquete)
+            @Html.DisplayFor(model => model.preciototal)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tempviajeini)
+            @Html.DisplayNameFor(model => model.tb_aerolinea.NombreComercial)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tempviajeini)
+            @Html.DisplayFor(model => model.tb_aerolinea.NombreComercial)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tempviajefin)
+            @Html.DisplayNameFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tempviajefin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.flyer)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.flyer)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.word)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.word)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.incluye)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.incluye)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.notas)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.notas)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechacreacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechacreacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuariocreacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuariocreacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechamodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechamodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuariomodificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuariomodificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
+            @Html.DisplayFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
         </dd>
 
         <dt>
@@ -164,11 +164,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_moneda.NombreMoneda)
+            @Html.DisplayNameFor(model => model.tb_hotel.nombrehotel)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tb_moneda.NombreMoneda)
+            @Html.DisplayFor(model => model.tb_hotel.nombrehotel)
         </dd>
 
         <dt>
@@ -180,19 +180,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+            @Html.DisplayFor(model => model.tb_usuario.apellidopaternousuario)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_tematica.nombretematica)
+            @Html.DisplayNameFor(model => model.tb_usuario1.apellidopaternousuario)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tb_tematica.nombretematica)
+            @Html.DisplayFor(model => model.tb_usuario1.apellidopaternousuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
         </dd>
 
         <dt>
@@ -201,6 +209,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.tb_zona.nombreZona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
         </dd>
 
     </dl>

@@ -332,35 +332,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_hotel_paquete">
-      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_hotel_paquete">
-        <MappingFragment StoreEntitySet="tb_hotel_paquete">
-          <ScalarProperty Name="idHotelPaquete" ColumnName="idHotelPaquete" />
-          <ScalarProperty Name="idPaquete" ColumnName="idPaquete" />
-          <ScalarProperty Name="Cadena" ColumnName="Cadena" />
-          <ScalarProperty Name="Hotel" ColumnName="Hotel" />
-          <ScalarProperty Name="tipohabitacion" ColumnName="tipohabitacion" />
-          <ScalarProperty Name="doble" ColumnName="doble" />
-          <ScalarProperty Name="triple" ColumnName="triple" />
-          <ScalarProperty Name="cuadruple" ColumnName="cuadruple" />
-          <ScalarProperty Name="simple" ColumnName="simple" />
-          <ScalarProperty Name="quintuple" ColumnName="quintuple" />
-          <ScalarProperty Name="sextuple" ColumnName="sextuple" />
-          <ScalarProperty Name="child1" ColumnName="child1" />
-          <ScalarProperty Name="edad1child1" ColumnName="edad1child1" />
-          <ScalarProperty Name="edad2child1" ColumnName="edad2child1" />
-          <ScalarProperty Name="child2" ColumnName="child2" />
-          <ScalarProperty Name="edad1child2" ColumnName="edad1child2" />
-          <ScalarProperty Name="edad2child2" ColumnName="edad2child2" />
-          <ScalarProperty Name="child3" ColumnName="child3" />
-          <ScalarProperty Name="edad1child3" ColumnName="edad1child3" />
-          <ScalarProperty Name="edad2child3" ColumnName="edad2child3" />
-          <ScalarProperty Name="infante" ColumnName="infante" />
-          <ScalarProperty Name="edadinfante1" ColumnName="edadinfante1" />
-          <ScalarProperty Name="edadinfante2" ColumnName="edadinfante2" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_impuestos">
       <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_impuestos">
         <MappingFragment StoreEntitySet="tb_impuestos">
@@ -398,17 +369,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_lineaerea_paquete">
-      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_lineaerea_paquete">
-        <MappingFragment StoreEntitySet="tb_lineaerea_paquete">
-          <ScalarProperty Name="idLineaaereaPaquete" ColumnName="idLineaaereaPaquete" />
-          <ScalarProperty Name="idPaquete" ColumnName="idPaquete" />
-          <ScalarProperty Name="idLineaAerea" ColumnName="idLineaAerea" />
-          <ScalarProperty Name="clase" ColumnName="clase" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_moneda">
       <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_moneda">
         <MappingFragment StoreEntitySet="tb_moneda">
@@ -440,41 +400,32 @@
       <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_paquete">
         <MappingFragment StoreEntitySet="tb_paquete">
           <ScalarProperty Name="idPaquete" ColumnName="idPaquete" />
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="fecha_compra_in" ColumnName="fecha_compra_in" />
+          <ScalarProperty Name="fecha_compra_out" ColumnName="fecha_compra_out" />
+          <ScalarProperty Name="fecha_viajes_in" ColumnName="fecha_viajes_in" />
+          <ScalarProperty Name="fecha_viaje_out" ColumnName="fecha_viaje_out" />
+          <ScalarProperty Name="idCadenaH" ColumnName="idCadenaH" />
+          <ScalarProperty Name="idHotelH" ColumnName="idHotelH" />
+          <ScalarProperty Name="idTipoHabitacionH" ColumnName="idTipoHabitacionH" />
+          <ScalarProperty Name="acomodacionH" ColumnName="acomodacionH" />
+          <ScalarProperty Name="precioH" ColumnName="precioH" />
+          <ScalarProperty Name="idOperadorT" ColumnName="idOperadorT" />
+          <ScalarProperty Name="idCiudadT" ColumnName="idCiudadT" />
+          <ScalarProperty Name="planT" ColumnName="planT" />
+          <ScalarProperty Name="precioT" ColumnName="precioT" />
+          <ScalarProperty Name="idOperadorTA" ColumnName="idOperadorTA" />
+          <ScalarProperty Name="planTA" ColumnName="planTA" />
+          <ScalarProperty Name="precioTA" ColumnName="precioTA" />
           <ScalarProperty Name="incentivo" ColumnName="incentivo" />
           <ScalarProperty Name="factor" ColumnName="factor" />
-          <ScalarProperty Name="comision" ColumnName="comision" />
-          <ScalarProperty Name="fechacompra" ColumnName="fechacompra" />
-          <ScalarProperty Name="seccion" ColumnName="seccion" />
-          <ScalarProperty Name="tematica" ColumnName="tematica" />
-          <ScalarProperty Name="moneda" ColumnName="moneda" />
-          <ScalarProperty Name="tipocambio" ColumnName="tipocambio" />
-          <ScalarProperty Name="nombrepaquete" ColumnName="nombrepaquete" />
-          <ScalarProperty Name="tempviajeini" ColumnName="tempviajeini" />
-          <ScalarProperty Name="tempviajefin" ColumnName="tempviajefin" />
-          <ScalarProperty Name="zona" ColumnName="zona" />
-          <ScalarProperty Name="pais" ColumnName="pais" />
-          <ScalarProperty Name="destino1" ColumnName="destino1" />
-          <ScalarProperty Name="destino2" ColumnName="destino2" />
-          <ScalarProperty Name="flyer" ColumnName="flyer" />
-          <ScalarProperty Name="word" ColumnName="word" />
-          <ScalarProperty Name="tarjetaasistencia" ColumnName="tarjetaasistencia" />
-          <ScalarProperty Name="incluye" ColumnName="incluye" />
-          <ScalarProperty Name="notas" ColumnName="notas" />
-          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
-          <ScalarProperty Name="usuariocreacion" ColumnName="usuariocreacion" />
-          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
-          <ScalarProperty Name="usuariomodificacion" ColumnName="usuariomodificacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_servicios_paquete">
-      <EntityTypeMapping TypeName="BD_MUNDOREPRESENTACIONESModel.tb_servicios_paquete">
-        <MappingFragment StoreEntitySet="tb_servicios_paquete">
-          <ScalarProperty Name="idServiciosPaquete" ColumnName="idServiciosPaquete" />
-          <ScalarProperty Name="idPaquete" ColumnName="idPaquete" />
-          <ScalarProperty Name="tiposervicio" ColumnName="tiposervicio" />
-          <ScalarProperty Name="traslados" ColumnName="traslados" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="aerolinea" ColumnName="aerolinea" />
+          <ScalarProperty Name="npax" ColumnName="npax" />
+          <ScalarProperty Name="precio_A" ColumnName="precio_A" />
+          <ScalarProperty Name="precio_TTA" ColumnName="precio_TTA" />
+          <ScalarProperty Name="preciototal" ColumnName="preciototal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -654,5 +605,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BD_MUNDOREPRESENTACIONESModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

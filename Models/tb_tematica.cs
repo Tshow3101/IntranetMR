@@ -14,17 +14,8 @@ namespace IntranetMundoRepresentaciones.Models
     
     public partial class tb_tematica
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_tematica()
-        {
-            this.tb_paquete = new HashSet<tb_paquete>();
-        }
-    
         public int idTematica { get; set; }
         public string nombretematica { get; set; }
         public string fototematica { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_paquete> tb_paquete { get; set; }
     }
 }

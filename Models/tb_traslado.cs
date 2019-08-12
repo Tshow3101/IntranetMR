@@ -18,7 +18,6 @@ namespace IntranetMundoRepresentaciones.Models
         public tb_traslado()
         {
             this.tb_detalleTraslado = new HashSet<tb_detalleTraslado>();
-            this.tb_servicios_paquete = new HashSet<tb_servicios_paquete>();
         }
     
         public int id_traslado { get; set; }
@@ -42,8 +41,6 @@ namespace IntranetMundoRepresentaciones.Models
         public virtual tb_ciudad tb_ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_detalleTraslado> tb_detalleTraslado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_servicios_paquete> tb_servicios_paquete { get; set; }
         public virtual tb_usuario tb_usuario { get; set; }
     }
 }

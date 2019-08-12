@@ -214,16 +214,10 @@
     <Compile Include="Models\tb_hotel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_hotel_paquete.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tb_impuestos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_ingresohotel.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tb_lineaerea_paquete.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_moneda.cs">
@@ -233,9 +227,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_paquete.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tb_servicios_paquete.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_tarifa_aerea.cs">
@@ -6610,17 +6601,17 @@
     <Content Include="Views\TarjetaAsistencia\Details.cshtml" />
     <Content Include="Views\TarjetaAsistencia\Edit.cshtml" />
     <Content Include="Views\TarjetaAsistencia\Index.cshtml" />
-    <Content Include="Views\Paquete\Create.cshtml" />
-    <Content Include="Views\Paquete\Delete.cshtml" />
-    <Content Include="Views\Paquete\Details.cshtml" />
-    <Content Include="Views\Paquete\Edit.cshtml" />
-    <Content Include="Views\Paquete\Index.cshtml" />
     <Content Include="Views\Traslado\Create.cshtml" />
     <Content Include="Views\Traslado\Delete.cshtml" />
     <Content Include="Views\Traslado\Details.cshtml" />
     <Content Include="Views\Traslado\DetailsR.cshtml" />
     <Content Include="Views\Traslado\Edit.cshtml" />
     <Content Include="Views\Traslado\Index.cshtml" />
+    <Content Include="Views\Paquete\Create.cshtml" />
+    <Content Include="Views\Paquete\Delete.cshtml" />
+    <Content Include="Views\Paquete\Details.cshtml" />
+    <Content Include="Views\Paquete\Edit.cshtml" />
+    <Content Include="Views\Paquete\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
