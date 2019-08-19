@@ -138,6 +138,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AgenciaController.cs" />
+    <Compile Include="Controllers\BuscadorController.cs" />
+    <Compile Include="Controllers\BuscarController.cs" />
     <Compile Include="Controllers\CadenaHoteleraController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
@@ -6612,10 +6614,13 @@
     <Content Include="Views\Paquete\Details.cshtml" />
     <Content Include="Views\Paquete\Edit.cshtml" />
     <Content Include="Views\Paquete\Index.cshtml" />
+    <Content Include="Views\Buscador\Details.cshtml" />
+    <Content Include="Views\Buscador\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
+    <Folder Include="Views\Buscar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

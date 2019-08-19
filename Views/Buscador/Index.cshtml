@@ -1,0 +1,634 @@
+﻿@model IEnumerable<IntranetMundoRepresentaciones.Models.tb_detalleingresohotel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
+    @using (Html.BeginForm())
+    {
+    <div class="col-md-12" style="text-align:center;">
+        <input type="date" name="fecha1" class="form-control" />
+        <input type="date" name="fecha2" class="form-control" />
+        @Html.DropDownList("idZona", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+        @Html.DropDownList("idPais", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+        @Html.DropDownList("idCiudad", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+
+        @Html.DropDownList("idCadena", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+        @Html.DropDownList("idHotel", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+        @Html.DropDownList("idLineaaerea", null, "Seleccione", htmlAttributes: new { @class = "form-control" })
+        <input type="submit" value="Consulta" class="btn btn-primary" style="height:33px; width:10%;" />
+    </div>
+    }
+</div>  
+@foreach( var item in ViewBag.boletoaereoeitinerario)
+{
+    @item.tb_aerolinea.NombreComercial
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.doble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doblereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.triple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.triplereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cuadruplereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.simple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.simplereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quituplereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sextuplereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child1real)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad1child1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad2child1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child2real)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad1child2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad2child2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child3real)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad1child3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad2child3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.infante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.infantereal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edadinfante1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edadinfante2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.capmaximaadu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.capmaximanin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontodoble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajedoble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontotriple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajetriple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tercerpaxmonto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tercerpaxporcentaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontocuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajecuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cuartopaxmonto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cuartopaxporcentaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontosimple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajesimple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontoquintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajequintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quintopaxmonto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quintopaxporcentaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontosextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajesextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sextopaxmonto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sextopaxporcentaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontochild1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajechild1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontochild2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajechild2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontochild3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajechild3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supmontoinfante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supporcentajeinfante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto1doble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto1triple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto1cuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto1simple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto1quintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto1sextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje1doble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje1triple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje1cuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje1simple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje1quintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje1sextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto2doble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto2triple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto2cuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto2simple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto2quintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviciomonto2sextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje2doble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje2triple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje2cuadruple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje2simple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje2quintuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servicioporcentaje2sextuple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciodoble1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciotriple1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciocuadruple1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciosimple1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciservicioquintuple1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciosextuple1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciodoble2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciotriple2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciocuadruple2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciosimple2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciservicioquintuple2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preciserviciosextuple2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_categoria1.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_ingresohotel.codprom)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.doble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doblereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.triple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.triplereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuadruplereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.simple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.simplereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quituplereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sextuplereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.child1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.child1real)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad1child1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad2child1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.child2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.child2real)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad1child2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad2child2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.child3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.child3real)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad1child3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad2child3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.infante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.infantereal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edadinfante1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edadinfante2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capmaximaadu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capmaximanin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontodoble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajedoble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontotriple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajetriple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tercerpaxmonto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tercerpaxporcentaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontocuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajecuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuartopaxmonto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuartopaxporcentaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontosimple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajesimple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontoquintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajequintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quintopaxmonto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quintopaxporcentaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontosextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajesextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sextopaxmonto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sextopaxporcentaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontochild1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajechild1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontochild2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajechild2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontochild3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajechild3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supmontoinfante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supporcentajeinfante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto1doble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto1triple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto1cuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto1simple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto1quintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto1sextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje1doble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje1triple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje1cuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje1simple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje1quintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje1sextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto2doble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto2triple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto2cuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto2simple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto2quintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviciomonto2sextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje2doble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje2triple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje2cuadruple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje2simple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje2quintuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicioporcentaje2sextuple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciodoble1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciotriple1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciocuadruple1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciosimple1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciservicioquintuple1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciosextuple1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciodoble2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciotriple2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciocuadruple2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciosimple2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciservicioquintuple2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preciserviciosextuple2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_categoria.nombreCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_categoria1.nombreCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_tipohabitacion.NombreTipoHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_ingresohotel.codprom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idDetalleIngresoHotel }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idDetalleIngresoHotel }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idDetalleIngresoHotel })
+            </td>
+        </tr>
+    }
+
+</table>
