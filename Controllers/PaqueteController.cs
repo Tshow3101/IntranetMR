@@ -215,7 +215,7 @@ namespace IntranetMundoRepresentaciones.Controllers
             var results = from p in db.tb_traslado
                           where p.id_operador == op && p.id_puntosalida == ds && p.fecha_vigencia >= fechain && p.fecha_vigencia >= fechaout
                           orderby p.id_traslado
-                          select new { idTraslado = p.id_traslado};
+                          select new { idTraslado = p.id_traslado };
             return Json(results, JsonRequestBehavior.AllowGet);
         }
 
@@ -223,9 +223,10 @@ namespace IntranetMundoRepresentaciones.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
             var results = from p in db.tb_detalleTraslado
-                          where p.id_traslado == it && p.id_destino == dll 
+                          where p.id_traslado == it && p.id_destino == dll
                           orderby p.id_traslado
-                          select new {
+                          select new
+                          {
                               tramo = p.tb_categoria.nombreCategoria,
                               destinoll = p.tb_ciudad.nombreCiudad,
                               precio_compartido = p.precio_compartido,
@@ -250,17 +251,18 @@ namespace IntranetMundoRepresentaciones.Controllers
             db.Configuration.ProxyCreationEnabled = false;
             var results = from p in db.tb_ingresohotel
                           where p.idCadena == ch && p.idHotel == ht && p.feccompraini <= fechaini && p.feccomprafin >= fechaout
-                          select new { idIngresoHotel = p.idIngresoHotel };
+                          select new { idIngresoHotel = p.idIngresoHotel, tar = p.tb_categoria.nombreCategoria };
             return Json(results, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult getTarifaHotelera(int? ih, int? th)
+        public JsonResult getTarifaHotelera(int? ih, int? th, string tt)
         {
             db.Configuration.ProxyCreationEnabled = false;
             var results = from p in db.tb_detalleingresohotel
                           where p.idIngresoHotel == ih && p.idTipoHabitacion == th
                           select new
                           {
+                              idtarifa = p.idDetalleIngresoHotel,
                               doblereal = p.doblereal,
                               triplereal = p.triplereal,
                               cuadruplereal = p.cuadruplereal,
@@ -295,9 +297,124 @@ namespace IntranetMundoRepresentaciones.Controllers
                               preciserviciosimple2 = p.preciserviciosimple2,
                               preciservicioquintuple2 = p.preciservicioquintuple2,
                               preciserviciosextuple2 = p.preciserviciosextuple2,
-                              tipohabitacion = p.tb_tipohabitacion.NombreTipoHabitacion
+                              tipohabitacion = p.tb_tipohabitacion.NombreTipoHabitacion,
+                              nomtarifa = tt,
                           };
             return Json(results, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult getTarjetaAsistencia(int? id)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var results = from p in db.tb_tarjetaasistencia
+                          where p.idOperador == id
+                          orderby p.nombreTarjetaasistencia
+                          select new { idTarjetaAsistencia = p.idTarjetaasistencia, Nombre = p.nombreTarjetaasistencia };
+            return Json(results, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult getPreTarjetaAsistencia(int? op, int? ta)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var results = from p in db.tb_tarjetaasistencia
+                          where p.idOperador == op && p.idTarjetaasistencia == ta
+                          orderby p.idTarjetaasistencia
+                          select new
+                          {
+                              nombre = p.nombreTarjetaasistencia,
+                              operador = p.tb_usuario.nombreusuario,
+                              cobertura = p.cobertura,
+                              costo = p.costo
+                          };
+            return Json(results, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult getTarifaAerea(int? ic, int? ila, DateTime fv1, DateTime fv2, DateTime fc1, DateTime fc2)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var results = from p in db.tb_tarifa_aerea
+                          where p.id_ciudad == ic && p.id_laerea == ila && p.time_viaje_1 <= fv1 && p.time_viaje_2 >= fv2 && p.time_compra_1 <= fc1 && p.time_compra_2 >= fc2 && p.estado == 1
+                          select new
+                          {
+                              id_tarifa_aerea = p.id_tarifa_aerea,
+                              id_ciudad = p.id_ciudad,
+                              clase = p.clase,
+                              id_laerea = p.tb_aerolinea.NombreComercial,
+                              dest_abre = p.dest_abre,
+                              total_tarifa = p.total_tarifa,
+                              neto = p.neto,
+                              time_compra_1 = p.time_compra_1,
+                              time_compra_2 = p.time_compra_2,
+                              fecha_emisiion = p.fecha_emisiion,
+                              porc_chd = p.prec_chd,
+                              prec_chd = p.prec_chd,
+                              porc_inf = p.porc_inf,
+                              prec_inf = p.prec_inf,
+                              edad_chd_1 = p.edad_chd_1,
+                              edad_chd_2 = p.edad_chd_2,
+                              edad_inf_1 = p.edad_inf_1,
+                              edad_inf_2 = p.edad_inf_2,
+                              cod_fb = p.cod_fb,
+                              time_viaje_1 = p.time_viaje_1,
+                              time_viaje_2 = p.time_viaje_2,
+                              queue = p.queue,
+                              igv = p.igv,
+                              tipo_tarifa = p.tipo_tarifa,
+
+                          };
+            return Json(results, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult getImpTarifaAerea(int? idt)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var results = from p in db.tb_detalletarifaaerea
+                          where p.id_tarifa_aerea == idt
+                          select new
+                          {
+                              id_tarifa_aerea = p.id_tarifa_aerea,
+                              impuesto = p.impuesto,
+                              pre_imp = p.precio_impuesto
+                          };
+            return Json(results, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult GuardarPaquetesba(tb_paquete tb_paquete)
+        {
+            bool status = false;
+
+            var isValidModel = TryUpdateModel(tb_paquete);
+            
+                using (db)
+                {
+
+                    db.tb_paquete.Add(tb_paquete);
+                    db.SaveChanges();
+                    status = true;
+
+                }         
+            return new JsonResult { Data = new { status = status } };
+        }
+
+        [HttpPost]
+        public JsonResult GuardarPaquetecba(tb_paquete tb_paquete)
+        {
+            bool status = false;
+
+            var isValidModel = TryUpdateModel(tb_paquete);
+                using (db)
+                {
+
+                    db.tb_paquete.Add(tb_paquete);
+                    db.SaveChanges();
+                    status = true;
+                }
+            
+            
+            return new JsonResult { Data = new { status = status } };
+        }
+
+
     }
 }

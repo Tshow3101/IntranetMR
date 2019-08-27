@@ -496,8 +496,7 @@
     <Property Name="idCadenaH" Type="Int32" />
     <Property Name="idHotelH" Type="Int32" />
     <Property Name="idTipoHabitacionH" Type="Int32" />
-    <Property Name="acomodacionH" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="precioH" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="tarifaH" Type="Int32" />
     <Property Name="idOperadorT" Type="Int32" />
     <Property Name="idCiudadT" Type="Int32" />
     <Property Name="planT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
@@ -508,10 +507,38 @@
     <Property Name="incentivo" Type="Decimal" Precision="9" Scale="4" />
     <Property Name="factor" Type="Decimal" Precision="9" Scale="4" />
     <Property Name="aerolinea" Type="Int32" />
-    <Property Name="npax" Type="Int32" />
-    <Property Name="precio_A" Type="Decimal" Precision="9" Scale="4" />
-    <Property Name="precio_TTA" Type="Decimal" Precision="9" Scale="4" />
-    <Property Name="preciototal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="incluye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="no_incluye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="notas_generales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rangoT1" Type="Int32" />
+    <Property Name="rangoT2" Type="Int32" />
+    <Property Name="cabeceraTable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="edad1child1__" Type="Int32" />
+    <Property Name="edad1child2__" Type="Int32" />
+    <Property Name="edad1child3__" Type="Int32" />
+    <Property Name="edad1infante" Type="Int32" />
+    <Property Name="edad2child1" Type="Int32" />
+    <Property Name="edad2child2" Type="Int32" />
+    <Property Name="edad2child3" Type="Int32" />
+    <Property Name="edad2infante" Type="Int32" />
+    <Property Name="doblereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="triplereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="simplereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="cuadruplereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="quintuplereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="sextuplereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="infantereal" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="child1real" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="child2real" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="child3real" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="titulo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="titulo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="titulo3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="imagen1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="imagen2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="flyer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="flyer2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tb_aerolinea" Relationship="Self.FK__tb_paquet__aerol__62E4AA3C" FromRole="tb_paquete" ToRole="tb_aerolinea" />
     <NavigationProperty Name="tb_cadenahotelera" Relationship="Self.FK__tb_paquet__idCad__5C37ACAD" FromRole="tb_paquete" ToRole="tb_cadenahotelera" />
     <NavigationProperty Name="tb_ciudad" Relationship="Self.FK__tb_paquet__idCiu__5B438874" FromRole="tb_paquete" ToRole="tb_ciudad" />

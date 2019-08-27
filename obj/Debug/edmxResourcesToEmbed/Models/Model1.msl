@@ -410,8 +410,7 @@
           <ScalarProperty Name="idCadenaH" ColumnName="idCadenaH" />
           <ScalarProperty Name="idHotelH" ColumnName="idHotelH" />
           <ScalarProperty Name="idTipoHabitacionH" ColumnName="idTipoHabitacionH" />
-          <ScalarProperty Name="acomodacionH" ColumnName="acomodacionH" />
-          <ScalarProperty Name="precioH" ColumnName="precioH" />
+          <ScalarProperty Name="tarifaH" ColumnName="tarifaH" />
           <ScalarProperty Name="idOperadorT" ColumnName="idOperadorT" />
           <ScalarProperty Name="idCiudadT" ColumnName="idCiudadT" />
           <ScalarProperty Name="planT" ColumnName="planT" />
@@ -422,10 +421,38 @@
           <ScalarProperty Name="incentivo" ColumnName="incentivo" />
           <ScalarProperty Name="factor" ColumnName="factor" />
           <ScalarProperty Name="aerolinea" ColumnName="aerolinea" />
-          <ScalarProperty Name="npax" ColumnName="npax" />
-          <ScalarProperty Name="precio_A" ColumnName="precio_A" />
-          <ScalarProperty Name="precio_TTA" ColumnName="precio_TTA" />
-          <ScalarProperty Name="preciototal" ColumnName="preciototal" />
+          <ScalarProperty Name="incluye" ColumnName="incluye" />
+          <ScalarProperty Name="no_incluye" ColumnName="no_incluye" />
+          <ScalarProperty Name="notas_generales" ColumnName="notas_generales" />
+          <ScalarProperty Name="rangoT1" ColumnName="rangoT1" />
+          <ScalarProperty Name="rangoT2" ColumnName="rangoT2" />
+          <ScalarProperty Name="cabeceraTable" ColumnName="cabeceraTable" />
+          <ScalarProperty Name="edad1child1__" ColumnName="edad1child1&#xD;&#xA;" />
+          <ScalarProperty Name="edad1child2__" ColumnName="edad1child2&#xD;&#xA;" />
+          <ScalarProperty Name="edad1child3__" ColumnName="edad1child3&#xD;&#xA;" />
+          <ScalarProperty Name="edad1infante" ColumnName="edad1infante" />
+          <ScalarProperty Name="edad2child1" ColumnName="edad2child1" />
+          <ScalarProperty Name="edad2child2" ColumnName="edad2child2" />
+          <ScalarProperty Name="edad2child3" ColumnName="edad2child3" />
+          <ScalarProperty Name="edad2infante" ColumnName="edad2infante" />
+          <ScalarProperty Name="doblereal" ColumnName="doblereal" />
+          <ScalarProperty Name="triplereal" ColumnName="triplereal" />
+          <ScalarProperty Name="simplereal" ColumnName="simplereal" />
+          <ScalarProperty Name="cuadruplereal" ColumnName="cuadruplereal" />
+          <ScalarProperty Name="quintuplereal" ColumnName="quintuplereal" />
+          <ScalarProperty Name="sextuplereal" ColumnName="sextuplereal" />
+          <ScalarProperty Name="infantereal" ColumnName="infantereal" />
+          <ScalarProperty Name="child1real" ColumnName="child1real" />
+          <ScalarProperty Name="child2real" ColumnName="child2real" />
+          <ScalarProperty Name="child3real" ColumnName="child3real" />
+          <ScalarProperty Name="titulo1" ColumnName="titulo1" />
+          <ScalarProperty Name="titulo2" ColumnName="titulo2" />
+          <ScalarProperty Name="titulo3" ColumnName="titulo3" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="imagen1" ColumnName="imagen1" />
+          <ScalarProperty Name="imagen2" ColumnName="imagen2" />
+          <ScalarProperty Name="flyer1" ColumnName="flyer1" />
+          <ScalarProperty Name="flyer2" ColumnName="flyer2" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

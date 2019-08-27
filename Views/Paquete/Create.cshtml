@@ -11,8 +11,20 @@
     }
 
     .classelected {
-     background-color : yellow;
-     font-weight : bold;
+        background-color: yellow;
+        font-weight: bold;
+    }
+
+    .note-editing-area {
+        min-height: 200px !important;
+        height: auto !important;
+        text-transform: uppercase !important;
+    }
+
+    note-editable panel-body {
+        min-height: 200px !important;
+        height: auto !important;
+        text-transform: uppercase !important;
     }
 </style>
 <div class="col-md-12">
@@ -29,6 +41,7 @@
         <div class="panel-body">
             @using (Html.BeginForm())
             {
+
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 /*Primera Fila*/
@@ -142,11 +155,6 @@
 
                         <div class="col-md-12" style="margin-top:10px !important" id="divhotel">
                         </div>
-
-                        <div class="col-md-12" style="margin-top:5px !important" id="preciohotel">
-                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
-                        </div>
-
                     </fieldset>
                     <br />
                     <fieldset>
@@ -180,7 +188,8 @@
                         <div class="col-md-12" style="margin-top:5px !important" id="divtraslado">
                         </div>
                         <div class="col-md-12" style="margin-top:5px !important" id="preciotraslado">
-                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
+
+                            <label style="text-align-last:right; font-size:20px; float:right">$ <span id="ppreciotraslado">0.00</span></label>
                         </div>
                     </fieldset>
                     <br />
@@ -209,42 +218,10 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12" style="margin-top:5px !important" id="divtraslado">
+                        <div class="col-md-12" style="margin-top:5px !important" id="divtarjetasistencia">
                         </div>
                         <div class="col-md-12" style="margin-top:5px !important" id="preciotraslado">
-                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
-                        </div>
-                    </fieldset>
-                    <br />
-                    <fieldset>
-                        <legend>Aereo</legend>
-
-                        <div class="col-md-12">
-                            <!--Zona-->
-                            <div class="col-md-6">
-                                <div class="col-md-4">
-                                    <label style="font-size:11px;">Linea Aerea</label>
-                                </div>
-                                <div class="col-md-8">
-                                    @Html.DropDownList("aerolinea", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
-                                </div>
-                            </div>
-
-                            <!--País-->
-                            <div class="col-md-6">
-                                <div class="col-md-4">
-                                    <label style="font-size:11px;">N° Pax</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input id="npax" type="text" style="width:100%; height:30px" placeholder="0.00" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12" style="margin-top:5px !important" id="divaereo">
-                        </div>
-                        <div class="col-md-12" style="margin-top:5px !important" id="divaereo">
-                            <label style="text-align-last:right; font-size:20px; float:right">$ 0.00</label>
+                            <label style="text-align-last:right; font-size:20px; float:right">$ <span id="pptarjetasistencia">0.00</span></label>
                         </div>
                     </fieldset>
                     <br />
@@ -252,7 +229,7 @@
                         <fieldset>
                             <legend>Incentivo</legend>
                             <div class="col-md-12">
-                                <input id="incentivo" type="text" style="width:100%; height:30px" placeholder="0.00" />
+                                <input id="incentivo" type="text" style="width:100%; height:30px" placeholder="0.00" onchange="sba(); cba()" />
                             </div>
                         </fieldset>
                     </div>
@@ -260,26 +237,145 @@
                         <fieldset>
                             <legend>Factor</legend>
                             <div class="col-md-12">
-                                <input id="factor" type="text" style="width:100%; height:30px" placeholder="0.00" />
+                                <input id="factor" type="text" style="width:100%; height:30px" placeholder="0.00" onchange="sba(); cba()" />
                             </div>
                         </fieldset>
                     </div>
-                    <br />
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            <legend>Sin boleto Aereo</legend>
+                            <div id="preciosba"></div>
+                        </fieldset>
+                    </div>
 
-                    <br />
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            <legend>
+                                Linea Aerea
+                                <button type="button" id="caereo" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </legend>
+
+                            <div class="col-md-12">
+                                <!--Zona-->
+                                <div class="col-md-6">
+                                    <div class="col-md-4">
+                                        <label style="font-size:11px;">Linea Aerea</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("aerolinea", null, htmlAttributes: new { @style = "width: 100%; height:30px;" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" style="margin-top:5px !important" id="divaereo">
+                            </div>
+                            <div class="col-md-12" style="margin-top:5px !important" id="precioaereo">
+                            </div>
+                        </fieldset>
+                        <br />
+                    </div>
+
+
+
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            <legend>Con boleto Aereo</legend>
+                            <div id="preciocba"></div>
+                        </fieldset>
+                    </div>
+
+
+
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            <legend>Descripciones</legend>
+                        </fieldset>
+
+                        <div id="divincluye col-md-12">
+                            <div class="col-md-12">
+                                <label style="font-size:11px;">Incluye</label>
+                            </div>
+                            <div class="col-md-12" style="margin-bottom:20px !important">
+                                <textarea id="incluye" name="incluye" class="summernote col-md-12" style="max-height: 200px;"></textarea>
+                                @Html.ValidationMessageFor(model => model.incluye)
+                            </div>
+                        </div>
+
+                        <div id="divno_incluye">
+                            <div class="col-md-12">
+                                <label style="font-size:11px;">No Incluye</label>
+                            </div>
+                            <div class="col-md-12" style="margin-bottom:20px !important">
+                                <textarea id="no_incluye" name="no_incluye" class="summernote col-md-12" style="max-height: 200px;"></textarea>
+                                @Html.ValidationMessageFor(model => model.no_incluye)
+                            </div>
+                        </div>
+
+                        <div id="divnotas_generales">
+                            <div class="col-md-12">
+                                <label style="font-size:11px;">Notas Generales</label>
+                            </div>
+                            <div class="col-md-12" style="margin-bottom:20px !important">
+                                <textarea id="notas_generales" name="notas_generales" class="summernote col-md-12" style="max-height: 200px;"></textarea>
+                                @Html.ValidationMessageFor(model => model.notas_generales)
+                            </div>
+
+                        </div>
+                        <div id="divtitle1">
+                            <div class="col-md-12">
+                                <label style="font-size:11px;">Titulo 1</label>
+                            </div>
+                            <div class="col-md-12" style="margin-bottom:20px !important">
+                                <input id="titulo1" class="titulo1 form-control" type="text" />
+                            </div>
+
+                        </div>
+
+                        <div id="divtitle2">
+                            <div class="col-md-12">
+                                <label style="font-size:11px;">Titulo 2</label>
+                            </div>
+                            <div class="col-md-12" style="margin-bottom:20px !important">
+                                <input id="titulo2" class="titulo2 form-control" type="text" />
+                            </div>
+
+                        </div>
+
+                        <div id="divtitle3">
+                            <div class="col-md-12">
+                                <label style="font-size:11px;">Titulo 3</label>
+                            </div>
+                            <div class="col-md-12" style="margin-bottom:20px !important">
+                                <input id="titulo3" class="titulo3 form-control" type="text" />
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+
+
 
                 /*Botones*/
                 <div class="col-md-12" style="text-align:center;margin-top:10px !important">
                     <div class="form-group">
-                        <input type="submit" value="Agregar Empleado" class="btn btn-primary" />
-                        @Html.ActionLink("Regresar Lista Empleado", "Index", null, new { @class = "btn btn-danger" })
+                        <input type="button" id="submit" value="Crear Paquete" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista de Paquetes", "Index", null, new { @class = "btn btn-danger" })
                     </div>
                 </div>
             }
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        FormSummernote.init();
+    });
+</script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -433,6 +529,45 @@
 })
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#idOperadorTA").change(function () {
+        //Se limpia el contenido del dropdownlist
+            $("#planTA").empty();
+        $.ajax({
+            type: 'POST',
+            //Llamado al metodo en el controlador
+            url: '@Url.Action("getTarjetaAsistencia", "Paquete")',
+            dataType: 'json',
+            //Parametros que se envian al metodo del controlador
+            data: { id: $("#idOperadorTA").val() },
+            //En caso de resultado exitoso
+            success: function (States) {
+                if (States.length == 0) {
+                    $("#planTA").append('<option value=""></option>');
+                }
+                else {
+                    //Se agrega el elemento vacio para poder desplegar que seleccione una opcion
+                    $("#planTA").append('<option value="0">Seleccione</option>');
+                    $.each(States, function (i, State) {
+                        $("#planTA").append('<option value="' + State.idTarjetaAsistencia + '">' +
+                            State.Nombre + '</option>');
+                    });
+                }
+                //Recargar el plugin para que tenga la funcionalidad del componente
+                $("#planTA").select({ placeholder: "Seleccione un Hotel" });
+            },
+            //Mensaje de error en caso de fallo
+            error: function (ex) {
+                alert('Escoge al menos una opción.' + ex);
+            }
+        });
+        return false;
+    })
+})
+</script>
+
+
 <script>
     $('#chotel').click(function () {
 
@@ -460,10 +595,12 @@
                 else {
                     $.each(States, function (i, State) {
                         var ingresoh = State.idIngresoHotel;
+                        var tarifanom = State.tar;
                         console.log(ingresoh);
                         var detalle = {
                             ih: ingresoh,
                             th: $("#idTipoHabitacionH").val(),
+                            tt: tarifanom,
                         }
 
                         $.ajax({
@@ -481,71 +618,77 @@
                                     });
                                 }
                                 else {
-                                    $("#divhotel").empty();
                                     $.each(States, function (i, State) {
-                                        if (State.doblereal == null) { var doblereal = "-" } else { var doblereal = State.doblereal}
-                                        if (State.triplereal == null) { var triplereal = "-" } else { var triplereal = State.triplereal}
-                                        if (State.infantereal == null) { var infantereal = "-" } else { var infantereal = State.infantereal}
-                                        if (State.cuadruplereal == null) { var cuadruplereal = "-" } else { var cuadruplereal = State.cuadruplereal}
-                                        if (State.simplereal == null) { var simplereal = "-" } else { var simplereal = State.simplereal}
-                                        if (State.quituplereal == null) { var quituplereal = "-" } else { var quituplereal = State.quituplereal}
-                                        if (State.sextuplereal == null) { var sextuplereal = "-" } else { var sextuplereal = State.sextuplereal}
-                                        if (State.child1real == null) { var child1real = "-" } else { var child1real = State.child1real}
-                                        if (State.edad1child1 == null) { var edad1child1 = "-" } else { var edad1child1 = State.edad1child1}
-                                        if (State.edad2child1 == null) { var edad2child1 = "-" } else { var edad2child1 = State.edad2child1}
-                                        if (State.child2real == null) { var child2real = "-" } else { var child2real = State.child2real}
-                                        if (State.edad1child2 == null) { var edad1child2 = "-" } else { var edad1child2 = State.edad1child2}
-                                        if (State.edad2child2 == null) { var edad2child2 = "-" } else { var edad2child2 = State.edad2child2}
-                                        if (State.child3real == null) { var child3real = "-" } else { var child3real = State.child3real}
-                                        if (State.edad1child3 == null) { var edad1child3 = "-" } else { var edad1child3 = State.edad1child3}
-                                        if (State.edad2child3 == null) { var edad2child3 = "-" } else { var edad2child3 = State.edad2child3}
-                                        if (State.edadinfante1 == null) { var edadinfante1 = "-" } else { var edadinfante1 = State.edadinfante1}
-                                        if (State.edadinfante2 == null) { var edadinfante2 = "-" } else { var edadinfante2 = State.edadinfante2}
-                                        if (State.capmaximaadu == null) { var capmaximaadu = "-" } else { var capmaximaadu = State.capmaximaadu}
-                                        if (State.capmaximanin == null) { var capmaximanin = "-" } else { var capmaximanin = State.capmaximanin}
-                                        if (State.serviciohabitacion1 == null) { var serviciohabitacion1 = "-" } else { var serviciohabitacion1 = State.serviciohabitacion1}
-                                        if (State.serviciohabitacion2 == null) { var serviciohabitacion2 = "-" } else { var serviciohabitacion2 = State.serviciohabitacion2}
-                                        if (State.preciserviciodoble1 == null) { var preciserviciodoble1 = "-" } else { var preciserviciodoble1 = State.preciserviciodoble1}
-                                        if (State.preciserviciotriple1 == null) { var preciserviciotriple1 = "-" } else { var preciserviciotriple1 = State.preciserviciotriple1}
-                                        if (State.preciserviciocuadruple1 == null) { var preciserviciocuadruple1 = "-" } else { var preciserviciocuadruple1 = State.preciserviciocuadruple1}
-                                        if (State.preciserviciosimple1 == null) { var preciserviciosimple1 = "-" } else { var preciserviciosimple1 = State.preciserviciosimple1}
-                                        if (State.preciservicioquintuple1 == null) { var preciservicioquintuple1 = "-" } else { var preciservicioquintuple1 = State.preciservicioquintuple1}
-                                        if (State.preciserviciosextuple1 == null) { var preciserviciosextuple1 = "-" } else { var preciserviciosextuple1 = State.preciserviciosextuple1}
-                                        if (State.preciserviciodoble2 == null) { var preciserviciodoble2 = "-" } else { var preciserviciodoble2 = State.preciserviciodoble2}
-                                        if (State.preciserviciotriple2 == null) { var preciserviciotriple2 = "-" } else { var preciserviciotriple2 = State.preciserviciotriple2}
-                                        if (State.preciserviciocuadruple2 == null) { var preciserviciocuadruple2 = "-" } else { var preciserviciocuadruple2 = State.preciserviciocuadruple2}
-                                        if (State.preciserviciosimple2 == null) { var preciserviciosimple2 = "-" } else { var preciserviciosimple2 = State.preciserviciosimple2}
-                                        if (State.preciservicioquintuple2 == null) { var preciservicioquintuple2 = "-" } else { var preciservicioquintuple2 = State.preciservicioquintuple2}
-                                        if (State.preciserviciosextuple2 == null) { var preciserviciosextuple2 = "-" } else { var preciserviciosextuple2 = State.preciserviciosextuple2}
-                                        if (State.tipohabitacion == null) { var tipohabitacion = "-" } else { var tipohabitacion = State.tipohabitacion}
+                                        if (State.doblereal == null) { var doblereal = "-" } else { var doblereal = State.doblereal }
+                                        if (State.triplereal == null) { var triplereal = "-" } else { var triplereal = State.triplereal }
+                                        if (State.infantereal == null) { var infantereal = "-" } else { var infantereal = State.infantereal }
+                                        if (State.cuadruplereal == null) { var cuadruplereal = "-" } else { var cuadruplereal = State.cuadruplereal }
+                                        if (State.simplereal == null) { var simplereal = "-" } else { var simplereal = State.simplereal }
+                                        if (State.quituplereal == null) { var quituplereal = "-" } else { var quituplereal = State.quituplereal }
+                                        if (State.sextuplereal == null) { var sextuplereal = "-" } else { var sextuplereal = State.sextuplereal }
+                                        if (State.child1real == null) { var child1real = "-" } else { var child1real = State.child1real }
+                                        if (State.edad1child1 == null) { var edad1child1 = "-" } else { var edad1child1 = State.edad1child1 }
+                                        if (State.edad2child1 == null) { var edad2child1 = "-" } else { var edad2child1 = State.edad2child1 }
+                                        if (State.child2real == null) { var child2real = "-" } else { var child2real = State.child2real }
+                                        if (State.edad1child2 == null) { var edad1child2 = "-" } else { var edad1child2 = State.edad1child2 }
+                                        if (State.edad2child2 == null) { var edad2child2 = "-" } else { var edad2child2 = State.edad2child2 }
+                                        if (State.child3real == null) { var child3real = "-" } else { var child3real = State.child3real }
+                                        if (State.edad1child3 == null) { var edad1child3 = "-" } else { var edad1child3 = State.edad1child3 }
+                                        if (State.edad2child3 == null) { var edad2child3 = "-" } else { var edad2child3 = State.edad2child3 }
+                                        if (State.edadinfante1 == null) { var edadinfante1 = "-" } else { var edadinfante1 = State.edadinfante1 }
+                                        if (State.edadinfante2 == null) { var edadinfante2 = "-" } else { var edadinfante2 = State.edadinfante2 }
+                                        if (State.capmaximaadu == null) { var capmaximaadu = "-" } else { var capmaximaadu = State.capmaximaadu }
+                                        if (State.capmaximanin == null) { var capmaximanin = "-" } else { var capmaximanin = State.capmaximanin }
+                                        if (State.serviciohabitacion1 == null) { var serviciohabitacion1 = "-" } else { var serviciohabitacion1 = State.serviciohabitacion1 }
+                                        if (State.serviciohabitacion2 == null) { var serviciohabitacion2 = "-" } else { var serviciohabitacion2 = State.serviciohabitacion2 }
+                                        if (State.preciserviciodoble1 == null) { var preciserviciodoble1 = "-" } else { var preciserviciodoble1 = State.preciserviciodoble1 }
+                                        if (State.preciserviciotriple1 == null) { var preciserviciotriple1 = "-" } else { var preciserviciotriple1 = State.preciserviciotriple1 }
+                                        if (State.preciserviciocuadruple1 == null) { var preciserviciocuadruple1 = "-" } else { var preciserviciocuadruple1 = State.preciserviciocuadruple1 }
+                                        if (State.preciserviciosimple1 == null) { var preciserviciosimple1 = "-" } else { var preciserviciosimple1 = State.preciserviciosimple1 }
+                                        if (State.preciservicioquintuple1 == null) { var preciservicioquintuple1 = "-" } else { var preciservicioquintuple1 = State.preciservicioquintuple1 }
+                                        if (State.preciserviciosextuple1 == null) { var preciserviciosextuple1 = "-" } else { var preciserviciosextuple1 = State.preciserviciosextuple1 }
+                                        if (State.preciserviciodoble2 == null) { var preciserviciodoble2 = "-" } else { var preciserviciodoble2 = State.preciserviciodoble2 }
+                                        if (State.preciserviciotriple2 == null) { var preciserviciotriple2 = "-" } else { var preciserviciotriple2 = State.preciserviciotriple2 }
+                                        if (State.preciserviciocuadruple2 == null) { var preciserviciocuadruple2 = "-" } else { var preciserviciocuadruple2 = State.preciserviciocuadruple2 }
+                                        if (State.preciserviciosimple2 == null) { var preciserviciosimple2 = "-" } else { var preciserviciosimple2 = State.preciserviciosimple2 }
+                                        if (State.preciservicioquintuple2 == null) { var preciservicioquintuple2 = "-" } else { var preciservicioquintuple2 = State.preciservicioquintuple2 }
+                                        if (State.preciserviciosextuple2 == null) { var preciserviciosextuple2 = "-" } else { var preciserviciosextuple2 = State.preciserviciosextuple2 }
+                                        if (State.tipohabitacion == null) { var tipohabitacion = "-" } else { var tipohabitacion = State.tipohabitacion }
+                                        if (State.nomtarifa == null) { var nomtarifa = "-" } else { var nomtarifa = State.nomtarifa }
+                                        console.log(i);
                                         $('#divhotel').append(
-                                            "<table id='example' class='table table-bordered table-striped' border='1'>" +
-                                            "<thead>" +
+                                            "<table id='" + State.idtarifa + "' class='tblhotel table table-bordered table-striped' border='1'>" +
                                             "<tr>" +
-                                            "<td style='text-align-last:center'> Habitacion A:" + capmaximaadu + " - N:" + capmaximanin + "</td>" +
-                                            "<td style='text-align-last:center'> Doble </td>" +
-                                            "<td style='text-align-last:center'> Triple </td>" +
-                                            "<td style='text-align-last:center'> Cuadruple </td>" +
-                                            "<td style='text-align-last:center'> Simple </td>" +
-                                            "<td style='text-align-last:center'> Quintuple </td>" +
-                                            "<td style='text-align-last:center'> Sextuple </td>" +
-                                            "<td style='text-align-last:center'> Child 1 : " + edad1child1 + " a " + edad2child1 + " años</td>" +
-                                            "<td style='text-align-last:center'> Child 2 : " + edad1child2 + " a " + edad2child2 + " años</td>" +
-                                            "<td style='text-align-last:center'> Child 3 : " + edad1child3 + " a " + edad2child3 + " años</td>" +
-                                            "<td style='text-align-last:center'> Infante : " + edadinfante1 + " a " + edadinfante2 + " años</td></tr>" +
-                                            "<tr>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + tipohabitacion + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + doblereal + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + triplereal + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + cuadruplereal + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + simplereal + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + quituplereal + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + sextuplereal + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + child1real + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + child2real + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + child3real + "</td>" +
-                                            "<td style='text-align-last:center' class='n' onclick='selecth(this)'>" + infantereal + "</td></tr>" +
-                                            "</table>"
+                                            "<td style='text-align-last:center;vertical-align: middle !important' rowspan='2'><input type='checkbox' class='chkhtl' onclick='sba(); cba()'></td>" +
+                                            "<td style='text-align-last:center'> Habitacion A:" + "<label class='capmaximaadu'>" + capmaximaadu + "</label> - N: <label class='capmaximanin'>" + capmaximanin + "</label></td>" +
+                                            "<td style='text-align-last:center' id='thdoble'> Doble </td>" +
+                                            "<td style='text-align-last:center' id='thtriple'> Triple </td>" +
+                                            "<td style='text-align-last:center' id='thcuadruple'> Cuadruple </td>" +
+                                            "<td style='text-align-last:center' id='thsimple'> Simple </td>" +
+                                            "<td style='text-align-last:center' id='thquintuple'> Quintuple </td>" +
+                                            "<td style='text-align-last:center' id='thsextuple'> Sextuple </td>" +
+                                            "<td style='text-align-last:center' id='thchild1'> Child 1 : <label class='edad1child1'>" + edad1child1 + "</label> a <label class='edad2child1'>" + edad2child1 + "</label> años</td>" +
+                                            "<td style='text-align-last:center' id='thchild2'> Child 2 : <label class='edad1child2'>" + edad1child2 + "</label> a <label class='edad2child2'>" + edad2child2 + "</label> años</td>" +
+                                            "<td style='text-align-last:center' id='thchild3'> Child 3 : <label class='edad1child3'>" + edad1child3 + "</label> a <label class='edad2child3'>" + edad2child3 + "</label> años</td>" +
+                                            "<td style='text-align-last:center' id='thinfante'> Infante : <label class='edadinfante1'>" + edadinfante1 + "</label> a <label class='edadinfante2'>" + edadinfante2 + "</label> años</td>" +
+                                            "<td style='text-align-last:center; vertical-align: middle !important' rowspan='2'><button type='button' class='removerht btn btn-danger' onclick='eliminarht(this)'><i class='fa fa-trash'></i></button></td>" +
+                                            "</tr>" +
+                                            "<td style='text-align-last:center; vertical-align:middle' class='info n'>" +
+                                            "<label class='nomtarifa' >" + nomtarifa + " / </label>" +
+                                            "<label class='nomhotel' >" + $('#idHotelH').text() + " / </label>" +
+                                            "<label class='tipohabitacion' >" + tipohabitacion + " / </label>" +
+                                            "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='doblereal'>" + doblereal + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='triplereal'>" + triplereal + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='cuadruplereal'>" + cuadruplereal + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='simplereal'>" + simplereal + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='quituplereal'>" + quituplereal + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='sextuplereal'>" + sextuplereal + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='child1real'>" + child1real + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='child2real'>" + child2real + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='child3real'>" + child3real + "</td>" +
+                                            "<td style='text-align-last:center;text-align:center; vertical-align:middle' class='n'><label  style='text-align-last:center;' class='infantereal'>" + infantereal + "</td></tr>" +
+                                            "</table></br>"
                                         )
 
                                     });
@@ -567,6 +710,25 @@
         });
     });
 
+
+</script>
+
+<script>
+    function eliminarht(obj) {
+        $(obj).parents('table').remove();
+    }
+</script>
+
+<script>
+    function selectt(obj) {
+        obj.style.background = (obj.style.background == '') ? 'yellow' : '';
+        $('#divtraslado').find('table').attr("disabled", "disabled");
+        var valortraslado = $(obj).text();
+        console.log(valortraslado);
+        $('#ppreciotraslado').text(valortraslado);
+        sba();
+        cba();
+    }
 </script>
 
 <script>
@@ -620,7 +782,7 @@
                                     console.log(States)
                                     $("#divtraslado").empty();
                                     $.each(States, function (i, State) {
-                                        if (State.tramo == null) { var tramo = "-" } else { var tramo = State.tramo}
+                                        if (State.tramo == null) { var tramo = "-" } else { var tramo = State.tramo }
                                         if (State.destinoll == null) { var destinoll = "-" } else { var destinoll = State.destinoll }
                                         if (State.precio_compartido == null) { var precio_compartido = "-" } else { var precio_compartido = State.precio_compartido }
                                         if (State.rango1a_priv == null) { var rango1a_priv = "-" } else { var rango1a_priv = State.rango1a_priv }
@@ -635,32 +797,32 @@
                                         if (State.rango1d_lujo == null) { var rango1d_lujo = "-" } else { var rango1d_lujo = State.rango1d_lujo }
                                         if (State.rango2d_lujo == null) { var rango2d_lujo = "-" } else { var rango2d_lujo = State.rango2d_lujo }
                                         if (State.preciod_lujo == null) { var preciod_lujo = "-" } else { var preciod_lujo = State.preciod_lujo }
-                                            $('#divtraslado').append(
-                                                "<table id='example2' class='table table-bordered table-striped' border='1'>" +
-                                                "<thead>" +
-                                                "<tr>" +
-                                                "<td style='text-align-last:center'>Punto de Salida / Tramo</td>" +
-                                                "<td style='text-align-last:center'> Traslados Compartidos </td>" +
-                                                "<td style='text-align-last:center' colspan='3'> Traslados Privados </td>" +
-                                                "<td style='text-align-last:center'> Traslados de Lujo </td>" +
-                                                "</tr>" +
-                                                "<tr>" +
-                                                "<td style='text-align-last:center'> &nbsp;</td>" +
-                                                "<td style='text-align-last:center'> &nbsp;</td>" +
-                                                "<td style='text-align-last:center'> De " + rango1a_priv + " a " + rango2a_priv + " pax</td>" +
-                                                "<td style='text-align-last:center'> De " + rango1b_priv + " a " + rango2b_priv + " pax</td>" +
-                                                "<td style='text-align-last:center'> De" + rango1c_priv + " a " + rango2c_priv + " pax</td>" +
-                                                "<td style='text-align-last:center'> De " + rango1d_lujo + " a " + rango2d_lujo + "pax</td>" +
-                                                "</tr>" +
-                                                "<tr>" +
-                                                "<td style='text-align-last:center;vertical-align: middle'>" + destinoll + "<br />" + tramo + "</td>" +
-                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + precio_compartido + "</td>" +
-                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + precioa_priv + "</td>" +
-                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + preciob_priv + "</td>" +
-                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + precioc_priv + "</td>" +
-                                                "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt'>" + preciod_lujo + "</td>" +
-                                                "</table>"
-                                            )
+                                        $('#divtraslado').append(
+                                            "<table id='example2' class='tbltraslado table table-bordered table-striped' border='1'>" +
+                                            "<thead>" +
+                                            "<tr>" +
+                                            "<td style='text-align-last:center'>Punto de Salida / Tramo</td>" +
+                                            "<td style='text-align-last:center'> Traslados Compartidos </td>" +
+                                            "<td style='text-align-last:center' colspan='3'> Traslados Privados </td>" +
+                                            "<td style='text-align-last:center'> Traslados de Lujo </td>" +
+                                            "</tr></thead>" +
+                                            "<tr>" +
+                                            "<td style='text-align-last:center'> &nbsp;</td>" +
+                                            "<td style='text-align-last:center'> &nbsp;</td>" +
+                                            "<td style='text-align-last:center'> De <label class='rango1a_priv'>" + rango1a_priv + "</label> a <label class='rango2a_priv'>" + rango2a_priv + "</label> pax</td>" +
+                                            "<td style='text-align-last:center'> De <label class='rango1b_priv'>" + rango1b_priv + "</label> a <label class='rango2b_priv'>" + rango2b_priv + "</label> pax</td>" +
+                                            "<td style='text-align-last:center'> De <label class='rango1c_priv'>" + rango1c_priv + "</label> a <label class='rango2c_priv'>" + rango2c_priv + "</label> pax</td>" +
+                                            "<td style='text-align-last:center'> De <label class='rango1d_lujo'>" + rango1d_lujo + "</label> a <label class='rango2d_lujo'>" + rango2d_lujo + "</label> pax</td>" +
+                                            "</tr>" +
+                                            "<tr>" +
+                                            "<td style='text-align-last:center;vertical-align: middle' class='info'><label class='destinoll'>" + destinoll + "</label><br /><label class='tramo'>" + tramo + "</label></td>" +
+                                            "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt(this)'><label class='precio_compartido'>" + precio_compartido + "</td>" +
+                                            "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt(this)'><label class='precioa_priv'>" + precioa_priv + "</td>" +
+                                            "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt(this)'><label class='preciob_priv'>" + preciob_priv + "</td>" +
+                                            "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt(this)'><label class='precioc_priv'>" + precioc_priv + "</td>" +
+                                            "<td style='text-align-last:center;vertical-align: middle' class='n' onclick='selectt(this)'><label class='preciod_lujo'>" + preciod_lujo + "</td>" +
+                                            "</table>"
+                                        )
 
                                     });
 
@@ -680,16 +842,617 @@
             }
         });
     });
-
 </script>
 
 <script>
-    function selecth(obj) {
-        console.log('entro');
-        obj.style.background = (obj.style.background == '') ? 'yellow' : '';
-        var vprecio = obj.val;
-        var vtipohab = $(obj).parent('tr').children('td').val;
-        console.log(vprecio);
-        console.log(vtipohab);
+    $('#caereo').click(function () {
+
+        var data = {
+            ic: $("#idCiudad").val(),
+            ila: $("#aerolinea").val(),
+            fv1: $("#fecha_viajes_in").val(),
+            fv2: $("#fecha_viajes_out").val(),
+            fc1: $("#fecha_compra_in").val(),
+            fc2: $("#fecha_compra_out").val(),
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/Paquete/getTarifaAerea',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function (States) {
+                if (States.length == 0) {
+                    sweetAlert({
+                        title: 'Error',
+                        text: 'No hay tarifas.',
+                        type: 'error'
+                    }).then(function () {
+                    });
+                }
+                else {
+                    $.each(States, function (i, State) {
+                        var det2 = {
+                            idt: State.id_tarifa_aerea
+                        }
+                        console.log(States);
+                        $("#divaereo").empty();
+                        $.each(States, function (i, State) {
+
+                            $('#divaereo').append(
+                                "<div class='col-md-4'><table id='" + State.id_tarifa_aerea + "' class='tbltraslado table table-bordered table-striped'style='text-transform:uppercase' border='1'>" +
+                                "<thead>" +
+                                "<tr>" +
+                                "<td style='text-align-last:center' colspan='2' class='info'><input type='checkbox' class='chkaer' onclick='cba()' id='" + State.id_tarifa_aerea + "'><label>" + $('#idCiudad option:selected').text() + "</label> /  CLASE <label class='clase'>" + State.clase + "</label> /  TARIFA <label class'tipo_tarifa'>" + State.tipo_tarifa + "</label></td>" +
+                                "</tr></thead>" +
+                                "<tbody class='aerimp'><tr>" +
+                                "<td style='text-align-last:center'> NETO</td>" +
+                                "<td style='text-align-last:center' class='netoa'>" + State.neto + "</td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                "<td style='text-align-last:center'> QUEUE</td>" +
+                                "<td style='text-align-last:center' class='queuea'>" + State.queue + "</td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                "<td style='text-align-last:center'> IGV</td>" +
+                                "<td style='text-align-last:center' class='igva'>" + State.igv + "</td>" +
+                                "</tr></tbody><tbody class='neto'>" +
+                                "<tr class='info'><td style='text-align-last:center'>TOTAL</td><td style='text-align-last:center' class='ptotal'>" + State.total_tarifa +
+                                "</td></tr></tbody>" +
+                                "</table></div>"
+                            )
+
+                        });
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/Paquete/getImpTarifaAerea',
+                            data: JSON.stringify(det2),
+                            contentType: 'application/json',
+                            success: function (Statesx) {
+                                if (Statesx.length == 0) {
+                                    sweetAlert({
+                                        title: 'Error',
+                                        text: 'No hay tarifas.',
+                                        type: 'error'
+                                    }).then(function () {
+                                    });
+                                }
+                                else {
+                                    $.each(Statesx, function (i, Statexr) {
+                                        console.log(Statexr);
+                                        $("#divaereo").find('#' + Statexr.id_tarifa_aerea).children('.aerimp').append(
+                                            "<tr><td style='text-align-last:center'>" + Statexr.impuesto + "</td>" +
+                                            "<td style='text-align-last:center' class='imp'>" + Statexr.pre_imp + "</td></tr>"
+                                        )
+                                    });
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        });
+
+
+                    });
+
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+<script>
+    $('#planTA').change(function () {
+
+        var data = {
+            op: $("#idOperadorTA").val(),
+            ta: $("#planTA").val(),
+
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/Paquete/getPreTarjetaAsistencia',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function (States) {
+                if (States.length == 0) {
+                    sweetAlert({
+                        title: 'Error',
+                        text: 'No hay tarifas.',
+                        type: 'error'
+                    }).then(function () {
+                    });
+                }
+                else {
+                    $.each(States, function (i, State) {
+                        $('#divtarjetasistencia').empty();
+                        $('#divtarjetasistencia').append(
+                            "<table class='tbltarjetasistencia table table-bordered table-striped' border='1'>" +
+                            "<thead><tr><td>Operador</td>" +
+                            "<td>Plan</td>" +
+                            "<td>Cobertura</td>" +
+                            "<td>Precio</td></tr></thead>" +
+                            "<tr><td>" + State.operador + "</td>" +
+                            "<td>" + State.nombre + "</td>" +
+                            "<td>" + State.cobertura + "</td>" +
+                            "<td>" + State.costo + "</td></tr></table>"
+
+                        )
+                        $('#pptarjetasistencia').text(State.costo)
+                        sba();
+                        cba();
+                    });
+
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+<script>
+    function sba() {
+        $('#preciosba').empty();
+        $('#divhotel .chkhtl').each(function () {
+            if ($(this).prop('checked')) {
+                console.log('entro')
+                var idtableh = $(this).parents('table').attr('id');
+                console.log(idtableh);
+                var pdobleh = $('.doblereal', '#' + idtableh).text();
+                var ptripleh = $('.triplereal', '#' + idtableh).text();
+                var pcuadrupleh = $('.cuadruplereal', '#' + idtableh).text();
+                var psimpleh = $('.simplereal', '#' + idtableh).text();
+                var pquintupleh = $('.quituplereal', '#' + idtableh).text();
+                var psextupleh = $('.sextuplereal', '#' + idtableh).text();
+                var pchild1h = $('.child1real', '#' + idtableh).text();
+                var pchild2h = $('.child2real', '#' + idtableh).text();
+                var pchild3h = $('.child3real', '#' + idtableh).text();
+                var pinfanteh = $('.infantereal', '#' + idtableh).text();
+                var preciotraslado = $('#ppreciotraslado').text();
+                var preciotarjetasistencia = $('#pptarjetasistencia').text();
+                var pincentivo = $('#incentivo').val();
+                var pfactor = $('#factor').val();
+
+                console.log("pdobleh : " + pdobleh);
+                console.log("ptripleh : " + ptripleh);
+                console.log("pcuadrupleh : " + pcuadrupleh);
+                console.log("psimpleh : " + psimpleh);
+                console.log("pquintupleh : " + pquintupleh);
+                console.log("psextupleh : " + psextupleh);
+                console.log("pchild1h : " + pchild1h);
+                console.log("pchild2h : " + pchild2h);
+                console.log("pchild3h : " + pchild3h);
+                console.log("pinfanteh : " + pinfanteh);
+                console.log("preciotraslado : " + preciotraslado);
+                console.log("preciotarjetasistencia : " + preciotarjetasistencia);
+                console.log("pincentivo : " + pincentivo);
+                console.log("pfactor : " + pfactor);
+
+                var pfsbdoble = ((parseFloat(pdobleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfsbtriple = ((parseFloat(ptripleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfscuadruple = ((parseFloat(pcuadrupleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfssimple = ((parseFloat(psimpleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfsquintuple = ((parseFloat(pquintupleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfssextuple = ((parseFloat(psextupleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfschild1 = ((parseFloat(pchild1h) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfschild2 = ((parseFloat(pchild2h) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfschild3 = ((parseFloat(pchild3h) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+                var pfsinfante = ((parseFloat(pinfanteh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo)) / parseFloat(pfactor)).toFixed(2);
+
+                console.log(pfsbdoble);
+                console.log(pfsbtriple);
+                console.log(pfscuadruple);
+                console.log(pfssimple);
+                console.log(pfsquintuple);
+                console.log(pfssextuple);
+                console.log(pfschild1);
+                console.log(pfschild2);
+                console.log(pfschild3);
+                console.log(pfsinfante);
+
+                $('#preciosba').append(
+                    "<table id='" + idtableh + "' class='tablesba table table-bordered table-striped' border='1'>" +
+                    "<tr>" +
+                    "<td style='text-align-last:center;vertical-align:middle;text-align:center' rowspan='2'><label class='info'>" + $('.info', '#' + idtableh).text() + "</label></td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thdoble'> Doble </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thtriple'> Triple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thcuadruple'> Cuadruple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thsimple'> Simple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thquintuple'> Quintuple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thsextuple'> Sextuple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thchild1'> Child1 De <label class='edad1child1'>" + $('.edad1child1', '#' + idtableh).text() + "</label> a <label class='edad2child1'>" + $('.edad2child1', '#' + idtableh).text() + "</label> años </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thchild2'> Child2 De <label class='edad1child2'>" + $('.edad1child2', '#' + idtableh).text() + "</label> a <label class='edad2child2'>" + $('.edad2child2', '#' + idtableh).text() + "</label> años </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thchild3'> Child3 De <label class='edad1child3'>" + $('.edad1child3', '#' + idtableh).text() + "</label> a <label class='edad2child3'>" + $('.edad2child3', '#' + idtableh).text() + "</label> años </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thinfante'>Infante De <label class='edadinfante1'>" + $('.edadinfante1', '#' + idtableh).text() + "</label> a <label class='edadinfante2'>" + $('.edadinfante2', '#' + idtableh).text() + "</label> años</td>" +
+                    "</tr>" +
+                    "<tr><td style='text-align-last:center' class='n'><label class='doblereal'>" + pfsbdoble + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='triplereal'>" + pfsbtriple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='simplereal'>" + pfssimple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='cuadruplereal'>" + pfscuadruple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='quituplereal'>" + pfsquintuple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='sextuplereal'>" + pfssextuple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='child1real'>" + pfschild1 + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='child2real'>" + pfschild2 + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='child3real'>" + pfschild3 + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='infantereal'>" + pfsinfante + "</td></tr>" +
+                    "</table></br>")
+
+                $('#preciosba .tablesba td label').each(function () {
+                    if ($(this).text() == 'NaN') { $(this).text("-") }
+                    if ($(this).text() == 'Infinity') { $(this).text("-") }
+                    if ($(this).text() == 0) { $(this).text("Gratis") }
+
+                });
+
+
+            }
+            else {
+                console.log('no seleccionado');
+            }
+        })
+
+
     }
 </script>
+
+
+<script>
+    function cba() {
+        $('#divhotel .chkhtl').each(function () {
+            var pdobleh = 0;
+            var ptripleh = 0;
+            var pcuadrupleh = 0;
+            var psimpleh = 0;
+            var pquintupleh = 0;
+            var psextupleh = 0;
+            var pchild1h = 0;
+            var pchild2h = 0;
+            var pchild3h = 0;
+            var pinfanteh = 0;
+            var preciotraslado = 0;
+            var preciotarjetasistencia = 0;
+            var pincentivo = 0;
+            var pfactor = 0;
+            var neteaereo = 0;
+            var queueaereo = 0;
+            var igvaereo = 0;
+            var sumaimp = 0;
+
+            if ($(this).prop('checked')) {
+                console.log('entro')
+                var idtableh = $(this).parents('table').attr('id');
+                console.log(idtableh);
+                pdobleh = $('.doblereal', '#' + idtableh).text();
+                ptripleh = $('.triplereal', '#' + idtableh).text();
+                pcuadrupleh = $('.cuadruplereal', '#' + idtableh).text();
+                psimpleh = $('.simplereal', '#' + idtableh).text();
+                pquintupleh = $('.quituplereal', '#' + idtableh).text();
+                psextupleh = $('.sextuplereal', '#' + idtableh).text();
+                pchild1h = $('.child1real', '#' + idtableh).text();
+                pchild2h = $('.child2real', '#' + idtableh).text();
+                pchild3h = $('.child3real', '#' + idtableh).text();
+                pinfanteh = $('.infantereal', '#' + idtableh).text();
+                preciotraslado = $('#ppreciotraslado').text();
+                preciotarjetasistencia = $('#pptarjetasistencia').text();
+                pincentivo = $('#incentivo').val();
+                pfactor = $('#factor').val();
+
+                console.log("pdobleh : " + pdobleh);
+                console.log("ptripleh : " + ptripleh);
+                console.log("pcuadrupleh : " + pcuadrupleh);
+                console.log("psimpleh : " + psimpleh);
+                console.log("pquintupleh : " + pquintupleh);
+                console.log("psextupleh : " + psextupleh);
+                console.log("pchild1h : " + pchild1h);
+                console.log("pchild2h : " + pchild2h);
+                console.log("pchild3h : " + pchild3h);
+                console.log("pinfanteh : " + pinfanteh);
+                console.log("preciotraslado : " + preciotraslado);
+                console.log("preciotarjetasistencia : " + preciotarjetasistencia);
+                console.log("pincentivo : " + pincentivo);
+                console.log("pfactor : " + pfactor);
+                $('#preciocba').empty()
+                $('#divaereo div table .chkaer').each(function () {
+                    if ($(this).prop('checked')) {
+                        console.log('entro linearea');
+                        var idtableaer = $(this).parents('table').attr('id');
+                        console.log(idtableaer);
+                        neteaereo = $('.netoa', '#' + idtableaer).text();
+                        queueaereo = $('.queuea', '#' + idtableaer).text();
+                        igvaereo = $('.igva', '#' + idtableaer).text();
+                        $('#' + idtableaer + ' ' + '.aerimp .imp').each(
+                            function () {
+                                console.log($(this).text());
+                                var tdTxt = $(this).text();
+                                sumaimp += parseFloat(tdTxt);
+                            }
+                        )
+                        console.log('neteaereo :' + neteaereo);
+                        console.log('queueaereo : ' + queueaereo);
+                        console.log('igvaereo : ' + igvaereo);
+                        console.log('sumaimp : ' + sumaimp);
+                    }
+                    else {
+                        console.log('no seleccionado aereo')
+                    }
+                })
+                var sumaimpuestost = parseFloat(sumaimp) + parseFloat(queueaereo);
+
+                var pfsbdoble = (((parseFloat(pdobleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfsbtriple = (((parseFloat(ptripleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfscuadruple = (((parseFloat(pcuadrupleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfssimple = (((parseFloat(psimpleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfsquintuple = (((parseFloat(pquintupleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfssextuple = (((parseFloat(psextupleh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfschild1 = (((parseFloat(pchild1h) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfschild2 = (((parseFloat(pchild2h) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfschild3 = (((parseFloat(pchild3h) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+                var pfsinfante = (((parseFloat(pinfanteh) + parseFloat(preciotraslado) + parseFloat(preciotarjetasistencia) + parseFloat(pincentivo) + parseFloat(neteaereo)) / parseFloat(pfactor)) + parseFloat(sumaimpuestost)).toFixed(2);
+
+                console.log(pfsbdoble);
+                console.log(pfsbtriple);
+                console.log(pfscuadruple);
+                console.log(pfssimple);
+                console.log(pfsquintuple);
+                console.log(pfssextuple);
+                console.log(pfschild1);
+                console.log(pfschild2);
+                console.log(pfschild3);
+                console.log(pfsinfante);
+
+                $('#preciocba').append(
+                    "<table id='" + idtableh + "'class='tablecba table table-bordered table-striped' border='1'>" +
+                    "<tr>" +
+                    "<td style='text-align-last:center;vertical-align:middle;text-align:center' rowspan='2'><label class='info'>" + $('.info', '#' + idtableh).text() + " con " + $('#aerolinea option:selected').text() + " </label></td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thdoble'> Doble </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thtriple'> Triple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thcuadruple'> Cuadruple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thsimple'> Simple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thquintuple'> Quintuple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thsextuple'> Sextuple </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thchild1'> Child1 De <label class='edad1child1'>" + $('.edad1child1', '#' + idtableh).text() + "</label> a <label class='edad2child1'>" + $('.edad2child1', '#' + idtableh).text() + "</label> años </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thchild2'> Child2 De <label class='edad1child2'>" + $('.edad1child2', '#' + idtableh).text() + "</label> a <label class='edad2child2'>" + $('.edad2child2', '#' + idtableh).text() + "</label> años </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thchild3'> Child3 De <label class='edad1child3'>" + $('.edad1child3', '#' + idtableh).text() + "</label> a <label class='edad2child3'>" + $('.edad2child3', '#' + idtableh).text() + "</label> años </td>" +
+                    "<td style='text-align-last:center; width: 10% !important' id='thinfante'>Infante De <label class='edadinfante1'>" + $('.edadinfante1', '#' + idtableh).text() + "</label> a <label class='edadinfante2'>" + $('.edadinfante2', '#' + idtableh).text() + "</label> años</td>" +
+                    "</tr>" +
+                    "<tr><td style='text-align-last:center' class='n'><label class='doblereal'>" + pfsbdoble + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='triplereal'>" + pfsbtriple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='simplereal'>" + pfssimple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='cuadruplereal'>" + pfscuadruple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='quituplereal'>" + pfsquintuple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='sextuplereal'>" + pfssextuple + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='child1real'>" + pfschild1 + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='child2real'>" + pfschild2 + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='child3real'>" + pfschild3 + "</td>" +
+                    "<td style='text-align-last:center' class='n'><label class='infantereal'>" + pfsinfante + "</td></tr>" +
+                    "</table></br>")
+
+                $('#preciocba .tablecba td label').each(function () {
+                    if ($(this).text() == 'NaN') { $(this).text("-") }
+                    if ($(this).text() == 'Infinity') { $(this).text("-") }
+                    if ($(this).text() == 0) { $(this).text("Gratis") }
+
+                });
+
+
+            }
+            else {
+                console.log('no seleccionado');
+            }
+        })
+
+
+    }
+</script>
+
+<script type="text/javascript">
+    $('#submit').click(function () {
+        var isAllValid = true;
+
+        $('#orderItemError').text('');
+        var list = [];
+        var list2 = [];
+        var orderItem;
+        var orderItem2;
+        var errorItemCount = 0;
+
+        $('#preciosba table').each(function (index, ele) {
+             orderItem = {
+                idZona: $('#idZona').val(),
+                idPais: $('#idPais').val(),
+                idCiudad: $('#idPais').val(),
+                titulo1: $('#titulo1').val(),
+                titulo2: $('#titulo2').val(),
+                titulo3: $('#titulo3').val(),
+                fecha_compra_in: $('#fecha_compra_in').val(),
+                fecha_compra_out: $('#fecha_compra_out').val(),
+                fecha_viajes_in: $('#fecha_viajes_in').val(),
+                fecha_viaje_out: $('#fecha_viajes_out').val(),
+                idCadenaH: $('#idCadenaH').val(),
+                idHotelH: $('#idHotelH').val(),
+                idTipoHabitacionH: $('#idTipoHabitacionH').val(),
+                tarifaH: $(this).attr('id'),
+                idOperadorT: $('#idOperadorT').val(),
+                idCiudadT: $('#idCiudadT').val(),
+                planT: $('.tramo', '#example2').text(),
+                precioT: $('#ppreciotraslado').text(),
+                idOperadorTA: $('#idOperadorTA').val(),
+                planTA: $('#planTA').val(),
+                precioTA: $('#pptarjetasistencia').text(),
+                incentivo: $('#incentivo').val(),
+                factor: $('#factor').val(),
+                aerolinea: 3,
+                incluye: $('#incluye').val(),
+                no_incluye: $('#no_incluye').val(),
+                notas_generales: $('#notas_generales').val(),
+                estado: 1,
+                cabeceraTable: $('.info', this).text(),
+                edad1child1: $('.edad1child1', this).text(),
+                edad1child2: $('.edad1child2', this).text(),
+                edad1child3: $('.edad1child3', this).text(),
+                edad1infante: $('.edadinfante1', this).text(),
+                edad2child1: $('.edad2child1', this).text(),
+                edad2child2: $('.edad2child2', this).text(),
+                edad2child3: $('.edad2child3', this).text(),
+                edad2infante: $('.edadinfante2', this).text(),
+                edad2infante: $('.edadinfante2', this).text(),
+                doblereal: $('.doblereal', this).text(),
+                triplereal: $('.triplereal', this).text(),
+                simplereal: $('.simplereal', this).text(),
+                cuadruplereal: $('.cuadruplereal', this).text(),
+                quintuplereal: $('.quituplereal', this).text(),
+                sextuplereal: $('.sextuplereal', this).text(),
+                sextuplereal: $('.sextuplereal', this).text(),
+                infantereal: $('.infantereal', this).text(),
+                child1real: $('.child1real', this).text(),
+                child2real: $('.child2real', this).text(),
+                child3real: $('.child3real', this).text(),
+
+            }
+            list.push(orderItem);
+
+        })
+
+        $('#preciocba table').each(function (index, ele) {
+            orderItem2 = {
+                idZona: $('#idZona').val(),
+                idPais: $('#idPais').val(),
+                idCiudad: $('#idPais').val(),
+                titulo1: $('#titulo1').val(),
+                titulo2: $('#titulo2').val(),
+                titulo3: $('#titulo3').val(),
+                fecha_compra_in: $('#fecha_compra_in').val(),
+                fecha_compra_out: $('#fecha_compra_out').val(),
+                fecha_viajes_in: $('#fecha_viajes_in').val(),
+                fecha_viaje_out: $('#fecha_viajes_out').val(),
+                idCadenaH: $('#idCadenaH').val(),
+                idHotelH: $('#idHotelH').val(),
+                idTipoHabitacionH: $('#idTipoHabitacionH').val(),
+                tarifaH: $(this).attr('id'),
+                idOperadorT: $('#idOperadorT').val(),
+                idCiudadT: $('#idCiudadT').val(),
+                planT: $('.tramo', '#example2').text(),
+                precioT: $('#ppreciotraslado').text(),
+                idOperadorTA: $('#idOperadorTA').val(),
+                planTA: $('#planTA').val(),
+                precioTA: $('#pptarjetasistencia').text(),
+                incentivo: $('#incentivo').val(),
+                factor: $('#factor').val(),
+                aerolinea: $('#aerolinea').val(),
+                incluye: $('#incluye').val(),
+                no_incluye: $('#no_incluye').val(),
+                notas_generales: $('#notas_generales').val(),
+                estado: 1,
+                cabeceraTable: $('.info', this).text(),
+                edad1child1: $('.edad1child1', this).text(),
+                edad1child2: $('.edad1child2', this).text(),
+                edad1child3: $('.edad1child3', this).text(),
+                edad1infante: $('.edadinfante1', this).text(),
+                edad2child1: $('.edad2child1', this).text(),
+                edad2child2: $('.edad2child2', this).text(),
+                edad2child3: $('.edad2child3', this).text(),
+                edad2infante: $('.edadinfante2', this).text(),
+                edad2infante: $('.edadinfante2', this).text(),
+                doblereal: $('.doblereal', this).text(),
+                triplereal: $('.triplereal', this).text(),
+                simplereal: $('.simplereal', this).text(),
+                cuadruplereal: $('.cuadruplereal', this).text(),
+                quintuplereal: $('.quituplereal', this).text(),
+                sextuplereal: $('.sextuplereal', this).text(),
+                sextuplereal: $('.sextuplereal', this).text(),
+                infantereal: $('.infantereal', this).text(),
+                child1real: $('.child1real', this).text(),
+                child2real: $('.child2real', this).text(),
+                child3real: $('.child3real', this).text(),
+            }
+            list2.push(orderItem2);
+
+        })
+
+
+
+        console.log(list);
+        console.log(list2);
+
+        if (isAllValid) {
+            var data = {
+                tb_paquete: list,
+
+            }
+            var data2 = {
+                tb_paquete: list2,
+
+            }
+            console.log(data);
+            console.log(data2);
+            $.ajax({
+
+                type: 'POST',
+                url: '/Paquete/GuardarPaquetesba',
+                data: JSON.stringify(orderItem),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.status) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/Paquete/GuardarPaquetecba',
+                            data: JSON.stringify(orderItem2),
+                            contentType: 'application/json',
+                            success: function (data) {
+                                if (data.status) {
+                                    sweetAlert({
+                                        title: 'Correcto',
+                                        text: 'La Tarifa ha sido registrada correctamente.',
+                                        type: 'success'
+                                    }).then(function () {
+                                    });
+                                }
+                                else {
+                                    sweetAlert({
+                                        title: 'Error',
+                                        text: 'La Tarifa no ha podido ser registrada.',
+                                        type: 'error'
+                                    }).then(function () {
+                                        window.location.reload();
+
+                                    });
+                                }
+                                $('#submit').text('Save');
+                            },
+                            error: function (error) {
+                                console.log(error);
+                                $('#submit').text('Save');
+                            }
+                        });
+                    }
+
+                    else {
+                        sweetAlert({
+                            title: 'Error',
+                            text: 'La Tarifa no ha podido ser registrada.',
+                            type: 'error'
+                        }).then(function () {
+
+                        });
+                    }
+                    $('#submit').text('Save');
+                },
+                error: function (error) {
+                    console.log(error);
+                    $('#submit').text('Save');
+                }
+            });
+        }
+
+    });
+
+</script>
+
+

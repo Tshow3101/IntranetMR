@@ -393,8 +393,7 @@
     <Property Name="idCadenaH" Type="int" />
     <Property Name="idHotelH" Type="int" />
     <Property Name="idTipoHabitacionH" Type="int" />
-    <Property Name="acomodacionH" Type="varchar" MaxLength="1" />
-    <Property Name="precioH" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="tarifaH" Type="int" />
     <Property Name="idOperadorT" Type="int" />
     <Property Name="idCiudadT" Type="int" />
     <Property Name="planT" Type="varchar" MaxLength="1" />
@@ -405,10 +404,38 @@
     <Property Name="incentivo" Type="decimal" Precision="9" Scale="4" />
     <Property Name="factor" Type="decimal" Precision="9" Scale="4" />
     <Property Name="aerolinea" Type="int" />
-    <Property Name="npax" Type="int" />
-    <Property Name="precio_A" Type="decimal" Precision="9" Scale="4" />
-    <Property Name="precio_TTA" Type="decimal" Precision="9" Scale="4" />
-    <Property Name="preciototal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="incluye" Type="varchar(max)" />
+    <Property Name="no_incluye" Type="varchar(max)" />
+    <Property Name="notas_generales" Type="varchar(max)" />
+    <Property Name="rangoT1" Type="int" />
+    <Property Name="rangoT2" Type="int" />
+    <Property Name="cabeceraTable" Type="varchar(max)" />
+    <Property Name="edad1child1&#xD;&#xA;" Type="int" />
+    <Property Name="edad1child2&#xD;&#xA;" Type="int" />
+    <Property Name="edad1child3&#xD;&#xA;" Type="int" />
+    <Property Name="edad1infante" Type="int" />
+    <Property Name="edad2child1" Type="int" />
+    <Property Name="edad2child2" Type="int" />
+    <Property Name="edad2child3" Type="int" />
+    <Property Name="edad2infante" Type="int" />
+    <Property Name="doblereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="triplereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="simplereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="cuadruplereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="quintuplereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="sextuplereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="infantereal" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="child1real" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="child2real" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="child3real" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="titulo1" Type="varchar(max)" />
+    <Property Name="titulo2" Type="varchar(max)" />
+    <Property Name="titulo3" Type="varchar(max)" />
+    <Property Name="estado" Type="int" />
+    <Property Name="imagen1" Type="varchar(max)" />
+    <Property Name="imagen2" Type="varchar(max)" />
+    <Property Name="flyer1" Type="varchar(max)" />
+    <Property Name="flyer2" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="tb_tarifa_aerea">
     <Key>

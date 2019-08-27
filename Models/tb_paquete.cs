@@ -25,8 +25,7 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<int> idCadenaH { get; set; }
         public Nullable<int> idHotelH { get; set; }
         public Nullable<int> idTipoHabitacionH { get; set; }
-        public string acomodacionH { get; set; }
-        public Nullable<decimal> precioH { get; set; }
+        public Nullable<int> tarifaH { get; set; }
         public Nullable<int> idOperadorT { get; set; }
         public Nullable<int> idCiudadT { get; set; }
         public string planT { get; set; }
@@ -37,10 +36,38 @@ namespace IntranetMundoRepresentaciones.Models
         public Nullable<decimal> incentivo { get; set; }
         public Nullable<decimal> factor { get; set; }
         public Nullable<int> aerolinea { get; set; }
-        public Nullable<int> npax { get; set; }
-        public Nullable<decimal> precio_A { get; set; }
-        public Nullable<decimal> precio_TTA { get; set; }
-        public Nullable<decimal> preciototal { get; set; }
+        public string incluye { get; set; }
+        public string no_incluye { get; set; }
+        public string notas_generales { get; set; }
+        public Nullable<int> rangoT1 { get; set; }
+        public Nullable<int> rangoT2 { get; set; }
+        public string cabeceraTable { get; set; }
+        public Nullable<int> edad1child1__ { get; set; }
+        public Nullable<int> edad1child2__ { get; set; }
+        public Nullable<int> edad1child3__ { get; set; }
+        public Nullable<int> edad1infante { get; set; }
+        public Nullable<int> edad2child1 { get; set; }
+        public Nullable<int> edad2child2 { get; set; }
+        public Nullable<int> edad2child3 { get; set; }
+        public Nullable<int> edad2infante { get; set; }
+        public Nullable<decimal> doblereal { get; set; }
+        public Nullable<decimal> triplereal { get; set; }
+        public Nullable<decimal> simplereal { get; set; }
+        public Nullable<decimal> cuadruplereal { get; set; }
+        public Nullable<decimal> quintuplereal { get; set; }
+        public Nullable<decimal> sextuplereal { get; set; }
+        public Nullable<decimal> infantereal { get; set; }
+        public Nullable<decimal> child1real { get; set; }
+        public Nullable<decimal> child2real { get; set; }
+        public Nullable<decimal> child3real { get; set; }
+        public string titulo1 { get; set; }
+        public string titulo2 { get; set; }
+        public string titulo3 { get; set; }
+        public Nullable<int> estado { get; set; }
+        public string imagen1 { get; set; }
+        public string imagen2 { get; set; }
+        public string flyer1 { get; set; }
+        public string flyer2 { get; set; }
     
         public virtual tb_aerolinea tb_aerolinea { get; set; }
         public virtual tb_cadenahotelera tb_cadenahotelera { get; set; }
