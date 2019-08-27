@@ -499,7 +499,7 @@
     <Property Name="tarifaH" Type="Int32" />
     <Property Name="idOperadorT" Type="Int32" />
     <Property Name="idCiudadT" Type="Int32" />
-    <Property Name="planT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="planT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="precioT" Type="Decimal" Precision="9" Scale="4" />
     <Property Name="idOperadorTA" Type="Int32" />
     <Property Name="planTA" Type="Int32" />
@@ -2126,35 +2126,5 @@
       <End Role="tb_vigencia" EntitySet="tb_vigencia" />
       <End Role="tb_usuario" EntitySet="tb_usuario" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
 </Schema>

@@ -541,7 +541,6 @@ D:\Intranet\IntranetMR\bin\es\System.Web.Razor.resources.dll
 D:\Intranet\IntranetMR\bin\es\System.Web.WebPages.resources.dll
 D:\Intranet\IntranetMR\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\Intranet\IntranetMR\bin\es\System.Web.WebPages.Razor.resources.dll
-D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache
 D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompileInputs.cache
 D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
 D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.dll

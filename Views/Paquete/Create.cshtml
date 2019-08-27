@@ -1395,14 +1395,14 @@
             $.ajax({
 
                 type: 'POST',
-                url: '/Paquete/GuardarPaquetesba',
+                url: '../Paquete/GuardarPaquetesba',
                 data: JSON.stringify(orderItem),
                 contentType: 'application/json',
                 success: function (data) {
                     if (data.status) {
                         $.ajax({
                             type: 'POST',
-                            url: '/Paquete/GuardarPaquetecba',
+                            url: '../Paquete/GuardarPaquetecba',
                             data: JSON.stringify(orderItem2),
                             contentType: 'application/json',
                             success: function (data) {
