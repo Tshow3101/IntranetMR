@@ -15,10 +15,150 @@ namespace IntranetMundoRepresentaciones.Controllers
         private ModeloMR db = new ModeloMR();
 
         // GET: Paquete
-        public ActionResult Index()
+        public ActionResult Index(DateTime? fecha1, DateTime? fecha2, int idZona = 0, int idPais = 0, int idCiudad = 0, int idCadena = 0, int idHotel = 0, int idLineaaerea = 0)
         {
-            var tb_paquete = db.tb_paquete.Include(t => t.tb_aerolinea).Include(t => t.tb_cadenahotelera).Include(t => t.tb_ciudad).Include(t => t.tb_ciudad1).Include(t => t.tb_hotel).Include(t => t.tb_pais).Include(t => t.tb_usuario).Include(t => t.tb_usuario1).Include(t => t.tb_tipohabitacion).Include(t => t.tb_zona).Include(t => t.tb_tarjetaasistencia);
-            return View(tb_paquete.ToList());
+            ViewBag.idCiudad = new SelectList(db.tb_ciudad, "idCiudad", "nombreCiudad");
+            ViewBag.idPais = new SelectList(db.tb_pais, "idPais", "NombrePais");
+            ViewBag.idZona = new SelectList(db.tb_zona, "idZona", "nombreZona");
+            ViewBag.idCadena = new SelectList(db.tb_cadenahotelera, "idCadenaHotelera", "nombreCadenaHotelera");
+            ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel");
+            ViewBag.idLineaaerea = new SelectList(db.tb_aerolinea, "idAerolinea", "NombreComercial");
+
+            var itinerariodeviaje = from c in db.tb_paquete
+                                    where c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                          c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                    select c;
+
+            var hotelzonaseitinerarios = from c in db.tb_paquete
+                                         where c.idHotelH == idHotel && c.idCadenaH == idCadena &&
+                                               c.idZona == idZona && c.idPais == idPais &&
+                                               c.idCiudad == idCiudad &&
+                                               c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                               c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                         select c;
+
+            var zonaeitinerarios = from c in db.tb_paquete
+                                   where c.idZona == idZona && c.idPais == idPais &&
+                                         c.idCiudad == idCiudad &&
+                                         c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                         c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                   select c;
+
+            var hoteleitinerarios = from c in db.tb_paquete
+                                    where c.idHotelH == idHotel && c.idCadenaH == idCadena &&
+                                          c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                          c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                    select c;
+
+            var hotelzonaslineaaereaeitinerarios = from c in db.tb_paquete
+                                                   where c.idHotelH == idHotel && c.idCadenaH == idCadena &&
+                                                         c.idZona == idZona && c.idPais == idPais &&
+                                                         c.idCiudad == idCiudad &&
+                                                         c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                         c.aerolinea == idLineaaerea &&
+                                                         c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                                   select c;
+
+            var zonalineaaereaeitinerario = from c in db.tb_paquete
+                                            where c.idZona == idZona && c.idPais == idPais &&
+                                                  c.idCiudad == idCiudad &&
+                                                  c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                  c.aerolinea == idLineaaerea &&
+                                                  c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                            select c;
+
+            var hotellineaaereaeitinierario = from c in db.tb_paquete
+                                              where c.idHotelH == idHotel && c.idCadenaH == idCadena &&
+                                                    c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                    c.aerolinea == idLineaaerea &&
+                                                    c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                              select c;
+
+            /*Nuevos Querys*/
+            var itinerarioszona = from c in db.tb_paquete
+                                  where c.idZona == idZona &&
+                                        c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                        c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                  select c;
+
+            var itinerarioszonapais = from c in db.tb_paquete
+                                      where c.idZona == idZona && c.idPais == idPais &&
+                                            c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                            c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                      select c;
+
+            var itinerarioscadena = from c in db.tb_paquete
+                                    where c.idCadenaH == idCadena &&
+                                          c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                          c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                    select c;
+
+            var itinerarioszonacadena = from c in db.tb_paquete
+                                        where c.idCadenaH == idCadena &&
+                                              c.idZona == idZona &&
+                                              c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                              c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                        select c;
+
+            var itinerariozonapaiscadena = from c in db.tb_paquete
+                                           where c.idCadenaH == idCadena &&
+                                                 c.idZona == idZona && c.idPais == idPais &&
+                                                 c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                 c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                           select c;
+
+            var itinerariozonapaiscidadcadena = from c in db.tb_paquete
+                                                where c.idCadenaH == idCadena &&
+                                                      c.idZona == idZona && c.idPais == idPais &&
+                                                      c.idCiudad == idCiudad &&
+                                                      c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                      c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                                select c;
+
+            var itinerariozonacadenahotel = from c in db.tb_paquete
+                                            where c.idCadenaH == idCadena &&
+                                                  c.idZona == idZona && c.idPais == idPais &&
+                                                  c.idCiudad == idCiudad &&
+                                                  c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                  c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                            select c;
+
+            var itinerariozonapaiscadenahotel = from c in db.tb_paquete
+                                                where c.idHotelH == idHotel && c.idCadenaH == idCadena &&
+                                                      c.idZona == idZona && c.idPais == idPais &&
+                                                      c.fecha_viajes_in <= fecha1 && c.fecha_viaje_out >= fecha2 &&
+                                                      c.fecha_compra_in <= DateTime.Today && c.fecha_compra_out >= DateTime.Today
+                                                select c;
+
+            /**/
+            if (idCadena == 0 && idHotel == 0 && idZona == 0 && idPais == 0 && idCiudad == 0 && idLineaaerea == 0)
+            {
+                return View(itinerariodeviaje.ToList());
+            }
+            if (idCadena == 0 && idHotel == 0 && idLineaaerea == 0)
+            {
+                return View(zonaeitinerarios.ToList());
+            }
+            if (idZona == 0 && idPais == 0 && idCiudad == 0 && idLineaaerea == 0)
+            {
+                return View(hoteleitinerarios.ToList());
+            }
+            if (idLineaaerea == 0)
+            {
+                return View(hotelzonaseitinerarios.ToList());
+            }
+            if (idCadena == 0 && idHotel == 0)
+            {
+                return View(zonalineaaereaeitinerario.ToList());
+            }
+            if (idZona == 0 && idPais == 0 && idCiudad == 0)
+            {
+                return View(hotellineaaereaeitinierario.ToList());
+            }            
+            else
+            {
+                return View(hotelzonaslineaaereaeitinerarios.ToList());
+            }
         }
 
         // GET: Paquete/Details/5
@@ -45,8 +185,8 @@ namespace IntranetMundoRepresentaciones.Controllers
             ViewBag.idCiudadT = new SelectList(db.tb_ciudad.OrderBy(m => m.nombreCiudad), "idCiudad", "nombreCiudad");
             ViewBag.idHotelH = new SelectList(db.tb_hotel.OrderBy(m => m.nombrehotel), "idHotel", "nombrehotel");
             ViewBag.idPais = new SelectList(db.tb_pais.OrderBy(m => m.NombrePais), "idPais", "NombrePais");
-            ViewBag.idOperadorT = new SelectList(db.tb_usuario.OrderBy(m => m.nombreusuario), "idUsuario", "nombreusuario");
-            ViewBag.idOperadorTA = new SelectList(db.tb_usuario.OrderBy(m => m.nombreusuario), "idUsuario", "nombreusuario");
+            ViewBag.idOperadorT = new SelectList(db.tb_usuario.Where(x => x.TIPOUSUARIO == 56).OrderBy(m => m.nombreusuario), "idUsuario", "nombreusuario");
+            ViewBag.idOperadorTA = new SelectList(db.tb_usuario.Where(x => x.TIPOUSUARIO == 56).OrderBy(m => m.nombreusuario), "idUsuario", "nombreusuario");
             ViewBag.idTipoHabitacionH = new SelectList(db.tb_tipohabitacion.OrderBy(m => m.NombreTipoHabitacion), "idTipoHabitacion", "NombreTipoHabitacion");
             ViewBag.idZona = new SelectList(db.tb_zona.OrderBy(m => m.nombreZona), "idZona", "nombreZona");
             ViewBag.planTA = new SelectList(db.tb_tarjetaasistencia.OrderBy(m => m.nombreTarjetaasistencia), "idTarjetaasistencia", "nombreTarjetaasistencia");
@@ -385,15 +525,15 @@ namespace IntranetMundoRepresentaciones.Controllers
             bool status = false;
 
             var isValidModel = TryUpdateModel(tb_paquete);
-            
-                using (db)
-                {
 
-                    db.tb_paquete.Add(tb_paquete);
-                    db.SaveChanges();
-                    status = true;
+            using (db)
+            {
 
-                }         
+                db.tb_paquete.Add(tb_paquete);
+                db.SaveChanges();
+                status = true;
+
+            }
             return new JsonResult { Data = new { status = status } };
         }
 
@@ -403,15 +543,15 @@ namespace IntranetMundoRepresentaciones.Controllers
             bool status = false;
 
             var isValidModel = TryUpdateModel(tb_paquete);
-                using (db)
-                {
+            using (db)
+            {
 
-                    db.tb_paquete.Add(tb_paquete);
-                    db.SaveChanges();
-                    status = true;
-                }
-            
-            
+                db.tb_paquete.Add(tb_paquete);
+                db.SaveChanges();
+                status = true;
+            }
+
+
             return new JsonResult { Data = new { status = status } };
         }
 

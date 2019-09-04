@@ -137,6 +137,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AerolineaController.cs" />
     <Compile Include="Controllers\AgenciaController.cs" />
     <Compile Include="Controllers\BuscadorController.cs" />
     <Compile Include="Controllers\BuscarController.cs" />
@@ -6616,6 +6617,11 @@
     <Content Include="Views\Paquete\Index.cshtml" />
     <Content Include="Views\Buscador\Details.cshtml" />
     <Content Include="Views\Buscador\Index.cshtml" />
+    <Content Include="Views\Aerolinea\Create.cshtml" />
+    <Content Include="Views\Aerolinea\Delete.cshtml" />
+    <Content Include="Views\Aerolinea\Details.cshtml" />
+    <Content Include="Views\Aerolinea\Edit.cshtml" />
+    <Content Include="Views\Aerolinea\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

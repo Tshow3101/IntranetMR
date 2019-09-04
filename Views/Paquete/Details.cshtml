@@ -4,224 +4,78 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br />
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Detalle del Paquete</h4>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <h1 style="color:#823694">@Model.titulo1</h1>
+                <label>Valido para viajar del @String.Format("{0:dd/MM/yyyy}", Model.fecha_viajes_in) al @String.Format("{0:dd/MM/yyyy}", Model.fecha_viaje_out)</label><br />
+                <label style="color:red;">Valido para comprar hasta el @String.Format("{0:dd/MM/yyyy}", Model.fecha_compra_out)</label>
+            </div>
+            <div class="col-md-12">
+                <h3>Incluye</h3>
+                @Html.Raw(Model.incluye)
+            </div>
 
-<h2>Details</h2>
+            <div class="col-md-12">
+                <h3>Tarifa Hotel</h3>
+                <table class="table table-responsive" style="border: rgb(209,0,109) 2px solid;">
+                    <thead style="color:white; text-align: center;">
+                        <tr>
+                            <td style="background: rgb(209,0,109);">Hotel</td>
+                            <td style="background: rgb(209,0,109);">Tipo Habitacion</td>
+                            <td style="background: rgb(209,0,109);">Doble</td>
+                            <td style="background: rgb(209,0,109);">Triple</td>
+                            <td style="background: rgb(209,0,109);">Cuadruple</td>
+                            <td style="background: rgb(209,0,109);">Simple</td>
+                            <td style="background: rgb(209,0,109);">Quintuple</td>
+                            <td style="background: rgb(209,0,109);">Sextuple</td>
+                            <td style="background: rgb(209,0,109);">Child 1 (@Model.edad1child1__ - @Model.edad2child1)</td>
+                            <td style="background: rgb(209,0,109);">Child 2 (@Model.edad1child2__ - @Model.edad2child2)</td>
+                            <td style="background: rgb(209,0,109);">Child 3 (@Model.edad1child3__ - @Model.edad2child3)</td>
+                            <td style="background: rgb(209,0,109);">Infante (@Model.edad1infante - @Model.edad2infante)</td>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align:center;">
+                        <tr>
+                            <td><input type="button" value="@Model.tb_hotel.nombrehotel" style="font-weight: Bold; border: rgb(209,0,109) 2px solid; color: rgb(209,0,109); background: white;" /> </td>
+                            <td>@Model.tb_tipohabitacion.NombreTipoHabitacion</td>
+                            <td>@Model.doblereal</td>
+                            <td>@Model.triplereal</td>
+                            <td>@Model.cuadruplereal</td>
+                            <td>@Model.simplereal</td>
+                            <td>@Model.quintuplereal</td>
+                            <td>@Model.sextuplereal</td>
+                            <td>@Model.child1real</td>
+                            <td>@Model.child2real</td>
+                            <td>@Model.child3real</td>
+                            <td>@Model.infantereal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<div>
-    <h4>tb_paquete</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_compra_in)
-        </dt>
+            <div class="col-md-12">
+                <h3>Notas Generales</h3>
+                @Html.Raw(Model.notas_generales)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha_compra_in)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_compra_out)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecha_compra_out)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_viajes_in)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecha_viajes_in)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_viaje_out)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecha_viaje_out)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.acomodacionH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.acomodacionH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.precioH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.precioH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.planT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.planT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.precioT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.precioT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.precioTA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.precioTA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.incentivo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.incentivo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.factor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.factor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.npax)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.npax)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.precio_A)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.precio_A)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.precio_TTA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.precio_TTA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.preciototal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.preciototal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_aerolinea.NombreComercial)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_aerolinea.NombreComercial)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_cadenahotelera.nombreCadenaHotelera)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_ciudad1.nombreCiudad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_ciudad1.nombreCiudad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_hotel.nombrehotel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_hotel.nombrehotel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_pais.NombrePais)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuario.apellidopaternousuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuario.apellidopaternousuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuario1.apellidopaternousuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuario1.apellidopaternousuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_tipohabitacion.NombreTipoHabitacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_zona.nombreZona)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_tarjetaasistencia.nombreTarjetaasistencia)
-        </dd>
-
-    </dl>
+            <div class="col-md-12" style="text-align:center;">
+                <div class="form-group">
+                    @Html.ActionLink("Enviar Correo", "Edit", new { id = Model.idPaquete }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Regresar Lista Paquete", "Index", null, new { @class = "btn btn-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idPaquete }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -1,0 +1,161 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_aerolinea
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tb_aerolinea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreComercial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreComercial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ruc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paginaweb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paginaweb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correofacturacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correofacturacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecharegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecharegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioregistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioregistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechamodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechamodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuariomodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariomodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_categoria.nombreCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_categoria.nombreCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudad.nombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudad.nombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_pais.NombrePais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_pais.NombrePais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_zona.nombreZona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_zona.nombreZona)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

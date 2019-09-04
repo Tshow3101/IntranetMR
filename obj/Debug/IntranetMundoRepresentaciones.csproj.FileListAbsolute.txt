@@ -545,3 +545,4 @@ D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CoreCompil
 D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csproj.CopyComplete
 D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.dll
 D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.pdb
+D:\Intranet\IntranetMR\obj\Debug\IntranetMundoRepresentaciones.csprojAssemblyReference.cache

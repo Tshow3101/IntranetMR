@@ -1,0 +1,162 @@
+﻿@model IntranetMundoRepresentaciones.Models.tb_aerolinea
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+
+<div class="col-md-12">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Crear Aerolinea</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.AntiForgeryToken()
+                <!--Primera Fila-->
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Nombre</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.NombreComercial, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>RUC</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Ruc, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Razon Social</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.RazonSocial, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                <!--Segunda Fila-->
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Zona</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("Zona", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Pais</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("Pais", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Destino</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("Destino", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <!--Tercer Fila-->
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Direccion</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Correo</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.correofacturacion, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <label>Pagina Web</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Paginaweb, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                <!--Cuarta Fila-->
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-3">
+                        <div class="col-md-4">
+                            <label>Telefono 1</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.telefono1, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-4">
+                            <label>Telefono 2</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.telefono2, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-4">
+                            <label>Banco</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.DropDownList("BancoAfiliado", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-4">
+                            <label>Logo</label>
+                        </div>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.logo, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                /*Botones*/
+                <div class="col-md-12" style="text-align:center;"><br />
+                    <div class="form-group">
+                        <input type="submit" value="Agregar Aerolinea" class="btn btn-primary" />
+                        @Html.ActionLink("Regresar Lista Aerolinea", "Index", null, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

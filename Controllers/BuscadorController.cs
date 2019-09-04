@@ -24,9 +24,9 @@ namespace IntranetMundoRepresentaciones.Controllers
             ViewBag.idHotel = new SelectList(db.tb_hotel, "idHotel", "nombrehotel");
             ViewBag.idLineaaerea = new SelectList(db.tb_aerolinea, "idAerolinea", "NombreComercial");
 
-            var itinerariodeviaje =          from c in db.tb_detalleingresohotel
-                                             where c.tb_ingresohotel.fecviajeini < fecha1 && c.tb_ingresohotel.fecviajefin > fecha2 &&
-                                                   c.tb_ingresohotel.feccompraini < DateTime.Today && c.tb_ingresohotel.feccomprafin > DateTime.Today
+            var itinerariodeviaje =          from c in db.tb_paquete
+                                             where c.fecha_viajes_in < fecha1 && c.fecha_viaje_out> fecha2 &&
+                                                   c.fecha_compra_in < DateTime.Today && c.fecha_compra_out > DateTime.Today
                                              select c;
 
             var zonaseitinerario =          from c in db.tb_detalleingresohotel
@@ -44,11 +44,8 @@ namespace IntranetMundoRepresentaciones.Controllers
                                                   c.tb_ingresohotel.feccompraini < DateTime.Today && c.tb_ingresohotel.feccomprafin > DateTime.Today
                                             select c;
 
-            ViewBag.boletoaereoeitinerario =from c in db.tb_tarifa_aerea
-                                            where c.id_laerea == idLineaaerea && c.time_viaje_1 < fecha1 && c.time_viaje_2 > fecha2 &&
-                                                  c.time_compra_1 < DateTime.Today && c.time_compra_2 > DateTime.Today
-                                            select c;
-            return View(ViewBag.boletoaereoeitinerario);
+            
+            return View(itinerariodeviaje.ToList());
         }
 
         // GET: Buscador/Details/5
